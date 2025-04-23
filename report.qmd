@@ -8,7 +8,7 @@ author:
     affiliation: "MSc Landscape Architecture"
   - name: "Kelly Schoonderwoerd"
     affiliation: "MSc Geomatics"
-  - name: "Student 4"
+  - name: "Viola Ebermannová"
     affiliation: "MSc Urbanism"
 format: html
 ---
