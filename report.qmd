@@ -2,8 +2,8 @@
 title: "Title of your report"
 subtitle: "Project report of Group C"
 author:
-  - name: "Student 1"
-    affiliation: "MSc Geomatics"
+  - name: "Hongyue Kang"
+    affiliation: "MSc Urbanism"
   - name: "Student 2"
     affiliation: "MSc Landscape Architecture"
   - name: "Kelly Schoonderwoerd"
