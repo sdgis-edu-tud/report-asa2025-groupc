@@ -67,15 +67,17 @@ format: html
 
 This report presents a spatial Multi-criteria Data Analysis to determine possibilities for the Teplica river in the town Senica (Slovakia).
 
-This is student work created as part of the Applied Spatial Analysis for Sustainable Urban Development course at TU Delft.
+Note: This is student work created as part of the Applied Spatial Analysis for Sustainable Urban Development course at TU Delft.
 
 ##### Key words:
 
 Urban Stream Restoration, XXXX, XXXX, XXXX
 
+![Introduction catchy image – placeholder](/img/placeholder.png)
+
 ### Colophon
 
-##### Students and roles in project:
+#### Students and roles in project:
 
 Hongyue Kang (MSc Urbanism) – Design Lead, Presentation Lead
 
@@ -85,7 +87,7 @@ Kelly Schoonderwoerd (MSc Geomatics) – Editor, Mapping Specialist
 
 Viola Ebermannová (MSc Urbanism) – Project Coordinator, Research Lead
 
-##### Course information
+#### Course information
 
 Created as part of the course: ARFW0501 Applied Spatial Analysis for Sustainable Urban Development (2024/25 Q4), Faculty of Architecture and the Built Environment.
 
