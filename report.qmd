@@ -63,7 +63,7 @@ format: html
 
 ## Introduction
 
-__*How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?*__
+***How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?***
 
 This report presents a spatial Multi Criteria Data Analysis and Typology Construction to determine possibilities for restoration of the Teplica river in the town Senica (Slovakia).
 
@@ -85,7 +85,7 @@ Hongyue Kang (MSc Urbanism) – Presentation Lead, Data Analyst (microclimate an
 
 Jiaoyang Wu (MSc Geomatics) – Data Analyst, Mapping Specialist (flood risk)
 
-Kelly Schoonderwoerd (MSc Geomatics) – Editor, Mapping Specialist
+Kelly Schoonderwoerd (MSc Geomatics) – Editor, Mapping Specialist, R expert
 
 Viola Ebermannová (MSc Urbanism) – Project Coordinator, Research Lead, Design Lead (graphic guidelines and layout templates), Data Analyst (analysis geometry, space syntax analysis)
 
@@ -117,7 +117,7 @@ Multi Criteria Decision Analysis is a research style that advises decision makin
 
 #### Detailed research structure
 
-![Research structure – detailed flow chart, version for midterm (open image in new tab to see in full). Climate adaptation might change to include shadow/temperature , biodiversity might include NDVI.](/img/ResearchStructure_20250525.png)
+![Research structure – detailed flow chart, version 27. 5. (open image in new tab to see in full).](img/ResearchStructure_20250527.jpg)
 
 ### Analysis geometry
 
@@ -140,6 +140,16 @@ The flood plain was partitioned based on local morphology and land cover, and in
 
 ![Some larger uniform areas were partitioned based on parcellation.](/img/analysisgeometry_parcelation.png)
 
+#### Analysis geometry update after 27. 5. consultation
+
+Cells along the river: i went through it manually and merged some cells to create larger areas. Always merged only the ones that i previously classified as the same landcover. I did it based on spatial logic and continuity of surrounding division lines. Left and right bank is still distinguished.
+
+Other cells: In few places, i simplified field separation and merged a road into it (where there is no significant different type of land cover along the road.)
+
+*- Viola*
+
+![The updated analysis geometry 27. 5. 2025](img/AnalysisGeometryOverview_250527.png)
+
 ### Data structure
 
 <!--Talk about how we deal with data, sources, what geometries we use for what and how overview of approaches to agregate data from original geometry types to the analysis geometry -->
@@ -151,7 +161,8 @@ WIP - please refer to detailed research structure flowchart for some information
 ### Biodiversity
 
 <!--# intro -->
-__*how to improve local and supra local biodiversity resilience by interventions within the stream flood plain? -> which spaces to prioritize based on value and feasibility of intervention*__
+
+***how to improve local and supra local biodiversity resilience by interventions within the stream flood plain? -\> which spaces to prioritize based on value and feasibility of intervention***
 
 WIP – please refer to the main research structure flow chart for overview.
 
@@ -171,18 +182,23 @@ Our argument is that spaces with not so great ecological value should be priorit
 
 The estimate ecological quality indicator was assigned based on intuition. We might modify the indicators of built-up space to better reflect the quality of green space.
 
-![WIP landcover overview](/img/B_LandCover_old.png)
+![Landcover overview version 27. 5. 2025](img/LandcoverOverview_250527.png)
 
 ![Typical examples of landcover classes, draft estimate ecological quality indicator](/img/B_LandCover_typology.png)
 
-#### #3 ? + some other indicator– maybe we do not need it, because the other ones are good enough together? – NDVI???
+#### #3 ? + some other indicator– maybe we do not need it, because the other ones are good enough together? – NDVI??? temperature?
+
+NDVI might me duplicit with our land cover classification (it talks about the density of the vegetation similar to the landcover classes we propose.) We could maybe also by trying to combine the data with the landcover to isolate information about which green is neglected?
+
+Anothe possibility might be that it could be used as indicator of temperature, or perhaps we also could instead choose surface temperature (from google earth engine)?
 
 #### Weighting
 
 #### Biodiversity conclusion
 
 ### Climate adaptation
-__*how to use areas in the flood plain to capture water in the landscape? -> where is good space for infiltration basins and natural flood protection measures based on soil types and flood risk?*__
+
+***how to use areas in the flood plain to capture water in the landscape? -\> where is good space for infiltration basins and natural flood protection measures based on soil types and flood risk?***
 
 <!--# intro -->
 
@@ -200,7 +216,11 @@ This chapter is based on the fact that in western slovakia, there is a large dro
 
 Flood risk raster, calculated by us. ![Flood risk](/img/CA_FloodRisk.png)
 
-#### #3
+#### #3 Maybe impervious cover ?
+
+We dont know if we will manage to do this, it is now very low priority.
+
+In the case we dont, we think for our goal of capturing water in landscape (as water buffer for flood protection, and also longterm anti-drought measure), the two we already have might be sufficient (while stating general goal overall is to improve surface permeability no matter where.)
 
 #### Weighting
 
@@ -210,7 +230,7 @@ Flood risk raster, calculated by us. ![Flood risk](/img/CA_FloodRisk.png)
 
 <!--# intro -->
 
-__*what type of places should be created in the stream flood plain?*__ -\> amenities, green spaces, connections / what combination
+***what type of places should be created in the stream flood plain?*** -\> amenities, green spaces, connections / what combination
 
 WIP – please refer to the main research structure flow chart for overview.
 
@@ -324,11 +344,17 @@ Attraction Reach Teplica
 
 ## Typology construction
 
-# Results
+We feel like our goal for typology alligns pretty well with our main research question *How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?*
 
-# Discussion
+Hopefully, we will get types of areas that can make it easier to create example design interventions. Perhaps something like "areas with large potential for community facilities with water retention function", "areas with community functions and maintained high biodiversity", "areas with biodiversity boost, improved surface permeability and connectivity".
 
-## Discussion of results
+Plan is I (viola) guess to feed the data in (in various compositions perhaps) and see what happens.
+
+## Results
+
+## Discussion
+
+### Discussion of results
 
 ## Reflection
 
@@ -340,24 +366,24 @@ Attraction Reach Teplica
   -->
 ```
 
-# Conclusion
+## Conclusion
 
-# Appendix
+## Appendix
 
 <!--# layers and analyses we didnt use but would be shame not to include  -->
 
 ![Density](pdf/Density_20250518.pdf){height="100%" width="100%"}
 
-# Sources
+## Sources
 
 <!-- Use APA 7 - full here, bracketed in text and maps (for some i used the full version in the image for easier referencing) -->
 
 <!-- we could also make the bracketed versions and the full references linked -->
 
-## Literature
+### Literature
 
-## Map layers
+### Map layers
 
-## Images
+### Images
 
 Street View of Senica – Google Maps. (May 2012). Retrieved on May 22, 2025 from: [https://www.google.com/maps/place/905+01+Senica,+Slovensko/\@48.6841521,17.3581313,3a,75y,296.73h,88.04t/data=!3m7!1e1!3m5!1sbkMc3aSUkJxRvi5IszgGWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9640483562330928%26panoid%3DbkMc3aSUkJxRvi5IszgGWg%26yaw%3D296.73281886129774!7i13312!8i6656!4m7!3m6!1s0x476cb4e2e7ed1a27:0x400f7d1c696ee40!8m2!3d48.6811502!4d17.3672337!10e5!16zL20vMGRyeG43?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D](https://www.google.com/maps/place/905+01+Senica,+Slovensko/@48.6841521,17.3581313,3a,75y,296.73h,88.04t/data=!3m7!1e1!3m5!1sbkMc3aSUkJxRvi5IszgGWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9640483562330928%26panoid%3DbkMc3aSUkJxRvi5IszgGWg%26yaw%3D296.73281886129774!7i13312!8i6656!4m7!3m6!1s0x476cb4e2e7ed1a27:0x400f7d1c696ee40!8m2!3d48.6811502!4d17.3672337!10e5!16zL20vMGRyeG43?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D)
