@@ -1,11 +1,11 @@
 ---
-title: "Title of your report"
-subtitle: "Project report of Group C"
+title: "Urban stream restoration – Teplica (Senica, SK)"
+subtitle: "Project report of Group C (WIP)"
 author:
   - name: "Hongyue Kang"
     affiliation: "MSc Urbanism"
-  - name: "Student 2"
-    affiliation: "MSc Landscape Architecture"
+  - name: "Jiaoyang Wu"
+    affiliation: "MSc Geomatics"
   - name: "Kelly Schoonderwoerd"
     affiliation: "MSc Geomatics"
   - name: "Viola Ebermannová"
@@ -13,51 +13,377 @@ author:
 format: html
 ---
 
-::: callout
-## This is a computational notebook
+<!-- ::: callout -->
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+<!-- ## This is a computational notebook -->
 
-## Running Code
+<!-- Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>. -->
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+<!-- ## Running Code -->
 
-```{r}
-1 + 1
-```
+<!-- When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this: -->
 
-You can add options to executable code like this 
+<!-- ```{r} -->
 
-```{r}
-#| echo: false
-2 * 2
-```
+<!-- 1 + 1 -->
 
-The `echo: false` option disables the printing of code (only output is displayed).
+<!-- ``` -->
 
-You can delete this entire callout between and including the lines
-```
-::: callout
-```
-and
+<!-- You can add options to executable code like this  -->
 
-```
-:::
-```
-and start the report from the Introduction section below.
-:::
+<!-- ```{r} -->
+
+<!-- #| echo: false -->
+
+<!-- 2 * 2 -->
+
+<!-- ``` -->
+
+<!-- The `echo: false` option disables the printing of code (only output is displayed). -->
+
+<!-- You can delete this entire callout between and including the lines -->
+
+<!-- ``` -->
+
+<!-- ::: callout -->
+
+<!-- ``` -->
+
+<!-- and -->
+
+<!-- ``` -->
+
+<!-- ::: -->
+
+<!-- ``` -->
+
+<!-- and start the report from the Introduction section below. -->
+
+<!-- ::: -->
 
 ## Introduction
 
+***How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?***
+
+This report presents a spatial Multi Criteria Data Analysis and Typology Construction to determine possibilities for restoration of the Teplica river in the town Senica (Slovakia).
+
+Note: This is student work created as part of the Applied Spatial Analysis for Sustainable Urban Development course at TU Delft.
+
+Note #2: THIS IS A WIP, IT WILL BE FINALISED IN END OF JUNE 2025.
+
+##### Key words:
+
+Urban Stream Restoration, Biodiversity, XXXX, XXXX
+
+![River Senica on the edge of Teplica (Google Street View, 2012)](/img/SenicaOnTheEdgeOfTeplica_googleStreetview.png)
+
+### Colophon
+
+#### Students – roles and contributions
+
+Hongyue Kang (MSc Urbanism) – Presentation Lead, Data Analyst (microclimate analysis)
+
+Jiaoyang Wu (MSc Geomatics) – Data Analyst, Mapping Specialist (flood risk)
+
+Kelly Schoonderwoerd (MSc Geomatics) – Editor, Mapping Specialist, R expert
+
+Viola Ebermannová (MSc Urbanism) – Project Coordinator, Research Lead, Design Lead (graphic guidelines and layout templates), Data Analyst (analysis geometry, space syntax analysis)
+
+#### Course information
+
+Created as part of the course: ARFW0501 Applied Spatial Analysis for Sustainable Urban Development (2024/25 Q4), Faculty of Architecture and the Built Environment.
+
+Tutors: Dr. Daniele Cannatella, Dr. Claudiu Forgaci
+
+In collaboration with the [ReBioClim](www.interreg-central.eu/projects/rebioclim/) project.
+
 ## Methods
 
-### MCDA
+<!--# add intro!!! -->
 
-### Typology construction
+## MCDA
+
+::: callout
+Multi Criteria Decision Analysis is a research style that advises decision making based on evaluation of multiple objectives and criteria. It aims to formalize problems and evaluate them by mathematical means. <!-- Do we need a source? -->
+:::
+
+### Selection of objectives and criteria – three pillar system
+
+<!--Add diagrams and text describing the approach to create objectives, research questions and subquestions -->
+
+![Venn diagram of Biodiversity, Climate adaptation, and Quality of life - placeholder](/img/placeholder.png)
+
+![Research structure – simplified flow chart of topics - (?objectives - attributes, highlighted the ones we chose?) - placeholder](/img/placeholder.png)
+
+#### Detailed research structure
+
+![Research structure – detailed flow chart, version 27. 5. (open image in new tab to see in full).](img/ResearchStructure_20250527.jpg)
+
+### Analysis geometry
+
+The analysis geometry is a vector polygon layer consisting of morphologically determined elements. The decision to create geometry tailored to the local spatial conditions has two main reasons:
+
+1.  to make the analysis more accessible to locals – through analysing on geometry familiar to them, hopefully making interpretation easier, and
+2.  to make the results more actionable – through analysing on logical spatial units results will be more space-specific
+
+At the core is a *Regional biocorridor* as indicated in *Spatial Ecological Stability System* (*ÚSES*) – an approximately 20 meter buffer around the stream. We differentiate left and right bank, because it matters for accessibility (significant for all attributes in quality of life).
+
+The bounds of the analysis geometry were determined based on the floodplain of the river indicated by flood danger maps. This is the area that "belongs" to the river, thus it should be restored together with the watercourse. (The outline was based on raster data available online and spatial logic of the area to respect natural boundaries.)
+
+The flood plain was partitioned based on local morphology and land cover, and in some cases inspired by the parcellation structure to create a smaller grain in areas with large unpartitioned fields.
+
+![Biocorridor at the core of the geometry as the immediate banks of the river.](/img/analysisgeometry_uses.png)
+
+![Flood plain - area belonging to the river should be treated as a whole.](/img/analysisgeometry_flood.png)
+
+![Polygons are based on morphology.](/img/analysisgeometry_space.png)
+
+![Some larger uniform areas were partitioned based on parcellation.](/img/analysisgeometry_parcelation.png)
+
+#### Analysis geometry update after 27. 5. consultation
+
+Cells along the river: i went through it manually and merged some cells to create larger areas. Always merged only the ones that i previously classified as the same landcover. I did it based on spatial logic and continuity of surrounding division lines. Left and right bank is still distinguished.
+
+Other cells: In few places, i simplified field separation and merged a road into it (where there is no significant different type of land cover along the road.)
+
+*- Viola*
+
+![The updated analysis geometry 27. 5. 2025](img/AnalysisGeometryOverview_250527.png)
+
+### Data structure
+
+<!--Talk about how we deal with data, sources, what geometries we use for what and how overview of approaches to agregate data from original geometry types to the analysis geometry -->
+
+WIP - please refer to detailed research structure flowchart for some information.
+
+![Scheme of data structure – data types of original layers, processes that they go through to create 3 aggregate layers and the final map - placeholder](/img/placeholder.png)
+
+### Biodiversity
+
+<!--# intro -->
+
+***how to improve local and supra local biodiversity resilience by interventions within the stream flood plain? -\> which spaces to prioritize based on value and feasibility of intervention***
+
+WIP – please refer to the main research structure flow chart for overview.
+
+#### #1 Which spaces should be prioritised because of their connectivity to ÚSES?
+
+polygons in which ÚSES elements are present --\> 1
+
+polygons that are connected by (contuinuos) "green" land cover to ÚSES elements --\> 0,3
+
+other polygons --\> 0
+
+#### #2 Which spaces should be prioritised based on lack of ecological quality?
+
+Our argument is that spaces with not so great ecological value should be prioritised to raise make the overall ecological quality more stable (?) To do this, we classified the land cover of our analysis geometry based on the dominant land cover present in polygon. <!-- we could refer to justice principles, there is one where you make the worse better, as opposed to raising the average. -->
+
+##### Land cover classification
+
+The estimate ecological quality indicator was assigned based on intuition. We might modify the indicators of built-up space to better reflect the quality of green space.
+
+![Landcover overview version 27. 5. 2025](img/LandcoverOverview_250527.png)
+
+![Typical examples of landcover classes, draft estimate ecological quality indicator](/img/B_LandCover_typology.png)
+
+#### #3 ? + some other indicator– maybe we do not need it, because the other ones are good enough together? – NDVI??? temperature?
+
+NDVI might me duplicit with our land cover classification (it talks about the density of the vegetation similar to the landcover classes we propose.) We could maybe also by trying to combine the data with the landcover to isolate information about which green is neglected?
+
+Anothe possibility might be that it could be used as indicator of temperature, or perhaps we also could instead choose surface temperature (from google earth engine)?
+
+#### Weighting
+
+#### Biodiversity conclusion
+
+### Climate adaptation
+
+***how to use areas in the flood plain to capture water in the landscape? -\> where is good space for infiltration basins and natural flood protection measures based on soil types and flood risk?***
+
+<!--# intro -->
+
+<!-- The question needs to be more specific and based in data – what are examples of interventions that can achieve this? How much space do they need? -->
+
+WIP – please refer to the main research structure flow chart for overview.
+
+This chapter is based on the fact that in western slovakia, there is a large drought problem, and water management activities should target capturing water in the landscape. <!-- ^This needs a source, but it is true. -->
+
+#### #1 Where does the soil have high potential for water retention?
+
+![Soil potential placeholder](/img/CA_soilpotential.png)
+
+#### #2 Where it is likely water will gather?
+
+Flood risk raster, calculated by us. ![Flood risk](/img/CA_FloodRisk.png)
+
+#### #3 Maybe impervious cover ?
+
+We dont know if we will manage to do this, it is now very low priority.
+
+In the case we dont, we think for our goal of capturing water in landscape (as water buffer for flood protection, and also longterm anti-drought measure), the two we already have might be sufficient (while stating general goal overall is to improve surface permeability no matter where.)
+
+#### Weighting
+
+#### Climate adaptation conclusion
+
+### Quality of life
+
+<!--# intro -->
+
+***what type of places should be created in the stream flood plain?*** -\> amenities, green spaces, connections / what combination
+
+WIP – please refer to the main research structure flow chart for overview.
+
+#### #1 potential for community functions: high angular choice within polygon – local 500 m
+
+#### #2 potential for "central" functions: high angular choice within polygon – walking + larger distance 1000 + 2000 m
+
+#### #3 need for ammenities: lack of ammenities in 500 m reach from polygon
+
+#### #4 need for green: lack of green area in 500 m reach from polygon
+
+#### PLACEHOLDER SPACE SYNTAX – UNTIL WE PUT IT IN CORRECT CHAPTERS
+
+![Angular Choice Analysis (note: idk why it is displayed wrong and don't have time to solve it now, sorry. You can display the frame by itself in new tab to see the pdf nicely.)](pdf/AngularChoice_20250518.pdf){height="100%" width="100%"}
+
+Angular choice:
+
+-   Every choice of path from every location to every destination – how many possible routes go through location
+
+-   500 m
+
+    -   very local scale, scale of children playing and shops on the corner even on this scale, there are some centralities along the river
+
+    -   this means the river has a potential to be used by the community and act as a very local common space under social control
+
+-   1000 m
+
+    -   local scale of walking to shop or walking the dog
+
+    -   paths along river do not have very low angular choice, hinting at them being possibly moderately frequented
+
+    -   more centralities at bridges
+
+-   2000m:
+
+    -   close to the end of walkable scale
+
+    -   some paths along river in the center have high angular choice, meaning they will likely be more frequented and have potential for active use and ammenities
+
+    -   more centralities at bridges
+
+![Attraction reach from buildings to green spaces (note: idk why it is displayed wrong and don't have time to solve it now, sorry. You can display the frame by itself in new tab to see the pdf nicely.)](pdf/AttractionReach_GreenSpace_20250518.pdf){height="100%" width="100%"}
+
+Attraction Reach Green space
+
+-   What is the **reachable** potential **attraction density** of location (sqm)
+
+    green areas weighted by area
+
+-   500m:
+
+    -   very local scale, scale of children playing and shops on the corner
+
+    -   river and surroundings as potential new green areas to serve local scale in the west and north of the town
+
+-   1000m:
+
+    -   local scale of walking to shop or walking the dog
+
+    -   river and surroundings as potential new green areas to serve local scale in the west and north of the town
+
+-   2000m:
+
+    -   close to the end of walkable scale
+
+    -   center/east of town not having access to more large areas of green
+
+![Attraction reach from buildings to Teplica (note: idk why it is displayed wrong and don't have time to solve it now, sorry. You can display the frame by itself in new tab to see the pdf nicely.)](pdf/AttractionReach_Teplica_20250518.pdf){height="100%" width="100%"}
+
+Attraction Reach Teplica
+
+-   What is the **reachable** potential **attraction density** of location (sqm)
+
+    measured to points every 5m of waterway
+
+-   500m:
+
+    -   very local scale, scale of children playing and shops on the corner
+
+    -   Teplica quite well accessible from houses
+
+    -   SW: industry is not so well connected
+
+    -   SE: lacking connection between road parallel to river
+
+-   1000m:
+
+    -   local scale of walking to shop or walking the dog
+
+    -   SW industry not allowing houses behind it to access river
+
+    -   SE: still visible missing connection between parallel road and river
+
+-   2000m:
+
+    -   close to the end of walkable scale
+
+    -   very similar to 1k
+
+    -   SW: industry finally permeable, however this is quite a large distance and if the river and the way to it are not nice, there are no reasons to go
+
+    -   W: the small village is not connected to a large path of the river, that is why it is lighter
+
+    -   SE: still visible missing connection between parallel road and river
+
+#### Weighting
+
+#### Quality of life conclusion
+
+### MCDA conclusion
+
+## Typology construction
+
+We feel like our goal for typology alligns pretty well with our main research question *How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?*
+
+Hopefully, we will get types of areas that can make it easier to create example design interventions. Perhaps something like "areas with large potential for community facilities with water retention function", "areas with community functions and maintained high biodiversity", "areas with biodiversity boost, improved surface permeability and connectivity".
+
+Plan is I (viola) guess to feed the data in (in various compositions perhaps) and see what happens.
 
 ## Results
 
 ## Discussion
 
+### Discussion of results
+
+## Reflection
+
+```{=html}
+<!-- Notes for reflection
+    - limitation with layer selection – abilities, time management, ...
+    - what would be good to also include
+    - analysis geometry (suitability, methodology, scale) – this might also be in discussion, at least partly
+  -->
+```
+
 ## Conclusion
 
+## Appendix
+
+<!--# layers and analyses we didnt use but would be shame not to include  -->
+
+![Density](pdf/Density_20250518.pdf){height="100%" width="100%"}
+
+## Sources
+
+<!-- Use APA 7 - full here, bracketed in text and maps (for some i used the full version in the image for easier referencing) -->
+
+<!-- we could also make the bracketed versions and the full references linked -->
+
+### Literature
+
+### Map layers
+
+### Images
+
+Street View of Senica – Google Maps. (May 2012). Retrieved on May 22, 2025 from: [https://www.google.com/maps/place/905+01+Senica,+Slovensko/\@48.6841521,17.3581313,3a,75y,296.73h,88.04t/data=!3m7!1e1!3m5!1sbkMc3aSUkJxRvi5IszgGWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9640483562330928%26panoid%3DbkMc3aSUkJxRvi5IszgGWg%26yaw%3D296.73281886129774!7i13312!8i6656!4m7!3m6!1s0x476cb4e2e7ed1a27:0x400f7d1c696ee40!8m2!3d48.6811502!4d17.3672337!10e5!16zL20vMGRyeG43?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D](https://www.google.com/maps/place/905+01+Senica,+Slovensko/@48.6841521,17.3581313,3a,75y,296.73h,88.04t/data=!3m7!1e1!3m5!1sbkMc3aSUkJxRvi5IszgGWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9640483562330928%26panoid%3DbkMc3aSUkJxRvi5IszgGWg%26yaw%3D296.73281886129774!7i13312!8i6656!4m7!3m6!1s0x476cb4e2e7ed1a27:0x400f7d1c696ee40!8m2!3d48.6811502!4d17.3672337!10e5!16zL20vMGRyeG43?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D)
