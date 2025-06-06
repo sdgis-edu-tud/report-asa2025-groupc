@@ -372,7 +372,7 @@ Plan is I (viola) guess to feed the data in (in various compositions perhaps) an
 
 <!--# layers and analyses we didnt use but would be shame not to include  -->
 
-![Density](pdf/Density_20250518.pdf){height="100%" width="100%"}
+![Density](pdf/Density_20250518.pdf) ![NVDI](pdf/GreenTypes_20250603.pdf)
 
 ## Sources
 
