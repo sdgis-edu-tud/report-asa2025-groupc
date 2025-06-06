@@ -222,7 +222,10 @@ We dont know if we will manage to do this, it is now very low priority.
 
 In the case we dont, we think for our goal of capturing water in landscape (as water buffer for flood protection, and also longterm anti-drought measure), the two we already have might be sufficient (while stating general goal overall is to improve surface permeability no matter where.)
 
-![LST draft](/img/LST_analysis_prediction_draft.png)
+![LST draft](/img/LST_analysis_prediction_draft02.png)
+
+THIS IS A DRAFT:
+To analyse surface temperatures, we found a [Google Earth Engine script](https://code.earthengine.google.com/ac986028b56a794aefd3ea54e9cb09ba) that uses information from Sentinel-2, LANDSAT, and DEM to predict a raster LST (land surface temperature) with a higher resolution, namely 10-meter resolution. The computations are complicated, but the results are nice. The draft image shows the results for dates 2024-06-01 to 2024-08-31, since these three months include the summer and will therefore be most susceptible for heat stress, which makes this time period interesting to look at for our research. 
 
 #### Weighting
 
