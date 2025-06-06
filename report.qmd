@@ -222,6 +222,8 @@ We dont know if we will manage to do this, it is now very low priority.
 
 In the case we dont, we think for our goal of capturing water in landscape (as water buffer for flood protection, and also longterm anti-drought measure), the two we already have might be sufficient (while stating general goal overall is to improve surface permeability no matter where.)
 
+![LST draft](/img/LST_analysis_prediction_draft.png)
+
 #### Weighting
 
 #### Climate adaptation conclusion
