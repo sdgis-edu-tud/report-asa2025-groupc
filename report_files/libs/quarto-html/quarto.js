@@ -1,8 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import * as tabsets from "./tabsets/tabsets.js";
 
 >>>>>>> dd012dbe9db9c6d15fa0836662425b46045d4c59
+=======
+>>>>>>> e4c109e7077a3c1dc4533d806da6743d1ae22dfe
 const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
   bubbles: true,
@@ -70,6 +73,7 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
   };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   // fire slideEnter for bootstrap tab activations (for htmlwidget resize behavior)
   function fireSlideEnter(e) {
 =======
@@ -77,19 +81,27 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
   // they use slideenter event to trigger resize
   function fireSlideEnter() {
 >>>>>>> dd012dbe9db9c6d15fa0836662425b46045d4c59
+=======
+  // fire slideEnter for bootstrap tab activations (for htmlwidget resize behavior)
+  function fireSlideEnter(e) {
+>>>>>>> e4c109e7077a3c1dc4533d806da6743d1ae22dfe
     const event = window.document.createEvent("Event");
     event.initEvent("slideenter", true, true);
     window.document.dispatchEvent(event);
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> dd012dbe9db9c6d15fa0836662425b46045d4c59
+=======
+>>>>>>> e4c109e7077a3c1dc4533d806da6743d1ae22dfe
   const tabs = window.document.querySelectorAll('a[data-bs-toggle="tab"]');
   tabs.forEach((tab) => {
     tab.addEventListener("shown.bs.tab", fireSlideEnter);
   });
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   // fire slideEnter for tabby tab activations (for htmlwidget resize behavior)
   document.addEventListener("tabby", fireSlideEnter, false);
@@ -117,6 +129,10 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
     false
   );
 >>>>>>> dd012dbe9db9c6d15fa0836662425b46045d4c59
+=======
+  // fire slideEnter for tabby tab activations (for htmlwidget resize behavior)
+  document.addEventListener("tabby", fireSlideEnter, false);
+>>>>>>> e4c109e7077a3c1dc4533d806da6743d1ae22dfe
 
   // Track scrolling and mark TOC links as active
   // get table of contents and sidebar (bail if we don't have at least one)
@@ -266,6 +282,7 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
 
   async function findAndActivateCategories() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     const currentPagePath = offsetAbsoluteUrl(window.location.href);
 =======
     // Categories search with listing only use path without query
@@ -273,6 +290,9 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
       window.location.origin + window.location.pathname
     );
 >>>>>>> dd012dbe9db9c6d15fa0836662425b46045d4c59
+=======
+    const currentPagePath = offsetAbsoluteUrl(window.location.href);
+>>>>>>> e4c109e7077a3c1dc4533d806da6743d1ae22dfe
     const response = await fetch(offsetRelativeUrl("listings.json"));
     if (response.status == 200) {
       return response.json().then(function (listingPaths) {
@@ -280,6 +300,7 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
         for (const listingPath of listingPaths) {
           const pathWithoutLeadingSlash = listingPath.listing.substring(1);
           for (const item of listingPath.items) {
+<<<<<<< HEAD
 <<<<<<< HEAD
             if (
               item === currentPagePath ||
@@ -290,6 +311,11 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
               encodedItem === currentPagePath ||
               encodedItem === currentPagePath + "index.html"
 >>>>>>> dd012dbe9db9c6d15fa0836662425b46045d4c59
+=======
+            if (
+              item === currentPagePath ||
+              item === currentPagePath + "index.html"
+>>>>>>> e4c109e7077a3c1dc4533d806da6743d1ae22dfe
             ) {
               // Resolve this path against the offset to be sure
               // we already are using the correct path to the listing
@@ -792,10 +818,14 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
     // See if there is an active child to this element
     let hasActiveChild = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
     for (child of el.children) {
 =======
     for (const child of el.children) {
 >>>>>>> dd012dbe9db9c6d15fa0836662425b46045d4c59
+=======
+    for (child of el.children) {
+>>>>>>> e4c109e7077a3c1dc4533d806da6743d1ae22dfe
       hasActiveChild = walk(child, depth) || hasActiveChild;
     }
 
@@ -856,6 +886,9 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e4c109e7077a3c1dc4533d806da6743d1ae22dfe
 // grouped tabsets
 window.addEventListener("pageshow", (_event) => {
   function getTabSettings() {
@@ -948,9 +981,12 @@ window.addEventListener("pageshow", (_event) => {
     }
   }
 });
+<<<<<<< HEAD
 =======
 tabsets.init();
 >>>>>>> dd012dbe9db9c6d15fa0836662425b46045d4c59
+=======
+>>>>>>> e4c109e7077a3c1dc4533d806da6743d1ae22dfe
 
 function throttle(func, wait) {
   let waiting = false;
