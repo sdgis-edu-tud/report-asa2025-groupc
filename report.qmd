@@ -190,11 +190,22 @@ Potential for high impact improvement is determined by unsatisfactory ecological
 
 ![Ecological quality improvement potential in bottom row.](/img/B_LandCover_ImprovementPotential.png)
 
-#### #3 ? + some other indicator– maybe we do not need it, because the other ones are good enough together? – NDVI??? temperature?
+#### #3 Which spaces should be prioritized based on the state of the vegetation?
 
-NDVI might me duplicit with our land cover classification (it talks about the density of the vegetation similar to the landcover classes we propose.) We could maybe also by trying to combine the data with the landcover to isolate information about which green is neglected?
+Based on the different value of NDVI mean, we can deduce the vegetation state in each spatial geometry.
 
-Anothe possibility might be that it could be used as indicator of temperature, or perhaps we also could instead choose surface temperature (from google earth engine)?
+-   **\< 0** – Water bodies, shadows, or noise
+
+-   **0–0.1** – Bare soil or urban hardscape
+
+-   **0.1–0.3** – Sparse or dry vegetation
+
+-   **0.3–0.6** – Moderate vegetation
+
+-   **\> 0.6** – Dense and healthy vegetation
+
+![NDVI classification](img/NDVI_draft.png)
+
 
 #### Weighting
 
