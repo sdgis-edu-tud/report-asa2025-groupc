@@ -188,7 +188,7 @@ Our argument is that spaces with a potential for a high impact improvement and a
 
 Potential for high impact improvement is determined by unsatisfactory ecological quality. Investment feasibility is determined by attractivity to invest in biodiversity improvement and in general spatial quality improvement in an area like this. High investment feasibility is in the surrounding of dwellings, in spaces that are already upkept. Low investment feasibility is in agricultural areas, where produce is prioritised. In these areas in general it is advised to use agricultural methods that can aid local biodiversity.
 
-*IMAGE*
+![Ecological quality improvement potential in bottom row.](/img/B_LandCover_ImprovementPotential.png)
 
 #### #3 ? + some other indicator– maybe we do not need it, because the other ones are good enough together? – NDVI??? temperature?
 
