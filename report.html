@@ -201,11 +201,11 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Research structure – detailed flow chart, version 27. 5. (open image in new tab to see in full).</figcaption>
 </figure>
 </div>
-<iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0">
+<!-- <iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0" /> -->
 </section>
 </section>
 <section id="analysis-geometry" class="level3">
-<h3>Analysis geometry</h3>
+<h3 class="anchored" data-anchor-id="analysis-geometry">Analysis geometry</h3>
 <p>The analysis geometry is a vector polygon layer consisting of morphologically determined elements. The decision to create geometry tailored to the local spatial conditions has two main reasons:</p>
 <ol type="1">
 <li>to make the analysis more accessible to locals – through analysing on geometry familiar to them, hopefully making interpretation easier, and</li>
@@ -215,142 +215,189 @@ ul.task-list li input[type="checkbox"] {
 <p>The bounds of the analysis geometry were determined based on the floodplain of the river indicated by flood danger maps. This is the area that “belongs” to the river, thus it should be restored together with the watercourse. (The outline was based on raster data available online and spatial logic of the area to respect natural boundaries.)</p>
 <p>The flood plain was partitioned based on local morphology and land cover, and in some cases inspired by the parcellation structure to create a smaller grain in areas with large unpartitioned fields.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src=".\img/analysisgeometry_uses.png" class="img-fluid" /></p>
+<figure class="figure">
+<p><img src=".\img/analysisgeometry_uses.png" class="img-fluid figure-img"></p>
 <figcaption>Biocorridor at the core of the geometry as the immediate banks of the river.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src=".\img/analysisgeometry_flood.png" class="img-fluid" /></p>
+<figure class="figure">
+<p><img src=".\img/analysisgeometry_flood.png" class="img-fluid figure-img"></p>
 <figcaption>Flood plain - area belonging to the river should be treated as a whole.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src=".\img/analysisgeometry_space.png" class="img-fluid" /></p>
+<figure class="figure">
+<p><img src=".\img/analysisgeometry_space.png" class="img-fluid figure-img"></p>
 <figcaption>Polygons are based on morphology.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src=".\img/analysisgeometry_parcelation.png" class="img-fluid" /></p>
+<figure class="figure">
+<p><img src=".\img/analysisgeometry_parcelation.png" class="img-fluid figure-img"></p>
 <figcaption>Some larger uniform areas were partitioned based on parcellation.</figcaption>
 </figure>
 </div>
 <section id="analysis-geometry-update-after-27.-5.-consultation" class="level4">
-<h4>Analysis geometry update after 27. 5. consultation</h4>
+<h4 class="anchored" data-anchor-id="analysis-geometry-update-after-27.-5.-consultation">Analysis geometry update after 27. 5. consultation</h4>
 <p>Cells along the river: i went through it manually and merged some cells to create larger areas. Always merged only the ones that i previously classified as the same landcover. I did it based on spatial logic and continuity of surrounding division lines. Left and right bank is still distinguished.</p>
 <p>Other cells: In few places, i simplified field separation and merged a road into it (where there is no significant different type of land cover along the road.)</p>
 <p><em>- Viola</em></p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src="img/AnalysisGeometryOverview_250527.png" class="img-fluid" /></p>
+<figure class="figure">
+<p><img src="img/AnalysisGeometryOverview_250527.png" class="img-fluid figure-img"></p>
 <figcaption>The updated analysis geometry 27. 5. 2025</figcaption>
 </figure>
 </div>
 </section>
 <section id="land-cover-classification" class="level4">
-<h4>Land cover classification</h4>
+<h4 class="anchored" data-anchor-id="land-cover-classification">Land cover classification</h4>
 <p>The analysis geometry was manually assigned Land Cover classes. Below is an overview of these classes with a typical example. Each land cover class was assigned an estimate ecological quality indicator based on intuition.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src="img/LandcoverOverview_250527.png" class="img-fluid" /></p>
+<figure class="figure">
+<p><img src="img/LandcoverOverview_250527.png" class="img-fluid figure-img"></p>
 <figcaption>Landcover overview version 27. 5. 2025</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src=".\img/B_LandCover_typology.png" class="img-fluid" /></p>
+<figure class="figure">
+<p><img src=".\img/B_LandCover_typology.png" class="img-fluid figure-img"></p>
 <figcaption>Typical examples of land cover classes, draft estimate ecological quality indicator</figcaption>
 </figure>
 </div>
 </section>
 </section>
 <section id="data-structure" class="level3">
-<h3>Data structure</h3>
+<h3 class="anchored" data-anchor-id="data-structure">Data structure</h3>
 <!--Talk about how we deal with data, sources, what geometries we use for what and how overview of approaches to agregate data from original geometry types to the analysis geometry -->
 <p>WIP - please refer to detailed research structure flowchart for some information.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src=".\img/placeholder.png" class="img-fluid" /></p>
+<figure class="figure">
+<p><img src=".\img/placeholder.png" class="img-fluid figure-img"></p>
 <figcaption>Scheme of data structure – data types of original layers, processes that they go through to create 3 aggregate layers and the final map - placeholder</figcaption>
 </figure>
 </div>
 </section>
 <section id="biodiversity" class="level3">
-<h3>Biodiversity</h3>
+<h3 class="anchored" data-anchor-id="biodiversity">Biodiversity</h3>
 <!--# intro -->
 <p><strong><em>How to improve local and supra local biodiversity resilience by interventions within the stream flood plain? -&gt; which spaces to prioritize based on value and feasibility of intervention</em></strong></p>
 <p>WIP – please refer to the main research structure flow chart for overview.</p>
 <section id="which-spaces-should-be-prioritised-because-of-their-connectivity-to-úses" class="level4">
-<h4>#1 Which spaces should be prioritised because of their connectivity to ÚSES?</h4>
-<p>polygons in which ÚSES elements are present –&gt; 1</p>
-<p>polygons that are connected by (contuinuos) “green” land cover to ÚSES elements –&gt; 0,3</p>
-<p>other polygons –&gt; 0</p>
+<h4 class="anchored" data-anchor-id="which-spaces-should-be-prioritised-because-of-their-connectivity-to-úses">#1 Which spaces should be prioritised because of their connectivity to ÚSES?</h4>
+<section id="data" class="level5">
+<h5 class="anchored" data-anchor-id="data">Data</h5>
+<section id="what-is-úses" class="level6">
+<h6 class="anchored" data-anchor-id="what-is-úses">What is ÚSES?</h6>
+<p>Územný systém ekologickej stability (ÚSES) (Spatial system of ecological stability) is a system of spatial units intended to securing the ecological stability of Slovakian landscape, connecting natural areas, and protection of biotopes and representative species in their natural habitats. It is a legally anchored documentation (Act No.&nbsp;543/2002 Z. z. – About the protection of nature and landscape).</p>
+<p>The elements of ÚSES are biocenters, biocorridors (connecting biocenters to allow for movement of organisms and genetical information exchange), and interaction elements (spatially tied with biocorridors). These elements are defined on supraregional, regional, and local scale.</p>
+<p>(SAŽP n.d.)</p>
+</section>
+<section id="úses-within-our-area" class="level6">
+<h6 class="anchored" data-anchor-id="úses-within-our-area">ÚSES within our area</h6>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\img/placeholder.png" class="img-fluid figure-img"></p>
+<figcaption>Map of ÚSES within our area - placeholder</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="aggregation-and-normalisation" class="level5">
+<h5 class="anchored" data-anchor-id="aggregation-and-normalisation">Aggregation and normalisation</h5>
+<p>Values were assigned based on the level of connectivity to ÚSES. Highest value was assigned to polygins intersecting with ÚSES elements, polygons that are connected by continuous green land cover (as defined in Land Cover general type of landcover) were also assigned a slight priority.</p>
+<div class="line-block">polygons in which ÚSES elements are present –&gt; 1<br>
+polygons that are connected by (contuinuos) “green” land cover to ÚSES elements –&gt; 0,3<br>
+other polygons –&gt; 0</div>
+</section>
 </section>
 <section id="which-spaces-should-be-prioritised-based-on-ecological-quality-improvement-potential" class="level4">
-<h4>#2 Which spaces should be prioritised based on ecological quality improvement potential?</h4>
+<h4 class="anchored" data-anchor-id="which-spaces-should-be-prioritised-based-on-ecological-quality-improvement-potential">#2 Which spaces should be prioritised based on ecological quality improvement potential?</h4>
 <p>Our argument is that spaces with a potential for a high impact improvement and at the same time good investment feasibility should be prioritised, because of good actionability of intentions/plans.</p>
 <p>Potential for high impact improvement is determined by unsatisfactory ecological quality. Investment feasibility is determined by attractivity to invest in biodiversity improvement and in general spatial quality improvement in an area like this. High investment feasibility is in the surrounding of dwellings, in spaces that are already upkept. Low investment feasibility is in agricultural areas, where produce is prioritised. In these areas in general it is advised to use agricultural methods that can aid local biodiversity.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src=".\img/B_LandCover_ImprovementPotential.png" class="img-fluid" /></p>
+<figure class="figure">
+<p><img src=".\img/B_LandCover_ImprovementPotential.png" class="img-fluid figure-img"></p>
 <figcaption>Ecological quality improvement potential in bottom row.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\img/placeholder.png" class="img-fluid figure-img"></p>
+<figcaption>Map of Ecological quality improvement potential - placeholder</figcaption>
 </figure>
 </div>
 </section>
 <section id="which-spaces-should-be-prioritized-based-on-the-state-of-the-vegetation" class="level4">
-<h4>#3 Which spaces should be prioritized based on the state of the vegetation?</h4>
+<h4 class="anchored" data-anchor-id="which-spaces-should-be-prioritized-based-on-the-state-of-the-vegetation">#3 Which spaces should be prioritized based on the state of the vegetation?</h4>
+<section id="ndvi" class="level5">
+<h5 class="anchored" data-anchor-id="ndvi">NDVI</h5>
 <p>Based on the different value of NDVI mean, we can deduce the vegetation state in each spatial geometry.</p>
-<ul>
-<li><p><strong>&lt; 0</strong> – Water bodies, shadows, or noise</p></li>
-<li><p><strong>0–0.1</strong> – Bare soil or urban hardscape</p></li>
-<li><p><strong>0.1–0.3</strong> – Sparse or dry vegetation</p></li>
-<li><p><strong>0.3–0.6</strong> – Moderate vegetation</p></li>
-<li><p><strong>&gt; 0.6</strong> – Dense and healthy vegetation</p></li>
-</ul>
+<div class="line-block"><strong>&lt; 0</strong> – Water bodies, shadows, or noise<br>
+<strong>0–0.1</strong> – Bare soil or urban hardscape<br>
+<strong>0.1–0.3</strong> – Sparse or dry vegetation<br>
+<strong>0.3–0.6</strong> – Moderate vegetation<br>
+<strong>&gt; 0.6</strong> – Dense and healthy vegetation</div>
+</section>
+<section id="aggregation-and-normalisation-1" class="level5">
+<h5 class="anchored" data-anchor-id="aggregation-and-normalisation-1">Aggregation and normalisation</h5>
+<p>Data was aggregated based on average value within analysis geometry polygon, and normalised by 1-[linear min-max] –&gt; priority is given to low quality vegetation.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src="img/NDVI_draft.png" class="img-fluid" /></p>
+<figure class="figure">
+<p><img src=".\img/placeholder.png" class="img-fluid figure-img"></p>
+<figcaption>Map of values for MCDA - placeholder</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/NDVI_draft.png" class="img-fluid figure-img"></p>
 <figcaption>NDVI classification</figcaption>
 </figure>
 </div>
 </section>
+</section>
 <section id="weighting" class="level4">
-<h4>Weighting</h4>
+<h4 class="anchored" data-anchor-id="weighting">Weighting</h4>
 </section>
 <section id="biodiversity-conclusion" class="level4">
-<h4>Biodiversity conclusion</h4>
+<h4 class="anchored" data-anchor-id="biodiversity-conclusion">Biodiversity conclusion</h4>
 </section>
 </section>
 <section id="climate-adaptation" class="level3">
-<h3>Climate adaptation</h3>
+<h3 class="anchored" data-anchor-id="climate-adaptation">Climate adaptation</h3>
 <p><strong><em>how to use areas in the flood plain to capture water in the landscape? -&gt; where is good space for infiltration basins and natural flood protection measures based on soil types and flood risk?</em></strong></p>
 <!--# intro -->
 <!-- The question needs to be more specific and based in data – what are examples of interventions that can achieve this? How much space do they need? -->
 <p>WIP – please refer to the main research structure flow chart for overview.</p>
 <p>This chapter is based on the fact that in western slovakia, there is a large drought problem, and water management activities should target capturing water in the landscape. <!-- ^This needs a source, but it is true. --></p>
+<section id="section" class="level4">
+<h4 class="anchored" data-anchor-id="section">#1</h4>
+<p>Look at #3 for now</p>
+</section>
 <section id="where-does-the-soil-have-high-potential-for-water-retention" class="level4">
-<h4>#1 Where does the soil have high potential for water retention?</h4>
+<h4 class="anchored" data-anchor-id="where-does-the-soil-have-high-potential-for-water-retention">#2 Where does the soil have high potential for water retention?</h4>
+<section id="soil-retention-abilityand-permeability" class="level5">
+<h5 class="anchored" data-anchor-id="soil-retention-abilityand-permeability">Soil retention abilityand permeability</h5>
+<p>From Atlas of Slovakia, quite small scale.</p>
+<p>Soil retention in this map means ….. Permeability means ….</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src=".\img/CA_soilpotential.png" class="img-fluid" /></p>
+<figure class="figure">
+<p><img src=".\img/CA_soilpotential.png" class="img-fluid figure-img"></p>
 <figcaption>Soil potential placeholder</figcaption>
 </figure>
 </div>
 </section>
-<section id="where-it-is-likely-water-will-gather" class="level4">
-<h4>#2 Where it is likely water will gather?</h4>
-<p>Flood risk raster, calculated by us. <img src=".\img/CA_FloodRisk.png" class="img-fluid" alt="Flood risk" /></p>
+<section id="aggregation-and-normalisation-2" class="level5">
+<h5 class="anchored" data-anchor-id="aggregation-and-normalisation-2">Aggregation and normalisation</h5>
+<div class="line-block">RS Medium+ P Medium -&gt; 0,5<br>
+RS High+ P Medium -&gt; 1</div>
 </section>
-<section id="maybe-impervious-cover" class="level4">
-<h4>#3 Maybe impervious cover ?</h4>
-<p>We dont know if we will manage to do this, it is now very low priority.</p>
-<p>In the case we dont, we think for our goal of capturing water in landscape (as water buffer for flood protection, and also longterm anti-drought measure), the two we already have might be sufficient (while stating general goal overall is to improve surface permeability no matter where.)</p>
+</section>
+<section id="lst" class="level4">
+<h4 class="anchored" data-anchor-id="lst">#3 LST</h4>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src=".\img/LST_analysis_prediction_draft02.png" class="img-fluid" /></p>
+<figure class="figure">
+<p><img src=".\img/LST_analysis_prediction_draft02.png" class="img-fluid figure-img"></p>
 <figcaption>LST draft</figcaption>
 </figure>
 </div>
@@ -366,34 +413,35 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="weighting-1" class="level4">
-<h4>Weighting</h4>
+<h4 class="anchored" data-anchor-id="weighting-1">Weighting</h4>
 </section>
 <section id="climate-adaptation-conclusion" class="level4">
-<h4>Climate adaptation conclusion</h4>
+<h4 class="anchored" data-anchor-id="climate-adaptation-conclusion">Climate adaptation conclusion</h4>
 </section>
 </section>
 <section id="quality-of-life" class="level3">
-<h3>Quality of life</h3>
+<h3 class="anchored" data-anchor-id="quality-of-life">Quality of life</h3>
 <!--# intro -->
 <p><strong><em>what type of places should be created in the stream flood plain?</em></strong> -&gt; amenities, green spaces, connections / what combination</p>
 <p>WIP – please refer to the main research structure flow chart for overview.</p>
 <section id="potential-for-community-functions-high-angular-choice-within-polygon-local-500-m" class="level4">
-<h4>#1 potential for community functions: high angular choice within polygon – local 500 m</h4>
+<h4 class="anchored" data-anchor-id="potential-for-community-functions-high-angular-choice-within-polygon-local-500-m">#1 potential for community functions: high angular choice within polygon – local 500 m</h4>
+<p>On OSM street network, in area there are no clearly fast routes and there are missing pathways along some roads, so we took all roads from the dataset as potentially slow.</p>
 </section>
 <section id="potential-for-central-functions-high-angular-choice-within-polygon-walking-larger-distance-1000-2000-m" class="level4">
-<h4>#2 potential for “central” functions: high angular choice within polygon – walking + larger distance 1000 + 2000 m</h4>
+<h4 class="anchored" data-anchor-id="potential-for-central-functions-high-angular-choice-within-polygon-walking-larger-distance-1000-2000-m">#2 potential for “central” functions: high angular choice within polygon – walking + larger distance 1000 + 2000 m</h4>
 </section>
 <section id="need-for-ammenities-lack-of-ammenities-in-500-m-reach-from-polygon" class="level4">
-<h4>#3 need for ammenities: lack of ammenities in 500 m reach from polygon</h4>
+<h4 class="anchored" data-anchor-id="need-for-ammenities-lack-of-ammenities-in-500-m-reach-from-polygon">#3 need for ammenities: lack of ammenities in 500 m reach from polygon</h4>
 </section>
 <section id="need-for-green-lack-of-green-area-in-500-m-reach-from-polygon" class="level4">
-<h4>#4 need for green: lack of green area in 500 m reach from polygon</h4>
+<h4 class="anchored" data-anchor-id="need-for-green-lack-of-green-area-in-500-m-reach-from-polygon">#4 need for green: lack of green area in 500 m reach from polygon</h4>
 </section>
 <section id="placeholder-space-syntax-until-we-put-it-in-correct-chapters" class="level4">
-<h4>PLACEHOLDER SPACE SYNTAX – UNTIL WE PUT IT IN CORRECT CHAPTERS</h4>
+<h4 class="anchored" data-anchor-id="placeholder-space-syntax-until-we-put-it-in-correct-chapters">PLACEHOLDER SPACE SYNTAX – UNTIL WE PUT IT IN CORRECT CHAPTERS</h4>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><embed src="pdf/AngularChoice_20250518.pdf" style="width:100.0%;height:100.0%" /></p>
+<figure class="figure">
+<p><embed src="pdf/AngularChoice_20250518.pdf" style="width:100.0%;height:100.0%"></p>
 <figcaption>Angular Choice Analysis (note: idk why it is displayed wrong and don’t have time to solve it now, sorry. You can display the frame by itself in new tab to see the pdf nicely.)</figcaption>
 </figure>
 </div>
@@ -419,8 +467,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><embed src="pdf/AttractionReach_GreenSpace_20250518.pdf" style="width:100.0%;height:100.0%" /></p>
+<figure class="figure">
+<p><embed src="pdf/AttractionReach_GreenSpace_20250518.pdf" style="width:100.0%;height:100.0%"></p>
 <figcaption>Attraction reach from buildings to green spaces (note: idk why it is displayed wrong and don’t have time to solve it now, sorry. You can display the frame by itself in new tab to see the pdf nicely.)</figcaption>
 </figure>
 </div>
@@ -445,8 +493,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><embed src="pdf/AttractionReach_Teplica_20250518.pdf" style="width:100.0%;height:100.0%" /></p>
+<figure class="figure">
+<p><embed src="pdf/AttractionReach_Teplica_20250518.pdf" style="width:100.0%;height:100.0%"></p>
 <figcaption>Attraction reach from buildings to Teplica (note: idk why it is displayed wrong and don’t have time to solve it now, sorry. You can display the frame by itself in new tab to see the pdf nicely.)</figcaption>
 </figure>
 </div>
@@ -478,33 +526,33 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="weighting-2" class="level4">
-<h4>Weighting</h4>
+<h4 class="anchored" data-anchor-id="weighting-2">Weighting</h4>
 </section>
 <section id="quality-of-life-conclusion" class="level4">
-<h4>Quality of life conclusion</h4>
+<h4 class="anchored" data-anchor-id="quality-of-life-conclusion">Quality of life conclusion</h4>
 </section>
 </section>
 <section id="mcda-conclusion" class="level3">
-<h3>MCDA conclusion</h3>
+<h3 class="anchored" data-anchor-id="mcda-conclusion">MCDA conclusion</h3>
 </section>
 </section>
 <section id="typology-construction" class="level2">
-<h2>Typology construction</h2>
+<h2 class="anchored" data-anchor-id="typology-construction">Typology construction</h2>
 <p>We feel like our goal for typology alligns pretty well with our main research question <em>How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?</em></p>
 <p>Hopefully, we will get types of areas that can make it easier to create example design interventions. Perhaps something like “areas with large potential for community facilities with water retention function”, “areas with community functions and maintained high biodiversity”, “areas with biodiversity boost, improved surface permeability and connectivity”.</p>
 <p>Plan is I (viola) guess to feed the data in (in various compositions perhaps) and see what happens.</p>
 </section>
 <section id="results" class="level2">
-<h2>Results</h2>
+<h2 class="anchored" data-anchor-id="results">Results</h2>
 </section>
 <section id="discussion" class="level2">
-<h2>Discussion</h2>
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
 <section id="discussion-of-results" class="level3">
-<h3>Discussion of results</h3>
+<h3 class="anchored" data-anchor-id="discussion-of-results">Discussion of results</h3>
 </section>
 </section>
 <section id="reflection" class="level2">
-<h2>Reflection</h2>
+<h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
 <!-- Notes for reflection
     - limitation with layer selection – abilities, time management, ...
     - what would be good to also include
@@ -512,32 +560,33 @@ ul.task-list li input[type="checkbox"] {
   -->
 </section>
 <section id="conclusion" class="level2">
-<h2>Conclusion</h2>
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 </section>
 <section id="appendix" class="level2">
-<h2>Appendix</h2>
+<h2 class="anchored" data-anchor-id="appendix">Appendix</h2>
 <!--# layers and analyses we didnt use but would be shame not to include  -->
-<p><embed src="pdf/Density_20250518.pdf" class="img-fluid" /> <embed src="pdf/GreenTypes_20250603.pdf" class="img-fluid" /></p>
+<p><embed src="pdf/Density_20250518.pdf" class="img-fluid"> <embed src="pdf/GreenTypes_20250603.pdf" class="img-fluid"></p>
 </section>
 <section id="sources" class="level2">
-<h2>Sources</h2>
+<h2 class="anchored" data-anchor-id="sources">Sources</h2>
 <!-- Use APA 7 - full here, bracketed in text and maps (for some i used the full version in the image for easier referencing) -->
 <!-- we could also make the bracketed versions and the full references linked -->
 <section id="literature" class="level3">
-<h3>Literature</h3>
+<h3 class="anchored" data-anchor-id="literature">Literature</h3>
+<p>SAŽP. (n.d.). Územný systém ekologickej stability (ÚSES). SAŽP – Slovak Environment Agency. Retrieved on June 6, 2025 from <a href="https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/uzemny-system-ekologickej-stability-uses" class="uri">https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/uzemny-system-ekologickej-stability-uses</a></p>
 </section>
 <section id="map-layers" class="level3">
-<h3>Map layers</h3>
+<h3 class="anchored" data-anchor-id="map-layers">Map layers</h3>
 </section>
 <section id="images" class="level3">
-<h3>Images</h3>
+<h3 class="anchored" data-anchor-id="images">Images</h3>
 <p>Street View of Senica – Google Maps. (May 2012). Retrieved on May 22, 2025 from: <a href="https://www.google.com/maps/place/905+01+Senica,+Slovensko/@48.6841521,17.3581313,3a,75y,296.73h,88.04t/data=!3m7!1e1!3m5!1sbkMc3aSUkJxRvi5IszgGWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9640483562330928%26panoid%3DbkMc3aSUkJxRvi5IszgGWg%26yaw%3D296.73281886129774!7i13312!8i6656!4m7!3m6!1s0x476cb4e2e7ed1a27:0x400f7d1c696ee40!8m2!3d48.6811502!4d17.3672337!10e5!16zL20vMGRyeG43?entry=ttu&amp;g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D">https://www.google.com/maps/place/905+01+Senica,+Slovensko/@48.6841521,17.3581313,3a,75y,296.73h,88.04t/data=!3m7!1e1!3m5!1sbkMc3aSUkJxRvi5IszgGWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9640483562330928%26panoid%3DbkMc3aSUkJxRvi5IszgGWg%26yaw%3D296.73281886129774!7i13312!8i6656!4m7!3m6!1s0x476cb4e2e7ed1a27:0x400f7d1c696ee40!8m2!3d48.6811502!4d17.3672337!10e5!16zL20vMGRyeG43?entry=ttu&amp;g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D</a></p>
 </section>
 </section>
 
 </main>
 <!-- /main column -->
-<script id = "quarto-html-after-body" type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -938,7 +987,7 @@ ul.task-list li input[type="checkbox"] {
   </script>
 </div> <!-- /content -->
 
-</body>
 
-</html>
-</iframe></section></section></section></main></div></body></html>
+
+
+</body></html>
