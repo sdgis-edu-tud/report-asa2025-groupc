@@ -354,6 +354,15 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>THIS IS A DRAFT: To analyse surface temperatures, we found a <a href="https://code.earthengine.google.com/ac986028b56a794aefd3ea54e9cb09ba">Google Earth Engine script</a> that uses information from Sentinel-2, LANDSAT, and DEM to predict a raster LST (land surface temperature) with a higher resolution, namely 10-meter resolution. The computations are complicated, but the results are nice. The draft image shows the results for dates 2024-06-01 to 2024-08-31, since these three months include the summer and will therefore be most susceptible for heat stress, which makes this time period interesting to look at for our research.</p>
+<p>General steps (DRAFT):</p>
+<ul>
+<li>Use GEE code (reference properly)</li>
+<li>Download GeoTiff</li>
+<li>Use QGIS to convert GeoTiff raster to vector, save as GeoPackage</li>
+<li>Values from raster, become new layer “DN”</li>
+<li>Use field calculator: (maximum(“DN”) - “DN”) / (maximum(“DN”) - minimum(“DN”)), to create new field normalised</li>
+<li>The lower the LST, the better and thus the higher norm value (closer to 1 for lower LST)</li>
+</ul>
 </section>
 <section id="weighting-1" class="level4">
 <h4 class="anchored" data-anchor-id="weighting-1">Weighting</h4>
