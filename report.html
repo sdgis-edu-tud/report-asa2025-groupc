@@ -149,10 +149,10 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="colophon">Colophon</h3>
 <section id="students-roles-and-contributions" class="level4">
 <h4 class="anchored" data-anchor-id="students-roles-and-contributions">Students – roles and contributions</h4>
-<p>Hongyue Kang (MSc Urbanism) – Presentation Lead, Data Analyst (microclimate analysis)</p>
-<p>Jiaoyang Wu (MSc Geomatics) – Data Analyst, Mapping Specialist (flood risk)</p>
-<p>Kelly Schoonderwoerd (MSc Geomatics) – Editor, Mapping Specialist, R expert</p>
-<p>Viola Ebermannová (MSc Urbanism) – Project Coordinator, Research Lead, Design Lead (graphic guidelines and layout templates), Data Analyst (analysis geometry, space syntax analysis)</p>
+<p>Hongyue Kang (MSc Urbanism) – Presentation Lead, Data Analyst (microclimate analysis, NDVI)</p>
+<p><del>Jiaoyang Wu (MSc Geomatics) – Data Analyst, Mapping Specialist (flood risk)</del></p>
+<p>Kelly Schoonderwoerd (MSc Geomatics) – Editor, Data Analyst (surface temperature), R Expert, Clustering Lead</p>
+<p>Viola Ebermannová (MSc Urbanism) – Project Coordinator, Research Lead, Design Lead (graphic guidelines and layout templates), Data Analyst (analysis geometry, space syntax analysis), MCDA Lead</p>
 </section>
 <section id="course-information" class="level4">
 <h4 class="anchored" data-anchor-id="course-information">Course information</h4>
@@ -198,13 +198,75 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><embed src="pdf/ResearchStructure_20250610.pdf" style="width:100.0%;height:100.0%"></p>
-<figcaption>Research structure – detailed flow chart, version 27. 5. (open image in new tab to see in full).</figcaption>
+<figcaption>Research structure – detailed flow chart, version 10. 6. (open image in new tab to see in full).</figcaption>
 </figure>
 </div>
 <!-- <iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0" /> -->
 </section>
 <section id="weighting" class="level4">
 <h4 class="anchored" data-anchor-id="weighting">Weighting</h4>
+<p>We weighted the criteria for MCDA with a pairwise comparison matrix (Saaty matrix) using <a href="https://fuzzyahp.holecekp.eu/en/info">Fuzzy AHP</a> by Pavel Holeček. The complete matrix looks like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/CompleteSaatyMatrix.png" class="img-fluid figure-img"></p>
+<figcaption>Complete Saaty Matrix</figcaption>
+</figure>
+</div>
+<p>The weights are assigned as follows. Overall, highest weights were assigned to CA1temp (targetting cooling down summer surface temperature) and QL2acg (potential for central urban functions) and QL3gr (need of built up area for green). Criteria that scored high directly influence livability offer a very actionable basis for the public sector and show potential for feasible and well advocatable investments.</p>
+<table class="caption-top table">
+<caption>Weights of MCDA criteria</caption>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>B1uses</td>
+<td>0.058</td>
+</tr>
+<tr class="even">
+<td>B2pot</td>
+<td>0.027</td>
+</tr>
+<tr class="odd">
+<td>B3ndvi</td>
+<td>0.083</td>
+</tr>
+<tr class="even">
+<td>CA1temp</td>
+<td>0.198</td>
+</tr>
+<tr class="odd">
+<td>CA2soil</td>
+<td>0.03</td>
+</tr>
+<tr class="even">
+<td>QL1acl</td>
+<td>0.098</td>
+</tr>
+<tr class="odd">
+<td>QL2acg</td>
+<td>0.235</td>
+</tr>
+<tr class="even">
+<td>QL3gr</td>
+<td>0.27</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="MCDA_weightsgraph.png.png" class="img-fluid figure-img"></p>
+<figcaption>Graph of criteria weights</figcaption>
+</figure>
+</div>
+<p>Consistency is acceptable with consistency ration CR = 0,086 :</p>
+<div class="line-block">λmax = 8.847<br>
+CI = 0.121<br>
+RI = 1.4<br>
+CR = 0.086</div>
 </section>
 </section>
 <section id="analysis-geometry" class="level3">
@@ -343,8 +405,8 @@ other polygons –&gt; 0</div>
 </div>
 </section>
 </section>
-<section id="which-spaces-should-be-prioritized-based-on-the-state-of-the-vegetation" class="level4">
-<h4 class="anchored" data-anchor-id="which-spaces-should-be-prioritized-based-on-the-state-of-the-vegetation">#3 Which spaces should be prioritized based on the state of the vegetation?</h4>
+<section id="which-spaces-should-be-prioritized-based-on-current-state-of-the-vegetation" class="level4">
+<h4 class="anchored" data-anchor-id="which-spaces-should-be-prioritized-based-on-current-state-of-the-vegetation">#3 Which spaces should be prioritized based on current state of the vegetation?</h4>
 <section id="ndvi" class="level5">
 <h5 class="anchored" data-anchor-id="ndvi">NDVI</h5>
 <p>Based on the different value of NDVI mean, we can deduce the vegetation state in each spatial geometry.</p>
@@ -376,7 +438,7 @@ other polygons –&gt; 0</div>
 <p>An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing biodiversity criteria among each other, the values were given as follows:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/placeholder.png" class="img-fluid figure-img"></p>
+<p><img src="img/B_SaatyMatrix.png" class="img-fluid figure-img"></p>
 <figcaption>Partial pairwise comparison matrix – biodiversity</figcaption>
 </figure>
 </div>
@@ -418,7 +480,7 @@ other polygons –&gt; 0</div>
 </section>
 <section id="climate-adaptation" class="level3">
 <h3 class="anchored" data-anchor-id="climate-adaptation">Climate adaptation</h3>
-<p><strong><em>how to use areas in the flood plain to capture water in the landscape? -&gt; where is good space for infiltration basins and natural flood protection measures based on soil types and flood risk?</em></strong></p>
+<p><strong><em>How to use areas in the flood plain to capture water in the landscape? -&gt; where is good space for infiltration basins and natural flood protection measures based on soil types, and where is space for (wet) cooling measures?</em></strong></p>
 <!--# intro -->
 <!-- The question needs to be more specific and based in data – what are examples of interventions that can achieve this? How much space do they need? -->
 <p>WIP – please refer to the main research structure flow chart for overview.</p>
@@ -486,7 +548,7 @@ RS High+ P Medium -&gt; 1</div>
 <p>An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing climate adaptation criteria among each other, the values were given as follows:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/placeholder.png" class="img-fluid figure-img"></p>
+<p><img src="img/CA_SaatyMatrix.png" class="img-fluid figure-img"></p>
 <figcaption>Partial pairwise comparison matrix – climate adaptation</figcaption>
 </figure>
 </div>
@@ -513,7 +575,7 @@ RS High+ P Medium -&gt; 1</div>
 </section>
 <section id="climate-adaptation-conclusion" class="level4">
 <h4 class="anchored" data-anchor-id="climate-adaptation-conclusion">Climate adaptation conclusion</h4>
-<!-- some conclusion text -->
+<!-- some conclusion and interpretation text -->
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_CA.png" class="img-fluid figure-img"></p>
@@ -525,10 +587,10 @@ RS High+ P Medium -&gt; 1</div>
 <section id="quality-of-life" class="level3">
 <h3 class="anchored" data-anchor-id="quality-of-life">Quality of life</h3>
 <!--# intro -->
-<p><strong><em>what type of places should be created in the stream flood plain?</em></strong> -&gt; amenities, green spaces, connections / what combination</p>
+<p><strong><em>What types of places should be created in the stream flood plain?</em></strong> -&gt; Ammenities, green spaces, connections?</p>
 <p>WIP – please refer to the main research structure flow chart for overview.</p>
-<section id="potential-for-community-functions-high-angular-choice-within-polygon-local-500-m" class="level4">
-<h4 class="anchored" data-anchor-id="potential-for-community-functions-high-angular-choice-within-polygon-local-500-m">#1 potential for community functions: high angular choice within polygon – local 500 m</h4>
+<section id="where-is-potential-for-community-functions" class="level4">
+<h4 class="anchored" data-anchor-id="where-is-potential-for-community-functions">#1 Where is potential for community functions?</h4>
 <section id="angular-choice-analysis" class="level5">
 <h5 class="anchored" data-anchor-id="angular-choice-analysis">Angular choice analysis</h5>
 <!-- explanation of what it shows and space syntax intro -->
@@ -547,8 +609,8 @@ RS High+ P Medium -&gt; 1</div>
 </div>
 </section>
 </section>
-<section id="potential-for-central-functions-high-angular-choice-within-polygon-walking-larger-distance-1000-2000-m" class="level4">
-<h4 class="anchored" data-anchor-id="potential-for-central-functions-high-angular-choice-within-polygon-walking-larger-distance-1000-2000-m">#2 potential for “central” functions: high angular choice within polygon – walking + larger distance 1000 + 2000 m</h4>
+<section id="where-is-potential-for-central-functions" class="level4">
+<h4 class="anchored" data-anchor-id="where-is-potential-for-central-functions">#2 Where is potential for “central” functions?</h4>
 <p>Angular choice analysis was calculated for radii 1 km and 2 km. First, these two attributes were normalised. Then these values were combined to a common indicator, giving larger weight to the larger radius:</p>
 <div class="line-block">AC1km2km = 1*(AC r=1km) + 2*(AC r=2km)</div>
 <p>This attribute was then normalised.</p>
@@ -558,8 +620,8 @@ RS High+ P Medium -&gt; 1</div>
 <pre><code>aggregate( 'layer: angular_choice', 'max', "attribute: AC1km2km, normalised", intersects($geometry,geometry(@parent)))</code></pre>
 </section>
 </section>
-<section id="need-for-green-lack-of-green-area-in-500-m-reach-from-polygon" class="level4">
-<h4 class="anchored" data-anchor-id="need-for-green-lack-of-green-area-in-500-m-reach-from-polygon">#3 need for green: lack of green area in 500 m reach from polygon</h4>
+<section id="where-is-a-large-need-for-green" class="level4">
+<h4 class="anchored" data-anchor-id="where-is-a-large-need-for-green">#3 Where is a large need for green?</h4>
 <section id="attraction-reach-analysis" class="level5">
 <h5 class="anchored" data-anchor-id="attraction-reach-analysis">Attraction reach analysis</h5>
 <p>explanation of what it calculates</p>
@@ -694,7 +756,7 @@ END</code></pre>
 <p>An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing quality of life criteria among each other, the values were given as follows:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/placeholder.png" class="img-fluid figure-img"></p>
+<p><img src="img/QL_SaatyMatrix.png" class="img-fluid figure-img"></p>
 <figcaption>Partial pairwise comparison matrix – quality of life</figcaption>
 </figure>
 </div>
@@ -748,9 +810,9 @@ END</code></pre>
 </section>
 <section id="typology-construction" class="level2">
 <h2 class="anchored" data-anchor-id="typology-construction">Typology construction</h2>
+<p>Kelly is working on this.</p>
 <p>We feel like our goal for typology alligns pretty well with our main research question <em>How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?</em></p>
 <p>Hopefully, we will get types of areas that can make it easier to create example design interventions. Perhaps something like “areas with large potential for community facilities with water retention function”, “areas with community functions and maintained high biodiversity”, “areas with biodiversity boost, improved surface permeability and connectivity”.</p>
-<p>Kelly is working on this.</p>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
