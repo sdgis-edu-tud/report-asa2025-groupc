@@ -269,16 +269,27 @@ Soil retention in this map means ..... Permeability means ....
 
 ![LST draft](/img/LST_analysis_prediction_draft02.png)
 
-THIS IS A DRAFT: To analyse surface temperatures, we found a [Google Earth Engine script](https://code.earthengine.google.com/ac986028b56a794aefd3ea54e9cb09ba) that uses information from Sentinel-2, LANDSAT, and DEM to predict a raster LST (land surface temperature) with a higher resolution, namely 10-meter resolution. The computations are complicated, but the results are nice. The draft image shows the results for dates 2024-06-01 to 2024-08-31, since these three months include the summer and will therefore be most susceptible for heat stress, which makes this time period interesting to look at for our research.
+To analyse surface temperatures, we found a [Google Earth Engine script](https://code.earthengine.google.com/ac986028b56a794aefd3ea54e9cb09ba) made by [Ramadhan](https://www.youtube.com/watch?v=3LOMNzBHmjs) on YouTube (2024) that uses information from Sentinel-2, LANDSAT, and DEM to predict a raster LST (land surface temperature) with a higher resolution than other available datasets on LST, namely 10-meter resolution. The computations are complicated and will not be discussed in further detail in this report, but the results are relevant and useful to our research. Mainly to answer the question of which spaces should be prioritized to be wetter to help the area cool down, because now it is too hot. The draft image shows the results for dates 2024-06-01 to 2024-08-31, since these three months include the summer and will therefore be most susceptible for heat stress, which makes this time period interesting to look at for our research.
 
-General steps (DRAFT):
+The Google Earth Engine (GEE) script was adapted to analyse our area of interest (Senica and surroundings) and an interesting time period as mentioned earlier. The code produced a GeoTiff file that we downloaded for further processing. The LST values in this file are given in degrees Celsius and range from 27-38. 
+The raster GeoTiff file was combined with our analysis geometry layer using the 'zonal statistics' tool in QGIS. This resulted in a vector layer with our analysis polygons, including a column in the attribute table representing the mean value of the LST raster layer inside that specific polygon. This value represents the aggregation of LST values, which was then normalized with the following statement in the field calculator: 
+``` 
+1 - (maximum("_mean") - "_mean") / (maximum("_mean") -  minimum("_mean"))
+``` 
+The normalization is a linear min-max normalization for a benefit criterion, meaning that areas with a higher LST should be prioritized for improvements and development. A lower LST would be desirable and thus has less need for spatial developments to improve LST, which is represented in lower normalization values (closer to 0). 
 
--   Use GEE code (reference properly)
--   Download GeoTiff
--   Use QGIS to convert GeoTiff raster to vector, save as GeoPackage
--   Values from raster, become new layer "DN"
--   Use field calculator: (maximum("DN") - "DN") / (maximum("DN") - minimum("DN")), to create new field normalised
--   The lower the LST, the better and thus the higher norm value (closer to 1 for lower LST)
+
+<!-- General steps (DRAFT):
+
+* Use GEE code (reference properly) 
+* Download GeoTiff 
+* Use zonal statistics
+* Combine raster layer with combined polygons using zonal statistics tool 
+* This results in onder andere the mean column 
+* Use mean (aggregation) to normalise: (maximum("_mean") - "_mean") / (maximum("_mean") -  minimum("_mean"))
+* The lower the LST, the better and thus the higher norm value (closer to 1 for lower LST) 
+* Clean up and rename, save as separate file for further processing -->
+
 
 #### Weighting
 
