@@ -142,7 +142,7 @@ The weights are assigned as follows. Overall, highest weights were assigned to C
 
 : Weights of MCDA criteria
 
-![Graph of criteria weights](MCDA_weightsgraph.png.png)
+![Graph of criteria weights](img/MCDA_weightsgraph.png)
 
 Consistency is acceptable with consistency ration CR = 0,086 :
 
