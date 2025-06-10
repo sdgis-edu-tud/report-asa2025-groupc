@@ -81,13 +81,13 @@ Urban Stream Restoration, Biodiversity, XXXX, XXXX
 
 #### Students – roles and contributions
 
-Hongyue Kang (MSc Urbanism) – Presentation Lead, Data Analyst (microclimate analysis)
+Hongyue Kang (MSc Urbanism) – Presentation Lead, Data Analyst (microclimate analysis, NDVI)
 
-Jiaoyang Wu (MSc Geomatics) – Data Analyst, Mapping Specialist (flood risk)
+~~Jiaoyang Wu (MSc Geomatics) – Data Analyst, Mapping Specialist (flood risk)~~
 
-Kelly Schoonderwoerd (MSc Geomatics) – Editor, Mapping Specialist, R expert
+Kelly Schoonderwoerd (MSc Geomatics) – Editor, Data Analyst (surface temperature), R Expert, Clustering Lead
 
-Viola Ebermannová (MSc Urbanism) – Project Coordinator, Research Lead, Design Lead (graphic guidelines and layout templates), Data Analyst (analysis geometry, space syntax analysis)
+Viola Ebermannová (MSc Urbanism) – Project Coordinator, Research Lead, Design Lead (graphic guidelines and layout templates), Data Analyst (analysis geometry, space syntax analysis), MCDA Lead
 
 #### Course information
 
@@ -117,9 +117,39 @@ Multi Criteria Decision Analysis is a research style that advises decision makin
 
 #### Detailed research structure
 
-![Research structure – detailed flow chart, version 27. 5. (open image in new tab to see in full).](pdf/ResearchStructure_20250610.pdf){height="100%" width="100%" src="path-to-pdf"}
+![Research structure – detailed flow chart, version 10. 6. (open image in new tab to see in full).](pdf/ResearchStructure_20250610.pdf){height="100%" width="100%" src="path-to-pdf"}
 
 <!-- <iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0" /> -->
+
+#### Weighting
+
+We weighted the criteria for MCDA with a pairwise comparison matrix (Saaty matrix) using [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/info) by Pavel Holeček. The complete matrix looks like this:
+
+![Complete Saaty Matrix](img/CompleteSaatyMatrix.png)
+
+The weights are assigned as follows. Overall, highest weights were assigned to CA1temp (targetting cooling down summer surface temperature) and QL2acg (potential for central urban functions) and QL3gr (need of built up area for green). Criteria that scored high directly influence livability offer a very actionable basis for the public sector and show potential for feasible and well advocatable investments.
+
+| Criterion | Weight |
+|-----------|--------|
+| B1uses    | 0.058  |
+| B2pot     | 0.027  |
+| B3ndvi    | 0.083  |
+| CA1temp   | 0.198  |
+| CA2soil   | 0.03   |
+| QL1acl    | 0.098  |
+| QL2acg    | 0.235  |
+| QL3gr     | 0.27   |
+
+: Weights of MCDA criteria
+
+![Graph of criteria weights](MCDA_weightsgraph.png.png)
+
+Consistency is acceptable with consistency ration CR = 0,086 :
+
+| λmax = 8.847
+| CI = 0.121
+| RI = 1.4
+| CR = 0.086
 
 ### Analysis geometry
 
@@ -164,6 +194,10 @@ The analysis geometry was manually assigned Land Cover classes. Below is an over
 
 <!--Talk about how we deal with data, sources, what geometries we use for what and how overview of approaches to agregate data from original geometry types to the analysis geometry -->
 
+General workflow of aggregating data is: 0. Perform calculations and create base layer 1. Normalise values 2. Aggregate (3. Eventually normalise again)
+
+We use linear min-max normalisation to 0-1, eventually inversed (1-\[standard min-max normalisation\]).
+
 WIP - please refer to detailed research structure flowchart for some information.
 
 ![Scheme of data structure – data types of original layers, processes that they go through to create 3 aggregate layers and the final map - placeholder](/img/placeholder.png)
@@ -194,11 +228,13 @@ The elements of ÚSES are biocenters, biocorridors (connecting biocenters to all
 
 ##### Aggregation and normalisation
 
-Values were assigned based on the level of connectivity to ÚSES. Highest value was assigned to polygins intersecting with ÚSES elements, polygons that are connected by continuous green land cover (as defined in Land Cover general type of landcover) were also assigned a slight priority.
+Values were assigned based on the level of connectivity to ÚSES. Highest value was assigned to polygons intersecting with ÚSES elements, polygons that are connected by continuous green land cover (as defined in Land Cover general type of landcover) were also assigned a slight priority.
 
 | polygons in which ÚSES elements are present --\> 1
 | polygons that are connected by (contuinuos) "green" land cover to ÚSES elements --\> 0,3
 | other polygons --\> 0
+
+![Criterion B1uses – Connectivity to ÚSES (normalised.)](/img/MCDA_conclusions_B1uses.png)
 
 #### #2 Which spaces should be prioritised based on ecological quality improvement potential?
 
@@ -208,9 +244,13 @@ Potential for high impact improvement is determined by unsatisfactory ecological
 
 ![Ecological quality improvement potential in bottom row.](/img/B_LandCover_ImprovementPotential.png)
 
-![Map of Ecological quality improvement potential - placeholder](/img/placeholder.png)
+##### Aggregation and normalisation
 
-#### #3 Which spaces should be prioritized based on the state of the vegetation?
+The potential was calculated on range 0-1 directly on Analysis geometry polygons.
+
+![Criterion B1pot – Improvement potential (normalised.)](/img/MCDA_conclusions_B1uses.png)
+
+#### #3 Which spaces should be prioritized based on current state of the vegetation?
 
 ##### NDVI
 
@@ -222,21 +262,39 @@ Based on the different value of NDVI mean, we can deduce the vegetation state in
 | **0.3–0.6** – Moderate vegetation
 | **\> 0.6** – Dense and healthy vegetation
 
+![NDVI classification](img/NDVI_draft.png)
+
 ##### Aggregation and normalisation
 
 Data was aggregated based on average value within analysis geometry polygon, and normalised by 1-\[linear min-max\] –\> priority is given to low quality vegetation.
 
-![Map of values for MCDA - placeholder](/img/placeholder.png)
-
-![NDVI classification](img/NDVI_draft.png)
+![Criterion B3ndvi – Current state of vegetation (normalised.)](/img/MCDA_conclusions_B3ndvi.png)
 
 #### Weighting
 
+An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing biodiversity criteria among each other, the values were given as follows:
+
+![Partial pairwise comparison matrix – biodiversity](img/B_SaatyMatrix.png)
+
+The calculated weights for biodiversity indicators are:
+
+| Criterion | Weight |
+|-----------|--------|
+| B1uses    | 0.058  |
+| B2pot     | 0.027  |
+| B3ndvi    | 0.083  |
+
+: Weights of biodiversity criteria
+
 #### Biodiversity conclusion
+
+<!--# some text  conclusion is needed here -->
+
+![MCDA Biodiversity conclusion](/img/MCDA_conclusions_B.png)
 
 ### Climate adaptation
 
-***how to use areas in the flood plain to capture water in the landscape? -\> where is good space for infiltration basins and natural flood protection measures based on soil types and flood risk?***
+***How to use areas in the flood plain to capture water in the landscape? -\> where is good space for infiltration basins and natural flood protection measures based on soil types, and where is space for (wet) cooling measures?***
 
 <!--# intro -->
 
@@ -246,13 +304,42 @@ WIP – please refer to the main research structure flow chart for overview.
 
 This chapter is based on the fact that in western slovakia, there is a large drought problem, and water management activities should target capturing water in the landscape. <!-- ^This needs a source, but it is true. -->
 
-#### #1
+#### #1 Which spaces should be prioritized for interventions aimed at cooling the area down?
 
-Look at #3 for now
+To analyse surface temperatures, we found a [Google Earth Engine script](https://code.earthengine.google.com/ac986028b56a794aefd3ea54e9cb09ba) made by [Ramadhan](https://www.youtube.com/watch?v=3LOMNzBHmjs) on YouTube (2024) that uses information from Sentinel-2, LANDSAT, and DEM to predict a raster LST (land surface temperature) with a higher resolution than other available datasets on LST, namely 10-meter resolution. The computations are complicated and will not be discussed in further detail in this report, but the results are relevant and useful to our research. Mainly to answer the question of which spaces should be prioritized to be wetter to help the area cool down, because now it is too hot. The draft image shows the results for dates 2024-06-01 to 2024-08-31, since these three months include the summer and will therefore be most susceptible for heat stress, which makes this time period interesting to look at for our research.
+
+The Google Earth Engine (GEE) script was adapted to analyse our area of interest (Senica and surroundings) and an interesting time period as mentioned earlier. The code produced a GeoTiff file that we downloaded for further processing. The LST values in this file are given in degrees Celsius and range from 27-38. The raster GeoTiff file was combined with our analysis geometry layer using the 'zonal statistics' tool in QGIS. This resulted in a vector layer with our analysis polygons, including a column in the attribute table representing the mean value of the LST raster layer inside that specific polygon. This value represents the aggregation of LST values, which was then normalized with the following statement in the field calculator:
+
+```         
+1 - (maximum("_mean") - "_mean") / (maximum("_mean") -  minimum("_mean"))
+```
+
+The normalization is a linear min-max normalization for a benefit criterion, meaning that areas with a higher LST should be prioritized for improvements and development. A lower LST would be desirable and thus has less need for spatial developments to improve LST, which is represented in lower normalization values (closer to 0).
+
+```{=html}
+<!-- General steps (DRAFT):
+
+* Use GEE code (reference properly) 
+* Download GeoTiff 
+* Use zonal statistics
+* Combine raster layer with combined polygons using zonal statistics tool 
+* This results in onder andere the mean column 
+* Use mean (aggregation) to normalise: (maximum("_mean") - "_mean") / (maximum("_mean") -  minimum("_mean"))
+* The lower the LST, the better and thus the higher norm value (closer to 1 for lower LST) 
+* Clean up and rename, save as separate file for further processing -->
+```
+
+![LST draft](/img/LST_analysis_prediction_draft02.png)
+
+##### Weigting and normalisation
+
+Weighted as mean by Zonal statistics tool.
+
+![Criterion CA1temp – need for cooling (normalised.)](/img/MCDA_conclusions_CA1temp.png)
 
 #### #2 Where does the soil have high potential for water retention?
 
-##### Soil retention abilityand permeability
+##### Soil retention ability and permeability
 
 From Atlas of Slovakia, quite small scale.
 
@@ -265,55 +352,114 @@ Soil retention in this map means ..... Permeability means ....
 | RS Medium+ P Medium -\> 0,5
 | RS High+ P Medium -\> 1
 
-#### #3 LST
-
-![LST draft](/img/LST_analysis_prediction_draft02.png)
-
-To analyse surface temperatures, we found a [Google Earth Engine script](https://code.earthengine.google.com/ac986028b56a794aefd3ea54e9cb09ba) made by [Ramadhan](https://www.youtube.com/watch?v=3LOMNzBHmjs) on YouTube (2024) that uses information from Sentinel-2, LANDSAT, and DEM to predict a raster LST (land surface temperature) with a higher resolution than other available datasets on LST, namely 10-meter resolution. The computations are complicated and will not be discussed in further detail in this report, but the results are relevant and useful to our research. Mainly to answer the question of which spaces should be prioritized to be wetter to help the area cool down, because now it is too hot. The draft image shows the results for dates 2024-06-01 to 2024-08-31, since these three months include the summer and will therefore be most susceptible for heat stress, which makes this time period interesting to look at for our research.
-
-The Google Earth Engine (GEE) script was adapted to analyse our area of interest (Senica and surroundings) and an interesting time period as mentioned earlier. The code produced a GeoTiff file that we downloaded for further processing. The LST values in this file are given in degrees Celsius and range from 27-38. 
-The raster GeoTiff file was combined with our analysis geometry layer using the 'zonal statistics' tool in QGIS. This resulted in a vector layer with our analysis polygons, including a column in the attribute table representing the mean value of the LST raster layer inside that specific polygon. This value represents the aggregation of LST values, which was then normalized with the following statement in the field calculator: 
-``` 
-1 - (maximum("_mean") - "_mean") / (maximum("_mean") -  minimum("_mean"))
-``` 
-The normalization is a linear min-max normalization for a benefit criterion, meaning that areas with a higher LST should be prioritized for improvements and development. A lower LST would be desirable and thus has less need for spatial developments to improve LST, which is represented in lower normalization values (closer to 0). 
-
-
-<!-- General steps (DRAFT):
-
-* Use GEE code (reference properly) 
-* Download GeoTiff 
-* Use zonal statistics
-* Combine raster layer with combined polygons using zonal statistics tool 
-* This results in onder andere the mean column 
-* Use mean (aggregation) to normalise: (maximum("_mean") - "_mean") / (maximum("_mean") -  minimum("_mean"))
-* The lower the LST, the better and thus the higher norm value (closer to 1 for lower LST) 
-* Clean up and rename, save as separate file for further processing -->
-
+![Criterion CA2soil – Retention ability (normalised.)](/img/MCDA_conclusions_CA2soil.png)
 
 #### Weighting
 
+An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing climate adaptation criteria among each other, the values were given as follows:
+
+![Partial pairwise comparison matrix – climate adaptation](img/CA_SaatyMatrix.png)
+
+The calculated weights for climate adaptation criteria are:
+
+| Criterion | Weight |
+|-----------|--------|
+| CA1temp   | 0.198  |
+| CA2soil   | 0.03   |
+
+: Weights of climate adaptation criteria
+
 #### Climate adaptation conclusion
+
+<!-- some conclusion and interpretation text -->
+
+![MCDA Climate adaptation conclusion](/img/MCDA_conclusions_CA.png)
 
 ### Quality of life
 
 <!--# intro -->
 
-***what type of places should be created in the stream flood plain?*** -\> amenities, green spaces, connections / what combination
+***What types of places should be created in the stream flood plain?*** -\> Ammenities, green spaces, connections?
 
 WIP – please refer to the main research structure flow chart for overview.
 
-#### #1 potential for community functions: high angular choice within polygon – local 500 m
+#### #1 Where is potential for community functions?
+
+##### Angular choice analysis
+
+<!-- explanation of what it shows and space syntax intro -->
 
 On OSM street network, in area there are no clearly fast routes and there are missing pathways along some roads, so we took all roads from the dataset as potentially slow.
 
-#### #2 potential for "central" functions: high angular choice within polygon – walking + larger distance 1000 + 2000 m
+The values of Angular choice analysis with radius 500 m were lineary normalised to 0-1 range.
 
-#### #3 need for ammenities: lack of ammenities in 500 m reach from polygon
+##### Weighting and normalisation
 
-#### #4 need for green: lack of green area in 500 m reach from polygon
+Aggregated as maximum value in polygon. Where there are no intersecting roads (gives result 'NULL'), 0 was assigned. This aggregate value was lineary normalised to 0-1 range.
 
-#### PLACEHOLDER SPACE SYNTAX – UNTIL WE PUT IT IN CORRECT CHAPTERS
+```         
+aggregate( 'layer: angular_choice', 'max', "attribute: r=500 m, normalised", intersects($geometry,geometry(@parent)))
+```
+
+![Criterion QL1acl – Community function potential (normalised.)](/img/MCDA_conclusions_QL1acl.png)
+
+#### #2 Where is potential for "central" functions?
+
+Angular choice analysis was calculated for radii 1 km and 2 km. First, these two attributes were normalised. Then these values were combined to a common indicator, giving larger weight to the larger radius:
+
+| AC1km2km = 1\*(AC r=1km) + 2\*(AC r=2km)
+
+This attribute was then normalised.
+
+##### Aggregation and normalisation
+
+Again, the value was aggregated by calculating maximum value in the polygon and lineary normalised to 0-1 range.
+
+```         
+aggregate( 'layer: angular_choice', 'max', "attribute: AC1km2km, normalised", intersects($geometry,geometry(@parent)))
+```
+
+#### #3 Where is a large need for green?
+
+##### Attraction reach analysis
+
+explanation of what it calculates
+
+Attraction reach was calculated from centroids of buildings to green areas, as classified in OSM, weighted by the area of the green area. Value was normalised.
+
+##### Aggregation and normalisation
+
+Analysis geometry polygons was buffered by 500 m, to simulate area in 500 m walking distance of each polygon. (While technically not 500 m walking distance, on this small scale we consider the difference negligible.)
+
+![Buffered analysis geometry](img/QL3gr_bufferedpolygons.png)
+
+Then, we filtered out houses that we consider "need green". Unfortunately, many houses in this area have "type" 'NULL', which skews the analysis.
+
+```         
+CASE
+  WHEN
+    "type" IS  NULL OR "type" IS 'apartments' OR "type" IS 'detached' OR "type" IS 'dormitory' OR "type" IS 'farm_auxiliary' OR "type" IS 'government' OR "type" IS 'house' OR "type" IS 'manor' OR "type" IS 'office' OR "type" IS 'public' OR "type" IS 'residential' OR "type" IS 'school' OR "type" IS 'semidetached_house'
+    
+  THEN 1
+  
+  ELSE 0
+
+END
+```
+
+![Buildings that we consider need green](img/QL3gr_buildingsneedgreen.png)
+
+Then, for each buffered Analysis geometry polygon, sum was calculated of values from buildings in need of green intersecting it (value polygons with no intersecting buildings is zero).
+
+```         
+aggregate( 'layer: Buildings in need of green', 'sum', "Attraction reach to green areas, weighted by area, normalised", intersects($geometry,geometry(@parent)))
+```
+
+This was lineary normalised to 0-1 into the final value.
+
+![Criterion QL3gr – need for green (normalised.)](/img/MCDA_conclusions_QL3gr.png)
+
+#### PLACEHOLDER SPACE SYNTAX base layers – UNTIL WE PUT IT IN CORRECT CHAPTERS
 
 ![Angular Choice Analysis (note: idk why it is displayed wrong and don't have time to solve it now, sorry. You can display the frame by itself in new tab to see the pdf nicely.)](pdf/AngularChoice_20250518.pdf){height="100%" width="100%"}
 
@@ -409,17 +555,41 @@ Attraction Reach Teplica
 
 #### Weighting
 
+An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing quality of life criteria among each other, the values were given as follows:
+
+![Partial pairwise comparison matrix – quality of life](img/QL_SaatyMatrix.png)
+
+The calculated weights for climate adaptation criteria are:
+
+| Criterion | Weight |
+|-----------|--------|
+| QL1acl    | 0.098  |
+| QL2acg    | 0.235  |
+| QL3gr     | 0.27   |
+
+: Weights of climate adaptation criteria
+
 #### Quality of life conclusion
+
+<!-- text about conclusion and interpretation -->
+
+![MCDA Quality of life conclusion](/img/MCDA_conclusions_QL.png)
 
 ### MCDA conclusion
 
+<!-- text about conclusion and interpretation -->
+
+We achieved the final conclusion by calculating the sum of all criteria for each polygon. This shows which areas have over all the greatest potentials and should be prioritised when making decisions on where to target urban stream restoration interventions. However, that does not mean that the areas with low priority should not be targeted. Sustainable stream restoration should be designed in a complex way, for the larger site (stream flood plain) as a whole.
+
+![MCDA Final conclusion](/img/MCDA_conclusions_sum.png)
+
 ## Typology construction
+
+Kelly is working on this.
 
 We feel like our goal for typology alligns pretty well with our main research question *How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?*
 
 Hopefully, we will get types of areas that can make it easier to create example design interventions. Perhaps something like "areas with large potential for community facilities with water retention function", "areas with community functions and maintained high biodiversity", "areas with biodiversity boost, improved surface permeability and connectivity".
-
-Plan is I (viola) guess to feed the data in (in various compositions perhaps) and see what happens.
 
 ## Results
 
