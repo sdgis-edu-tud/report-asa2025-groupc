@@ -117,7 +117,9 @@ Multi Criteria Decision Analysis is a research style that advises decision makin
 
 #### Detailed research structure
 
-![Research structure – detailed flow chart, version 27. 5. (open image in new tab to see in full).](img/ResearchStructure_20250527.jpg)
+![Research structure – detailed flow chart, version 27. 5. (open image in new tab to see in full).](pdf/ResearchStructure_20250610.pdf){height="100%" width="100%" src="path-to-pdf"}
+
+<iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0" />
 
 ### Analysis geometry
 
@@ -176,11 +178,27 @@ WIP – please refer to the main research structure flow chart for overview.
 
 #### #1 Which spaces should be prioritised because of their connectivity to ÚSES?
 
-polygons in which ÚSES elements are present --\> 1
+##### Data
 
-polygons that are connected by (contuinuos) "green" land cover to ÚSES elements --\> 0,3
+###### What is ÚSES?
 
-other polygons --\> 0
+Územný systém ekologickej stability (ÚSES) (Spatial system of ecological stability) is a system of spatial units intended to securing the ecological stability of Slovakian landscape, connecting natural areas, and protection of biotopes and representative species in their natural habitats. It is a legally anchored documentation (Act No. 543/2002 Z. z. – About the protection of nature and landscape).
+
+The elements of ÚSES are biocenters, biocorridors (connecting biocenters to allow for movement of organisms and genetical information exchange), and interaction elements (spatially tied with biocorridors). These elements are defined on supraregional, regional, and local scale.
+
+(SAŽP n.d.)
+
+###### ÚSES within our area
+
+![Map of ÚSES within our area - placeholder](/img/placeholder.png)
+
+##### Aggregation and normalisation
+
+Values were assigned based on the level of connectivity to ÚSES. Highest value was assigned to polygins intersecting with ÚSES elements, polygons that are connected by continuous green land cover (as defined in Land Cover general type of landcover) were also assigned a slight priority.
+
+| polygons in which ÚSES elements are present --\> 1
+| polygons that are connected by (contuinuos) "green" land cover to ÚSES elements --\> 0,3
+| other polygons --\> 0
 
 #### #2 Which spaces should be prioritised based on ecological quality improvement potential?
 
@@ -190,22 +208,27 @@ Potential for high impact improvement is determined by unsatisfactory ecological
 
 ![Ecological quality improvement potential in bottom row.](/img/B_LandCover_ImprovementPotential.png)
 
+![Map of Ecological quality improvement potential - placeholder](/img/placeholder.png)
+
 #### #3 Which spaces should be prioritized based on the state of the vegetation?
+
+##### NDVI
 
 Based on the different value of NDVI mean, we can deduce the vegetation state in each spatial geometry.
 
--   **\< 0** – Water bodies, shadows, or noise
+| **\< 0** – Water bodies, shadows, or noise
+| **0–0.1** – Bare soil or urban hardscape
+| **0.1–0.3** – Sparse or dry vegetation
+| **0.3–0.6** – Moderate vegetation
+| **\> 0.6** – Dense and healthy vegetation
 
--   **0–0.1** – Bare soil or urban hardscape
+##### Aggregation and normalisation
 
--   **0.1–0.3** – Sparse or dry vegetation
+Data was aggregated based on average value within analysis geometry polygon, and normalised by 1-\[linear min-max\] –\> priority is given to low quality vegetation.
 
--   **0.3–0.6** – Moderate vegetation
-
--   **\> 0.6** – Dense and healthy vegetation
+![Map of values for MCDA - placeholder](/img/placeholder.png)
 
 ![NDVI classification](img/NDVI_draft.png)
-
 
 #### Weighting
 
@@ -223,33 +246,39 @@ WIP – please refer to the main research structure flow chart for overview.
 
 This chapter is based on the fact that in western slovakia, there is a large drought problem, and water management activities should target capturing water in the landscape. <!-- ^This needs a source, but it is true. -->
 
-#### #1 Where does the soil have high potential for water retention?
+#### #1
+
+Look at #3 for now
+
+#### #2 Where does the soil have high potential for water retention?
+
+##### Soil retention abilityand permeability
+
+From Atlas of Slovakia, quite small scale.
+
+Soil retention in this map means ..... Permeability means ....
 
 ![Soil potential placeholder](/img/CA_soilpotential.png)
 
-#### #2 Where it is likely water will gather?
+##### Aggregation and normalisation
 
-Flood risk raster, calculated by us. ![Flood risk](/img/CA_FloodRisk.png)
+| RS Medium+ P Medium -\> 0,5
+| RS High+ P Medium -\> 1
 
-#### #3 Maybe impervious cover ?
-
-We dont know if we will manage to do this, it is now very low priority.
-
-In the case we dont, we think for our goal of capturing water in landscape (as water buffer for flood protection, and also longterm anti-drought measure), the two we already have might be sufficient (while stating general goal overall is to improve surface permeability no matter where.)
+#### #3 LST
 
 ![LST draft](/img/LST_analysis_prediction_draft02.png)
 
 THIS IS A DRAFT: To analyse surface temperatures, we found a [Google Earth Engine script](https://code.earthengine.google.com/ac986028b56a794aefd3ea54e9cb09ba) that uses information from Sentinel-2, LANDSAT, and DEM to predict a raster LST (land surface temperature) with a higher resolution, namely 10-meter resolution. The computations are complicated, but the results are nice. The draft image shows the results for dates 2024-06-01 to 2024-08-31, since these three months include the summer and will therefore be most susceptible for heat stress, which makes this time period interesting to look at for our research.
 
-General steps (DRAFT): 
+General steps (DRAFT):
 
-* Use GEE code (reference properly) 
-* Download GeoTiff 
-* Use QGIS to convert GeoTiff raster to vector, save as GeoPackage 
-* Values from raster, become new layer "DN"
-* Use field calculator: (maximum("DN") - "DN") / (maximum("DN") -  minimum("DN")), to create new field normalised 
-* The lower the LST, the better and thus the higher norm value (closer to 1 for lower LST) 
-
+-   Use GEE code (reference properly)
+-   Download GeoTiff
+-   Use QGIS to convert GeoTiff raster to vector, save as GeoPackage
+-   Values from raster, become new layer "DN"
+-   Use field calculator: (maximum("DN") - "DN") / (maximum("DN") - minimum("DN")), to create new field normalised
+-   The lower the LST, the better and thus the higher norm value (closer to 1 for lower LST)
 
 #### Weighting
 
@@ -264,6 +293,8 @@ General steps (DRAFT):
 WIP – please refer to the main research structure flow chart for overview.
 
 #### #1 potential for community functions: high angular choice within polygon – local 500 m
+
+On OSM street network, in area there are no clearly fast routes and there are missing pathways along some roads, so we took all roads from the dataset as potentially slow.
 
 #### #2 potential for "central" functions: high angular choice within polygon – walking + larger distance 1000 + 2000 m
 
@@ -410,6 +441,8 @@ Plan is I (viola) guess to feed the data in (in various compositions perhaps) an
 <!-- we could also make the bracketed versions and the full references linked -->
 
 ### Literature
+
+SAŽP. (n.d.). Územný systém ekologickej stability (ÚSES). SAŽP – Slovak Environment Agency. Retrieved on June 6, 2025 from <https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/uzemny-system-ekologickej-stability-uses>
 
 ### Map layers
 
