@@ -119,7 +119,20 @@ Multi Criteria Decision Analysis is a research style that advises decision makin
 
 ![Research structure – detailed flow chart, version 10. 6. (open image in new tab to see in full).](pdf/ResearchStructure_20250610.pdf){height="100%" width="100%" src="path-to-pdf"}
 
+```{=html}
+<iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0" />
+</iframe>
+```
+
+<iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0" />
+</iframe>
+
+
+<!-- ::: {#fig-resstr} -->
+
 <!-- <iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0" /> -->
+<!-- Research structure XXX -->
+<!-- ::: -->
 
 #### Weighting
 
