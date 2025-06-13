@@ -101,6 +101,10 @@ In collaboration with the [ReBioClim](www.interreg-central.eu/projects/rebioclim
 
 <!--# add intro!!! -->
 
+### Reproducibility self assessment
+
+<!-- Based on reproducibility seminar and the checklist linked in the presentation. -->
+
 ## MCDA
 
 ::: callout
