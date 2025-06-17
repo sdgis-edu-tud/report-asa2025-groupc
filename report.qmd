@@ -128,14 +128,18 @@ Multi Criteria Decision Analysis is a research style that advises decision makin
 </iframe>
 ```
 
-<iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0" />
-</iframe>
+```{=html}
+<iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0"></iframe>
+```
 
+</iframe>
 
 <!-- ::: {#fig-resstr} -->
 
 <!-- <iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0" /> -->
+
 <!-- Research structure XXX -->
+
 <!-- ::: -->
 
 #### Weighting
@@ -271,12 +275,7 @@ The potential was calculated on range 0-1 directly on Analysis geometry polygons
 
 ##### NDVI
 
-The steps we take to calculate the NDVI are as follow:
-Sentinel-2 satellite imagery was accessed via Google Earth Engine (GEE), covering the study area during the growing season to ensure accurate vegetation representation. The Normalized Difference Vegetation Index (NDVI) was calculated within GEE using the standard formula: 
-NDVI=(B8-B4)/(B8+B4) 
-where B8 represents the near-infrared (NIR) band and B4 represents the red band. The resulting NDVI raster was exported from GEE as a GeoTIFF file and imported into QGIS. 
-In QGIS, the NDVI layer was reprojected, clipped to the study boundary, and further analyzed using raster statistics and classification to evaluate vegetation cover across different spatial units along the Teplica River.
-Based on the different value of NDVI mean, we can deduce the vegetation state in each spatial geometry.
+The steps we take to calculate the NDVI are as follow: Sentinel-2 satellite imagery was accessed via Google Earth Engine (GEE), covering the study area during the growing season to ensure accurate vegetation representation. The Normalized Difference Vegetation Index (NDVI) was calculated within GEE using the standard formula: NDVI=(B8-B4)/(B8+B4) where B8 represents the near-infrared (NIR) band and B4 represents the red band. The resulting NDVI raster was exported from GEE as a GeoTIFF file and imported into QGIS. In QGIS, the NDVI layer was reprojected, clipped to the study boundary, and further analyzed using raster statistics and classification to evaluate vegetation cover across different spatial units along the Teplica River. Based on the different value of NDVI mean, we can deduce the vegetation state in each spatial geometry.
 
 | **\< 0** – Water bodies, shadows, or noise
 | **0–0.1** – Bare soil or urban hardscape
@@ -607,11 +606,235 @@ We achieved the final conclusion by calculating the sum of all criteria for each
 
 ## Typology construction
 
-Kelly is working on this.
+<!-- Kelly is working on this. -->
 
-We feel like our goal for typology alligns pretty well with our main research question *How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?*
+<!-- We feel like our goal for typology alligns pretty well with our main research question *How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?* -->
 
-Hopefully, we will get types of areas that can make it easier to create example design interventions. Perhaps something like "areas with large potential for community facilities with water retention function", "areas with community functions and maintained high biodiversity", "areas with biodiversity boost, improved surface permeability and connectivity".
+<!-- Hopefully, we will get types of areas that can make it easier to create example design interventions. Perhaps something like "areas with large potential for community facilities with water retention function", "areas with community functions and maintained high biodiversity", "areas with biodiversity boost, improved surface permeability and connectivity". -->
+
+The typology construction is based on the course's provided tutorial on how to construct urban typologies in R. We use K-means Clustering, an unsupervised machine learning method, to find similar typologies for areas around an urban stream based on earlier analysed qualities. The main goal for the typological clustering is to get types of areas that can make it easier to create example design interventions. Perhaps something like "areas with large potential for community facilities with water retention function", "areas with community functions and maintained high biodiversity", "areas with biodiversity boost, improved surface permeability and connectivity". We feel like our goal for typology alligns pretty well with our main research question *How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?*
+
+The focus area of the typology clustering is the stream corridor in Senica and the spatial unit is the earlier defined analysis geometries. For the typology clustering, we use four variables that were previously analysed, namely:
+
+`B1uses` - Normalised scores based on the connectivity of an area to ÚSES (the regional ecological stability system).
+
+`B3ndvi` - Normalised scores based on the current state of vegetation in an area, as indicated by the ndvi (Normalised Difference Vegetation Index).
+
+`CA1temp` - Normalised scores based on the mean LST (Land Surface Temperature) of an area.
+
+`QL2acg` - Normalised scores based on the potential of an area for "central" functions. Calculated by using high angular choice within polygons.
+
+These specific attributes were chosen, because we judged them to be the most relevant for typology clustering. Both biodiversity attributes (B1uses and B3ndvi) give information about the areas and their current characteristics, making them useful for typology clustering. The other two attributes (CA1temp and QL2acg) got a high weight in the MCDA and are thus important to our research question. Another attribute that scored high in the MCDA is QL3gr, indicating spaces that lack green area within a radius of 500m. This attribute has been left out of the typology construction, since the presence and quality of green areas is already included in attribute B3ndvi and we judged B3ndvi to be more about the area itself than QL3gr, which takes into account the surroundings as well.
+
+The dataset that is used, is an aggregated dataset containing all normalised attributes for each analysis geometry. The clustering steps can be generally described as follows:
+
+Step 1. Load R packages and data\
+Step 2. Standardization\
+Step 3. Determine optimal k\
+Step 4. Run K-means clustering\
+Step 5. Interpret cluster center\
+Step 6. (Optional) Calculate distance to cluster center
+
+### Step 1. Load R packages and data
+
+First, load the necessary R packages.
+
+```{r}
+install.packages("sf") 
+install.packages("dplyr")
+```
+
+Next, load the required packages:
+
+```{r}
+library(sf) # for processing vector data 
+library(dplyr) # for selecting and transforming data
+library(tidyr) 
+```
+
+Read the dataset from the GeoPackage file and display the first few rows using head()
+
+```{r}
+grids <- st_read("data/Senica/analysisgeometry_aggregated_allattributes.gpkg", quiet = TRUE)
+
+# View the first few rows of the data
+head(grids)
+```
+
+We can check how many analysis geometries are in the file, in our case 600.
+
+```{r}
+# Count how many analysis geometries we have
+nrow(grids)
+```
+
+To better understand the data we are working with, we can visualise it.
+
+```{r}
+# Plot B1uses
+plot(grids["B1uses"], border = NA, main = "B1uses")
+
+# Plot B3ndvi
+plot(grids["B3ndvi"], border = NA, main = "B3ndvi")
+
+# Plot CA1temp
+plot(grids["CA1temp"], border = NA, main = "CA1temp")
+
+# Plot QL2acg
+plot(grids["QL2acg"], border = NA, main = "QL2acg")
+```
+
+### Step 2. Standardization
+
+From the dataframe, we remove rows with missing (null/NA) values in one of the selected columns. This is needed to properly perform the clustering. We then select the relevant features (B1uses, B3ndvi, CA1temp, QL2acg). These features are standardised to ensure they contribute equally to the clustering algorithm.
+
+```{r}
+# remove rows with missing (null/na) values to continue clustering 
+grids <- grids %>%
+  drop_na(B1uses, B3ndvi, CA1temp, QL2acg)
+
+features <- grids |> 
+  select(B1uses, B3ndvi, CA1temp, QL2acg) |>
+  st_drop_geometry() # remove geometry column so we just keep a data table
+  
+X_scaled <- scale(features) # Standardize (mean=0, sd=1) 
+
+head(X_scaled)
+```
+
+### Step 3: Determine the optimal K
+
+We use the **elbow method** to choose a good number of clusters.
+
+For each value of `k` (e.g. 2 to 9), we run K-means and record a value called **inertia** : the total distance between points and their cluster centers. Lower inertia means tighter (better) clusters.
+
+```{r}
+# Initialize an empty numeric vector to store inertia values 
+inertia <- numeric()
+
+# Try k values from 2 to 9
+k_values <- 2:9
+
+# Loop through each k value
+for (k in k_values) {
+  km <- kmeans(X_scaled, centers = k, nstart = 20) 
+  
+  # tot.withinss is Total within-cluster sum of squares
+  # This measures how compact the clusters are: lower is better.
+  inertia <- c(inertia, km$tot.withinss)
+}
+
+# Combine the results into a data frame for plotting
+elbow_df <- data.frame(k = k_values, inertia = inertia)
+
+print(elbow_df)
+```
+
+The changing of inertia with increasing k is visualised and based on the *elbow point* we choose the best value for k. After this elbow point, adding more clusters does not add much to the quality of the end results.
+
+```{r}
+# Make the elbow plot
+plot(k_values, inertia,
+     type = "b",                  # shown both points + lines 
+     col = "darkblue",
+     main = "Elbow Method")
+```
+
+### Step 4. Run K-Means clustering
+
+Looking at the elbow plot, there is not a very clear elbow point. However, to limit the amount of clusters so that we can later define clear typologies we choose `k = 4`.\
+Now we run the K-means algorithm and assign each analysis geometry to one of the four clusters.
+
+```{r}
+# `set.seed()` sets the random number generator to a fixed state
+# Set the seed so the clustering result is always the same when re-run
+set.seed(0)  # The number 0 is just a fixed choice. You can also use 10, 345, etc.
+
+# Choose the number of clusters based on the elbow plot
+k <- 4
+
+# Run K-means clustering on the standardized data
+kmeans_result <- kmeans(X_scaled, centers = k, nstart = 20)
+#print(kmeans_result)
+
+# Add the cluster labels to the spatial data
+grids$cluster <- as.factor(kmeans_result$cluster) # The result kmeans_result$cluster is a list of cluster labels (1 to 4), in the same order as the original rows in X_scaled and grids
+
+head(grids)
+
+# Show how many grids fall into each cluster
+print(table(grids$cluster))
+```
+
+Save the updated analysis geometry data (with a column indicating clusters) to a new GeoPackage file for further analysis and visualisation.
+
+```{r}
+#st_write(grids, "analysisgeom_aggregated_cluster.gpkg")
+```
+
+We can also visualise it directly.
+
+```{r}
+# Plot clusters with base R
+plot(grids["cluster"], 
+     main = "Spatial Pattern of Urban Stream Clusters", 
+     border = NA)
+```
+
+### Step 5. Interpret cluster centers
+
+Now we look at the center of each cluster. First, we check the values in standardized form. Then, we convert them back to the original units, so they are easier to understand.
+
+```{r}
+# Get the cluster centers (in standardized form)
+scaled_centers <- kmeans_result$centers
+
+# Print them
+print("Cluster centers (standardized):")
+print(scaled_centers)
+
+# Convert the centers back to original scale: x * SD + mean
+original_centers <- t(apply(
+  scaled_centers, 1,
+  function(x) x * attr(X_scaled, "scaled:scale") + attr(X_scaled, "scaled:center")
+))
+
+# Print the real-world values
+print("Cluster centers (original):")
+print(original_centers)
+
+```
+
+To interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below shows the unscaled clustered values of each attribute.
+
+### Typology description
+
+| Type | B1uses | B3ndvi | CA1temp | QL2acg | Description |
+|------------|------------|------------|------------|------------|------------|
+| 1 | 0.417 | 0.742 | 0.778 | 0.708 | High B3ndvi, CA1temp, and QL2acg. Low B1uses. |
+| 2 | 0.747 | 0.300 | 0.386 | 7.216e-16 | High B1uses and extremely low QL2acg |
+| 3 | 0.781 | 0.286 | 0.442 | 0.792 | High B1uses and QL2acg |
+| 4 | 0.545 | 0.301 | 0.837 | 0.0177 | High CA1temp and low QL2acg |
+
+### Step 6. (Optional) Calculate distance to cluster center
+
+Optionally, we can compute the distance of each analysis geometry to the cluster center. This can be used as an indication of how well the geometry fits in its cluster, thus how closely an individual geometry resembles the general typology it is categorised in.
+
+```{r}
+## Step 6 (Optional): Compute distance to cluster center
+
+# Get the cluster center for each row, using the cluster assignment
+centroids_matrix <- kmeans_result$centers[kmeans_result$cluster, ]
+
+# Calculate Euclidean distance between each point and its assigned cluster center
+grid_distances <- sqrt(rowSums((X_scaled - centroids_matrix)^2))
+
+# Save to grids
+grids$cluster_dist <- grid_distances
+
+head(grids$cluster_dist)
+
+```
 
 ## Results
 
