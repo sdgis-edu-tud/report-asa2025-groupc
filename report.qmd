@@ -271,6 +271,11 @@ The potential was calculated on range 0-1 directly on Analysis geometry polygons
 
 ##### NDVI
 
+The steps we take to calculate the NDVI are as follow:
+Sentinel-2 satellite imagery was accessed via Google Earth Engine (GEE), covering the study area during the growing season to ensure accurate vegetation representation. The Normalized Difference Vegetation Index (NDVI) was calculated within GEE using the standard formula: 
+NDVI=(B8-B4)/(B8+B4) 
+where B8 represents the near-infrared (NIR) band and B4 represents the red band. The resulting NDVI raster was exported from GEE as a GeoTIFF file and imported into QGIS. 
+In QGIS, the NDVI layer was reprojected, clipped to the study boundary, and further analyzed using raster statistics and classification to evaluate vegetation cover across different spatial units along the Teplica River.
 Based on the different value of NDVI mean, we can deduce the vegetation state in each spatial geometry.
 
 | **\< 0** – Water bodies, shadows, or noise
@@ -279,7 +284,7 @@ Based on the different value of NDVI mean, we can deduce the vegetation state in
 | **0.3–0.6** – Moderate vegetation
 | **\> 0.6** – Dense and healthy vegetation
 
-![NDVI classification](img/NDVI_draft.png)
+![NDVI classification](img/NDVI.png)
 
 ##### Aggregation and normalisation
 
@@ -362,7 +367,7 @@ From Atlas of Slovakia, quite small scale.
 
 Soil retention in this map means ..... Permeability means ....
 
-![Soil potential placeholder](/img/CA_soilpotential.png)
+![Soil potential](/img/CA_soil.png)
 
 ##### Aggregation and normalisation
 
