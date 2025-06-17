@@ -241,7 +241,7 @@ The elements of ÚSES are biocenters, biocorridors (connecting biocenters to all
 
 ###### ÚSES within our area
 
-![Map of ÚSES within our area - placeholder](/img/B1USES_draft.png)
+![Map of ÚSES within our area](/img/USES.png)
 
 ##### Aggregation and normalisation
 
