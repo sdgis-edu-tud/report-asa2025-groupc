@@ -642,8 +642,8 @@ Step 6. (Optional) Calculate distance to cluster center
 First, load the necessary R packages.
 
 ```{r}
-install.packages("sf") 
-install.packages("dplyr")
+#install.packages("sf") 
+#install.packages("dplyr")
 ```
 
 Next, load the required packages:

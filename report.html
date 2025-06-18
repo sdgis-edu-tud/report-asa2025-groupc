@@ -24,6 +24,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -497,7 +531,8 @@ other polygons –&gt; 0</div>
 <p>This chapter is based on the fact that in western slovakia, there is a large drought problem, and water management activities should target capturing water in the landscape. <!-- ^This needs a source, but it is true. --></p>
 <section id="which-spaces-should-be-prioritized-for-interventions-aimed-at-cooling-the-area-down" class="level4">
 <h4 class="anchored" data-anchor-id="which-spaces-should-be-prioritized-for-interventions-aimed-at-cooling-the-area-down">#1 Which spaces should be prioritized for interventions aimed at cooling the area down?</h4>
-<p>To analyse surface temperatures, we found a <a href="https://code.earthengine.google.com/ac986028b56a794aefd3ea54e9cb09ba">Google Earth Engine script</a> made by <a href="https://www.youtube.com/watch?v=3LOMNzBHmjs">Ramadhan</a> on YouTube (2024) that uses information from Sentinel-2, LANDSAT, and DEM to predict a raster LST (land surface temperature) with a higher resolution than other available datasets on LST, namely 10-meter resolution. The computations are complicated and will not be discussed in further detail in this report, but the results are relevant and useful to our research. Mainly to answer the question of which spaces should be prioritized to be wetter to help the area cool down, because now it is too hot. The draft image shows the results for dates 2024-06-01 to 2024-08-31, since these three months include the summer and will therefore be most susceptible for heat stress, which makes this time period interesting to look at for our research.</p>
+<p>To analyse surface temperatures, we found a <a href="https://code.earthengine.google.com/ac986028b56a794aefd3ea54e9cb09ba">Google Earth Engine script</a> made by <a href="https://www.youtube.com/watch?v=3LOMNzBHmjs">Ramadhan</a> on YouTube (2024) that uses information from Sentinel-2, LANDSAT, and DEM to predict a raster LST (land surface temperature) with a higher resolution than other available datasets on LST, namely 10-meter resolution. The computations are complicated and will only be discussed in general lines in this report, but the results are relevant and useful to our research. Mainly to answer the question of which spaces should be prioritized to be wetter to help the area cool down, because now it is too hot. The draft image shows the results for dates 2024-06-01 to 2024-08-31, since these three months include the summer and will therefore be most susceptible for heat stress, which makes this time period interesting to look at for our research.</p>
+<p>The method uses the different datasets to extract several attributes (e.g.&nbsp;B2, B3, elevation, slope, wetness, greenness, dryness, etc.). Together with the recorded LST data, a correlation between attributes and LST is calculated. For the six attributes with the highest correlation, the average correlation matrices are computed and the three lowest correlation matrices are used to set up a model. The model is then trained with test data to predict LST based on the provided correlation information. Then, the model is applied to data in the area of interest to create a dataset with LST predictions that covers the full area in detail (instead of the available recorded LST datasets with big gridcells).</p>
 <p>The Google Earth Engine (GEE) script was adapted to analyse our area of interest (Senica and surroundings) and an interesting time period as mentioned earlier. The code produced a GeoTiff file that we downloaded for further processing. The LST values in this file are given in degrees Celsius and range from 27-38. The raster GeoTiff file was combined with our analysis geometry layer using the ‘zonal statistics’ tool in QGIS. This resulted in a vector layer with our analysis polygons, including a column in the attribute table representing the mean value of the LST raster layer inside that specific polygon. This value represents the aggregation of LST values, which was then normalized with the following statement in the field calculator:</p>
 <pre><code>1 - (maximum("_mean") - "_mean") / (maximum("_mean") -  minimum("_mean"))</code></pre>
 <p>The normalization is a linear min-max normalization for a benefit criterion, meaning that areas with a higher LST should be prioritized for improvements and development. A lower LST would be desirable and thus has less need for spatial developments to improve LST, which is represented in lower normalization values (closer to 0).</p>
@@ -820,9 +855,395 @@ END</code></pre>
 </section>
 <section id="typology-construction" class="level2">
 <h2 class="anchored" data-anchor-id="typology-construction">Typology construction</h2>
-<p>Kelly is working on this.</p>
-<p>We feel like our goal for typology alligns pretty well with our main research question <em>How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?</em></p>
-<p>Hopefully, we will get types of areas that can make it easier to create example design interventions. Perhaps something like “areas with large potential for community facilities with water retention function”, “areas with community functions and maintained high biodiversity”, “areas with biodiversity boost, improved surface permeability and connectivity”.</p>
+<!-- Kelly is working on this. -->
+<!-- We feel like our goal for typology alligns pretty well with our main research question *How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?* -->
+<!-- Hopefully, we will get types of areas that can make it easier to create example design interventions. Perhaps something like "areas with large potential for community facilities with water retention function", "areas with community functions and maintained high biodiversity", "areas with biodiversity boost, improved surface permeability and connectivity". -->
+<p>The typology construction is based on the course’s provided tutorial on how to construct urban typologies in R. We use K-means Clustering, an unsupervised machine learning method, to find similar typologies for areas around an urban stream based on earlier analysed qualities. The main goal for the typological clustering is to get types of areas that can make it easier to create example design interventions. Perhaps something like “areas with large potential for community facilities with water retention function”, “areas with community functions and maintained high biodiversity”, “areas with biodiversity boost, improved surface permeability and connectivity”. We feel like our goal for typology alligns pretty well with our main research question <em>How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?</em></p>
+<p>The focus area of the typology clustering is the stream corridor in Senica and the spatial unit is the earlier defined analysis geometries. For the typology clustering, we use four variables that were previously analysed, namely:</p>
+<p><code>B1uses</code> - Normalised scores based on the connectivity of an area to ÚSES (the regional ecological stability system).</p>
+<p><code>B3ndvi</code> - Normalised scores based on the current state of vegetation in an area, as indicated by the ndvi (Normalised Difference Vegetation Index).</p>
+<p><code>CA1temp</code> - Normalised scores based on the mean LST (Land Surface Temperature) of an area.</p>
+<p><code>QL2acg</code> - Normalised scores based on the potential of an area for “central” functions. Calculated by using high angular choice within polygons.</p>
+<p>These specific attributes were chosen, because we judged them to be the most relevant for typology clustering. Both biodiversity attributes (B1uses and B3ndvi) give information about the areas and their current characteristics, making them useful for typology clustering. The other two attributes (CA1temp and QL2acg) got a high weight in the MCDA and are thus important to our research question. Another attribute that scored high in the MCDA is QL3gr, indicating spaces that lack green area within a radius of 500m. This attribute has been left out of the typology construction, since the presence and quality of green areas is already included in attribute B3ndvi and we judged B3ndvi to be more about the area itself than QL3gr, which takes into account the surroundings as well.</p>
+<p>The dataset that is used, is an aggregated dataset containing all normalised attributes for each analysis geometry. The clustering steps can be generally described as follows:</p>
+<p>Step 1. Load R packages and data<br>
+Step 2. Standardization<br>
+Step 3. Determine optimal k<br>
+Step 4. Run K-means clustering<br>
+Step 5. Interpret cluster center<br>
+Step 6. (Optional) Calculate distance to cluster center</p>
+<section id="step-1.-load-r-packages-and-data" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.-load-r-packages-and-data">Step 1. Load R packages and data</h3>
+<p>First, load the necessary R packages.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("sf") </span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("dplyr")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, load the required packages:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co"># for processing vector data </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Linking to GEOS 3.13.1, GDAL 3.11.0, PROJ 9.6.0; sf_use_s2() is TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># for selecting and transforming data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Read the dataset from the GeoPackage file and display the first few rows using head()</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>grids <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/Senica/analysisgeometry_aggregated_allattributes.gpkg"</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first few rows of the data</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(grids)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 6 features and 10 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: 668535.9 ymin: 5392994 xmax: 669132.2 ymax: 5393061
+Projected CRS: ETRS89 / UTM zone 33N
+               name id_loc_int       QL3gr    QL1acl    QL2acg B1uses B2pot
+1 biocorridorriver1          1 0.000000000 0.1959299 0.8273824      1   0.6
+2 biocorridorriver1          3 0.000000000 0.2833527 0.8273824      1   0.6
+3 biocorridorriver1          2 0.000000000 0.0000000 0.0000000      1   0.6
+4 biocorridorriver1         13 0.000000000 0.3913989 0.7737928      1   0.6
+5 biocorridorriver1         12 0.000000000 0.0000000 0.0000000      1   0.6
+6 biocorridorriver1         20 0.003518765 0.4319898 0.8302794      1   0.6
+  B3ndvi CA1temp CA2soil                           geom
+1     NA      NA       1 MULTIPOLYGON (((668571.4 53...
+2     NA      NA       1 MULTIPOLYGON (((668583.8 53...
+3     NA      NA       1 MULTIPOLYGON (((668732.6 53...
+4     NA      NA       1 MULTIPOLYGON (((668773.7 53...
+5     NA      NA       1 MULTIPOLYGON (((668852.4 53...
+6     NA      NA       1 MULTIPOLYGON (((668956.7 53...</code></pre>
+</div>
+</div>
+<p>We can check how many analysis geometries are in the file, in our case 600.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count how many analysis geometries we have</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(grids)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 600</code></pre>
+</div>
+</div>
+<p>To better understand the data we are working with, we can visualise it.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot B1uses</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(grids[<span class="st">"B1uses"</span>], <span class="at">border =</span> <span class="cn">NA</span>, <span class="at">main =</span> <span class="st">"B1uses"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="report_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot B3ndvi</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(grids[<span class="st">"B3ndvi"</span>], <span class="at">border =</span> <span class="cn">NA</span>, <span class="at">main =</span> <span class="st">"B3ndvi"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="report_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot CA1temp</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(grids[<span class="st">"CA1temp"</span>], <span class="at">border =</span> <span class="cn">NA</span>, <span class="at">main =</span> <span class="st">"CA1temp"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="report_files/figure-html/unnamed-chunk-5-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot QL2acg</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(grids[<span class="st">"QL2acg"</span>], <span class="at">border =</span> <span class="cn">NA</span>, <span class="at">main =</span> <span class="st">"QL2acg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="report_files/figure-html/unnamed-chunk-5-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2.-standardization" class="level3">
+<h3 class="anchored" data-anchor-id="step-2.-standardization">Step 2. Standardization</h3>
+<p>From the dataframe, we remove rows with missing (null/NA) values in one of the selected columns. This is needed to properly perform the clustering. We then select the relevant features (B1uses, B3ndvi, CA1temp, QL2acg). These features are standardised to ensure they contribute equally to the clustering algorithm.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove rows with missing (null/na) values to continue clustering </span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>grids <span class="ot">&lt;-</span> grids <span class="sc">%&gt;%</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(B1uses, B3ndvi, CA1temp, QL2acg)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>features <span class="ot">&lt;-</span> grids <span class="sc">|&gt;</span> </span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(B1uses, B3ndvi, CA1temp, QL2acg) <span class="sc">|&gt;</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>() <span class="co"># remove geometry column so we just keep a data table</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>X_scaled <span class="ot">&lt;-</span> <span class="fu">scale</span>(features) <span class="co"># Standardize (mean=0, sd=1) </span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(X_scaled)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     B1uses      B3ndvi     CA1temp     QL2acg
+1 0.9753121 -0.37895766  0.49857323 -0.9419790
+2 0.9753121 -0.40992017  0.04600715  0.8735885
+3 0.9753121 -0.42500734  0.42961078  1.0899902
+4 0.9753121 -0.72952948  0.01583608  1.0869220
+5 0.9753121 -0.07110532  0.42961078 -0.9419790
+6 0.9753121 -0.47565398 -0.38931831 -0.9419790</code></pre>
+</div>
+</div>
+</section>
+<section id="step-3-determine-the-optimal-k" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-determine-the-optimal-k">Step 3: Determine the optimal K</h3>
+<p>We use the <strong>elbow method</strong> to choose a good number of clusters.</p>
+<p>For each value of <code>k</code> (e.g.&nbsp;2 to 9), we run K-means and record a value called <strong>inertia</strong> : the total distance between points and their cluster centers. Lower inertia means tighter (better) clusters.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize an empty numeric vector to store inertia values </span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>inertia <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Try k values from 2 to 9</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>k_values <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">9</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop through each k value</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (k <span class="cf">in</span> k_values) {</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  km <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(X_scaled, <span class="at">centers =</span> k, <span class="at">nstart =</span> <span class="dv">20</span>) </span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># tot.withinss is Total within-cluster sum of squares</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This measures how compact the clusters are: lower is better.</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>  inertia <span class="ot">&lt;-</span> <span class="fu">c</span>(inertia, km<span class="sc">$</span>tot.withinss)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the results into a data frame for plotting</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>elbow_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">k =</span> k_values, <span class="at">inertia =</span> inertia)</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(elbow_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  k   inertia
+1 2 1400.4364
+2 3 1102.4197
+3 4  859.0034
+4 5  740.4449
+5 6  623.5229
+6 7  547.0234
+7 8  471.7611
+8 9  411.9724</code></pre>
+</div>
+</div>
+<p>The changing of inertia with increasing k is visualised and based on the <em>elbow point</em> we choose the best value for k. After this elbow point, adding more clusters does not add much to the quality of the end results.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the elbow plot</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(k_values, inertia,</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"b"</span>,                  <span class="co"># shown both points + lines </span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"darkblue"</span>,</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Elbow Method"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="report_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="step-4.-run-k-means-clustering" class="level3">
+<h3 class="anchored" data-anchor-id="step-4.-run-k-means-clustering">Step 4. Run K-Means clustering</h3>
+<p>Looking at the elbow plot, there is not a very clear elbow point. However, to limit the amount of clusters so that we can later define clear typologies we choose <code>k = 4</code>.<br>
+Now we run the K-means algorithm and assign each analysis geometry to one of the four clusters.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># `set.seed()` sets the random number generator to a fixed state</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the seed so the clustering result is always the same when re-run</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)  <span class="co"># The number 0 is just a fixed choice. You can also use 10, 345, etc.</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Choose the number of clusters based on the elbow plot</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Run K-means clustering on the standardized data</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>kmeans_result <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(X_scaled, <span class="at">centers =</span> k, <span class="at">nstart =</span> <span class="dv">20</span>)</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="co">#print(kmeans_result)</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the cluster labels to the spatial data</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>grids<span class="sc">$</span>cluster <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(kmeans_result<span class="sc">$</span>cluster) <span class="co"># The result kmeans_result$cluster is a list of cluster labels (1 to 4), in the same order as the original rows in X_scaled and grids</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(grids)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 6 features and 11 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: 669998.5 ymin: 5392544 xmax: 670467.4 ymax: 5392697
+Projected CRS: ETRS89 / UTM zone 33N
+               name id_loc_int QL3gr    QL1acl    QL2acg B1uses B2pot    B3ndvi
+1 biocorridorriver1         82     0 0.0000000 0.0000000      1   0.6 0.3024099
+2 biocorridorriver1         83     0 0.2866132 0.7184709      1   0.6 0.2936403
+3 biocorridorriver1         90     0 0.3971186 0.8041071      1   0.6 0.2893672
+4 biocorridorriver1         91     0 0.3971186 0.8028929      1   0.6 0.2031165
+5 biocorridorriver1         96     0 0.0000000 0.0000000      1   0.6 0.3896038
+6 biocorridorriver1         97     0 0.0000000 0.0000000      1   0.6 0.2750224
+  CA1temp CA2soil                           geom cluster
+1   0.716       1 MULTIPOLYGON (((669998.5 53...       4
+2   0.611       1 MULTIPOLYGON (((670038.5 53...       3
+3   0.700       1 MULTIPOLYGON (((670149.7 53...       3
+4   0.604       1 MULTIPOLYGON (((670232.7 53...       3
+5   0.700       1 MULTIPOLYGON (((670323.1 53...       4
+6   0.510       1 MULTIPOLYGON (((670421.1 53...       2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show how many grids fall into each cluster</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">table</span>(grids<span class="sc">$</span>cluster))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  1   2   3   4 
+125 139 117 110 </code></pre>
+</div>
+</div>
+<p>Save the updated analysis geometry data (with a column indicating clusters) to a new GeoPackage file for further analysis and visualisation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#st_write(grids, "analysisgeom_aggregated_cluster02.gpkg")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can also visualise it directly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot clusters with base R</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(grids[<span class="st">"cluster"</span>], </span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial Pattern of Urban Stream Clusters"</span>, </span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">border =</span> <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="report_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="step-5.-interpret-cluster-centers" class="level3">
+<h3 class="anchored" data-anchor-id="step-5.-interpret-cluster-centers">Step 5. Interpret cluster centers</h3>
+<p>Now we look at the center of each cluster. First, we check the values in standardized form. Then, we convert them back to the original units, so they are easier to understand.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the cluster centers (in standardized form)</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>scaled_centers <span class="ot">&lt;-</span> kmeans_result<span class="sc">$</span>centers</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print them</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Cluster centers (standardized):"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Cluster centers (standardized):"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(scaled_centers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      B1uses     B3ndvi    CA1temp     QL2acg
+1 -0.5458306  1.1746584  0.7672854  0.8457834
+2  0.3166772 -0.3868650 -0.9239013 -0.9419790
+3  0.4046139 -0.4354863 -0.6831455  1.0588248
+4 -0.2102649 -0.3827834  1.0221785 -0.8970032</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the centers back to original scale: x * SD + mean</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>original_centers <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">apply</span>(</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  scaled_centers, <span class="dv">1</span>,</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">function</span>(x) x <span class="sc">*</span> <span class="fu">attr</span>(X_scaled, <span class="st">"scaled:scale"</span>) <span class="sc">+</span> <span class="fu">attr</span>(X_scaled, <span class="st">"scaled:center"</span>)</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the real-world values</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Cluster centers (original):"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Cluster centers (original):"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(original_centers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     B1uses    B3ndvi   CA1temp       QL2acg
+1 0.4168000 0.7424451 0.7783440 7.074676e-01
+2 0.7474820 0.3001703 0.3859712 7.216450e-16
+3 0.7811966 0.2863992 0.4418291 7.917741e-01
+4 0.5454545 0.3013264 0.8374818 1.779817e-02</code></pre>
+</div>
+</div>
+<p>To interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below shows the unscaled clustered values of each attribute.</p>
+</section>
+<section id="typology-description" class="level3">
+<h3 class="anchored" data-anchor-id="typology-description">Typology description</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>B1uses</th>
+<th>B3ndvi</th>
+<th>CA1temp</th>
+<th>QL2acg</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>0.417</td>
+<td>0.742</td>
+<td>0.778</td>
+<td>0.708</td>
+<td>High B3ndvi, CA1temp, and QL2acg. Low B1uses.</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>0.747</td>
+<td>0.300</td>
+<td>0.386</td>
+<td>7.216e-16</td>
+<td>High B1uses and extremely low QL2acg</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>0.781</td>
+<td>0.286</td>
+<td>0.442</td>
+<td>0.792</td>
+<td>High B1uses and QL2acg</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>0.545</td>
+<td>0.301</td>
+<td>0.837</td>
+<td>0.0177</td>
+<td>High CA1temp and low QL2acg</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-6.-optional-calculate-distance-to-cluster-center" class="level3">
+<h3 class="anchored" data-anchor-id="step-6.-optional-calculate-distance-to-cluster-center">Step 6. (Optional) Calculate distance to cluster center</h3>
+<p>Optionally, we can compute the distance of each analysis geometry to the cluster center. This can be used as an indication of how well the geometry fits in its cluster, thus how closely an individual geometry resembles the general typology it is categorised in.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Step 6 (Optional): Compute distance to cluster center</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the cluster center for each row, using the cluster assignment</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>centroids_matrix <span class="ot">&lt;-</span> kmeans_result<span class="sc">$</span>centers[kmeans_result<span class="sc">$</span>cluster, ]</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Euclidean distance between each point and its assigned cluster center</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>grid_distances <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">rowSums</span>((X_scaled <span class="sc">-</span> centroids_matrix)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Save to grids</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>grids<span class="sc">$</span>cluster_dist <span class="ot">&lt;-</span> grid_distances</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(grids<span class="sc">$</span>cluster_dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.2968395 0.9446302 1.2510013 0.9494854 1.3623125 0.8529141</code></pre>
+</div>
+</div>
+</section>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
