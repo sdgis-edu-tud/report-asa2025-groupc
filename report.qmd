@@ -771,7 +771,7 @@ print(table(grids$cluster))
 Save the updated analysis geometry data (with a column indicating clusters) to a new GeoPackage file for further analysis and visualisation.
 
 ```{r}
-#st_write(grids, "analysisgeom_aggregated_cluster.gpkg")
+#st_write(grids, "analysisgeom_aggregated_cluster02.gpkg")
 ```
 
 We can also visualise it directly.
