@@ -269,7 +269,7 @@ Potential for high impact improvement is determined by unsatisfactory ecological
 
 The potential was calculated on range 0-1 directly on Analysis geometry polygons.
 
-![Criterion B1pot – Improvement potential (normalised.)](/img/MCDA_conclusions_B1uses.png)
+![Criterion B2pot – Improvement potential (normalised.)](/img/MCDA_conclusions_B2pot.png)
 
 #### #3 Which spaces should be prioritized based on current state of the vegetation?
 
@@ -310,6 +310,9 @@ The calculated weights for biodiversity indicators are:
 #### Biodiversity conclusion
 
 <!--# some text  conclusion is needed here -->
+In this part, we developed a spatially explicit composite biodiversity index map for the spatial geometry by integrating three indicators: NDVI, USES (spatial system of ecological stability), and POT (ecological quality improvement potential). Because we agree that vegetative cover remains a dominant factor influencing riparian biodiversity, in line with existing ecological connection, we assigned NDVI with the highest weight (0.083), followed by USES(0.058) and POT(0.027). At last we generated a composite map reflecting biodiversity improvement potential along the Teplica.
+
+The resulting map reveals a clear spatial pattern: because of NDVI and USES’s high weight, area with high improvement potential are those where have low NDVI index and are less connected with USES, particularly in the midstream and upstream sections. 
 
 ![MCDA Biodiversity conclusion](/img/MCDA_conclusions_B.png)
 
