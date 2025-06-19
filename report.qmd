@@ -4,13 +4,22 @@ subtitle: "Project report of Group C (WIP)"
 author:
   - name: "Hongyue Kang"
     affiliation: "MSc Urbanism"
-  - name: "Jiaoyang Wu"
-    affiliation: "MSc Geomatics"
   - name: "Kelly Schoonderwoerd"
     affiliation: "MSc Geomatics"
   - name: "Viola Ebermannová"
     affiliation: "MSc Urbanism"
-format: html
+# format: html
+
+# this toc is not fully fuctional, but at least sth i guess. we might modify the levels still:
+
+format:
+  html:
+    toc: true
+    toc-location: right
+    toc-depth: 4
+    toc-expand: 2
+
+
 ---
 
 <!-- ::: callout -->
@@ -60,6 +69,10 @@ format: html
 <!-- and start the report from the Introduction section below. -->
 
 <!-- ::: -->
+
+```{=html}
+<div id='toc'></div>
+```
 
 ## Introduction
 
