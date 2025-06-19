@@ -660,12 +660,12 @@ library(tidyr)
 
 Read the dataset from the GeoPackage file and display the first few rows using head()
 
-```{r}
-grids <- st_read("data/Senica/analysisgeometry_aggregated_allattributes.gpkg", quiet = TRUE)
+ ```{r}
+ grids <- st_read("data/analysisgeometry_aggregated_allattributes.gpkg", quiet = TRUE)
 
-# View the first few rows of the data
-head(grids)
-```
+ # View the first few rows of the data
+ head(grids)
+ ```
 
 We can check how many analysis geometries are in the file, in our case 600.
 
