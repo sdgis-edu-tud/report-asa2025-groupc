@@ -398,6 +398,7 @@ The calculated weights for climate adaptation criteria are:
 #### Climate adaptation conclusion
 
 <!-- some conclusion and interpretation text -->
+For climate adaptation, we considered two key factors: land surface temperature (CA1temp) and water retention capacity (CA2soil). As shown in the resulting map, spatial geometries located within urban areas, as well as those near the downstream section of the Teplica River, are identified as more suitable for climate adaptation interventions. This outcome is primarily due to the significantly higher weight assigned to CA1temp, which has a more direct impact on climate adaptation potential. Consequently, areas currently experiencing higher land surface temperatures are prioritized as key targets for intervention.
 
 ![MCDA Climate adaptation conclusion](/img/MCDA_conclusions_CA.png)
 
