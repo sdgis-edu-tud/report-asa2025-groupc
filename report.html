@@ -296,27 +296,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!--Add diagrams and text describing the approach to create objectives, research questions and subquestions -->
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src=".\img/placeholder.png" class="img-fluid figure-img"></p>
-<figcaption>Venn diagram of Biodiversity, Climate adaptation, and Quality of life - placeholder</figcaption>
+<p><img src=".\img/_venndiagram.png" class="img-fluid figure-img" width="400"></p>
+<figcaption>Approach: combining the themes of biodiversity, climate adaptation, and quality of life</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src=".\img/placeholder.png" class="img-fluid figure-img"></p>
-<figcaption>Research structure – simplified flow chart of topics - (?objectives - attributes, highlighted the ones we chose?) - placeholder</figcaption>
+<p><img src=".\img/MCDAresearchStructure_overview.png" class="img-fluid figure-img"></p>
+<figcaption>Research structure – simplified flow chart of indicators used in each of the three themes</figcaption>
 </figure>
 </div>
 <section id="detailed-research-structure" class="level4">
 <h4 class="anchored" data-anchor-id="detailed-research-structure">Detailed research structure</h4>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><embed src="pdf/ResearchStructure_20250610.pdf" style="width:100.0%;height:100.0%"></p>
-<figcaption>Research structure – detailed flow chart, version 10. 6. (open image in new tab to see in full).</figcaption>
+<p><embed src="pdf/MCDA_researchStructure_detailed.pdf" style="width:100.0%;height:100.0%"></p>
+<figcaption>Research structure – detailed flow chart</figcaption>
 </figure>
 </div>
-<iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0">
+<iframe src="pdf/MCDA_researchStructure_detailed.pdf" width="100%" height="500" frameborder="0">
 </iframe>
-<iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0"></iframe>
+<iframe src="pdf/MCDA_researchStructure_detailed.pdf" width="100%" height="500" frameborder="0">
+</iframe>
 
 <!-- ::: {#fig-resstr} -->
 <!-- <iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0" /> -->
@@ -982,12 +983,12 @@ Attaching package: 'dplyr'</code></pre>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Read the dataset from the GeoPackage file and display the first few rows using head()</p>
-<p>::: {.cell}</p>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>grids <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/analysisgeometry_aggregated_allattributes.gpkg"</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first few rows of the data</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(grids)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>::: {.cell-output .cell-output-stdout}</p>
+<div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 6 features and 10 fields
 Geometry type: MULTIPOLYGON
 Dimension:     XY
@@ -1007,7 +1008,8 @@ Projected CRS: ETRS89 / UTM zone 33N
 4     NA      NA       1 MULTIPOLYGON (((668773.7 53...
 5     NA      NA       1 MULTIPOLYGON (((668852.4 53...
 6     NA      NA       1 MULTIPOLYGON (((668956.7 53...</code></pre>
-<p>::: :::</p>
+</div>
+</div>
 <p>We can check how many analysis geometries are in the file, in our case 600.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count how many analysis geometries we have</span></span>
@@ -1113,9 +1115,9 @@ Projected CRS: ETRS89 / UTM zone 33N
 3 4  859.0034
 4 5  740.4449
 5 6  623.5229
-6 7  545.1301
-7 8  473.0536
-8 9  405.7474</code></pre>
+6 7  544.3696
+7 8  470.8772
+8 9  402.1753</code></pre>
 </div>
 </div>
 <p>The changing of inertia with increasing k is visualised and based on the <em>elbow point</em> we choose the best value for k. After this elbow point, adding more clusters does not add much to the quality of the end results.</p>
