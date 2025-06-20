@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.7.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,8 +24,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -36,7 +37,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -61,20 +62,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="report_files/libs/clipboard/clipboard.min.js"></script>
-<script src="report_files/libs/quarto-html/quarto.js"></script>
+<script src="report_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="report_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="report_files/libs/quarto-html/popper.min.js"></script>
 <script src="report_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="report_files/libs/quarto-html/anchor.min.js"></script>
 <link href="report_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="report_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="report_files/libs/quarto-html/quarto-syntax-highlighting-17a5f7109c529cfde00c5b46f211b69b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="report_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="report_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="report_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
 
-<body>
+<body class="quarto-light">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -84,8 +86,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul>
+  <li><a href="#key-words" id="toc-key-words" class="nav-link" data-scroll-target="#key-words">Key words:</a></li>
   <li><a href="#colophon" id="toc-colophon" class="nav-link" data-scroll-target="#colophon">Colophon</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#students-roles-and-contributions" id="toc-students-roles-and-contributions" class="nav-link" data-scroll-target="#students-roles-and-contributions">Students – roles and contributions</a></li>
   <li><a href="#course-information" id="toc-course-information" class="nav-link" data-scroll-target="#course-information">Course information</a></li>
   </ul></li>
@@ -98,36 +101,68 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#explanation-of-how-mcda-works" id="toc-explanation-of-how-mcda-works" class="nav-link" data-scroll-target="#explanation-of-how-mcda-works">Explanation of how MCDA works</a></li>
   <li><a href="#selecting-objectives-and-criteria-three-pillar-system" id="toc-selecting-objectives-and-criteria-three-pillar-system" class="nav-link" data-scroll-target="#selecting-objectives-and-criteria-three-pillar-system">Selecting objectives and criteria – three pillar system</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#detailed-research-structure" id="toc-detailed-research-structure" class="nav-link" data-scroll-target="#detailed-research-structure">Detailed research structure</a></li>
-  <li><a href="#weighting" id="toc-weighting" class="nav-link" data-scroll-target="#weighting">Weighting</a></li>
   </ul></li>
+  <li><a href="#weighting" id="toc-weighting" class="nav-link" data-scroll-target="#weighting">Weighting</a></li>
   <li><a href="#analysis-geometry" id="toc-analysis-geometry" class="nav-link" data-scroll-target="#analysis-geometry">Analysis geometry</a>
-  <ul class="collapse">
-  <li><a href="#analysis-geometry-update-after-27.-5.-consultation" id="toc-analysis-geometry-update-after-27.-5.-consultation" class="nav-link" data-scroll-target="#analysis-geometry-update-after-27.-5.-consultation">Analysis geometry update after 27. 5. consultation</a></li>
+  <ul>
+  <li><a href="#principle-1-úses" id="toc-principle-1-úses" class="nav-link" data-scroll-target="#principle-1-úses">Principle 1: ÚSES</a></li>
+  <li><a href="#principle-2-flood-plain" id="toc-principle-2-flood-plain" class="nav-link" data-scroll-target="#principle-2-flood-plain">Principle 2: Flood plain</a></li>
+  <li><a href="#principle-3-morphology" id="toc-principle-3-morphology" class="nav-link" data-scroll-target="#principle-3-morphology">Principle 3: Morphology</a></li>
+  <li><a href="#principle-4-parcelation" id="toc-principle-4-parcelation" class="nav-link" data-scroll-target="#principle-4-parcelation">Principle 4: Parcelation</a></li>
   <li><a href="#land-cover-classification" id="toc-land-cover-classification" class="nav-link" data-scroll-target="#land-cover-classification">Land cover classification</a></li>
   </ul></li>
   <li><a href="#data-structure" id="toc-data-structure" class="nav-link" data-scroll-target="#data-structure">Data structure</a></li>
   <li><a href="#biodiversity" id="toc-biodiversity" class="nav-link" data-scroll-target="#biodiversity">Biodiversity</a>
+  <ul>
+  <li><a href="#b1uses-which-spaces-should-be-prioritised-because-of-their-connectivity-to-úses" id="toc-b1uses-which-spaces-should-be-prioritised-because-of-their-connectivity-to-úses" class="nav-link" data-scroll-target="#b1uses-which-spaces-should-be-prioritised-because-of-their-connectivity-to-úses"><em>B1uses</em> – Which spaces should be prioritised because of their connectivity to ÚSES?</a>
   <ul class="collapse">
-  <li><a href="#which-spaces-should-be-prioritised-because-of-their-connectivity-to-úses" id="toc-which-spaces-should-be-prioritised-because-of-their-connectivity-to-úses" class="nav-link" data-scroll-target="#which-spaces-should-be-prioritised-because-of-their-connectivity-to-úses">#1 Which spaces should be prioritised because of their connectivity to ÚSES?</a></li>
-  <li><a href="#which-spaces-should-be-prioritised-based-on-ecological-quality-improvement-potential" id="toc-which-spaces-should-be-prioritised-based-on-ecological-quality-improvement-potential" class="nav-link" data-scroll-target="#which-spaces-should-be-prioritised-based-on-ecological-quality-improvement-potential">#2 Which spaces should be prioritised based on ecological quality improvement potential?</a></li>
-  <li><a href="#which-spaces-should-be-prioritized-based-on-current-state-of-the-vegetation" id="toc-which-spaces-should-be-prioritized-based-on-current-state-of-the-vegetation" class="nav-link" data-scroll-target="#which-spaces-should-be-prioritized-based-on-current-state-of-the-vegetation">#3 Which spaces should be prioritized based on current state of the vegetation?</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#aggregation-and-normalisation" id="toc-aggregation-and-normalisation" class="nav-link" data-scroll-target="#aggregation-and-normalisation">Aggregation and normalisation</a></li>
+  </ul></li>
+  <li><a href="#b2pot-which-spaces-should-be-prioritised-based-on-ecological-quality-improvement-potential" id="toc-b2pot-which-spaces-should-be-prioritised-based-on-ecological-quality-improvement-potential" class="nav-link" data-scroll-target="#b2pot-which-spaces-should-be-prioritised-based-on-ecological-quality-improvement-potential"><em>B2pot</em> – Which spaces should be prioritised based on ecological quality improvement potential?</a>
+  <ul class="collapse">
+  <li><a href="#aggregation-and-normalisation-1" id="toc-aggregation-and-normalisation-1" class="nav-link" data-scroll-target="#aggregation-and-normalisation-1">Aggregation and normalisation</a></li>
+  </ul></li>
+  <li><a href="#b3ndvi-which-spaces-should-be-prioritized-based-on-current-state-of-the-vegetation" id="toc-b3ndvi-which-spaces-should-be-prioritized-based-on-current-state-of-the-vegetation" class="nav-link" data-scroll-target="#b3ndvi-which-spaces-should-be-prioritized-based-on-current-state-of-the-vegetation"><em>B3ndvi</em> – Which spaces should be prioritized based on current state of the vegetation?</a>
+  <ul class="collapse">
+  <li><a href="#ndvi" id="toc-ndvi" class="nav-link" data-scroll-target="#ndvi">NDVI</a></li>
+  <li><a href="#aggregation-and-normalisation-2" id="toc-aggregation-and-normalisation-2" class="nav-link" data-scroll-target="#aggregation-and-normalisation-2">Aggregation and normalisation</a></li>
+  </ul></li>
   <li><a href="#weighting-1" id="toc-weighting-1" class="nav-link" data-scroll-target="#weighting-1">Weighting</a></li>
   <li><a href="#biodiversity-conclusion" id="toc-biodiversity-conclusion" class="nav-link" data-scroll-target="#biodiversity-conclusion">Biodiversity conclusion</a></li>
   </ul></li>
   <li><a href="#climate-adaptation" id="toc-climate-adaptation" class="nav-link" data-scroll-target="#climate-adaptation">Climate adaptation</a>
+  <ul>
+  <li><a href="#ca1temp-which-spaces-should-be-prioritized-for-interventions-aimed-at-cooling-the-area-down" id="toc-ca1temp-which-spaces-should-be-prioritized-for-interventions-aimed-at-cooling-the-area-down" class="nav-link" data-scroll-target="#ca1temp-which-spaces-should-be-prioritized-for-interventions-aimed-at-cooling-the-area-down"><em>CA1temp</em> – Which spaces should be prioritized for interventions aimed at cooling the area down?</a>
   <ul class="collapse">
-  <li><a href="#which-spaces-should-be-prioritized-for-interventions-aimed-at-cooling-the-area-down" id="toc-which-spaces-should-be-prioritized-for-interventions-aimed-at-cooling-the-area-down" class="nav-link" data-scroll-target="#which-spaces-should-be-prioritized-for-interventions-aimed-at-cooling-the-area-down">#1 Which spaces should be prioritized for interventions aimed at cooling the area down?</a></li>
-  <li><a href="#where-does-the-soil-have-high-potential-for-water-retention" id="toc-where-does-the-soil-have-high-potential-for-water-retention" class="nav-link" data-scroll-target="#where-does-the-soil-have-high-potential-for-water-retention">#2 Where does the soil have high potential for water retention?</a></li>
+  <li><a href="#weigting-and-normalisation" id="toc-weigting-and-normalisation" class="nav-link" data-scroll-target="#weigting-and-normalisation">Weigting and normalisation</a></li>
+  </ul></li>
+  <li><a href="#ca2soil-where-does-the-soil-have-high-potential-for-water-retention" id="toc-ca2soil-where-does-the-soil-have-high-potential-for-water-retention" class="nav-link" data-scroll-target="#ca2soil-where-does-the-soil-have-high-potential-for-water-retention"><em>CA2soil</em> – Where does the soil have high potential for water retention?</a>
+  <ul class="collapse">
+  <li><a href="#soil-retention-ability-and-permeability" id="toc-soil-retention-ability-and-permeability" class="nav-link" data-scroll-target="#soil-retention-ability-and-permeability">Soil retention ability and permeability</a></li>
+  <li><a href="#aggregation-and-normalisation-3" id="toc-aggregation-and-normalisation-3" class="nav-link" data-scroll-target="#aggregation-and-normalisation-3">Aggregation and normalisation</a></li>
+  </ul></li>
   <li><a href="#weighting-2" id="toc-weighting-2" class="nav-link" data-scroll-target="#weighting-2">Weighting</a></li>
   <li><a href="#climate-adaptation-conclusion" id="toc-climate-adaptation-conclusion" class="nav-link" data-scroll-target="#climate-adaptation-conclusion">Climate adaptation conclusion</a></li>
   </ul></li>
   <li><a href="#quality-of-life" id="toc-quality-of-life" class="nav-link" data-scroll-target="#quality-of-life">Quality of life</a>
+  <ul>
+  <li><a href="#ql1acl-where-is-potential-for-community-functions" id="toc-ql1acl-where-is-potential-for-community-functions" class="nav-link" data-scroll-target="#ql1acl-where-is-potential-for-community-functions"><em>QL1acl</em> – Where is potential for community functions?</a>
   <ul class="collapse">
-  <li><a href="#where-is-potential-for-community-functions" id="toc-where-is-potential-for-community-functions" class="nav-link" data-scroll-target="#where-is-potential-for-community-functions">#1 Where is potential for community functions?</a></li>
-  <li><a href="#where-is-potential-for-central-functions" id="toc-where-is-potential-for-central-functions" class="nav-link" data-scroll-target="#where-is-potential-for-central-functions">#2 Where is potential for “central” functions?</a></li>
-  <li><a href="#where-is-a-large-need-for-green" id="toc-where-is-a-large-need-for-green" class="nav-link" data-scroll-target="#where-is-a-large-need-for-green">#3 Where is a large need for green?</a></li>
+  <li><a href="#angular-choice-analysis" id="toc-angular-choice-analysis" class="nav-link" data-scroll-target="#angular-choice-analysis">Angular choice analysis</a></li>
+  <li><a href="#weighting-and-normalisation" id="toc-weighting-and-normalisation" class="nav-link" data-scroll-target="#weighting-and-normalisation">Weighting and normalisation</a></li>
+  </ul></li>
+  <li><a href="#ql2acg-where-is-potential-for-central-functions" id="toc-ql2acg-where-is-potential-for-central-functions" class="nav-link" data-scroll-target="#ql2acg-where-is-potential-for-central-functions"><em>QL2acg</em> – Where is potential for “central” functions?</a>
+  <ul class="collapse">
+  <li><a href="#aggregation-and-normalisation-4" id="toc-aggregation-and-normalisation-4" class="nav-link" data-scroll-target="#aggregation-and-normalisation-4">Aggregation and normalisation</a></li>
+  </ul></li>
+  <li><a href="#ql3gr-where-is-a-large-need-for-green" id="toc-ql3gr-where-is-a-large-need-for-green" class="nav-link" data-scroll-target="#ql3gr-where-is-a-large-need-for-green"><em>QL3gr</em> – Where is a large need for green?</a>
+  <ul class="collapse">
+  <li><a href="#attraction-reach-analysis" id="toc-attraction-reach-analysis" class="nav-link" data-scroll-target="#attraction-reach-analysis">Attraction reach analysis</a></li>
+  <li><a href="#aggregation-and-normalisation-5" id="toc-aggregation-and-normalisation-5" class="nav-link" data-scroll-target="#aggregation-and-normalisation-5">Aggregation and normalisation</a></li>
+  </ul></li>
   <li><a href="#placeholder-space-syntax-base-layers-until-we-put-it-in-correct-chapters" id="toc-placeholder-space-syntax-base-layers-until-we-put-it-in-correct-chapters" class="nav-link" data-scroll-target="#placeholder-space-syntax-base-layers-until-we-put-it-in-correct-chapters">PLACEHOLDER SPACE SYNTAX base layers – UNTIL WE PUT IT IN CORRECT CHAPTERS</a></li>
   <li><a href="#weighting-3" id="toc-weighting-3" class="nav-link" data-scroll-target="#weighting-3">Weighting</a></li>
   <li><a href="#quality-of-life-conclusion" id="toc-quality-of-life-conclusion" class="nav-link" data-scroll-target="#quality-of-life-conclusion">Quality of life conclusion</a></li>
@@ -137,11 +172,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#typology-construction" id="toc-typology-construction" class="nav-link" data-scroll-target="#typology-construction">Typology Construction</a>
   <ul>
   <li><a href="#clustering" id="toc-clustering" class="nav-link" data-scroll-target="#clustering">Clustering</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#focus-area-and-variables" id="toc-focus-area-and-variables" class="nav-link" data-scroll-target="#focus-area-and-variables">Focus area and variables</a></li>
   </ul></li>
   <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#step-1.-load-r-packages-and-data" id="toc-step-1.-load-r-packages-and-data" class="nav-link" data-scroll-target="#step-1.-load-r-packages-and-data">Step 1. Load R packages and data</a></li>
   <li><a href="#step-2.-standardization" id="toc-step-2.-standardization" class="nav-link" data-scroll-target="#step-2.-standardization">Step 2. Standardization</a></li>
   <li><a href="#step-3-determine-the-optimal-k" id="toc-step-3-determine-the-optimal-k" class="nav-link" data-scroll-target="#step-3-determine-the-optimal-k">Step 3: Determine the optimal K</a></li>
@@ -149,7 +184,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#step-5.-interpret-cluster-centers" id="toc-step-5.-interpret-cluster-centers" class="nav-link" data-scroll-target="#step-5.-interpret-cluster-centers">Step 5. Interpret cluster centers</a></li>
   <li><a href="#step-6.-optional-calculate-distance-to-cluster-center" id="toc-step-6.-optional-calculate-distance-to-cluster-center" class="nav-link" data-scroll-target="#step-6.-optional-calculate-distance-to-cluster-center">Step 6. (Optional) Calculate distance to cluster center</a></li>
   </ul></li>
-  <li><a href="#tpylogy-construction-conclusion" id="toc-tpylogy-construction-conclusion" class="nav-link" data-scroll-target="#tpylogy-construction-conclusion">Tpylogy Construction conclusion</a></li>
+  <li><a href="#tpylogy-construction-conclusion" id="toc-tpylogy-construction-conclusion" class="nav-link" data-scroll-target="#tpylogy-construction-conclusion">Tpylogy Construction conclusion</a>
+  <ul>
+  <li><a href="#typology-description" id="toc-typology-description" class="nav-link" data-scroll-target="#typology-description">Typology description</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a>
@@ -295,54 +333,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>We use MCDA to determine suitability of areas in Teplica river floodplain in the city of Senica for urban stream restoration measures targeting specific themes, and also in general for sustainable urban stream restoration measures.</p>
+<p>We use Multi Criteria Decision Analysis (MCDA) to determine suitability of areas in Teplica river floodplain in the city of Senica for urban stream restoration measures targeting specific themes, and also in general for sustainable urban stream restoration measures.</p>
 <section id="explanation-of-how-mcda-works" class="level3">
 <h3 class="anchored" data-anchor-id="explanation-of-how-mcda-works">Explanation of how MCDA works</h3>
-<p>This is a short overview of how MCDA works in this research project. MCDA starts with a research question and subquestions, leading to objectives. Our research ibjectives are described below. From these research questions, we determined criteria that will be used to describe/answer them.</p>
-<p>We determined the mutual importance of the attributes and assigned weights to them based on pairwise comparison. For this, we used a Saaty matrix. In the Saaty matrix, in each cell we stated how many times we think the criterion in the row is more important than the criterion in the column. This is described more in detail below. To evaluate the Saaty matrix, a sum is calculated for each row. These values are normalised to determine the weights, so the sum of the weights is 1.</p>
-<p>We divided the area into spatial units that form our analysis geometry, the workflow is described below. These are the units on which the research questions will be answered. For each of these units, we determined the value of each criterion. We normalised these criteria to 0-1, so they are comparable with each other.</p>
+<p>This is a short overview of how Multi Criteria Decision Analysis works in this research project. MCDA starts with a research question and subquestions, leading to objectives. Our research objectives are described further in the report. From these, we determined criteria that will be used to describe/answer them.</p>
+<p>We determined the mutual importance of the attributes and assigned weights to them based on pairwise comparison. For this, we used a Saaty matrix. In the Saaty matrix, in each cell we stated how many times we think the criterion in the row is more important than the criterion in the column. To evaluate the Saaty matrix, a sum is calculated for each row. These values are normalised to determine the weights, so the sum of the weights is 1. An example is shown in the figure below in the “weight determination, and our approach is explained further in a dedicated chapter.</p>
+<p>We divided the area around Teplica river in Senica into spatial units that form our analysis geometry, the workflow is described in a dedicated chapter. These are the units on which the research questions will be answered. For each of these units, we determined the value of each criterion. We normalised these criteria to 0-1, so they are comparable with each other.</p>
 <p>Then, we multiplied the criteria by the weights to get their relative value (for each spatial unit, the sum of all the weighted criteria falls into interval 0-1). We determined the result of MCDA for the main research question, as well as for individual subquestions.</p>
+<p>You can see a simplified example demonstrating the principles of MCDA in the figure below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/MCDA_explanation.png" class="img-fluid figure-img"></p>
-<figcaption>Diagram of how MCDA works</figcaption>
+<figcaption>Diagram of how MCDA works (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 </section>
 <section id="selecting-objectives-and-criteria-three-pillar-system" class="level3">
 <h3 class="anchored" data-anchor-id="selecting-objectives-and-criteria-three-pillar-system">Selecting objectives and criteria – three pillar system</h3>
-<p>The approach of ReBioClim project builds on three pillars: <em>“The primary aim is to improve the quality of life in cities and at the same time to promote biodiversity and climate adaptation.”</em> (ReBioClim n.d.)</p>
+<p>ReBioClim is a project focused on sustainable urban stream restoration, and it builds on three pillars: <em>“The primary aim is to improve the quality of life in cities and at the same time to promote biodiversity and climate adaptation.”</em> (ReBioClim n.d.)</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/_venndiagram.png" class="img-fluid figure-img" width="400"></p>
-<figcaption>Approach: combining the themes of biodiversity, climate adaptation, and quality of life</figcaption>
+<figcaption>Approach: combining the themes of biodiversity, climate adaptation, and quality of life (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 <p>These three themes form the three branches of our MCDA analysis research tree. In each of these branches, we chose a number of sub-themes to determine the suitability of different more specific types of interventions. These sub-themes consist of attributes which we aggregate to use for MCDA. MCDA is performed for each of the three themes, as well as for sustainable urban stream restoration as a whole. Each attribute was given a unique code to be used across our research for clarity.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDAresearchStructure_overview.png" class="img-fluid figure-img"></p>
-<figcaption>Research structure – simplified flow chart of indicators used in each of the three themes</figcaption>
+<figcaption>Research structure – simplified flow chart of indicators used in each of the three themes (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 <section id="detailed-research-structure" class="level4">
 <h4 class="anchored" data-anchor-id="detailed-research-structure">Detailed research structure</h4>
-<p>Each of the sub/themes comes with its own research subquestion. In the scheme below, you can see a more detailed look at the MCDA research structure, together with an overview of what data we use to evaluate the attributes, and what format of geometry that data is. More specifics of how we sourced the data, what it represents, and how we worked with it are described below in the chapters dedicated to individual attributes.</p>
+<p>Each of the sub/themes comes with its own research subquestion. In the scheme below, you can see a more detailed look at the MCDA research structure, together with an overview of what data we use to evaluate the attributes, and what format of geometry that data is. More specifics of how we sourced the data, what it represents, and how we worked with it are described below in the Data Structure, and more in detail in the chapters dedicated to individual attributes.</p>
 <iframe src="pdf/MCDA_researchStructure_detailed.pdf" width="100%" height="500" frameborder="0">
 </iframe>
 
 </section>
-<section id="weighting" class="level4">
-<h4 class="anchored" data-anchor-id="weighting">Weighting</h4>
-<p>In MCDA, each attribute results in a quantifiable criterion. These criteria are normalised and weighed among each other based on their hierarchy of importance in relation to the research question. There are different approaches to determined the weights, we used pairwise comparison Saaty matrix. For this, we used <a href="https://fuzzyahp.holecekp.eu/en/info">Fuzzy AHP</a> by Pavel Holeček.</p>
+</section>
+<section id="weighting" class="level3">
+<h3 class="anchored" data-anchor-id="weighting">Weighting</h3>
+<p>In MCDA, each attribute results in a quantifiable criterion. These criteria are normalised and weighed among each other based on their hierarchy of importance in relation to the research question. There are different approaches to determined the weights, we used pairwise comparison Saaty matrix. For this, we used <a href="https://fuzzyahp.holecekp.eu/en/info">Fuzzy AHP</a> by Pavel Holeček (Holeček n.d.).</p>
 <p>We determined how many times more or less important is each criterion in relation to every other criterion. This was done in a subjective way, based on our understanding of the problem. The complete matrix of the importance ratios looks like this:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/CompleteSaatyMatrix.png" class="img-fluid figure-img"></p>
-<figcaption>Complete Saaty Matrix. The meaning of the numbers is: “How many times more important is the criterion in the row compared to the criterion in the column?”</figcaption>
+<figcaption>Complete Saaty Matrix. The meaning of the numbers is: “How many times more important is the criterion in the row compared to the criterion in the column?” (screenshot from <a href="https://fuzzyahp.holecekp.eu/en/">Fuzzy AHP</a> (Holeček n.d.))</figcaption>
 </figure>
 </div>
-<p>For the matrix above, the weights are assigned as follows. Overall, highest weights were assigned to CA1temp (targeting cooling down summer surface temperature) and QL2acg (potential for central urban functions) and QL3gr (need of built up area for green). Criteria that scored high directly influence livability offer a very actionable basis for the public sector and show potential for feasible and well advocatable investments.</p>
+<p>For the matrix above, the weights were assigned as follows. Overall, highest weights were assigned to CA1temp (targeting cooling down summer surface temperature) and QL2acg (potential for central urban functions) and QL3gr (need of built up area for green). Criteria that scored high directly influence livability and offer a very actionable basis for the public sector and show potential for feasible and tenable investments.</p>
 <table class="caption-top table">
 <caption>Weights of MCDA criteria</caption>
 <thead>
@@ -389,59 +429,124 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/MCDA_weightsgraph.png" class="img-fluid figure-img"></p>
-<figcaption>Graph of criteria weights</figcaption>
+<figcaption>Graph of criteria weights (screenshot from <a href="https://fuzzyahp.holecekp.eu/en/">Fuzzy AHP</a> (Holeček n.d.))</figcaption>
 </figure>
 </div>
-<p>Consistency is acceptable with consistency ration CR = 0,086 (this is a mechanism to check if the researcher’s assigning of importance ratios was consistent across the matrix):</p>
+<p>Consistency is acceptable with consistency ratio CR = 0,086 (this is a mechanism to check if the manual assigning of importance ratios was consistent across the matrix):</p>
 <div class="line-block">λmax = 8.847<br>
 CI = 0.121<br>
 RI = 1.4<br>
 CR = 0.086</div>
 </section>
-</section>
 <section id="analysis-geometry" class="level3">
 <h3 class="anchored" data-anchor-id="analysis-geometry">Analysis geometry</h3>
-<p>The analysis geometry is a vector polygon layer consisting of morphologically determined elements. The decision to create geometry tailored to the local spatial conditions has two main reasons:</p>
+<p>The values of MCDA criteria are evaluated on analysis geometry spatial units. We decided for creating a custom analysis geometry vector polygon layer consisting of morphologicaly determined spatial units. The decision to create geometry tailored to the local spatial conditions has two main reasons:</p>
 <ol type="1">
-<li>to make the analysis more accessible to locals – through analysing on geometry familiar to them, hopefully making interpretation easier, and</li>
-<li>to make the results more actionable – through analysing on logical spatial units results will be more space-specific</li>
+<li>to make the analysis more accessible to locals,
+<ul>
+<li>by using familiar analysis geometry units (spatial units respecting recognisable urban and landscape linear orientation structures and long lines (streams, roads), completed by familiar grid structures (street structure, building blocks, boundaries of park areas and fields)</li>
+<li>maps will be more intuitive to read, making the research more accessible and interpretation easier</li>
+</ul></li>
+<li>to make the results more actionable.
+<ul>
+<li>by analysing on logical spatial units</li>
+<li>more space-specific results will make the analysis-intention-decision path shorter</li>
+</ul></li>
 </ol>
-<p>At the core is a <em>Regional biocorridor</em> as indicated in <em>Spatial Ecological Stability System</em> (<em>ÚSES</em>) – an approximately 20 meter buffer around the stream. We differentiate left and right bank, because it matters for accessibility (significant for all attributes in quality of life).</p>
-<p>The bounds of the analysis geometry were determined based on the floodplain of the river indicated by flood danger maps. This is the area that “belongs” to the river, thus it should be restored together with the watercourse. (The outline was based on raster data available online and spatial logic of the area to respect natural boundaries.)</p>
-<p>The flood plain was partitioned based on local morphology and land cover, and in some cases inspired by the parcellation structure to create a smaller grain in areas with large unpartitioned fields.</p>
+<p>The geometry was created mainly manually following four main principles, in this order. It follows the structure of the <em>Regional biocorridor</em> as defined in<em>Spatial Ecological Stability System</em> (<em>ÚSES</em>) as a spine along the river Teplica. The bounds of the geometry were defined based on the flood plain of the river Teplica, as that is the area we consider “belongs” to the river. We followed morphological characteristics of the space to create smaller units. In case the units needed to be partitioned further, and morphology was not used, the partitioning was inspired by the parcel system. Each of these four principles will be explained in a dedicated section.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src=".\img/analysisgeometry_uses.png" class="img-fluid figure-img"></p>
-<figcaption>Biocorridor at the core of the geometry as the immediate banks of the river.</figcaption>
+<p><img src=".\img/analysisgeometry_overview.png" class="img-fluid figure-img"></p>
+<figcaption>Four principles of determining analysis geometry units. (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src=".\img/analysisgeometry_flood.png" class="img-fluid figure-img"></p>
-<figcaption>Flood plain - area belonging to the river should be treated as a whole.</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src=".\img/analysisgeometry_space.png" class="img-fluid figure-img"></p>
-<figcaption>Polygons are based on morphology.</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src=".\img/analysisgeometry_parcelation.png" class="img-fluid figure-img"></p>
-<figcaption>Some larger uniform areas were partitioned based on parcellation.</figcaption>
-</figure>
-</div>
-<section id="analysis-geometry-update-after-27.-5.-consultation" class="level4">
-<h4 class="anchored" data-anchor-id="analysis-geometry-update-after-27.-5.-consultation">Analysis geometry update after 27. 5. consultation</h4>
-<p>Cells along the river: i went through it manually and merged some cells to create larger areas. Always merged only the ones that i previously classified as the same landcover. I did it based on spatial logic and continuity of surrounding division lines. Left and right bank is still distinguished.</p>
-<p>Other cells: In few places, i simplified field separation and merged a road into it (where there is no significant different type of land cover along the road.)</p>
-<p><em>- Viola</em></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/AnalysisGeometryOverview_250527.png" class="img-fluid figure-img"></p>
-<figcaption>The updated analysis geometry 27. 5. 2025</figcaption>
+<figcaption>Overview of analysis geometry (by Viola Ebermannová)</figcaption>
+</figure>
+</div>
+<section id="principle-1-úses" class="level5">
+<h5 class="anchored" data-anchor-id="principle-1-úses">Principle 1: ÚSES</h5>
+<p>At the spine of the analysis geometry is a <em>Regional biocorridor</em> as defined in <em>Spatial Ecological Stability System</em> (<em>ÚSES</em>) – an approximately 20 meter buffer around the Teplica stream. This is not a geometry created by us, it is directly taken from <a href="https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/dokumenty-uses-v-sr">official ÚSES map layer by SAŽP</a> (Slovak Environment Agency), 2023. We differentiate left and right bank, because it matters for accessibility (significant for all attributes in quality of life). In our opinion, apart from being an official spatial unit anchored in the binding spatial plans as having ecological priority, 20 m buffer is an accurate distance for the immediate surroundings of the river, (potentially) connected to it visually and audibly.</p>
+<p>Workflow steps:</p>
+<ol type="1">
+<li><p>Retrieve data from <a href="https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/dokumenty-uses-v-sr">ÚSES</a>.</p></li>
+<li><p>Isolate geometry of biocorridor along the stream Teplica, clip to a size slightly larger than municipality borders, divide dissolved corridor polygon into left and right bank using a the stream line from OSM waterway dataset.</p></li>
+<li><p>Create temporary 40 m segments along the corridor (40 m was chosen because it partitions the ~40 m wide biocorridor into “squares”, and also as a good distance for having a more detailed analysis of the immediate stream surroundings.)</p>
+<ul>
+<li>This was done by constructing normals (length larger than corridor width) along the isolated river teplica line (from OSM waterway dataset) at 40 m intervals, manually adjusting the lines in areas where the normals intersected within the corridor (manually deleting and adding lines so the geometry seems “regular”), and splitting the corridor with these lines</li>
+</ul></li>
+<li><p>After executing steps 1-3 of the ÚSES principle, the other three principles were followed. In the end, Land Cover categories were manually assigned to all spatial units (see <a href="#land-cover-classification">Land cover classification</a> chapter). After this, the decision was made to merge some adjacent tiles into larger units to unify the level of detail with the rest of the spatial units and follow a similar morphological principle. This makes the results better comparable and helps the analysis be cohesive. Merging was done following these principles:</p>
+<ul>
+<li><p>units lay on the same riverbank (left/right),</p></li>
+<li><p>units have the same land cover classification,</p></li>
+<li><p>aim is to maintain division line continuity between the inner spine and the outer floodplain (see following principles for explanation of what this is.)</p></li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\img/analysisgeometry_uses.png" class="img-fluid figure-img"></p>
+<figcaption>Biocorridor at the core of the geometry as the immediate banks of the river. (by Viola Ebermannová)</figcaption>
+</figure>
+</div>
+</section>
+<section id="principle-2-flood-plain" class="level5">
+<h5 class="anchored" data-anchor-id="principle-2-flood-plain">Principle 2: Flood plain</h5>
+<p>The bounds of the analysis geometry were determined based on the floodplain of the river indicated by flood danger maps. This is the area that “belongs” to the river, thus it should be restored together with the watercourse.</p>
+<p>Workflow:</p>
+<ol type="1">
+<li><p>Find flood danger (*Povodňové ohrozenie) data, this project uses map accessible through <a href="https://mpt.svp.sk/svp_vmapportal/?basemap=orto2023&amp;zoom=5&amp;lat=48.683285&amp;lng=17.339609">SVP š.p. map viewer</a> (SVP š.p. 2023). (The outline was based on raster data available in an online map viewer. In case of raster or vector data being available directly as a retrievable GIS layer, it would be beneficial to use a more exact boundary.)</p></li>
+<li><p>Trace the flood danger area related to Teplica stream (discarding flood areas of other streams), following morphological boundaries (morphological boundaries already largely follow the approximate flood plain boundary).</p></li>
+<li><p>This results in an “outer boundary” polygon of the (approximate) flood plain.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\img/analysisgeometry_flood.png" class="img-fluid figure-img"></p>
+<figcaption>Flood plain - area belonging to the river should be treated as a whole. (by Viola Ebermannová)</figcaption>
+</figure>
+</div>
+</section>
+<section id="principle-3-morphology" class="level5">
+<h5 class="anchored" data-anchor-id="principle-3-morphology">Principle 3: Morphology</h5>
+<p>The flood plain was manually partitioned based on local morphology and land cover, as analysed from Bing aerial photos. (Bing Aerial View 2018)</p>
+<p>Workflow</p>
+<ol type="1">
+<li><p>Retrieve aerial imagery of area (we used Bing Aerial View, 2018).</p></li>
+<li><p>Analyse morphology of area, identify important orientation lines (roads through landscape or important roads/other linear elements in urban fabric, streams, important paths in landscape), identify grid structures and recognisable planar elements present in the area (street structure, building blocks, park and field boundaries)</p></li>
+<li><p>Draw by lines the morphology:</p>
+<ul>
+<li><p>linear elements of sufficient width (at minimum ~ 15 m): by drawing edge boundaries, divide into segments based on spatial structure (changing surrounding land cover, morphology), if the spatial structure is consistent, create arbitrary segments of 100-200 m length.</p></li>
+<li><p>all other important linear elements (of not sufficient width): by drawing the center line</p></li>
+<li><p>planar elements and grid structures: fill up the remaining space by drawing a grid following the structure of the fabric of the landscape or urban fabric, with cell size approximately 50-200 m large. The cell size depends on the grain size of the morphology (i.e.&nbsp;a farm house in the middle of large fields will have a smaller cell than the grid size of the surrounding agricultural land)</p></li>
+<li><p>This is a subjective principle, and really depends on agency of the researcher.</p></li>
+</ul></li>
+<li><p>Split the “outer boundary” polygon of the (approximate) flood plain by the lines produced in step 3 (leaving the separation of the spine/ÚSES biocorridor intact.)</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\img/analysisgeometry_space.png" class="img-fluid figure-img"></p>
+<figcaption>Polygons are based on morphology. (by Viola Ebermannová)</figcaption>
+</figure>
+</div>
+</section>
+<section id="principle-4-parcelation" class="level5">
+<h5 class="anchored" data-anchor-id="principle-4-parcelation">Principle 4: Parcelation</h5>
+<p>In some cases, division of spatial units produces units that we consider too large. In these cases, the larger spatial units determined morphologically are further split in a way inspired by the parcelation structure to create a smaller grain. This typically happens in areas with large unpartitioned agricultural fields. Although this is not a very intuitive/recognisable division, as these boundaries are often not visible in the landscape, they form the basis of ownership and therefore influence the possible interventions.</p>
+<p>Workflow:</p>
+<ol type="1">
+<li><p>Retrieve cadaster data, we used data from <a href="https://kataster.skgeodesy.sk/eskn/rest/services/">ArcGIS Rest service of the Portal for Electronin Services of the Cadaster</a> of Slovakia (ÚGKK SR, n.d.).</p></li>
+<li><p>For spatial units formed by previous steps, that are larger than approximately ~ 150-200 m, create additional divisions inspired by the cadaster parcelation.</p>
+<ul>
+<li><p>Not following all boundaries, but creating regular partitioning of the larger units with grid size of approximately 80-120 m.</p></li>
+<li><p>Preferably, there is a continuity of separation lines between larger floodplain and the inner spine division.</p></li>
+</ul></li>
+<li><p>This results in analysis geometry with a sufficiently uniform grain size based in actual spatial structure.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\img/analysisgeometry_parcelation.png" class="img-fluid figure-img"></p>
+<figcaption>Some larger uniform areas were partitioned based on parcelation. (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 </section>
@@ -451,13 +556,13 @@ CR = 0.086</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/LandcoverOverview_250527.png" class="img-fluid figure-img"></p>
-<figcaption>Landcover overview version 27. 5. 2025</figcaption>
+<figcaption>Landcover overview version 27. 5. 2025 (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/B_LandCover_typology.png" class="img-fluid figure-img"></p>
-<figcaption>Typical examples of land cover classes, draft estimate ecological quality indicator</figcaption>
+<figcaption>Typical examples of land cover classes, draft estimate ecological quality indicator (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 </section>
@@ -481,8 +586,8 @@ CR = 0.086</div>
 <!--# intro -->
 <p><strong><em>How to improve local and supra local biodiversity resilience by interventions within the stream flood plain? -&gt; which spaces to prioritize based on value and feasibility of intervention</em></strong></p>
 <p>WIP – please refer to the main research structure flow chart for overview.</p>
-<section id="which-spaces-should-be-prioritised-because-of-their-connectivity-to-úses" class="level4">
-<h4 class="anchored" data-anchor-id="which-spaces-should-be-prioritised-because-of-their-connectivity-to-úses">#1 Which spaces should be prioritised because of their connectivity to ÚSES?</h4>
+<section id="b1uses-which-spaces-should-be-prioritised-because-of-their-connectivity-to-úses" class="level4">
+<h4 class="anchored" data-anchor-id="b1uses-which-spaces-should-be-prioritised-because-of-their-connectivity-to-úses"><em>B1uses</em> – Which spaces should be prioritised because of their connectivity to ÚSES?</h4>
 <section id="data" class="level5">
 <h5 class="anchored" data-anchor-id="data">Data</h5>
 <section id="what-is-úses" class="level6">
@@ -496,7 +601,7 @@ CR = 0.086</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/USES.png" class="img-fluid figure-img"></p>
-<figcaption>Map of ÚSES within our area</figcaption>
+<figcaption>Map of ÚSES within our area (by Hongyue Kang)</figcaption>
 </figure>
 </div>
 </section>
@@ -510,19 +615,19 @@ other polygons –&gt; 0</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_B1uses.png" class="img-fluid figure-img"></p>
-<figcaption>Criterion B1uses – Connectivity to ÚSES (normalised.)</figcaption>
+<figcaption>Criterion B1uses – Connectivity to ÚSES (normalised.) (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 </section>
 </section>
-<section id="which-spaces-should-be-prioritised-based-on-ecological-quality-improvement-potential" class="level4">
-<h4 class="anchored" data-anchor-id="which-spaces-should-be-prioritised-based-on-ecological-quality-improvement-potential">#2 Which spaces should be prioritised based on ecological quality improvement potential?</h4>
+<section id="b2pot-which-spaces-should-be-prioritised-based-on-ecological-quality-improvement-potential" class="level4">
+<h4 class="anchored" data-anchor-id="b2pot-which-spaces-should-be-prioritised-based-on-ecological-quality-improvement-potential"><em>B2pot</em> – Which spaces should be prioritised based on ecological quality improvement potential?</h4>
 <p>Our argument is that spaces with a potential for a high impact improvement and at the same time good investment feasibility should be prioritised, because of good actionability of intentions/plans.</p>
 <p>Potential for high impact improvement is determined by unsatisfactory ecological quality. Investment feasibility is determined by attractivity to invest in biodiversity improvement and in general spatial quality improvement in an area like this. High investment feasibility is in the surrounding of dwellings, in spaces that are already upkept. Low investment feasibility is in agricultural areas, where produce is prioritised. In these areas in general it is advised to use agricultural methods that can aid local biodiversity.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/B_LandCover_ImprovementPotential.png" class="img-fluid figure-img"></p>
-<figcaption>Ecological quality improvement potential in bottom row.</figcaption>
+<figcaption>Ecological quality improvement potential in bottom row. (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 <section id="aggregation-and-normalisation-1" class="level5">
@@ -531,13 +636,13 @@ other polygons –&gt; 0</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_B2pot.png" class="img-fluid figure-img"></p>
-<figcaption>Criterion B2pot – Improvement potential (normalised.)</figcaption>
+<figcaption>Criterion B2pot – Improvement potential (normalised.) (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 </section>
 </section>
-<section id="which-spaces-should-be-prioritized-based-on-current-state-of-the-vegetation" class="level4">
-<h4 class="anchored" data-anchor-id="which-spaces-should-be-prioritized-based-on-current-state-of-the-vegetation">#3 Which spaces should be prioritized based on current state of the vegetation?</h4>
+<section id="b3ndvi-which-spaces-should-be-prioritized-based-on-current-state-of-the-vegetation" class="level4">
+<h4 class="anchored" data-anchor-id="b3ndvi-which-spaces-should-be-prioritized-based-on-current-state-of-the-vegetation"><em>B3ndvi</em> – Which spaces should be prioritized based on current state of the vegetation?</h4>
 <section id="ndvi" class="level5">
 <h5 class="anchored" data-anchor-id="ndvi">NDVI</h5>
 <p>The steps we take to calculate the NDVI are as follow: Sentinel-2 satellite imagery was accessed via Google Earth Engine (GEE), covering the study area during the growing season to ensure accurate vegetation representation. The Normalized Difference Vegetation Index (NDVI) was calculated within GEE using the standard formula: NDVI=(B8-B4)/(B8+B4) where B8 represents the near-infrared (NIR) band and B4 represents the red band. The resulting NDVI raster was exported from GEE as a GeoTIFF file and imported into QGIS. In QGIS, the NDVI layer was reprojected, clipped to the study boundary, and further analyzed using raster statistics and classification to evaluate vegetation cover across different spatial units along the Teplica River. Based on the different value of NDVI mean, we can deduce the vegetation state in each spatial geometry.</p>
@@ -549,7 +654,7 @@ other polygons –&gt; 0</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/NDVI.png" class="img-fluid figure-img"></p>
-<figcaption>NDVI classification</figcaption>
+<figcaption>NDVI classification (by Hongyue Kang)</figcaption>
 </figure>
 </div>
 </section>
@@ -559,7 +664,7 @@ other polygons –&gt; 0</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_B3ndvi.png" class="img-fluid figure-img"></p>
-<figcaption>Criterion B3ndvi – Current state of vegetation (normalised.)</figcaption>
+<figcaption>Criterion B3ndvi – Current state of vegetation (normalised.) (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 </section>
@@ -570,7 +675,7 @@ other polygons –&gt; 0</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/B_SaatyMatrix.png" class="img-fluid figure-img"></p>
-<figcaption>Partial pairwise comparison matrix – biodiversity</figcaption>
+<figcaption>Partial pairwise comparison matrix – biodiversity (screenshot from <a href="https://fuzzyahp.holecekp.eu/en/">Fuzzy AHP</a> (Holeček n.d.))</figcaption>
 </figure>
 </div>
 <p>The calculated weights for biodiversity indicators are:</p>
@@ -606,7 +711,7 @@ other polygons –&gt; 0</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_B.png" class="img-fluid figure-img"></p>
-<figcaption>MCDA Biodiversity conclusion</figcaption>
+<figcaption>MCDA Biodiversity conclusion (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 </section>
@@ -618,8 +723,8 @@ other polygons –&gt; 0</div>
 <!-- The question needs to be more specific and based in data – what are examples of interventions that can achieve this? How much space do they need? -->
 <p>WIP – please refer to the main research structure flow chart for overview.</p>
 <p>This chapter is based on the fact that in western slovakia, there is a large drought problem, and water management activities should target capturing water in the landscape. <!-- ^This needs a source, but it is true. --></p>
-<section id="which-spaces-should-be-prioritized-for-interventions-aimed-at-cooling-the-area-down" class="level4">
-<h4 class="anchored" data-anchor-id="which-spaces-should-be-prioritized-for-interventions-aimed-at-cooling-the-area-down">#1 Which spaces should be prioritized for interventions aimed at cooling the area down?</h4>
+<section id="ca1temp-which-spaces-should-be-prioritized-for-interventions-aimed-at-cooling-the-area-down" class="level4">
+<h4 class="anchored" data-anchor-id="ca1temp-which-spaces-should-be-prioritized-for-interventions-aimed-at-cooling-the-area-down"><em>CA1temp</em> – Which spaces should be prioritized for interventions aimed at cooling the area down?</h4>
 <p>To analyse surface temperatures, we found a <a href="https://code.earthengine.google.com/ac986028b56a794aefd3ea54e9cb09ba">Google Earth Engine script</a> made by <a href="https://www.youtube.com/watch?v=3LOMNzBHmjs">Ramadhan</a> on YouTube (2024) that uses information from Sentinel-2, LANDSAT, and DEM to predict a raster LST (land surface temperature) with a higher resolution than other available datasets on LST, namely 10-meter resolution. The computations are complicated and will only be discussed in general lines in this report, but the results are relevant and useful to our research. Mainly to answer the question of which spaces should be prioritized to be wetter to help the area cool down, because now it is too hot. The draft image shows the results for dates 2024-06-01 to 2024-08-31, since these three months include the summer and will therefore be most susceptible for heat stress, which makes this time period interesting to look at for our research.</p>
 <p>The method uses the different datasets to extract several attributes (e.g.&nbsp;B2, B3, elevation, slope, wetness, greenness, dryness, etc.). Together with the recorded LST data, a correlation between attributes and LST is calculated. For the six attributes with the highest correlation, the average correlation matrices are computed and the three lowest correlation matrices are used to set up a model. The model is then trained with test data to predict LST based on the provided correlation information. Then, the model is applied to data in the area of interest to create a dataset with LST predictions that covers the full area in detail (instead of the available recorded LST datasets with big gridcells).</p>
 <p>The Google Earth Engine (GEE) script was adapted to analyse our area of interest (Senica and surroundings) and an interesting time period as mentioned earlier. The code produced a GeoTiff file that we downloaded for further processing. The LST values in this file are given in degrees Celsius and range from 27-38. The raster GeoTiff file was combined with our analysis geometry layer using the ‘zonal statistics’ tool in QGIS. This resulted in a vector layer with our analysis polygons, including a column in the attribute table representing the mean value of the LST raster layer inside that specific polygon. This value represents the aggregation of LST values, which was then normalized with the following statement in the field calculator:</p>
@@ -638,7 +743,7 @@ other polygons –&gt; 0</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/CA1temp_LST_map02.png" class="img-fluid figure-img"></p>
-<figcaption>Map of predicted LST values</figcaption>
+<figcaption>Map of predicted LST values (by Kelly Schoonderwoerd)</figcaption>
 </figure>
 </div>
 <section id="weigting-and-normalisation" class="level5">
@@ -647,13 +752,13 @@ other polygons –&gt; 0</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_CA1temp.png" class="img-fluid figure-img"></p>
-<figcaption>Criterion CA1temp – need for cooling (normalised.)</figcaption>
+<figcaption>Criterion CA1temp – need for cooling (normalised.) (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 </section>
 </section>
-<section id="where-does-the-soil-have-high-potential-for-water-retention" class="level4">
-<h4 class="anchored" data-anchor-id="where-does-the-soil-have-high-potential-for-water-retention">#2 Where does the soil have high potential for water retention?</h4>
+<section id="ca2soil-where-does-the-soil-have-high-potential-for-water-retention" class="level4">
+<h4 class="anchored" data-anchor-id="ca2soil-where-does-the-soil-have-high-potential-for-water-retention"><em>CA2soil</em> – Where does the soil have high potential for water retention?</h4>
 <section id="soil-retention-ability-and-permeability" class="level5">
 <h5 class="anchored" data-anchor-id="soil-retention-ability-and-permeability">Soil retention ability and permeability</h5>
 <p>From Atlas of Slovakia, quite small scale.</p>
@@ -661,7 +766,7 @@ other polygons –&gt; 0</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/CA_soil.png" class="img-fluid figure-img"></p>
-<figcaption>Soil potential</figcaption>
+<figcaption>Soil potential (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 </section>
@@ -672,7 +777,7 @@ RS High+ P Medium -&gt; 1</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_CA2soil.png" class="img-fluid figure-img"></p>
-<figcaption>Criterion CA2soil – Retention ability (normalised.)</figcaption>
+<figcaption>Criterion CA2soil – Retention ability (normalised.) (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 </section>
@@ -683,7 +788,7 @@ RS High+ P Medium -&gt; 1</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/CA_SaatyMatrix.png" class="img-fluid figure-img"></p>
-<figcaption>Partial pairwise comparison matrix – climate adaptation</figcaption>
+<figcaption>Partial pairwise comparison matrix – climate adaptation(screenshot from <a href="https://fuzzyahp.holecekp.eu/en/">Fuzzy AHP</a> (Holeček n.d.))</figcaption>
 </figure>
 </div>
 <p>The calculated weights for climate adaptation criteria are:</p>
@@ -714,7 +819,7 @@ RS High+ P Medium -&gt; 1</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_CA.png" class="img-fluid figure-img"></p>
-<figcaption>MCDA Climate adaptation conclusion</figcaption>
+<figcaption>MCDA Climate adaptation conclusion (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 </section>
@@ -724,8 +829,8 @@ RS High+ P Medium -&gt; 1</div>
 <!--# intro -->
 <p><strong><em>What types of places should be created in the stream flood plain?</em></strong> -&gt; Ammenities, green spaces, connections?</p>
 <p>WIP – please refer to the main research structure flow chart for overview.</p>
-<section id="where-is-potential-for-community-functions" class="level4">
-<h4 class="anchored" data-anchor-id="where-is-potential-for-community-functions">#1 Where is potential for community functions?</h4>
+<section id="ql1acl-where-is-potential-for-community-functions" class="level4">
+<h4 class="anchored" data-anchor-id="ql1acl-where-is-potential-for-community-functions"><em>QL1acl</em> – Where is potential for community functions?</h4>
 <section id="angular-choice-analysis" class="level5">
 <h5 class="anchored" data-anchor-id="angular-choice-analysis">Angular choice analysis</h5>
 <!-- explanation of what it shows and space syntax intro -->
@@ -739,13 +844,13 @@ RS High+ P Medium -&gt; 1</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_QL1acl.png" class="img-fluid figure-img"></p>
-<figcaption>Criterion QL1acl – Community function potential (normalised.)</figcaption>
+<figcaption>Criterion QL1acl – Community function potential (normalised.) (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 </section>
 </section>
-<section id="where-is-potential-for-central-functions" class="level4">
-<h4 class="anchored" data-anchor-id="where-is-potential-for-central-functions">#2 Where is potential for “central” functions?</h4>
+<section id="ql2acg-where-is-potential-for-central-functions" class="level4">
+<h4 class="anchored" data-anchor-id="ql2acg-where-is-potential-for-central-functions"><em>QL2acg</em> – Where is potential for “central” functions?</h4>
 <p>Angular choice analysis was calculated for radii 1 km and 2 km. First, these two attributes were normalised. Then these values were combined to a common indicator, giving larger weight to the larger radius:</p>
 <div class="line-block">AC1km2km = 1*(AC r=1km) + 2*(AC r=2km)</div>
 <p>This attribute was then normalised.</p>
@@ -755,8 +860,8 @@ RS High+ P Medium -&gt; 1</div>
 <pre><code>aggregate( 'layer: angular_choice', 'max', "attribute: AC1km2km, normalised", intersects($geometry,geometry(@parent)))</code></pre>
 </section>
 </section>
-<section id="where-is-a-large-need-for-green" class="level4">
-<h4 class="anchored" data-anchor-id="where-is-a-large-need-for-green">#3 Where is a large need for green?</h4>
+<section id="ql3gr-where-is-a-large-need-for-green" class="level4">
+<h4 class="anchored" data-anchor-id="ql3gr-where-is-a-large-need-for-green"><em>QL3gr</em> – Where is a large need for green?</h4>
 <section id="attraction-reach-analysis" class="level5">
 <h5 class="anchored" data-anchor-id="attraction-reach-analysis">Attraction reach analysis</h5>
 <p>explanation of what it calculates</p>
@@ -768,7 +873,7 @@ RS High+ P Medium -&gt; 1</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/QL3gr_bufferedpolygons.png" class="img-fluid figure-img"></p>
-<figcaption>Buffered analysis geometry</figcaption>
+<figcaption>Buffered analysis geometry (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 <p>Then, we filtered out houses that we consider “need green”. Unfortunately, many houses in this area have “type” ‘NULL’, which skews the analysis.</p>
@@ -784,7 +889,7 @@ END</code></pre>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/QL3gr_buildingsneedgreen.png" class="img-fluid figure-img"></p>
-<figcaption>Buildings that we consider need green</figcaption>
+<figcaption>Buildings that we consider need green (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 <p>Then, for each buffered Analysis geometry polygon, sum was calculated of values from buildings in need of green intersecting it (value polygons with no intersecting buildings is zero).</p>
@@ -793,7 +898,7 @@ END</code></pre>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_QL3gr.png" class="img-fluid figure-img"></p>
-<figcaption>Criterion QL3gr – need for green (normalised.)</figcaption>
+<figcaption>Criterion QL3gr – need for green (normalised.) (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 </section>
@@ -892,7 +997,7 @@ END</code></pre>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/QL_SaatyMatrix.png" class="img-fluid figure-img"></p>
-<figcaption>Partial pairwise comparison matrix – quality of life</figcaption>
+<figcaption>Partial pairwise comparison matrix – quality of life (screenshot from <a href="https://fuzzyahp.holecekp.eu/en/">Fuzzy AHP</a> (Holeček n.d.))</figcaption>
 </figure>
 </div>
 <p>The calculated weights for climate adaptation criteria are:</p>
@@ -926,7 +1031,7 @@ END</code></pre>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_QL.png" class="img-fluid figure-img"></p>
-<figcaption>MCDA Quality of life conclusion</figcaption>
+<figcaption>MCDA Quality of life conclusion (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 </section>
@@ -938,7 +1043,7 @@ END</code></pre>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_sum.png" class="img-fluid figure-img"></p>
-<figcaption>MCDA Final conclusion</figcaption>
+<figcaption>MCDA Final conclusion (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 </section>
@@ -981,7 +1086,7 @@ Step 6. (Optional) Calculate distance to cluster center</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co"># for processing vector data </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Linking to GEOS 3.13.1, GDAL 3.11.0, PROJ 9.6.0; sf_use_s2() is TRUE</code></pre>
+<pre><code>Linking to GEOS 3.13.1, GDAL 3.10.2, PROJ 9.5.1; sf_use_s2() is TRUE</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># for selecting and transforming data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -1133,9 +1238,9 @@ Projected CRS: ETRS89 / UTM zone 33N
 3 4  859.0034
 4 5  740.4449
 5 6  623.5229
-6 7  544.3696
-7 8  473.8696
-8 9  405.7474</code></pre>
+6 7  547.0234
+7 8  468.2062
+8 9  402.1753</code></pre>
 </div>
 </div>
 <p>The changing of inertia with increasing k is visualised and based on the <em>elbow point</em> we choose the best value for k. After this elbow point, adding more clusters does not add much to the quality of the end results.</p>
@@ -1333,7 +1438,7 @@ Projected CRS: ETRS89 / UTM zone 33N
 <td>🟢 0.286</td>
 <td>🟠 0.442</td>
 <td>🔴 0.792</td>
-<td>High B1uses and QL2acg</td>
+<td>High B1uses and QL2acg, low B3ndvi</td>
 </tr>
 <tr class="even">
 <td>4</td>
@@ -1341,7 +1446,7 @@ Projected CRS: ETRS89 / UTM zone 33N
 <td>🟡 0.301</td>
 <td>🔴 0.837</td>
 <td>🔵 0.0177</td>
-<td>High CA1temp and low QL2acg</td>
+<td>High CA1temp and very low QL2acg</td>
 </tr>
 </tbody>
 </table>
@@ -1387,12 +1492,16 @@ Projected CRS: ETRS89 / UTM zone 33N
 <h3 class="anchored" data-anchor-id="literature">Literature</h3>
 <p>ReBioClim. (n.d.) ReBioClim - ProjectOverview. Interreg Central Europe. Retrieved June 20, 2025 from <a href="https://www.interreg-central.eu/projects/rebioclim/" class="uri">https://www.interreg-central.eu/projects/rebioclim/</a></p>
 <p>SAŽP. (n.d.). Územný systém ekologickej stability (ÚSES). SAŽP – Slovak Environment Agency. Retrieved on June 6, 2025 from <a href="https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/uzemny-system-ekologickej-stability-uses" class="uri">https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/uzemny-system-ekologickej-stability-uses</a></p>
+<p>Holeček, P. (n.d.). Fuzzy AHP. Web Application. Screenshots taken on June 10 from <a href="https://fuzzyahp.holecekp.eu/en/" class="uri">https://fuzzyahp.holecekp.eu/en/</a></p>
 </section>
 <section id="map-layers" class="level3">
 <h3 class="anchored" data-anchor-id="map-layers">Map layers</h3>
+<p>Bing Aerial Photos. (2018). Retrieved from <a href="http://ecn.t3.tiles.virtualearth.net/tiles/a%7Bq%7D.jpeg?g=1" class="uri">http://ecn.t3.tiles.virtualearth.net/tiles/a%7Bq%7D.jpeg?g=1</a></p>
 <p>European Union/ESA/Copernicus. (2025) Harmonized Sentinel-2 MSI, Level -2A. Retrieved June 6, 2025 from Google Earth Engine</p>
 <p>Google Earth Engine. (2025) Cloud Score+ S2_HARMONIZED V1. Retrieved June 6, 2025 from Google Earth Engine</p>
 <p>NASA / USGS / JPL-Caltech. (2025) NASA SRTM Digital Elevation 30m. Retrieved June 6, 2025 from Google Earth Engine</p>
+<p>SVP š.p. – Slovakian Water Management Utility. (15 June 2023). Mapy povodňového ohrozenia. (Flood danger maps). Retrieved June 1, 2025 from: <a href="https://mpt.svp.sk/svp_vmapportal/?basemap=orto2023&amp;zoom=5&amp;lat=48.683285&amp;lng=17.339609" class="uri">https://mpt.svp.sk/svp_vmapportal/?basemap=orto2023&amp;zoom=5&amp;lat=48.683285&amp;lng=17.339609</a></p>
+<p>ÚGKK SK. (n.d.). Katastrálna mapa (Cadaster map), Mapa určeného operátu (Cadaster parcels usually not visible in the terrain merged into larger units). Portál elektronických služieb katastra nehnuteľností. (Portal for Electronic Services of the Cadaster). Úřad geodézie, kartografie a katastra Slovenskej reoubliky. (Office for geodesy, cartography, and cadaster of the Slovak Reoublic). Retrieved from <a href="https://kataster.skgeodesy.sk/eskn/rest/services/" class="uri">https://kataster.skgeodesy.sk/eskn/rest/services/</a></p>
 <p>USGS. (2025) USGS Landsat 9 Level 2, Collection 2, Tier 1. Retrieved June 6, 2025 from Google Earth Engine</p>
 <p>USGS. (2025) USGS Landsat 8 Level 2, Collection 2, Tier 1. Retrieved June 6, 2025 from Google Earth Engine</p>
 </section>
@@ -1405,239 +1514,242 @@ Projected CRS: ETRS89 / UTM zone 33N
 </main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1645,185 +1757,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 
 

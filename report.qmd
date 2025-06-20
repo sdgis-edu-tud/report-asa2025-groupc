@@ -16,7 +16,7 @@ format:
   html:
     toc: true
     toc-location: right
-    toc-depth: 4
+    toc-depth: 5
     toc-expand: 2
 ---
 
@@ -116,33 +116,35 @@ In collaboration with the [ReBioClim](www.interreg-central.eu/projects/rebioclim
 Multi Criteria Decision Analysis is a research approach that advises decision making based on evaluation of multiple objectives and criteria. It aims to formalize problems and evaluate them by mathematical means. <!-- Do we need a source? -->
 :::
 
-We use MCDA to determine suitability of areas in Teplica river floodplain in the city of Senica for urban stream restoration measures targeting specific themes, and also in general for sustainable urban stream restoration measures.
+We use Multi Criteria Decision Analysis (MCDA) to determine suitability of areas in Teplica river floodplain in the city of Senica for urban stream restoration measures targeting specific themes, and also in general for sustainable urban stream restoration measures.
 
 ### Explanation of how MCDA works
 
-This is a short overview of how MCDA works in this research project. MCDA starts with a research question and subquestions, leading to objectives. Our research ibjectives are described below. From these research questions, we determined criteria that will be used to describe/answer them.
+This is a short overview of how Multi Criteria Decision Analysis works in this research project. MCDA starts with a research question and subquestions, leading to objectives. Our research objectives are described further in the report. From these, we determined criteria that will be used to describe/answer them.
 
-We determined the mutual importance of the attributes and assigned weights to them based on pairwise comparison. For this, we used a Saaty matrix. In the Saaty matrix, in each cell we stated how many times we think the criterion in the row is more important than the criterion in the column. This is described more in detail below. To evaluate the Saaty matrix, a sum is calculated for each row. These values are normalised to determine the weights, so the sum of the weights is 1.
+We determined the mutual importance of the attributes and assigned weights to them based on pairwise comparison. For this, we used a Saaty matrix. In the Saaty matrix, in each cell we stated how many times we think the criterion in the row is more important than the criterion in the column. To evaluate the Saaty matrix, a sum is calculated for each row. These values are normalised to determine the weights, so the sum of the weights is 1. An example is shown in the figure below in the "weight determination, and our approach is explained further in a dedicated chapter.
 
-We divided the area into spatial units that form our analysis geometry, the workflow is described below. These are the units on which the research questions will be answered. For each of these units, we determined the value of each criterion. We normalised these criteria to 0-1, so they are comparable with each other.
+We divided the area around Teplica river in Senica into spatial units that form our analysis geometry, the workflow is described in a dedicated chapter. These are the units on which the research questions will be answered. For each of these units, we determined the value of each criterion. We normalised these criteria to 0-1, so they are comparable with each other.
 
 Then, we multiplied the criteria by the weights to get their relative value (for each spatial unit, the sum of all the weighted criteria falls into interval 0-1). We determined the result of MCDA for the main research question, as well as for individual subquestions.
 
-![Diagram of how MCDA works](img/MCDA_explanation.png)
+You can see a simplified example demonstrating the principles of MCDA in the figure below.
+
+![Diagram of how MCDA works (by Viola Ebermannová)](img/MCDA_explanation.png)
 
 ### Selecting objectives and criteria – three pillar system
 
-The approach of ReBioClim project builds on three pillars: *"The primary aim is to improve the quality of life in cities and at the same time to promote biodiversity and climate adaptation."* (ReBioClim n.d.)
+ReBioClim is a project focused on sustainable urban stream restoration, and it builds on three pillars: *"The primary aim is to improve the quality of life in cities and at the same time to promote biodiversity and climate adaptation."* (ReBioClim n.d.)
 
-![Approach: combining the themes of biodiversity, climate adaptation, and quality of life](/img/_venndiagram.png){width="400"}
+![Approach: combining the themes of biodiversity, climate adaptation, and quality of life (by Viola Ebermannová)](/img/_venndiagram.png){width="400"}
 
 These three themes form the three branches of our MCDA analysis research tree. In each of these branches, we chose a number of sub-themes to determine the suitability of different more specific types of interventions. These sub-themes consist of attributes which we aggregate to use for MCDA. MCDA is performed for each of the three themes, as well as for sustainable urban stream restoration as a whole. Each attribute was given a unique code to be used across our research for clarity.
 
-![Research structure – simplified flow chart of indicators used in each of the three themes](/img/MCDAresearchStructure_overview.png)
+![Research structure – simplified flow chart of indicators used in each of the three themes (by Viola Ebermannová)](/img/MCDAresearchStructure_overview.png)
 
 #### Detailed research structure
 
-Each of the sub/themes comes with its own research subquestion. In the scheme below, you can see a more detailed look at the MCDA research structure, together with an overview of what data we use to evaluate the attributes, and what format of geometry that data is. More specifics of how we sourced the data, what it represents, and how we worked with it are described below in the chapters dedicated to individual attributes.
+Each of the sub/themes comes with its own research subquestion. In the scheme below, you can see a more detailed look at the MCDA research structure, together with an overview of what data we use to evaluate the attributes, and what format of geometry that data is. More specifics of how we sourced the data, what it represents, and how we worked with it are described below in the Data Structure, and more in detail in the chapters dedicated to individual attributes.
 
 <iframe src="pdf/MCDA_researchStructure_detailed.pdf" width="100%" height="500" frameborder="0">
 
@@ -150,15 +152,15 @@ Each of the sub/themes comes with its own research subquestion. In the scheme be
 
 </iframe>
 
-#### Weighting
+### Weighting
 
-In MCDA, each attribute results in a quantifiable criterion. These criteria are normalised and weighed among each other based on their hierarchy of importance in relation to the research question. There are different approaches to determined the weights, we used pairwise comparison Saaty matrix. For this, we used [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/info) by Pavel Holeček.
+In MCDA, each attribute results in a quantifiable criterion. These criteria are normalised and weighed among each other based on their hierarchy of importance in relation to the research question. There are different approaches to determined the weights, we used pairwise comparison Saaty matrix. For this, we used [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/info) by Pavel Holeček (Holeček n.d.).
 
 We determined how many times more or less important is each criterion in relation to every other criterion. This was done in a subjective way, based on our understanding of the problem. The complete matrix of the importance ratios looks like this:
 
-![Complete Saaty Matrix. The meaning of the numbers is: "How many times more important is the criterion in the row compared to the criterion in the column?"](img/CompleteSaatyMatrix.png)
+![Complete Saaty Matrix. The meaning of the numbers is: "How many times more important is the criterion in the row compared to the criterion in the column?" (screenshot from [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/) (Holeček n.d.))](img/CompleteSaatyMatrix.png)
 
-For the matrix above, the weights are assigned as follows. Overall, highest weights were assigned to CA1temp (targeting cooling down summer surface temperature) and QL2acg (potential for central urban functions) and QL3gr (need of built up area for green). Criteria that scored high directly influence livability offer a very actionable basis for the public sector and show potential for feasible and well advocatable investments.
+For the matrix above, the weights were assigned as follows. Overall, highest weights were assigned to CA1temp (targeting cooling down summer surface temperature) and QL2acg (potential for central urban functions) and QL3gr (need of built up area for green). Criteria that scored high directly influence livability and offer a very actionable basis for the public sector and show potential for feasible and tenable investments.
 
 | Criterion | Weight |
 |-----------|--------|
@@ -173,9 +175,9 @@ For the matrix above, the weights are assigned as follows. Overall, highest weig
 
 : Weights of MCDA criteria
 
-![Graph of criteria weights](img/MCDA_weightsgraph.png)
+![Graph of criteria weights (screenshot from [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/) (Holeček n.d.))](img/MCDA_weightsgraph.png)
 
-Consistency is acceptable with consistency ration CR = 0,086 (this is a mechanism to check if the researcher's assigning of importance ratios was consistent across the matrix):
+Consistency is acceptable with consistency ratio CR = 0,086 (this is a mechanism to check if the manual assigning of importance ratios was consistent across the matrix):
 
 | λmax = 8.847
 | CI = 0.121
@@ -184,48 +186,116 @@ Consistency is acceptable with consistency ration CR = 0,086 (this is a mechanis
 
 ### Analysis geometry
 
-The analysis geometry is a vector polygon layer consisting of morphologically determined elements. The decision to create geometry tailored to the local spatial conditions has two main reasons:
+The values of MCDA criteria are evaluated on analysis geometry spatial units. We decided for creating a custom analysis geometry vector polygon layer consisting of morphologicaly determined spatial units. The decision to create geometry tailored to the local spatial conditions has two main reasons:
 
-1.  to make the analysis more accessible to locals – through analysing on geometry familiar to them, hopefully making interpretation easier, and
-2.  to make the results more actionable – through analysing on logical spatial units results will be more space-specific
+1.  to make the analysis more accessible to locals,
+    -   by using familiar analysis geometry units (spatial units respecting recognisable urban and landscape linear orientation structures and long lines (streams, roads), completed by familiar grid structures (street structure, building blocks, boundaries of park areas and fields)
+    -   maps will be more intuitive to read, making the research more accessible and interpretation easier
+2.  to make the results more actionable.
+    -   by analysing on logical spatial units
+    -   more space-specific results will make the analysis-intention-decision path shorter
 
-At the core is a *Regional biocorridor* as indicated in *Spatial Ecological Stability System* (*ÚSES*) – an approximately 20 meter buffer around the stream. We differentiate left and right bank, because it matters for accessibility (significant for all attributes in quality of life).
+The geometry was created mainly manually following four main principles, in this order. It follows the structure of the *Regional biocorridor* as defined in*Spatial Ecological Stability System* (*ÚSES*) as a spine along the river Teplica. The bounds of the geometry were defined based on the flood plain of the river Teplica, as that is the area we consider "belongs" to the river. We followed morphological characteristics of the space to create smaller units. In case the units needed to be partitioned further, and morphology was not used, the partitioning was inspired by the parcel system. Each of these four principles will be explained in a dedicated section.
 
-The bounds of the analysis geometry were determined based on the floodplain of the river indicated by flood danger maps. This is the area that "belongs" to the river, thus it should be restored together with the watercourse. (The outline was based on raster data available online and spatial logic of the area to respect natural boundaries.)
+![Four principles of determining analysis geometry units. (by Viola Ebermannová)](/img/analysisgeometry_overview.png)
 
-The flood plain was partitioned based on local morphology and land cover, and in some cases inspired by the parcellation structure to create a smaller grain in areas with large unpartitioned fields.
 
-![Biocorridor at the core of the geometry as the immediate banks of the river.](/img/analysisgeometry_uses.png)
+![Overview of analysis geometry (by Viola Ebermannová)](img/AnalysisGeometryOverview_250527.png)
 
-![Flood plain - area belonging to the river should be treated as a whole.](/img/analysisgeometry_flood.png)
+##### Principle 1: ÚSES
 
-![Polygons are based on morphology.](/img/analysisgeometry_space.png)
+At the spine of the analysis geometry is a *Regional biocorridor* as defined in *Spatial Ecological Stability System* (*ÚSES*) – an approximately 20 meter buffer around the Teplica stream. This is not a geometry created by us, it is directly taken from [official ÚSES map layer by SAŽP](https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/dokumenty-uses-v-sr) (Slovak Environment Agency), 2023. We differentiate left and right bank, because it matters for accessibility (significant for all attributes in quality of life). In our opinion, apart from being an official spatial unit anchored in the binding spatial plans as having ecological priority, 20 m buffer is an accurate distance for the immediate surroundings of the river, (potentially) connected to it visually and audibly.
 
-![Some larger uniform areas were partitioned based on parcellation.](/img/analysisgeometry_parcelation.png)
+Workflow steps:
 
-#### Analysis geometry update after 27. 5. consultation
+1.  Retrieve data from [ÚSES](https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/dokumenty-uses-v-sr).
 
-Cells along the river: i went through it manually and merged some cells to create larger areas. Always merged only the ones that i previously classified as the same landcover. I did it based on spatial logic and continuity of surrounding division lines. Left and right bank is still distinguished.
+2.  Isolate geometry of biocorridor along the stream Teplica, clip to a size slightly larger than municipality borders, divide dissolved corridor polygon into left and right bank using a the stream line from OSM waterway dataset.
 
-Other cells: In few places, i simplified field separation and merged a road into it (where there is no significant different type of land cover along the road.)
+3.  Create temporary 40 m segments along the corridor (40 m was chosen because it partitions the \~40 m wide biocorridor into "squares", and also as a good distance for having a more detailed analysis of the immediate stream surroundings.)
 
-*- Viola*
+    -   This was done by constructing normals (length larger than corridor width) along the isolated river teplica line (from OSM waterway dataset) at 40 m intervals, manually adjusting the lines in areas where the normals intersected within the corridor (manually deleting and adding lines so the geometry seems "regular"), and splitting the corridor with these lines
 
-![The updated analysis geometry 27. 5. 2025](img/AnalysisGeometryOverview_250527.png)
+4.  After executing steps 1-3 of the ÚSES principle, the other three principles were followed. In the end, Land Cover categories were manually assigned to all spatial units (see [Land cover classification] chapter). After this, the decision was made to merge some adjacent tiles into larger units to unify the level of detail with the rest of the spatial units and follow a similar morphological principle. This makes the results better comparable and helps the analysis be cohesive. Merging was done following these principles:
+
+    -   units lay on the same riverbank (left/right),
+
+    -   units have the same land cover classification,
+
+    -   aim is to maintain division line continuity between the inner spine and the outer floodplain (see following principles for explanation of what this is.)
+
+![Biocorridor at the core of the geometry as the immediate banks of the river. (by Viola Ebermannová)](/img/analysisgeometry_uses.png)
+
+##### Principle 2: Flood plain
+
+The bounds of the analysis geometry were determined based on the floodplain of the river indicated by flood danger maps. This is the area that "belongs" to the river, thus it should be restored together with the watercourse.
+
+Workflow:
+
+1.  Find flood danger (\*Povodňové ohrozenie) data, this project uses map accessible through [SVP š.p. map viewer](https://mpt.svp.sk/svp_vmapportal/?basemap=orto2023&zoom=5&lat=48.683285&lng=17.339609) (SVP š.p. 2023). (The outline was based on raster data available in an online map viewer. In case of raster or vector data being available directly as a retrievable GIS layer, it would be beneficial to use a more exact boundary.)
+
+2.  Trace the flood danger area related to Teplica stream (discarding flood areas of other streams), following morphological boundaries (morphological boundaries already largely follow the approximate flood plain boundary).
+
+3.  This results in an "outer boundary" polygon of the (approximate) flood plain.
+
+![Flood plain - area belonging to the river should be treated as a whole. (by Viola Ebermannová)](/img/analysisgeometry_flood.png)
+
+##### Principle 3: Morphology
+
+The flood plain was manually partitioned based on local morphology and land cover, as analysed from Bing aerial photos. (Bing Aerial View 2018)
+
+Workflow
+
+1.  Retrieve aerial imagery of area (we used Bing Aerial View, 2018).
+
+2.  Analyse morphology of area, identify important orientation lines (roads through landscape or important roads/other linear elements in urban fabric, streams, important paths in landscape), identify grid structures and recognisable planar elements present in the area (street structure, building blocks, park and field boundaries)
+
+3.  Draw by lines the morphology:
+
+    -   linear elements of sufficient width (at minimum \~ 15 m): by drawing edge boundaries, divide into segments based on spatial structure (changing surrounding land cover, morphology), if the spatial structure is consistent, create arbitrary segments of 100-200 m length.
+
+    -   all other important linear elements (of not sufficient width): by drawing the center line
+
+    -   planar elements and grid structures: fill up the remaining space by drawing a grid following the structure of the fabric of the landscape or urban fabric, with cell size approximately 50-200 m large. The cell size depends on the grain size of the morphology (i.e. a farm house in the middle of large fields will have a smaller cell than the grid size of the surrounding agricultural land)
+
+    -   This is a subjective principle, and really depends on agency of the researcher.
+
+4.  Split the "outer boundary" polygon of the (approximate) flood plain by the lines produced in step 3 (leaving the separation of the spine/ÚSES biocorridor intact.)
+
+![Polygons are based on morphology. (by Viola Ebermannová)](/img/analysisgeometry_space.png)
+
+##### Principle 4: Parcelation
+
+In some cases, division of spatial units produces units that we consider too large. In these cases, the larger spatial units determined morphologically are further split in a way inspired by the parcelation structure to create a smaller grain. This typically happens in areas with large unpartitioned agricultural fields. Although this is not a very intuitive/recognisable division, as these boundaries are often not visible in the landscape, they form the basis of ownership and therefore influence the possible interventions.
+
+Workflow:
+
+1.  Retrieve cadaster data, we used data from [ArcGIS Rest service of the Portal for Electronin Services of the Cadaster](https://kataster.skgeodesy.sk/eskn/rest/services/) of Slovakia (ÚGKK SR, n.d.).
+
+2.  For spatial units formed by previous steps, that are larger than approximately \~ 150-200 m, create additional divisions inspired by the cadaster parcelation.
+
+    -   Not following all boundaries, but creating regular partitioning of the larger units with grid size of approximately 80-120 m.
+
+    -   Preferably, there is a continuity of separation lines between larger floodplain and the inner spine division.
+
+3.  This results in analysis geometry with a sufficiently uniform grain size based in actual spatial structure.
+
+![Some larger uniform areas were partitioned based on parcelation. (by Viola Ebermannová)](/img/analysisgeometry_parcelation.png)
+
 
 #### Land cover classification
 
 The analysis geometry was manually assigned Land Cover classes. Below is an overview of these classes with a typical example. Each land cover class was assigned an estimate ecological quality indicator based on intuition.
 
-![Landcover overview version 27. 5. 2025](img/LandcoverOverview_250527.png)
+![Landcover overview version 27. 5. 2025 (by Viola Ebermannová)](img/LandcoverOverview_250527.png)
 
-![Typical examples of land cover classes, draft estimate ecological quality indicator](/img/B_LandCover_typology.png)
+![Typical examples of land cover classes, draft estimate ecological quality indicator (by Viola Ebermannová)](/img/B_LandCover_typology.png)
 
 ### Data structure
 
 This is an overview of data formats and sources used, as well as a simplified description on how original geometry formats were aggregated onto our vector polygon analysis geometry spatial units. More detailed descriptions can be found in the attribute sub chapters of this report.
 
-General workflow for all of the attributes was: data was
+General workflow for all of the attributes was:
 
 1.  Perform calculations and create base layer
 
@@ -249,7 +319,7 @@ We used linear min-max normalisation to 0-1, eventually inversed (1-\[standard m
 
 WIP – please refer to the main research structure flow chart for overview.
 
-#### #1 Which spaces should be prioritised because of their connectivity to ÚSES?
+#### *B1uses* – Which spaces should be prioritised because of their connectivity to ÚSES?
 
 ##### Data
 
@@ -263,7 +333,7 @@ The elements of ÚSES are biocenters, biocorridors (connecting biocenters to all
 
 ###### ÚSES within our area
 
-![Map of ÚSES within our area](/img/USES.png)
+![Map of ÚSES within our area (by Hongyue Kang)](/img/USES.png)
 
 ##### Aggregation and normalisation
 
@@ -273,23 +343,23 @@ Values were assigned based on the level of connectivity to ÚSES. Highest value 
 | polygons that are connected by (contuinuos) "green" land cover to ÚSES elements --\> 0,3
 | other polygons --\> 0
 
-![Criterion B1uses – Connectivity to ÚSES (normalised.)](/img/MCDA_conclusions_B1uses.png)
+![Criterion B1uses – Connectivity to ÚSES (normalised.) (by Viola Ebermannová)](/img/MCDA_conclusions_B1uses.png)
 
-#### #2 Which spaces should be prioritised based on ecological quality improvement potential?
+#### *B2pot* – Which spaces should be prioritised based on ecological quality improvement potential?
 
 Our argument is that spaces with a potential for a high impact improvement and at the same time good investment feasibility should be prioritised, because of good actionability of intentions/plans.
 
 Potential for high impact improvement is determined by unsatisfactory ecological quality. Investment feasibility is determined by attractivity to invest in biodiversity improvement and in general spatial quality improvement in an area like this. High investment feasibility is in the surrounding of dwellings, in spaces that are already upkept. Low investment feasibility is in agricultural areas, where produce is prioritised. In these areas in general it is advised to use agricultural methods that can aid local biodiversity.
 
-![Ecological quality improvement potential in bottom row.](/img/B_LandCover_ImprovementPotential.png)
+![Ecological quality improvement potential in bottom row. (by Viola Ebermannová)](/img/B_LandCover_ImprovementPotential.png)
 
 ##### Aggregation and normalisation
 
 The potential was calculated on range 0-1 directly on Analysis geometry polygons.
 
-![Criterion B2pot – Improvement potential (normalised.)](/img/MCDA_conclusions_B2pot.png)
+![Criterion B2pot – Improvement potential (normalised.) (by Viola Ebermannová)](/img/MCDA_conclusions_B2pot.png)
 
-#### #3 Which spaces should be prioritized based on current state of the vegetation?
+#### *B3ndvi* – Which spaces should be prioritized based on current state of the vegetation?
 
 ##### NDVI
 
@@ -301,19 +371,21 @@ The steps we take to calculate the NDVI are as follow: Sentinel-2 satellite imag
 | **0.3–0.6** – Moderate vegetation
 | **\> 0.6** – Dense and healthy vegetation
 
-![NDVI classification](img/NDVI.png)
+![NDVI classification (by Hongyue Kang)](img/NDVI.png)
 
 ##### Aggregation and normalisation
 
 Data was aggregated based on average value within analysis geometry polygon, and normalised by 1-\[linear min-max\] –\> priority is given to low quality vegetation.
 
-![Criterion B3ndvi – Current state of vegetation (normalised.)](/img/MCDA_conclusions_B3ndvi.png)
+Note: In the area, there is a large water body present. This water body was assigned a high value for the nornalised *B3ndvi*, because water has a low NDVI value. That means it is classified as area with a large priority to improve the green cover based on its current state, despite there being no actuall green cover. This makes the analysis biased. 
+
+![Criterion B3ndvi – Current state of vegetation (normalised.) (by Viola Ebermannová)](/img/MCDA_conclusions_B3ndvi.png)
 
 #### Weighting
 
 An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing biodiversity criteria among each other, the values were given as follows:
 
-![Partial pairwise comparison matrix – biodiversity](img/B_SaatyMatrix.png)
+![Partial pairwise comparison matrix – biodiversity (screenshot from [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/) (Holeček n.d.))](img/B_SaatyMatrix.png)
 
 The calculated weights for biodiversity indicators are:
 
@@ -333,7 +405,7 @@ In this part, we developed a spatially explicit composite biodiversity index map
 
 The resulting map reveals a clear spatial pattern: because of NDVI and USES’s high weight, area with high improvement potential are those where have low NDVI index and are less connected with USES, particularly in the midstream and upstream sections.
 
-![MCDA Biodiversity conclusion](/img/MCDA_conclusions_B.png)
+![MCDA Biodiversity conclusion (by Viola Ebermannová)](/img/MCDA_conclusions_B.png)
 
 ### Climate adaptation
 
@@ -347,7 +419,7 @@ WIP – please refer to the main research structure flow chart for overview.
 
 This chapter is based on the fact that in western slovakia, there is a large drought problem, and water management activities should target capturing water in the landscape. <!-- ^This needs a source, but it is true. -->
 
-#### #1 Which spaces should be prioritized for interventions aimed at cooling the area down?
+#### *CA1temp* – Which spaces should be prioritized for interventions aimed at cooling the area down?
 
 To analyse surface temperatures, we found a [Google Earth Engine script](https://code.earthengine.google.com/ac986028b56a794aefd3ea54e9cb09ba) made by [Ramadhan](https://www.youtube.com/watch?v=3LOMNzBHmjs) on YouTube (2024) that uses information from Sentinel-2, LANDSAT, and DEM to predict a raster LST (land surface temperature) with a higher resolution than other available datasets on LST, namely 10-meter resolution. The computations are complicated and will only be discussed in general lines in this report, but the results are relevant and useful to our research. Mainly to answer the question of which spaces should be prioritized to be wetter to help the area cool down, because now it is too hot. The draft image shows the results for dates 2024-06-01 to 2024-08-31, since these three months include the summer and will therefore be most susceptible for heat stress, which makes this time period interesting to look at for our research.
 
@@ -374,15 +446,15 @@ The normalization is a linear min-max normalization for a benefit criterion, mea
 * Clean up and rename, save as separate file for further processing -->
 ```
 
-![Map of predicted LST values](/img/CA1temp_LST_map02.png)
+![Map of predicted LST values (by Kelly Schoonderwoerd)](/img/CA1temp_LST_map02.png)
 
 ##### Weigting and normalisation
 
 Weighted as mean by Zonal statistics tool.
 
-![Criterion CA1temp – need for cooling (normalised.)](/img/MCDA_conclusions_CA1temp.png)
+![Criterion CA1temp – need for cooling (normalised.) (by Viola Ebermannová)](/img/MCDA_conclusions_CA1temp.png)
 
-#### #2 Where does the soil have high potential for water retention?
+#### *CA2soil* – Where does the soil have high potential for water retention?
 
 ##### Soil retention ability and permeability
 
@@ -390,20 +462,20 @@ From Atlas of Slovakia, quite small scale.
 
 Soil retention in this map means ..... Permeability means ....
 
-![Soil potential](/img/CA_soil.png)
+![Soil potential (by Viola Ebermannová)](/img/CA_soil.png)
 
 ##### Aggregation and normalisation
 
 | RS Medium+ P Medium -\> 0,5
 | RS High+ P Medium -\> 1
 
-![Criterion CA2soil – Retention ability (normalised.)](/img/MCDA_conclusions_CA2soil.png)
+![Criterion CA2soil – Retention ability (normalised.) (by Viola Ebermannová)](/img/MCDA_conclusions_CA2soil.png)
 
 #### Weighting
 
 An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing climate adaptation criteria among each other, the values were given as follows:
 
-![Partial pairwise comparison matrix – climate adaptation](img/CA_SaatyMatrix.png)
+![Partial pairwise comparison matrix – climate adaptation(screenshot from [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/) (Holeček n.d.))](img/CA_SaatyMatrix.png)
 
 The calculated weights for climate adaptation criteria are:
 
@@ -420,7 +492,7 @@ The calculated weights for climate adaptation criteria are:
 
 For climate adaptation, we considered two key factors: land surface temperature (CA1temp) and water retention capacity (CA2soil). As shown in the resulting map, spatial geometries located within urban areas, as well as those near the downstream section of the Teplica River, are identified as more suitable for climate adaptation interventions. This outcome is primarily due to the significantly higher weight assigned to CA1temp, which has a more direct impact on climate adaptation potential. Consequently, areas currently experiencing higher land surface temperatures are prioritized as key targets for intervention.
 
-![MCDA Climate adaptation conclusion](/img/MCDA_conclusions_CA.png)
+![MCDA Climate adaptation conclusion (by Viola Ebermannová)](/img/MCDA_conclusions_CA.png)
 
 ### Quality of life
 
@@ -430,7 +502,7 @@ For climate adaptation, we considered two key factors: land surface temperature 
 
 WIP – please refer to the main research structure flow chart for overview.
 
-#### #1 Where is potential for community functions?
+#### *QL1acl* – Where is potential for community functions?
 
 ##### Angular choice analysis
 
@@ -442,15 +514,15 @@ The values of Angular choice analysis with radius 500 m were lineary normalised 
 
 ##### Weighting and normalisation
 
-Aggregated as maximum value in polygon. Where there are no intersecting roads (gives result 'NULL'), 0 was assigned. This aggregate value was lineary normalised to 0-1 range.
+Aggregated as maximum value in polygon, to show the maximum potential in the area. Where there are no intersecting roads (gives result 'NULL'), 0 was assigned. This aggregate value was lineary normalised to 0-1 range.
 
 ```         
 aggregate( 'layer: angular_choice', 'max', "attribute: r=500 m, normalised", intersects($geometry,geometry(@parent)))
 ```
 
-![Criterion QL1acl – Community function potential (normalised.)](/img/MCDA_conclusions_QL1acl.png)
+![Criterion QL1acl – Community function potential (normalised.) (by Viola Ebermannová)](/img/MCDA_conclusions_QL1acl.png)
 
-#### #2 Where is potential for "central" functions?
+#### *QL2acg* – Where is potential for "central" functions?
 
 Angular choice analysis was calculated for radii 1 km and 2 km. First, these two attributes were normalised. Then these values were combined to a common indicator, giving larger weight to the larger radius:
 
@@ -460,13 +532,13 @@ This attribute was then normalised.
 
 ##### Aggregation and normalisation
 
-Again, the value was aggregated by calculating maximum value in the polygon and lineary normalised to 0-1 range.
+Again, the value was aggregated by calculating maximum value in the polygon, to show the maximal potential in the area, and lineary normalised to 0-1 range.
 
 ```         
 aggregate( 'layer: angular_choice', 'max', "attribute: AC1km2km, normalised", intersects($geometry,geometry(@parent)))
 ```
 
-#### #3 Where is a large need for green?
+#### *QL3gr* – Where is a large need for green?
 
 ##### Attraction reach analysis
 
@@ -476,9 +548,9 @@ Attraction reach was calculated from centroids of buildings to green areas, as c
 
 ##### Aggregation and normalisation
 
-Analysis geometry polygons was buffered by 500 m, to simulate area in 500 m walking distance of each polygon. (While technically not 500 m walking distance, on this small scale we consider the difference negligible.)
+Analysis geometry polygons was buffered by 500 m, to simulate area in 500 m walking distance of each polygon. (While technically not 500 m walking distance, on this small scale we consider the difference negligible.) (If replicating this workflow, consider using a 500 m walking distance service area instead, which captures the intended meaning of the analysis more accurately.)
 
-![Buffered analysis geometry](img/QL3gr_bufferedpolygons.png)
+![Buffered analysis geometry (by Viola Ebermannová)](img/QL3gr_bufferedpolygons.png)
 
 Then, we filtered out houses that we consider "need green". Unfortunately, many houses in this area have "type" 'NULL', which skews the analysis.
 
@@ -494,7 +566,7 @@ CASE
 END
 ```
 
-![Buildings that we consider need green](img/QL3gr_buildingsneedgreen.png)
+![Buildings that we consider need green (by Viola Ebermannová)](img/QL3gr_buildingsneedgreen.png)
 
 Then, for each buffered Analysis geometry polygon, sum was calculated of values from buildings in need of green intersecting it (value polygons with no intersecting buildings is zero).
 
@@ -504,7 +576,7 @@ aggregate( 'layer: Buildings in need of green', 'sum', "Attraction reach to gree
 
 This was lineary normalised to 0-1 into the final value.
 
-![Criterion QL3gr – need for green (normalised.)](/img/MCDA_conclusions_QL3gr.png)
+![Criterion QL3gr – need for green (normalised.) (by Viola Ebermannová)](/img/MCDA_conclusions_QL3gr.png)
 
 #### PLACEHOLDER SPACE SYNTAX base layers – UNTIL WE PUT IT IN CORRECT CHAPTERS
 
@@ -604,7 +676,7 @@ Attraction Reach Teplica
 
 An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing quality of life criteria among each other, the values were given as follows:
 
-![Partial pairwise comparison matrix – quality of life](img/QL_SaatyMatrix.png)
+![Partial pairwise comparison matrix – quality of life (screenshot from [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/) (Holeček n.d.))](img/QL_SaatyMatrix.png)
 
 The calculated weights for climate adaptation criteria are:
 
@@ -620,7 +692,7 @@ The calculated weights for climate adaptation criteria are:
 
 <!-- text about conclusion and interpretation -->
 
-![MCDA Quality of life conclusion](/img/MCDA_conclusions_QL.png)
+![MCDA Quality of life conclusion (by Viola Ebermannová)](/img/MCDA_conclusions_QL.png)
 
 ### MCDA conclusion
 
@@ -628,7 +700,7 @@ The calculated weights for climate adaptation criteria are:
 
 We achieved the final conclusion by calculating the sum of all criteria for each polygon. This shows which areas have over all the greatest potentials and should be prioritised when making decisions on where to target urban stream restoration interventions. However, that does not mean that the areas with low priority should not be targeted. Sustainable stream restoration should be designed in a complex way, for the larger site (stream flood plain) as a whole.
 
-![MCDA Final conclusion](/img/MCDA_conclusions_sum.png)
+![MCDA Final conclusion (by Viola Ebermannová)](/img/MCDA_conclusions_sum.png)
 
 ## Typology Construction
 
@@ -638,11 +710,11 @@ We achieved the final conclusion by calculating the sum of all criteria for each
 
 <!-- Hopefully, we will get types of areas that can make it easier to create example design interventions. Perhaps something like "areas with large potential for community facilities with water retention function", "areas with community functions and maintained high biodiversity", "areas with biodiversity boost, improved surface permeability and connectivity". -->
 
-### Clustering 
+### Clustering
 
 The typology construction is based on the course's provided tutorial on how to construct urban typologies in R. We use K-means Clustering, an unsupervised machine learning method, to find similar typologies for areas around an urban stream based on earlier analysed qualities. The main goal for the typological clustering is to get types of areas that can make it easier to create example design interventions. Perhaps something like "areas with large potential for community facilities with water retention function", "areas with community functions and maintained high biodiversity", "areas with biodiversity boost, improved surface permeability and connectivity". We feel like our goal for typology alligns pretty well with our main research question *How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?*
 
-#### Focus area and variables 
+#### Focus area and variables
 
 The focus area of the typology clustering is the stream corridor in Senica and the spatial unit is the earlier defined analysis geometries. For the typology clustering, we use four variables that were previously analysed, namely:
 
@@ -656,7 +728,7 @@ The focus area of the typology clustering is the stream corridor in Senica and t
 
 These specific attributes were chosen, because we judged them to be the most relevant for typology clustering. Both biodiversity attributes (B1uses and B3ndvi) give information about the areas and their current characteristics, making them useful for typology clustering. The other two attributes (CA1temp and QL2acg) got a high weight in the MCDA and are thus important to our research question. Another attribute that scored high in the MCDA is QL3gr, indicating spaces that lack green area within a radius of 500m. This attribute has been left out of the typology construction, since the presence and quality of green areas is already included in attribute B3ndvi and we judged B3ndvi to be more about the area itself than QL3gr, which takes into account the surroundings as well.
 
-### Workflow 
+### Workflow
 
 The dataset that is used, is an aggregated dataset containing all normalised attributes for each analysis geometry. The clustering steps can be generally described as follows:
 
@@ -837,7 +909,6 @@ print(original_centers)
 
 ```
 
-
 #### Step 6. (Optional) Calculate distance to cluster center
 
 Optionally, we can compute the distance of each analysis geometry to the cluster center. This can be used as an indication of how well the geometry fits in its cluster, thus how closely an individual geometry resembles the general typology it is categorised in.
@@ -860,32 +931,34 @@ head(grids$cluster_dist)
 
 ### Tpylogy Construction conclusion
 
-
 ##### Typology description
 
 <!-- 🔴 🟠 🟡 🟢 🔵 🟣 -->
 
-To interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below shows the (unscaled) clustered values of each attribute. 
+To interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below shows the (unscaled) clustered values of each attribute.
 
 | Type | B1uses | B3ndvi | CA1temp | QL2acg | Description |
 |------------|------------|------------|------------|------------|------------|
 | 1 | 🟠 0.417 | 🔴 0.742 | 🔴 0.778 | 🔴 0.708 | High B3ndvi, CA1temp, and QL2acg. Low B1uses. |
 | 2 | 🔴 0.747 | 🟡 0.300 | 🟡 0.386 | 🟣 7.216e-16 | High B1uses and extremely low QL2acg |
 | 3 | 🔴 0.781 | 🟢 0.286 | 🟠 0.442 | 🔴 0.792 | High B1uses and QL2acg, low B3ndvi |
-| 4 | 🟠 0.545 |🟡 0.301 | 🔴 0.837 | 🔵 0.0177 | High CA1temp and very low QL2acg |
+| 4 | 🟠 0.545 | 🟡 0.301 | 🔴 0.837 | 🔵 0.0177 | High CA1temp and very low QL2acg |
 
-🔴 High \
-🟠 Medium high \
-🟡 Medium low \
-🟢 Low \
-🔵 Very low \
-🟣 Extremely low 
+🔴 High\
+🟠 Medium high\
+🟡 Medium low\
+🟢 Low\
+🔵 Very low\
+🟣 Extremely low
 
 ## Results
 
 ## Discussion
 
 ### Discussion of results
+
+In the area, there is a large water body present. This water body was assigned a high value for the nornalised *B3ndvi*, because water has a low NDVI value. That means it is classified as area with a large priority to improve the green cover based on its current state, despite there being no actuall green cover. This makes the analysis biased.
+ <!-- -> In what way exactly???? What would we expect differently if we fixed this? -->
 
 ## Reflection
 
@@ -896,6 +969,7 @@ To interpret the clustering results, we examine the centers of each cluster in t
     - analysis geometry (suitability, methodology, scale) – this might also be in discussion, at least partly
   -->
 ```
+
 
 ## Conclusion
 
@@ -917,17 +991,25 @@ ReBioClim. (n.d.) ReBioClim - ProjectOverview. Interreg Central Europe. Retrieve
 
 SAŽP. (n.d.). Územný systém ekologickej stability (ÚSES). SAŽP – Slovak Environment Agency. Retrieved on June 6, 2025 from <https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/uzemny-system-ekologickej-stability-uses>
 
+Holeček, P. (n.d.). Fuzzy AHP. Web Application. Screenshots taken on June 10 from <https://fuzzyahp.holecekp.eu/en/>
+
 ### Map layers
 
-European Union/ESA/Copernicus. (2025) Harmonized Sentinel-2 MSI, Level -2A. Retrieved June 6, 2025 from Google Earth Engine 
+Bing Aerial Photos. (2018). Retrieved from <http://ecn.t3.tiles.virtualearth.net/tiles/a%7Bq%7D.jpeg?g=1>
 
-Google Earth Engine. (2025) Cloud Score+ S2_HARMONIZED V1. Retrieved June 6, 2025 from Google Earth Engine 
+European Union/ESA/Copernicus. (2025) Harmonized Sentinel-2 MSI, Level -2A. Retrieved June 6, 2025 from Google Earth Engine
 
-NASA / USGS / JPL-Caltech. (2025) NASA SRTM Digital Elevation 30m. Retrieved June 6, 2025 from Google Earth Engine 
+Google Earth Engine. (2025) Cloud Score+ S2_HARMONIZED V1. Retrieved June 6, 2025 from Google Earth Engine
 
-USGS. (2025) USGS Landsat 9 Level 2, Collection 2, Tier 1. Retrieved June 6, 2025 from Google Earth Engine 
+NASA / USGS / JPL-Caltech. (2025) NASA SRTM Digital Elevation 30m. Retrieved June 6, 2025 from Google Earth Engine
 
-USGS. (2025) USGS Landsat 8 Level 2, Collection 2, Tier 1. Retrieved June 6, 2025 from Google Earth Engine 
+SVP š.p. – Slovakian Water Management Utility. (15 June 2023). Mapy povodňového ohrozenia. (Flood danger maps). Retrieved June 1, 2025 from: <https://mpt.svp.sk/svp_vmapportal/?basemap=orto2023&zoom=5&lat=48.683285&lng=17.339609>
+
+ÚGKK SK. (n.d.). Katastrálna mapa (Cadaster map), Mapa určeného operátu (Cadaster parcels usually not visible in the terrain merged into larger units). Portál elektronických služieb katastra nehnuteľností. (Portal for Electronic Services of the Cadaster). Úřad geodézie, kartografie a katastra Slovenskej reoubliky. (Office for geodesy, cartography, and cadaster of the Slovak Reoublic). Retrieved from <https://kataster.skgeodesy.sk/eskn/rest/services/>
+
+USGS. (2025) USGS Landsat 9 Level 2, Collection 2, Tier 1. Retrieved June 6, 2025 from Google Earth Engine
+
+USGS. (2025) USGS Landsat 8 Level 2, Collection 2, Tier 1. Retrieved June 6, 2025 from Google Earth Engine
 
 ### Images
 
