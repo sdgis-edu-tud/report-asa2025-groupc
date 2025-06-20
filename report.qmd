@@ -15,9 +15,9 @@ author:
 format:
   html:
     toc: true
-    # toc-location: right
-    # toc-depth: 4
-    # toc-expand: 2
+    toc-location: right
+    toc-depth: 4
+    toc-expand: 2
 ---
 
 <!-- ::: callout -->
@@ -67,8 +67,6 @@ format:
 <!-- and start the report from the Introduction section below. -->
 
 <!-- ::: -->
-
-
 
 ## Introduction
 
@@ -132,10 +130,9 @@ Then, we multiplied the criteria by the weights to get their relative value (for
 
 ![Diagram of how MCDA works](img/MCDA_explanation.png)
 
-
 ### Selecting objectives and criteria – three pillar system
 
-The approach of ReBioClim project builds on three pillars: _"The primary aim is to improve the quality of life in cities and at the same time to promote biodiversity and climate adaptation."_ (ReBioClim n.d.)
+The approach of ReBioClim project builds on three pillars: *"The primary aim is to improve the quality of life in cities and at the same time to promote biodiversity and climate adaptation."* (ReBioClim n.d.)
 
 ![Approach: combining the themes of biodiversity, climate adaptation, and quality of life](/img/_venndiagram.png){width="400"}
 
@@ -147,18 +144,17 @@ These three themes form the three branches of our MCDA analysis research tree. I
 
 Each of the sub/themes comes with its own research subquestion. In the scheme below, you can see a more detailed look at the MCDA research structure, together with an overview of what data we use to evaluate the attributes, and what format of geometry that data is. More specifics of how we sourced the data, what it represents, and how we worked with it are described below in the chapters dedicated to individual attributes.
 
-
-<iframe src="pdf/MCDA_researchStructure_detailed.pdf" width="100%" height="500" frameborder="0"></iframe>
+<iframe src="pdf/MCDA_researchStructure_detailed.pdf" width="100%" height="500" frameborder="0">
 
 </iframe>
 
+</iframe>
 
 #### Weighting
 
 In MCDA, each attribute results in a quantifiable criterion. These criteria are normalised and weighed among each other based on their hierarchy of importance in relation to the research question. There are different approaches to determined the weights, we used pairwise comparison Saaty matrix. For this, we used [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/info) by Pavel Holeček.
 
 We determined how many times more or less important is each criterion in relation to every other criterion. This was done in a subjective way, based on our understanding of the problem. The complete matrix of the importance ratios looks like this:
-
 
 ![Complete Saaty Matrix. The meaning of the numbers is: "How many times more important is the criterion in the row compared to the criterion in the column?"](img/CompleteSaatyMatrix.png)
 
@@ -185,7 +181,6 @@ Consistency is acceptable with consistency ration CR = 0,086 (this is a mechanis
 | CI = 0.121
 | RI = 1.4
 | CR = 0.086
-
 
 ### Analysis geometry
 
@@ -228,15 +223,23 @@ The analysis geometry was manually assigned Land Cover classes. Below is an over
 
 ### Data structure
 
-<!--Talk about how we deal with data, sources, what geometries we use for what and how overview of approaches to agregate data from original geometry types to the analysis geometry -->
+This is an overview of data formats and sources used, as well as a simplified description on how original geometry formats were aggregated onto our vector polygon analysis geometry spatial units. More detailed descriptions can be found in the attribute sub chapters of this report.
 
-General workflow of aggregating data is: 0. Perform calculations and create base layer 1. Normalise values 2. Aggregate (3. Eventually normalise again)
+General workflow for all of the attributes was: data was
 
-We use linear min-max normalisation to 0-1, eventually inversed (1-\[standard min-max normalisation\]).
+1.  Perform calculations and create base layer
 
-WIP - please refer to detailed research structure flowchart for some information.
+2.  Normalise values
 
-![Scheme of data structure – data types of original layers, processes that they go through to create 3 aggregate layers and the final map - placeholder](/img/placeholder.png)
+3.  Aggregate
+
+4.  Normalise again
+
+We used linear min-max normalisation to 0-1, eventually inversed (1-\[standard min-max normalisation\]).
+
+<iframe src="pdf/MCDA_DataStructure.pdf" width="100%" height="500" frameborder="0">
+
+</iframe>
 
 ### Biodiversity
 
@@ -899,4 +902,4 @@ SAŽP. (n.d.). Územný systém ekologickej stability (ÚSES). SAŽP – Slovak 
 
 ### Images
 
-Street View of Senica – Google Maps. (May 2012). Retrieved on May 22, 2025 from: <https://www.google.com/maps/place/905+01+Senica,+Slovensko/@48.6841521,17.3581313,3a,75y,296.73h,88.04t/data=!3m7!1e1!3m5!1sbkMc3aSUkJxRvi5IszgGWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9640483562330928%26panoid%3DbkMc3aSUkJxRvi5IszgGWg%26yaw%3D296.73281886129774!7i13312!8i6656!4m7!3m6!1s0x476cb4e2e7ed1a27:0x400f7d1c696ee40!8m2!3d48.6811502!4d17.3672337!10e5!16zL20vMGRyeG43?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D>
+Street View of Senica – Google Maps. (May 2012). Retrieved on May 22, 2025 from: [https://www.google.com/maps/place/905+01+Senica,+Slovensko/\@48.6841521,17.3581313,3a,75y,296.73h,88.04t/data=!3m7!1e1!3m5!1sbkMc3aSUkJxRvi5IszgGWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9640483562330928%26panoid%3DbkMc3aSUkJxRvi5IszgGWg%26yaw%3D296.73281886129774!7i13312!8i6656!4m7!3m6!1s0x476cb4e2e7ed1a27:0x400f7d1c696ee40!8m2!3d48.6811502!4d17.3672337!10e5!16zL20vMGRyeG43?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D](https://www.google.com/maps/place/905+01+Senica,+Slovensko/@48.6841521,17.3581313,3a,75y,296.73h,88.04t/data=!3m7!1e1!3m5!1sbkMc3aSUkJxRvi5IszgGWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9640483562330928%26panoid%3DbkMc3aSUkJxRvi5IszgGWg%26yaw%3D296.73281886129774!7i13312!8i6656!4m7!3m6!1s0x476cb4e2e7ed1a27:0x400f7d1c696ee40!8m2!3d48.6811502!4d17.3672337!10e5!16zL20vMGRyeG43?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D){.uri}
