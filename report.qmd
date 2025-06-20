@@ -374,7 +374,7 @@ The normalization is a linear min-max normalization for a benefit criterion, mea
 * Clean up and rename, save as separate file for further processing -->
 ```
 
-![LST draft](/img/LST_analysis_prediction_draft02.png)
+![Map of predicted LST values](/img/CA1temp_LST_map02.png)
 
 ##### Weigting and normalisation
 
@@ -630,7 +630,7 @@ We achieved the final conclusion by calculating the sum of all criteria for each
 
 ![MCDA Final conclusion](/img/MCDA_conclusions_sum.png)
 
-## Typology construction
+## Typology Construction
 
 <!-- Kelly is working on this. -->
 
@@ -638,7 +638,11 @@ We achieved the final conclusion by calculating the sum of all criteria for each
 
 <!-- Hopefully, we will get types of areas that can make it easier to create example design interventions. Perhaps something like "areas with large potential for community facilities with water retention function", "areas with community functions and maintained high biodiversity", "areas with biodiversity boost, improved surface permeability and connectivity". -->
 
+### Clustering 
+
 The typology construction is based on the course's provided tutorial on how to construct urban typologies in R. We use K-means Clustering, an unsupervised machine learning method, to find similar typologies for areas around an urban stream based on earlier analysed qualities. The main goal for the typological clustering is to get types of areas that can make it easier to create example design interventions. Perhaps something like "areas with large potential for community facilities with water retention function", "areas with community functions and maintained high biodiversity", "areas with biodiversity boost, improved surface permeability and connectivity". We feel like our goal for typology alligns pretty well with our main research question *How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?*
+
+#### Focus area and variables 
 
 The focus area of the typology clustering is the stream corridor in Senica and the spatial unit is the earlier defined analysis geometries. For the typology clustering, we use four variables that were previously analysed, namely:
 
@@ -652,6 +656,8 @@ The focus area of the typology clustering is the stream corridor in Senica and t
 
 These specific attributes were chosen, because we judged them to be the most relevant for typology clustering. Both biodiversity attributes (B1uses and B3ndvi) give information about the areas and their current characteristics, making them useful for typology clustering. The other two attributes (CA1temp and QL2acg) got a high weight in the MCDA and are thus important to our research question. Another attribute that scored high in the MCDA is QL3gr, indicating spaces that lack green area within a radius of 500m. This attribute has been left out of the typology construction, since the presence and quality of green areas is already included in attribute B3ndvi and we judged B3ndvi to be more about the area itself than QL3gr, which takes into account the surroundings as well.
 
+### Workflow 
+
 The dataset that is used, is an aggregated dataset containing all normalised attributes for each analysis geometry. The clustering steps can be generally described as follows:
 
 Step 1. Load R packages and data\
@@ -661,7 +667,7 @@ Step 4. Run K-means clustering\
 Step 5. Interpret cluster center\
 Step 6. (Optional) Calculate distance to cluster center
 
-### Step 1. Load R packages and data
+#### Step 1. Load R packages and data
 
 First, load the necessary R packages.
 
@@ -710,7 +716,7 @@ plot(grids["CA1temp"], border = NA, main = "CA1temp")
 plot(grids["QL2acg"], border = NA, main = "QL2acg")
 ```
 
-### Step 2. Standardization
+#### Step 2. Standardization
 
 From the dataframe, we remove rows with missing (null/NA) values in one of the selected columns. This is needed to properly perform the clustering. We then select the relevant features (B1uses, B3ndvi, CA1temp, QL2acg). These features are standardised to ensure they contribute equally to the clustering algorithm.
 
@@ -728,7 +734,7 @@ X_scaled <- scale(features) # Standardize (mean=0, sd=1)
 head(X_scaled)
 ```
 
-### Step 3: Determine the optimal K
+#### Step 3: Determine the optimal K
 
 We use the **elbow method** to choose a good number of clusters.
 
@@ -766,7 +772,7 @@ plot(k_values, inertia,
      main = "Elbow Method")
 ```
 
-### Step 4. Run K-Means clustering
+#### Step 4. Run K-Means clustering
 
 Looking at the elbow plot, there is not a very clear elbow point. However, to limit the amount of clusters so that we can later define clear typologies we choose `k = 4`.\
 Now we run the K-means algorithm and assign each analysis geometry to one of the four clusters.
@@ -807,7 +813,7 @@ plot(grids["cluster"],
      border = NA)
 ```
 
-### Step 5. Interpret cluster centers
+#### Step 5. Interpret cluster centers
 
 Now we look at the center of each cluster. First, we check the values in standardized form. Then, we convert them back to the original units, so they are easier to understand.
 
@@ -831,18 +837,8 @@ print(original_centers)
 
 ```
 
-To interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below shows the unscaled clustered values of each attribute.
 
-### Typology description
-
-| Type | B1uses | B3ndvi | CA1temp | QL2acg | Description |
-|------------|------------|------------|------------|------------|------------|
-| 1 | 0.417 | 0.742 | 0.778 | 0.708 | High B3ndvi, CA1temp, and QL2acg. Low B1uses. |
-| 2 | 0.747 | 0.300 | 0.386 | 7.216e-16 | High B1uses and extremely low QL2acg |
-| 3 | 0.781 | 0.286 | 0.442 | 0.792 | High B1uses and QL2acg |
-| 4 | 0.545 | 0.301 | 0.837 | 0.0177 | High CA1temp and low QL2acg |
-
-### Step 6. (Optional) Calculate distance to cluster center
+#### Step 6. (Optional) Calculate distance to cluster center
 
 Optionally, we can compute the distance of each analysis geometry to the cluster center. This can be used as an indication of how well the geometry fits in its cluster, thus how closely an individual geometry resembles the general typology it is categorised in.
 
@@ -861,6 +857,29 @@ grids$cluster_dist <- grid_distances
 head(grids$cluster_dist)
 
 ```
+
+### Tpylogy Construction conclusion
+
+
+##### Typology description
+
+<!-- 🔴 🟠 🟡 🟢 🔵 🟣 -->
+
+To interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below shows the (unscaled) clustered values of each attribute. 
+
+| Type | B1uses | B3ndvi | CA1temp | QL2acg | Description |
+|------------|------------|------------|------------|------------|------------|
+| 1 | 🟠 0.417 | 🔴 0.742 | 🔴 0.778 | 🔴 0.708 | High B3ndvi, CA1temp, and QL2acg. Low B1uses. |
+| 2 | 🔴 0.747 | 🟡 0.300 | 🟡 0.386 | 🟣 7.216e-16 | High B1uses and extremely low QL2acg |
+| 3 | 🔴 0.781 | 🟢 0.286 | 🟠 0.442 | 🔴 0.792 | High B1uses and QL2acg, low B3ndvi |
+| 4 | 🟠 0.545 |🟡 0.301 | 🔴 0.837 | 🔵 0.0177 | High CA1temp and very low QL2acg |
+
+🔴 High \
+🟠 Medium high \
+🟡 Medium low \
+🟢 Low \
+🔵 Very low \
+🟣 Extremely low 
 
 ## Results
 
@@ -894,11 +913,21 @@ head(grids$cluster_dist)
 
 ### Literature
 
-ReBioClim. (n.d.) ReBioClim - ProjectOverview. Interreg Central Europe. Retriewed June 20, 2025 from <https://www.interreg-central.eu/projects/rebioclim/>
+ReBioClim. (n.d.) ReBioClim - ProjectOverview. Interreg Central Europe. Retrieved June 20, 2025 from <https://www.interreg-central.eu/projects/rebioclim/>
 
 SAŽP. (n.d.). Územný systém ekologickej stability (ÚSES). SAŽP – Slovak Environment Agency. Retrieved on June 6, 2025 from <https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/uzemny-system-ekologickej-stability-uses>
 
 ### Map layers
+
+European Union/ESA/Copernicus. (2025) Harmonized Sentinel-2 MSI, Level -2A. Retrieved June 6, 2025 from Google Earth Engine 
+
+Google Earth Engine. (2025) Cloud Score+ S2_HARMONIZED V1. Retrieved June 6, 2025 from Google Earth Engine 
+
+NASA / USGS / JPL-Caltech. (2025) NASA SRTM Digital Elevation 30m. Retrieved June 6, 2025 from Google Earth Engine 
+
+USGS. (2025) USGS Landsat 9 Level 2, Collection 2, Tier 1. Retrieved June 6, 2025 from Google Earth Engine 
+
+USGS. (2025) USGS Landsat 8 Level 2, Collection 2, Tier 1. Retrieved June 6, 2025 from Google Earth Engine 
 
 ### Images
 
