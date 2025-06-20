@@ -94,8 +94,6 @@ Urban Stream Restoration, Biodiversity, XXXX, XXXX
 
 Hongyue Kang (MSc Urbanism) – Presentation Lead, Data Analyst (microclimate analysis, NDVI)
 
-~~Jiaoyang Wu (MSc Geomatics) – Data Analyst, Mapping Specialist (flood risk)~~
-
 Kelly Schoonderwoerd (MSc Geomatics) – Editor, Data Analyst (surface temperature), R Expert, Clustering Lead
 
 Viola Ebermannová (MSc Urbanism) – Project Coordinator, Research Lead, Design Lead (graphic guidelines and layout templates), Data Analyst (analysis geometry, space syntax analysis), MCDA Lead
@@ -119,46 +117,42 @@ In collaboration with the [ReBioClim](www.interreg-central.eu/projects/rebioclim
 ## MCDA
 
 ::: callout
-Multi Criteria Decision Analysis is a research style that advises decision making based on evaluation of multiple objectives and criteria. It aims to formalize problems and evaluate them by mathematical means. <!-- Do we need a source? -->
+Multi Criteria Decision Analysis is a research approach that advises decision making based on evaluation of multiple objectives and criteria. It aims to formalize problems and evaluate them by mathematical means. <!-- Do we need a source? -->
 :::
+
+We use MCDA to determine suitability of areas in Teplica river floodplain in the city of Senica for urban stream restoration measures targeting specific themes, and also in general for sustainable urban stream restoration measures.
 
 ### Selection of objectives and criteria – three pillar system
 
-<!--Add diagrams and text describing the approach to create objectives, research questions and subquestions -->
+The approach of ReBioClim project builds on three pillars: _"The primary aim is to improve the quality of life in cities and at the same time to promote biodiversity and climate adaptation."_ (ReBioClim n.d.)
 
 ![Approach: combining the themes of biodiversity, climate adaptation, and quality of life](/img/_venndiagram.png){width="400"}
+
+These three themes form the three branches of our MCDA analysis research tree. In each of these branches, we chose a number of sub-themes to determine the suitability of different more specific types of interventions. These sub-themes consist of attributes which we aggregate to use for MCDA. MCDA is performed for each of the three themes, as well as for sustainable urban stream restoration as a whole. Each attribute was given a unique code to be used across our research for clarity.
 
 ![Research structure – simplified flow chart of indicators used in each of the three themes](/img/MCDAresearchStructure_overview.png)
 
 #### Detailed research structure
 
-![Research structure – detailed flow chart](pdf/MCDA_researchStructure_detailed.pdf){height="100%" width="100%" src="path-to-pdf"}
-
-```{=html}
-<iframe src="pdf/MCDA_researchStructure_detailed.pdf" width="100%" height="500" frameborder="0" />
-</iframe>
-```
+Each of the sub/themes comes with its own research subquestion. In the scheme below, you can see a more detailed look at the MCDA research structure, together with an overview of what data we use to evaluate the attributes, and what format of geometry that data is. More specifics of how we sourced the data, what it represents, and how we worked with it are described below in the chapters dedicated to individual attributes.
 
 
 <iframe src="pdf/MCDA_researchStructure_detailed.pdf" width="100%" height="500" frameborder="0"></iframe>
 
 </iframe>
 
-<!-- ::: {#fig-resstr} -->
-
-<!-- <iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0" /> -->
-
-<!-- Research structure XXX -->
-
-<!-- ::: -->
 
 #### Weighting
 
-We weighted the criteria for MCDA with a pairwise comparison matrix (Saaty matrix) using [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/info) by Pavel Holeček. The complete matrix looks like this:
+In MCDA, each attribute results in a quantifiable criterion. These criteria are normalised and weighed among each other based on their hierarchy of importance in relation to the research question. There are different approaches to determined the weights, we used pairwise comparison Saaty matrix. For this, we used [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/info) by Pavel Holeček.
 
-![Complete Saaty Matrix](img/CompleteSaatyMatrix.png)
+We determined how many times more or less important is each criterion in relation to every other criterion. This was done in a subjective way, based on our understanding of the problem. The complete matrix of the importance ratios looks like this:
 
-The weights are assigned as follows. Overall, highest weights were assigned to CA1temp (targetting cooling down summer surface temperature) and QL2acg (potential for central urban functions) and QL3gr (need of built up area for green). Criteria that scored high directly influence livability offer a very actionable basis for the public sector and show potential for feasible and well advocatable investments.
+
+
+![Complete Saaty Matrix. The meaning of the numbers is: "How many times more important is the criterion in the row compared to the criterion in the column?"](img/CompleteSaatyMatrix.png)
+
+To evaluate the Saaty matrix, a sum is calculated for each row. These values are normalised to determine the weights, so the sum of the weights is 1. For the matrix above, the weights are assigned as follows. Overall, highest weights were assigned to CA1temp (targeting cooling down summer surface temperature) and QL2acg (potential for central urban functions) and QL3gr (need of built up area for green). Criteria that scored high directly influence livability offer a very actionable basis for the public sector and show potential for feasible and well advocatable investments.
 
 | Criterion | Weight |
 |-----------|--------|
@@ -175,12 +169,22 @@ The weights are assigned as follows. Overall, highest weights were assigned to C
 
 ![Graph of criteria weights](img/MCDA_weightsgraph.png)
 
-Consistency is acceptable with consistency ration CR = 0,086 :
+Consistency is acceptable with consistency ration CR = 0,086 (this is a mechanism to check if the researcher's assigning of importance ratios was consistent across the matrix):
 
 | λmax = 8.847
 | CI = 0.121
 | RI = 1.4
 | CR = 0.086
+
+#### Explanation of how MCDA works
+
+This is a short overview of how MCDA works in this research project. We determined our research questions, and criteria that will describe them. We determined the mutual importance of the attributes and assigned the weights.
+
+We divided the area into spatial units, on which we wanted to answer the research questions. For each of these units, we determined the value of each criterion. We normalised these criteria to 0-1, so they are comparable with each other.
+
+Then, we multiplied the criteria by the weights to get the relative value (for each attribute, the sum of all the weighted criteria falls on 0-1). We calculated the sum of the criteria for each theme, and also a total sum for the complete MCDA value.
+
+![Diagram of how MCDA works](img/placeholder.png)
 
 ### Analysis geometry
 
@@ -886,10 +890,12 @@ head(grids$cluster_dist)
 
 ### Literature
 
+ReBioClim. (n.d.) ReBioClim - ProjectOverview. Interreg Central Europe. Retriewed June 20, 2025 from <https://www.interreg-central.eu/projects/rebioclim/>
+
 SAŽP. (n.d.). Územný systém ekologickej stability (ÚSES). SAŽP – Slovak Environment Agency. Retrieved on June 6, 2025 from <https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/uzemny-system-ekologickej-stability-uses>
 
 ### Map layers
 
 ### Images
 
-Street View of Senica – Google Maps. (May 2012). Retrieved on May 22, 2025 from: [https://www.google.com/maps/place/905+01+Senica,+Slovensko/\@48.6841521,17.3581313,3a,75y,296.73h,88.04t/data=!3m7!1e1!3m5!1sbkMc3aSUkJxRvi5IszgGWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9640483562330928%26panoid%3DbkMc3aSUkJxRvi5IszgGWg%26yaw%3D296.73281886129774!7i13312!8i6656!4m7!3m6!1s0x476cb4e2e7ed1a27:0x400f7d1c696ee40!8m2!3d48.6811502!4d17.3672337!10e5!16zL20vMGRyeG43?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D](https://www.google.com/maps/place/905+01+Senica,+Slovensko/@48.6841521,17.3581313,3a,75y,296.73h,88.04t/data=!3m7!1e1!3m5!1sbkMc3aSUkJxRvi5IszgGWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9640483562330928%26panoid%3DbkMc3aSUkJxRvi5IszgGWg%26yaw%3D296.73281886129774!7i13312!8i6656!4m7!3m6!1s0x476cb4e2e7ed1a27:0x400f7d1c696ee40!8m2!3d48.6811502!4d17.3672337!10e5!16zL20vMGRyeG43?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D)
+Street View of Senica – Google Maps. (May 2012). Retrieved on May 22, 2025 from: <https://www.google.com/maps/place/905+01+Senica,+Slovensko/@48.6841521,17.3581313,3a,75y,296.73h,88.04t/data=!3m7!1e1!3m5!1sbkMc3aSUkJxRvi5IszgGWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9640483562330928%26panoid%3DbkMc3aSUkJxRvi5IszgGWg%26yaw%3D296.73281886129774!7i13312!8i6656!4m7!3m6!1s0x476cb4e2e7ed1a27:0x400f7d1c696ee40!8m2!3d48.6811502!4d17.3672337!10e5!16zL20vMGRyeG43?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D>
