@@ -4,13 +4,20 @@ subtitle: "Project report of Group C (WIP)"
 author:
   - name: "Hongyue Kang"
     affiliation: "MSc Urbanism"
-  - name: "Jiaoyang Wu"
-    affiliation: "MSc Geomatics"
   - name: "Kelly Schoonderwoerd"
     affiliation: "MSc Geomatics"
   - name: "Viola Ebermannová"
     affiliation: "MSc Urbanism"
-format: html
+# format: html
+
+# this toc is not fully fuctional, but at least sth i guess. we might modify the levels still:
+
+format:
+  html:
+    toc: true
+    toc-location: right
+    toc-depth: 4
+    toc-expand: 2
 ---
 
 <!-- ::: callout -->
@@ -61,6 +68,10 @@ format: html
 
 <!-- ::: -->
 
+```{=html}
+<div id='toc'></div>
+```
+
 ## Introduction
 
 ***How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?***
@@ -82,8 +93,6 @@ Urban Stream Restoration, Biodiversity, XXXX, XXXX
 #### Students – roles and contributions
 
 Hongyue Kang (MSc Urbanism) – Presentation Lead, Data Analyst (microclimate analysis, NDVI)
-
-~~Jiaoyang Wu (MSc Geomatics) – Data Analyst, Mapping Specialist (flood risk)~~
 
 Kelly Schoonderwoerd (MSc Geomatics) – Editor, Data Analyst (surface temperature), R Expert, Clustering Lead
 
@@ -108,47 +117,42 @@ In collaboration with the [ReBioClim](www.interreg-central.eu/projects/rebioclim
 ## MCDA
 
 ::: callout
-Multi Criteria Decision Analysis is a research style that advises decision making based on evaluation of multiple objectives and criteria. It aims to formalize problems and evaluate them by mathematical means. <!-- Do we need a source? -->
+Multi Criteria Decision Analysis is a research approach that advises decision making based on evaluation of multiple objectives and criteria. It aims to formalize problems and evaluate them by mathematical means. <!-- Do we need a source? -->
 :::
+
+We use MCDA to determine suitability of areas in Teplica river floodplain in the city of Senica for urban stream restoration measures targeting specific themes, and also in general for sustainable urban stream restoration measures.
 
 ### Selection of objectives and criteria – three pillar system
 
-<!--Add diagrams and text describing the approach to create objectives, research questions and subquestions -->
+The approach of ReBioClim project builds on three pillars: _"The primary aim is to improve the quality of life in cities and at the same time to promote biodiversity and climate adaptation."_ (ReBioClim n.d.)
 
-![Venn diagram of Biodiversity, Climate adaptation, and Quality of life - placeholder](/img/placeholder.png)
+![Approach: combining the themes of biodiversity, climate adaptation, and quality of life](/img/_venndiagram.png){width="400"}
 
-![Research structure – simplified flow chart of topics - (?objectives - attributes, highlighted the ones we chose?) - placeholder](/img/placeholder.png)
+These three themes form the three branches of our MCDA analysis research tree. In each of these branches, we chose a number of sub-themes to determine the suitability of different more specific types of interventions. These sub-themes consist of attributes which we aggregate to use for MCDA. MCDA is performed for each of the three themes, as well as for sustainable urban stream restoration as a whole. Each attribute was given a unique code to be used across our research for clarity.
+
+![Research structure – simplified flow chart of indicators used in each of the three themes](/img/MCDAresearchStructure_overview.png)
 
 #### Detailed research structure
 
-![Research structure – detailed flow chart, version 10. 6. (open image in new tab to see in full).](pdf/ResearchStructure_20250610.pdf){height="100%" width="100%" src="path-to-pdf"}
+Each of the sub/themes comes with its own research subquestion. In the scheme below, you can see a more detailed look at the MCDA research structure, together with an overview of what data we use to evaluate the attributes, and what format of geometry that data is. More specifics of how we sourced the data, what it represents, and how we worked with it are described below in the chapters dedicated to individual attributes.
 
-```{=html}
-<iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0" />
-</iframe>
-```
 
-```{=html}
-<iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0"></iframe>
-```
+<iframe src="pdf/MCDA_researchStructure_detailed.pdf" width="100%" height="500" frameborder="0"></iframe>
 
 </iframe>
 
-<!-- ::: {#fig-resstr} -->
-
-<!-- <iframe src="pdf/ResearchStructure_20250610.pdf" width="100%" height="500" frameborder="0" /> -->
-
-<!-- Research structure XXX -->
-
-<!-- ::: -->
 
 #### Weighting
 
-We weighted the criteria for MCDA with a pairwise comparison matrix (Saaty matrix) using [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/info) by Pavel Holeček. The complete matrix looks like this:
+In MCDA, each attribute results in a quantifiable criterion. These criteria are normalised and weighed among each other based on their hierarchy of importance in relation to the research question. There are different approaches to determined the weights, we used pairwise comparison Saaty matrix. For this, we used [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/info) by Pavel Holeček.
 
-![Complete Saaty Matrix](img/CompleteSaatyMatrix.png)
+We determined how many times more or less important is each criterion in relation to every other criterion. This was done in a subjective way, based on our understanding of the problem. The complete matrix of the importance ratios looks like this:
 
-The weights are assigned as follows. Overall, highest weights were assigned to CA1temp (targetting cooling down summer surface temperature) and QL2acg (potential for central urban functions) and QL3gr (need of built up area for green). Criteria that scored high directly influence livability offer a very actionable basis for the public sector and show potential for feasible and well advocatable investments.
+
+
+![Complete Saaty Matrix. The meaning of the numbers is: "How many times more important is the criterion in the row compared to the criterion in the column?"](img/CompleteSaatyMatrix.png)
+
+To evaluate the Saaty matrix, a sum is calculated for each row. These values are normalised to determine the weights, so the sum of the weights is 1. For the matrix above, the weights are assigned as follows. Overall, highest weights were assigned to CA1temp (targeting cooling down summer surface temperature) and QL2acg (potential for central urban functions) and QL3gr (need of built up area for green). Criteria that scored high directly influence livability offer a very actionable basis for the public sector and show potential for feasible and well advocatable investments.
 
 | Criterion | Weight |
 |-----------|--------|
@@ -165,12 +169,22 @@ The weights are assigned as follows. Overall, highest weights were assigned to C
 
 ![Graph of criteria weights](img/MCDA_weightsgraph.png)
 
-Consistency is acceptable with consistency ration CR = 0,086 :
+Consistency is acceptable with consistency ration CR = 0,086 (this is a mechanism to check if the researcher's assigning of importance ratios was consistent across the matrix):
 
 | λmax = 8.847
 | CI = 0.121
 | RI = 1.4
 | CR = 0.086
+
+#### Explanation of how MCDA works
+
+This is a short overview of how MCDA works in this research project. We determined our research questions, and criteria that will describe them. We determined the mutual importance of the attributes and assigned the weights.
+
+We divided the area into spatial units, on which we wanted to answer the research questions. For each of these units, we determined the value of each criterion. We normalised these criteria to 0-1, so they are comparable with each other.
+
+Then, we multiplied the criteria by the weights to get the relative value (for each attribute, the sum of all the weighted criteria falls on 0-1). We calculated the sum of the criteria for each theme, and also a total sum for the complete MCDA value.
+
+![Diagram of how MCDA works](img/placeholder.png)
 
 ### Analysis geometry
 
@@ -269,7 +283,7 @@ Potential for high impact improvement is determined by unsatisfactory ecological
 
 The potential was calculated on range 0-1 directly on Analysis geometry polygons.
 
-![Criterion B1pot – Improvement potential (normalised.)](/img/MCDA_conclusions_B1uses.png)
+![Criterion B2pot – Improvement potential (normalised.)](/img/MCDA_conclusions_B2pot.png)
 
 #### #3 Which spaces should be prioritized based on current state of the vegetation?
 
@@ -311,6 +325,10 @@ The calculated weights for biodiversity indicators are:
 
 <!--# some text  conclusion is needed here -->
 
+In this part, we developed a spatially explicit composite biodiversity index map for the spatial geometry by integrating three indicators: NDVI, USES (spatial system of ecological stability), and POT (ecological quality improvement potential). Because we agree that vegetative cover remains a dominant factor influencing riparian biodiversity, in line with existing ecological connection, we assigned NDVI with the highest weight (0.083), followed by USES(0.058) and POT(0.027). At last we generated a composite map reflecting biodiversity improvement potential along the Teplica.
+
+The resulting map reveals a clear spatial pattern: because of NDVI and USES’s high weight, area with high improvement potential are those where have low NDVI index and are less connected with USES, particularly in the midstream and upstream sections.
+
 ![MCDA Biodiversity conclusion](/img/MCDA_conclusions_B.png)
 
 ### Climate adaptation
@@ -329,7 +347,7 @@ This chapter is based on the fact that in western slovakia, there is a large dro
 
 To analyse surface temperatures, we found a [Google Earth Engine script](https://code.earthengine.google.com/ac986028b56a794aefd3ea54e9cb09ba) made by [Ramadhan](https://www.youtube.com/watch?v=3LOMNzBHmjs) on YouTube (2024) that uses information from Sentinel-2, LANDSAT, and DEM to predict a raster LST (land surface temperature) with a higher resolution than other available datasets on LST, namely 10-meter resolution. The computations are complicated and will only be discussed in general lines in this report, but the results are relevant and useful to our research. Mainly to answer the question of which spaces should be prioritized to be wetter to help the area cool down, because now it is too hot. The draft image shows the results for dates 2024-06-01 to 2024-08-31, since these three months include the summer and will therefore be most susceptible for heat stress, which makes this time period interesting to look at for our research.
 
-The method uses the different datasets to extract several attributes (e.g. B2, B3, elevation, slope, wetness, greenness, dryness, etc.). Together with the recorded LST data, a correlation between attributes and LST is calculated. For the six attributes with the highest correlation, the average correlation matrices are computed and the three lowest correlation matrices are used to set up a model. The model is then trained with test data to predict LST based on the provided correlation information. Then, the model is applied to data in the area of interest to create a dataset with LST predictions that covers the full area in detail (instead of the available recorded LST datasets with big gridcells). 
+The method uses the different datasets to extract several attributes (e.g. B2, B3, elevation, slope, wetness, greenness, dryness, etc.). Together with the recorded LST data, a correlation between attributes and LST is calculated. For the six attributes with the highest correlation, the average correlation matrices are computed and the three lowest correlation matrices are used to set up a model. The model is then trained with test data to predict LST based on the provided correlation information. Then, the model is applied to data in the area of interest to create a dataset with LST predictions that covers the full area in detail (instead of the available recorded LST datasets with big gridcells).
 
 The Google Earth Engine (GEE) script was adapted to analyse our area of interest (Senica and surroundings) and an interesting time period as mentioned earlier. The code produced a GeoTiff file that we downloaded for further processing. The LST values in this file are given in degrees Celsius and range from 27-38. The raster GeoTiff file was combined with our analysis geometry layer using the 'zonal statistics' tool in QGIS. This resulted in a vector layer with our analysis polygons, including a column in the attribute table representing the mean value of the LST raster layer inside that specific polygon. This value represents the aggregation of LST values, which was then normalized with the following statement in the field calculator:
 
@@ -395,6 +413,8 @@ The calculated weights for climate adaptation criteria are:
 #### Climate adaptation conclusion
 
 <!-- some conclusion and interpretation text -->
+
+For climate adaptation, we considered two key factors: land surface temperature (CA1temp) and water retention capacity (CA2soil). As shown in the resulting map, spatial geometries located within urban areas, as well as those near the downstream section of the Teplica River, are identified as more suitable for climate adaptation interventions. This outcome is primarily due to the significantly higher weight assigned to CA1temp, which has a more direct impact on climate adaptation potential. Consequently, areas currently experiencing higher land surface temperatures are prioritized as key targets for intervention.
 
 ![MCDA Climate adaptation conclusion](/img/MCDA_conclusions_CA.png)
 
@@ -657,7 +677,7 @@ library(tidyr)
 Read the dataset from the GeoPackage file and display the first few rows using head()
 
 ```{r}
-grids <- st_read("data/Senica/analysisgeometry_aggregated_allattributes.gpkg", quiet = TRUE)
+grids <- st_read("data/analysisgeometry_aggregated_allattributes.gpkg", quiet = TRUE)
 
 # View the first few rows of the data
 head(grids)
@@ -870,10 +890,12 @@ head(grids$cluster_dist)
 
 ### Literature
 
+ReBioClim. (n.d.) ReBioClim - ProjectOverview. Interreg Central Europe. Retriewed June 20, 2025 from <https://www.interreg-central.eu/projects/rebioclim/>
+
 SAŽP. (n.d.). Územný systém ekologickej stability (ÚSES). SAŽP – Slovak Environment Agency. Retrieved on June 6, 2025 from <https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/uzemny-system-ekologickej-stability-uses>
 
 ### Map layers
 
 ### Images
 
-Street View of Senica – Google Maps. (May 2012). Retrieved on May 22, 2025 from: [https://www.google.com/maps/place/905+01+Senica,+Slovensko/\@48.6841521,17.3581313,3a,75y,296.73h,88.04t/data=!3m7!1e1!3m5!1sbkMc3aSUkJxRvi5IszgGWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9640483562330928%26panoid%3DbkMc3aSUkJxRvi5IszgGWg%26yaw%3D296.73281886129774!7i13312!8i6656!4m7!3m6!1s0x476cb4e2e7ed1a27:0x400f7d1c696ee40!8m2!3d48.6811502!4d17.3672337!10e5!16zL20vMGRyeG43?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D](https://www.google.com/maps/place/905+01+Senica,+Slovensko/@48.6841521,17.3581313,3a,75y,296.73h,88.04t/data=!3m7!1e1!3m5!1sbkMc3aSUkJxRvi5IszgGWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9640483562330928%26panoid%3DbkMc3aSUkJxRvi5IszgGWg%26yaw%3D296.73281886129774!7i13312!8i6656!4m7!3m6!1s0x476cb4e2e7ed1a27:0x400f7d1c696ee40!8m2!3d48.6811502!4d17.3672337!10e5!16zL20vMGRyeG43?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D)
+Street View of Senica – Google Maps. (May 2012). Retrieved on May 22, 2025 from: <https://www.google.com/maps/place/905+01+Senica,+Slovensko/@48.6841521,17.3581313,3a,75y,296.73h,88.04t/data=!3m7!1e1!3m5!1sbkMc3aSUkJxRvi5IszgGWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9640483562330928%26panoid%3DbkMc3aSUkJxRvi5IszgGWg%26yaw%3D296.73281886129774!7i13312!8i6656!4m7!3m6!1s0x476cb4e2e7ed1a27:0x400f7d1c696ee40!8m2!3d48.6811502!4d17.3672337!10e5!16zL20vMGRyeG43?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D>
