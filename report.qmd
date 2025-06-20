@@ -15,9 +15,9 @@ author:
 format:
   html:
     toc: true
-    toc-location: right
-    toc-depth: 4
-    toc-expand: 2
+    # toc-location: right
+    # toc-depth: 4
+    # toc-expand: 2
 ---
 
 <!-- ::: callout -->
@@ -68,9 +68,7 @@ format:
 
 <!-- ::: -->
 
-```{=html}
-<div id='toc'></div>
-```
+
 
 ## Introduction
 
@@ -122,7 +120,20 @@ Multi Criteria Decision Analysis is a research approach that advises decision ma
 
 We use MCDA to determine suitability of areas in Teplica river floodplain in the city of Senica for urban stream restoration measures targeting specific themes, and also in general for sustainable urban stream restoration measures.
 
-### Selection of objectives and criteria – three pillar system
+### Explanation of how MCDA works
+
+This is a short overview of how MCDA works in this research project. MCDA starts with a research question and subquestions, leading to objectives. Our research ibjectives are described below. From these research questions, we determined criteria that will be used to describe/answer them.
+
+We determined the mutual importance of the attributes and assigned weights to them based on pairwise comparison. For this, we used a Saaty matrix. In the Saaty matrix, in each cell we stated how many times we think the criterion in the row is more important than the criterion in the column. This is described more in detail below. To evaluate the Saaty matrix, a sum is calculated for each row. These values are normalised to determine the weights, so the sum of the weights is 1.
+
+We divided the area into spatial units that form our analysis geometry, the workflow is described below. These are the units on which the research questions will be answered. For each of these units, we determined the value of each criterion. We normalised these criteria to 0-1, so they are comparable with each other.
+
+Then, we multiplied the criteria by the weights to get their relative value (for each spatial unit, the sum of all the weighted criteria falls into interval 0-1). We determined the result of MCDA for the main research question, as well as for individual subquestions.
+
+![Diagram of how MCDA works](img/MCDA_explanation.png)
+
+
+### Selecting objectives and criteria – three pillar system
 
 The approach of ReBioClim project builds on three pillars: _"The primary aim is to improve the quality of life in cities and at the same time to promote biodiversity and climate adaptation."_ (ReBioClim n.d.)
 
@@ -149,10 +160,9 @@ In MCDA, each attribute results in a quantifiable criterion. These criteria are 
 We determined how many times more or less important is each criterion in relation to every other criterion. This was done in a subjective way, based on our understanding of the problem. The complete matrix of the importance ratios looks like this:
 
 
-
 ![Complete Saaty Matrix. The meaning of the numbers is: "How many times more important is the criterion in the row compared to the criterion in the column?"](img/CompleteSaatyMatrix.png)
 
-To evaluate the Saaty matrix, a sum is calculated for each row. These values are normalised to determine the weights, so the sum of the weights is 1. For the matrix above, the weights are assigned as follows. Overall, highest weights were assigned to CA1temp (targeting cooling down summer surface temperature) and QL2acg (potential for central urban functions) and QL3gr (need of built up area for green). Criteria that scored high directly influence livability offer a very actionable basis for the public sector and show potential for feasible and well advocatable investments.
+For the matrix above, the weights are assigned as follows. Overall, highest weights were assigned to CA1temp (targeting cooling down summer surface temperature) and QL2acg (potential for central urban functions) and QL3gr (need of built up area for green). Criteria that scored high directly influence livability offer a very actionable basis for the public sector and show potential for feasible and well advocatable investments.
 
 | Criterion | Weight |
 |-----------|--------|
@@ -176,15 +186,6 @@ Consistency is acceptable with consistency ration CR = 0,086 (this is a mechanis
 | RI = 1.4
 | CR = 0.086
 
-#### Explanation of how MCDA works
-
-This is a short overview of how MCDA works in this research project. We determined our research questions, and criteria that will describe them. We determined the mutual importance of the attributes and assigned the weights.
-
-We divided the area into spatial units, on which we wanted to answer the research questions. For each of these units, we determined the value of each criterion. We normalised these criteria to 0-1, so they are comparable with each other.
-
-Then, we multiplied the criteria by the weights to get the relative value (for each attribute, the sum of all the weighted criteria falls on 0-1). We calculated the sum of the criteria for each theme, and also a total sum for the complete MCDA value.
-
-![Diagram of how MCDA works](img/placeholder.png)
 
 ### Analysis geometry
 
