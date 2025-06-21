@@ -20,11 +20,9 @@ format:
     toc-expand: 2
 ---
 
-
 <!-- ## This is a computational notebook -->
 
 <!-- This report was created using Quarto. To learn more about Quarto see <https://quarto.org>. -->
-
 
 ## Introduction
 
@@ -44,13 +42,13 @@ Urban Stream Restoration, Sustainability, Multi Criteria Decision Analysis, Typo
 
 ### Colophon
 
-#### Students – roles and contributions
+#### Students – contact, roles and contributions
 
-Hongyue Kang (MSc Urbanism) – Presentation Lead, Data Analyst (microclimate analysis, NDVI)
+Hongyue Kang (MSc track Urbanism, BK TU Delft, hongyuekang\@tudelft.nl) – Presentation Lead, Data Analyst (microclimate analysis, NDVI)
 
-Kelly Schoonderwoerd (MSc Geomatics) – Data Analyst (surface temperature), R Expert, Clustering Lead
+Kelly Schoonderwoerd (MSc Geomatics, BK TU Delft, K.R.Schoonderwoerd\@student.tudelft.nl) – Data Analyst (surface temperature), R Expert, Clustering Lead
 
-Viola Ebermannová (MSc Urbanism) – Project Coordinator, Research Lead, Design Lead (graphic guidelines and layout templates), Data Analyst (analysis geometry construction, space syntax analysis), MCDA Lead
+Viola Ebermannová (MSc track Urbanism, BK TU Delft, v.ebermannova\@student.tudelft.nl) – Project Coordinator, Research Lead, Design Lead (graphic guidelines and layout templates), Data Analyst (analysis geometry construction, space syntax analysis), MCDA Lead
 
 #### Course information
 
@@ -84,11 +82,17 @@ For both approaches, we perform the analysis on morphologically defined spatial 
 
 The attributes/criteria we selected to represent the characteristics of spaces in the river flood plain are described in the chapter [Selecting objectives and criteria – three pillar system](#selecting-objectives-and-criteria-three-pillar-system). We used all these criteria for MCDA analysis, and chose four of them for the typology construction.
 
-Spatial analysis was conducted and maps produced by [QGIS](https://qgis.org/), an open source GIS (Geographic Information System) software. Typology construction was conducted through R scripts directly in the report file.
+Spatial analysis was conducted and maps produced by [QGIS](https://qgis.org/), an open source GIS (Geographic Information System) software, including the [PST plugin](https://smog.chalmers.se/projects/pst-plugin-for-qgis/) (SMOG n.d.). Typology construction was conducted through R scripts directly in the report file. Some data was accessed and analysed through Google Earth Engine.
 
 ### Reproducibility self assessment
 
-<!-- Based on reproducibility seminar and the checklist linked in the presentation. -->
+This reproducibility self assessment is based on the ReproducibilityChecklist.md file (in main directory).
+
+Project documentation is up to the checklist standards (README files in subfolders could be more detailed). Data availability could be improved by separating raw and aggregated data and provided proper descriptions of file structure and attributes, as well as citation information. The data does use open formats (.gpkg). We used open software to conduct analyses, but some graphic work was done in paid graphic software. The version numbers of software should be listed (it is possible we did not used the same versions within the team.)
+
+The workflow is documented quite clearly, although in some parts the reproducibility is limited (subjectively assigned criteria.) When using code, it is well documented in the report and modular. The project is structured in a single folder repository with a quite consistent naming structure. The project folder could be better structured into data, code, documentation, and results. The project is published as a github repository with a persistent identifier.
+
+Overall, reproducibility is quite good, however it is lacking in some workflows and structure and description of provided data.
 
 ## MCDA
 
@@ -1005,33 +1009,33 @@ Despite that, we managed to combine some characteristics of each cluster to defi
 
 ###### Type 1 (urban area)
 
-+-----------+-------------+----------------------------------------------------------------------------+
-| Attribute | Value       | Interpretation                                                             |
-+===========+=============+============================================================================+
-| B1uses    | Medium high | Not very connected to ÚSES, so biodiversity improvement of less importance |
-+-----------+-------------+----------------------------------------------------------------------------+
-| B3ndvi    | High        | Could use more green                                                       |
-+-----------+-------------+----------------------------------------------------------------------------+
-| CA1temp   | High        | Needs improvements against heat stress                                     |
-+-----------+-------------+----------------------------------------------------------------------------+
-| QL2acg    | High        | Does have potential for central urban functions                            |
-+-----------+-------------+----------------------------------------------------------------------------+
++-------------+-------------+----------------------------------------------------------------------------+
+| Attribute   | Value       | Interpretation                                                             |
++=============+=============+============================================================================+
+| B1uses      | Medium high | Not very connected to ÚSES, so biodiversity improvement of less importance |
++-------------+-------------+----------------------------------------------------------------------------+
+| B3ndvi      | High        | Could use more green                                                       |
++-------------+-------------+----------------------------------------------------------------------------+
+| CA1temp     | High        | Needs improvements against heat stress                                     |
++-------------+-------------+----------------------------------------------------------------------------+
+| QL2acg      | High        | Does have potential for central urban functions                            |
++-------------+-------------+----------------------------------------------------------------------------+
 
 Type 1 consist of areas that are not very connected to ÚSES structures, so improvement of biodiversity will be of low priority. When planning urban development initiatives the focus should instead be on quality of life improvement and better climate adaptation. These areas have potential for central urban functions, the development of which can be paired with improvement of public space. After checking the areas of type 1 on a map, we additionally concluded that most type 1 areas are urban area. This lines up with our conclusions about this typology.
 
 ###### Type 2 (finetune areas a)
 
-+-----------+---------------+--------------------------------------------------------------------------------------------+
-| Attribute | Value         | Interpretation                                                                             |
-+===========+===============+============================================================================================+
-| B1uses    | High          | Can use improvement of already existing ÚSES structures, with focus on biodiversity        |
-+-----------+---------------+--------------------------------------------------------------------------------------------+
-| B3ndvi    | Medium low    | Quite good quality of green                                                                |
-+-----------+---------------+--------------------------------------------------------------------------------------------+
-| CA1temp   | Medium low    | Does not really need cooling                                                               |
-+-----------+---------------+--------------------------------------------------------------------------------------------+
-| QL2acg    | Extremely low | This value is unexpected, perhaps caused by clustering 0 values in areas without any roads |
-+-----------+---------------+--------------------------------------------------------------------------------------------+
++------------+---------------+--------------------------------------------------------------------------------------------+
+| Attribute  | Value         | Interpretation                                                                             |
++============+===============+============================================================================================+
+| B1uses     | High          | Can use improvement of already existing ÚSES structures, with focus on biodiversity        |
++------------+---------------+--------------------------------------------------------------------------------------------+
+| B3ndvi     | Medium low    | Quite good quality of green                                                                |
++------------+---------------+--------------------------------------------------------------------------------------------+
+| CA1temp    | Medium low    | Does not really need cooling                                                               |
++------------+---------------+--------------------------------------------------------------------------------------------+
+| QL2acg     | Extremely low | This value is unexpected, perhaps caused by clustering 0 values in areas without any roads |
++------------+---------------+--------------------------------------------------------------------------------------------+
 
 Type 2 areas score low on B3ndvi, CA1temp, and QL2acg meaning that its green areas are already of good quality, and that they do not have potential for central urban functions (likely because of not having any roads). There is also a low need for cooling, since the land surface temperatures are not too high. The only attribute that could use improvement is B1uses, but even this does not need too much attention. Therefore we suggest improvement of already existing structures in type 2 areas, possibly with native biodiversity oriented ecological interventions that specifically target ÚSES needs. In conclusion, type 2 does not need much drastic improvement and can instead benefit from finetuning and native biodiversity measures.
 
@@ -1053,17 +1057,17 @@ Both B3ndvi and CA1temp score low, which means that there is not much need for c
 
 ###### Type 4 (fields)
 
-+-------------+-------------+-----------------------------------------------------+
-| Attribute   | Value       | Interpretation                                      |
-+=============+=============+=====================================================+
-| B1uses      | Medium high | Moderate connectivity to existing ÚSES structures   |
-+-------------+-------------+-----------------------------------------------------+
-| B3ndvi      | Medium low  | Bad state of vegetation                             |
-+-------------+-------------+-----------------------------------------------------+
-| CA1temp     | High        | In high need of cooling                             |
-+-------------+-------------+-----------------------------------------------------+
-| QL2acg      | Very low    | Does not have potential for central urban functions |
-+-------------+-------------+-----------------------------------------------------+
++------------+-------------+-----------------------------------------------------+
+| Attribute  | Value       | Interpretation                                      |
++============+=============+=====================================================+
+| B1uses     | Medium high | Moderate connectivity to existing ÚSES structures   |
++------------+-------------+-----------------------------------------------------+
+| B3ndvi     | Medium low  | Bad state of vegetation                             |
++------------+-------------+-----------------------------------------------------+
+| CA1temp    | High        | In high need of cooling                             |
++------------+-------------+-----------------------------------------------------+
+| QL2acg     | Very low    | Does not have potential for central urban functions |
++------------+-------------+-----------------------------------------------------+
 
 Type 4 areas are characterised by a bad state of vegetation and a dire need for cooling. There is a moderate connectivity to existing ÚSES structures, and low potential for central urban functions. When checking the location of these type 4 areas, we found out that is it mostly fields. Heat island effects occur a lot above fields. Although the analysis suggests a need for improvement, we argue that the fields have a low priority for developments, since they often already have specified uses (also supported by results of MCDA). However, we do suggest possibly planting small clusters of denser vegetation and trees ([remízek](https://cs.wikipedia.org/wiki/Rem%C3%ADzek)). This could improve water retention (and in turn soil quality), microclimate, and biodiversity in the fields.
 
