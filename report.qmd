@@ -439,13 +439,13 @@ The calculated weights for biodiversity indicators are:
 
 #### Biodiversity conclusion
 
-In this part, we developed a spatially explicit composite biodiversity index map for the spatial geometry by weighting three criteria: B1ndvi (current state of vegetation based on NDVI), B2uses (connectivity to ÚSES – Slovakian official Spatial system of ecological stability), and B3pot (ecological quality improvement and feasibility potential).
-
-Because we agree that vegetative cover remains a dominant factor influencing riparian biodiversity, in line with existing ecological connection, we assigned B3ndvi with the highest weight (0.083), followed by B1uses (0.058) and B2pot (0.027). At last we generated a composite map reflecting biodiversity improvement potential along the river Teplica.
+In this part, we developed a spatially explicit composite biodiversity index map for the spatial geometry by weighting three criteria: B1ndvi (current state of vegetation based on NDVI), B2uses (connectivity to ÚSES – Slovakian official Spatial system of ecological stability), and B3pot (ecological quality improvement and feasibility potential). Because we agree that vegetative cover remains a dominant factor influencing riparian biodiversity, in line with existing ecological connection, we assigned B3ndvi with the highest weight (0.083), followed by B1uses (0.058) and B2pot (0.027).
 
 The conclusion map resembles the B3ndvi map a lot, with the addition of the ÚSES biocorridor(s) as higher priority. The two most important criteria, B3ndvi and B1uses are in a way contradictory: in ÚSES areas, it is more likely that the green has a high NDVI and therefore low B3ndvi value. However, in B1uses, spaces that are not green are also considered connected if they are adjacent to a green space continuously connected to ÚSES. Moreover, the supraregional biocorridor at the eastern edge of the city does not necessarily have high NDVI, as it is a larger structure.
 
 In general, the highest scores are in the east of the town, where the supraregional corridor passes the town, B2pot is the highest, and because of it being an urban area, NDVI is quite low -\> B3ndvi is quite high. **Overall, the highest suitability for biodiversity-oriented interventions seems to be in neglected urban or industrial areas, and especially clearly in urban areas of suburban character in the east of the town.** High values are also present in the water area at the north of the analysis area, however, we suspect that to be a mistake caused by improper use of NDVI data: for water, NDVI is very low, so the score of B3ndvi is very high, which is misleading.
+
+We recommend improving native biodiversity by implementing low maintenance nature-like native biotope landscaping in industrial areas. We also recommend improving biodiversity in the streets of the town with targeted interventions. In general, it is also beneficial to transform uniform fields to include dense vegetation patches that improve the resilience of local ecosystems and in general support biodiversity.
 
 ![MCDA Biodiversity conclusion (by Viola Ebermannová)](/img/MCDA_conclusions_B.png)
 
@@ -554,7 +554,7 @@ The calculated weights for climate adaptation criteria are:
 
 For climate adaptation, we considered two key factors: land surface temperature (CA1temp) and water retention capacity (CA2soil). For urban stream restoration climate adaptation measures, we considered the CA1temp criterion much more important, giving it a weight 0.198, and giving CA2soil weight 0.03.
 
-As shown in the resulting map, spatial geometries located within urban areas, as well as those in large fields near the downstream section of the Teplica River, are identified as more suitable for climate adaptation interventions. This outcome is primarily due to the significantly higher weight assigned to CA1temp, which has a more direct impact on climate adaptation potential. Consequently, areas currently experiencing higher land surface temperatures are prioritized as key targets for intervention.
+As shown in the resulting map, **spatial geometries located within urban areas, as well as those in large fields near the downstream section of the Teplica River, are identified as more suitable for climate adaptation interventions**. This outcome is primarily due to the significantly higher weight assigned to CA1temp, which has a more direct impact on climate adaptation potential. Consequently, areas currently experiencing higher land surface temperatures are prioritized as key targets for intervention.
 
 We recommend thinking about landscape water retention with all future plans for any interventions in the urban fabric. Moreover, we recommend focusing on implementing climate adaptation measures in the agricultural areas (such as dense vegetation separations strips, which help retain the water in the landscape and have a cooling effect as well.) In urban areas, using softer cooler surfaces and adding shadow can be beneficial, as well as adding more wet greenery (perhaps native flood plain biotopes), that improves the local microclimate.
 
@@ -684,29 +684,44 @@ We weighted 3 criteria targeting improving quality of life in Senica: potential 
 
 It needs to be noted that the layers of QL1acl and QL2acg overlap quite well, because they highlight in general the areas where there are roads, which is also why in the conclusion map, roads generally have higher potential. This does not mean that all roads should be prioritised, but merely that these are the areas to consider when intending to create urban central functions.
 
-Overall highest scores can be found in urban areas in the town, especially in the north side where there already are multiple central functions. Interventions should be aimed at embracing the location of these centralities, or new ones created, within the river basin, and profiting from the recreational opportunities it brings. Also, in general we recommend to use the biocorridor as an urban green area, and improve connectivity to urban green areas.
+**Overall highest scores can be found in urban areas in the town, especially in the north side where there already are multiple central functions**. Interventions should be aimed at embracing the location of these centralities, or new ones created, within the river basin, and profiting from the recreational opportunities it brings. Also, in general we recommend to use the biocorridor as an urban green area, and improve connectivity to urban green areas.
 
 ![MCDA Quality of life conclusion (by Viola Ebermannová)](/img/MCDA_conclusions_QL.png)
 
 ### MCDA conclusion
 
-<!-- text about conclusion and interpretation -->
-
 We achieved the final conclusion by calculating the sum of all criteria for each polygon. This shows which areas have over all the greatest potentials and should be prioritised when making decisions on where to target urban stream restoration interventions. However, that does not mean that the areas with low priority should not be targeted. Sustainable stream restoration should be designed in a complex way, for the larger site (stream flood plain) as a whole.
+
+Here is a reminder of the weights assigned to each attribute:
+
+| Criterion | Weight |
+|-----------|--------|
+| B1uses    | 0.058  |
+| B2pot     | 0.027  |
+| B3ndvi    | 0.083  |
+| CA1temp   | 0.198  |
+| CA2soil   | 0.03   |
+| QL1acl    | 0.098  |
+| QL2acg    | 0.235  |
+| QL3gr     | 0.27   |
+
+: Weights of MCDA criteria
+
+When designing the weights, we gave highest priority to criteria that directly influence liveability and, in our opinion, offer very actionable basis for feasible and tenable investments (QL3gr, QL2acg, CA1temp). This approach is visible in the results: overall the highest score was achieved in well accessible urban areas, mainly in the east of the town.
+
+This map should be interpreted in the context of the whole analysis, and interventions should be designed to suit the needs of specific locations.
+
+We recommend accessibility of green areas to be improved in the urban space, and where no potentially accessible green spaces exist, we propose to transform the area around the river into a recreational green area that contributes to landscape water retention, native biodiversity, and has a cooling effect. Smaller measures with the same aim can be taken, i.e. local improvements to streets and public space to include more green, permeable, and wet surfaces with greenery improving local microclimate and providing shadow. It can also be beneficial to combine investing into profitable central urban functions in combination with public space and greenery quality improvement. Investment into the central functions can also lead to secondary improvements of adjacent areas, that could be following the findings of this analysis.
+
+Analysis is further concluded in the [Results].
 
 ![MCDA Final conclusion (by Viola Ebermannová)](/img/MCDA_conclusions_sum.png)
 
 ## Typology Construction
 
-<!-- Kelly is working on this. -->
-
-<!-- We feel like our goal for typology alligns pretty well with our main research question *How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?* -->
-
-<!-- Hopefully, we will get types of areas that can make it easier to create example design interventions. Perhaps something like "areas with large potential for community facilities with water retention function", "areas with community functions and maintained high biodiversity", "areas with biodiversity boost, improved surface permeability and connectivity". -->
-
 ### Clustering
 
-The typology construction is based on the course's provided tutorial on how to construct urban typologies in R. We use K-means Clustering, an unsupervised machine learning method, to find similar typologies for areas around an urban stream based on earlier analysed qualities. The main goal for the typological clustering is to get types of areas that can make it easier to create example design interventions. Perhaps something like "areas with large potential for community facilities with water retention function", "areas with community functions and maintained high biodiversity", "areas with biodiversity boost, improved surface permeability and connectivity". We feel like our goal for typology alligns pretty well with our main research question *How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?*
+The typology construction is based on the course's provided tutorial on how to construct urban typologies in R. We use K-means Clustering, an unsupervised machine learning method, to find similar typologies for areas around an urban stream based on earlier analysed qualities. The main goal for the typological clustering is to get types of areas that can make it easier to create example design interventions. Perhaps something like "areas with large potential for community facilities with water retention function", "areas with community functions and maintained high biodiversity", "areas with biodiversity boost, improved surface permeability and connectivity". We feel like our goal for typology alligns pretty well with our main research question *How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving native biodiversity, ecological connectivity, and water retention in the landscape?*
 
 #### Focus area and variables
 
@@ -903,7 +918,7 @@ print(original_centers)
 
 ```
 
-We can also calculate the standard deviation for a better insight in the accuracy of the results. The code for this was written with the help of [Claude AI](https://claude.ai/). 
+We can also calculate the standard deviation for a better insight in the accuracy of the results. The code for this was written with the help of [Claude AI](https://claude.ai/).
 
 ```{r}
 # Calculate standard deviation within each cluster for each attribute
@@ -947,9 +962,9 @@ head(grids$cluster_dist)
 
 ```
 
-To get an even better idea of how well each cluster fits, we can also calculate the mean value of the distances to the cluster center for each cluster. This code was also written with the help of [Claude AI](https://claude.ai/). 
+To get an even better idea of how well each cluster fits, we can also calculate the mean value of the distances to the cluster center for each cluster. This code was also written with the help of [Claude AI](https://claude.ai/).
 
-```{r} 
+```{r}
 # Calculate mean distance to cluster center for each cluster
 mean_distances_per_cluster <- grids %>%
   st_drop_geometry() %>%
@@ -986,9 +1001,9 @@ To interpret the clustering results, we examine the centers of each cluster in t
 🔵 Very low\
 🟣 Extremely low
 
-The mean distance to cluster center for the four clusters is shown in the table below together with the number of geometries in each cluster. 
+The mean distance to cluster center for the four clusters is shown in the table below together with the number of geometries in each cluster.
 
-| Type | Mean Distance | Number of geometries | 
+| Type | Mean Distance | Number of geometries |
 |------|---------------|----------------------|
 | 1    | 1.260         | 125                  |
 | 2    | 1.264         | 139                  |
@@ -996,6 +1011,35 @@ The mean distance to cluster center for the four clusters is shown in the table 
 | 4    | 1.173         | 110                  |
 
 ## Results
+
+The Multi Criteria Decision Analysis (MCDA) highlights areas which should be prioritised in evaluating where to implement urban stream restoration interventions targeting biodiversity, climate adaptation, and quality of life. In general, we recommend:
+
+-   improving accessibility of urban green areas (improving quality of life)
+
+-   creating new green spaces in the flood plain of the river (improving microclimate, landscape retention ability, recreational opportunities, and native biodiversity),
+
+-   integrating creation of communal and urban central functions into new green areas and public space improvements (improving quality of life, microclimate, water retention in landscape, biodiversity)
+
+-   modifying public space to include more local biodiversity, and more permeable surfaces (improving microclimate, water retention, liveability, native biodiversity)
+
+-   adding biodiversity and water retention measures into large agricultural fields, such as dense vegetation islands/strips (climate adaptation, biodiversity)
+
+-   designing within the floodplain area to allow for water spillage, reintroducing flood plain biotopes (climate adaptation, native biodiversity)
+
+-   prioritising native species and naturally occurring biotopes in any future interventions (climate adaptation, improving biodiversity)
+
+![MCDA Final conclusion (by Viola Ebermannová)](/img/MCDA_conclusions_sum.png)
+
+The typologies created in Typology construction offer a simplified typology of areas that can act as a basis for an overview of typical spatial intervention sets.
+
+```{r}
+# Plot clusters with base R
+plot(grids["cluster"], 
+     main = "Spatial Pattern of Urban Stream Clusters", 
+     border = NA)
+```
+
+### Tying the two analysis methods together
 
 ## Discussion
 
