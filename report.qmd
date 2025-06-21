@@ -82,7 +82,7 @@ Note #2: THIS IS A WIP, IT WILL BE FINALISED IN END OF JUNE 2025.
 
 Urban Stream Restoration, Sustainability, Multi Criteria Decision Analysis, Typology Construction, K-means clustering, Senica, Slovakia
 
-![River Senica on the edge of Teplica (Google Street View, 2012)](/img/SenicaOnTheEdgeOfTeplica_googleStreetview.png)
+![River Senica on the edge of Teplica (Google Street View, 2012)](/img/_SenicaOnTheEdgeOfTeplica_googleStreetview.png)
 
 ### Colophon
 
@@ -142,25 +142,25 @@ We use Multi Criteria Decision Analysis (MCDA) to determine suitability of areas
 
 ### Explanation of how MCDA works
 
-This is a short overview of how Multi Criteria Decision Analysis works in this research project. MCDA starts with a research question and subquestions, leading to objectives. Our research objectives are described further in the report. From these, we determined criteria that will be used to describe/answer them.
+This is a short overview of how Multi Criteria Decision Analysis works in this research project. MCDA starts with a research question and subquestions, leading to objectives. Our research objectives are described further in the report (see chapter [Selecting objectives and criteria – three pillar system](#selecting-objectives-and-criteria-three-pillar-system)). From these, we determined criteria that will be used to describe/answer them.
 
-We determined the mutual importance of the attributes and assigned weights to them based on pairwise comparison. For this, we used a Saaty matrix. In the Saaty matrix, in each cell we stated how many times we think the criterion in the row is more important than the criterion in the column. To evaluate the Saaty matrix, a sum is calculated for each row. These values are normalised to determine the weights, so the sum of the weights is 1. An example is shown in the figure below in the "weight determination, and our approach is explained further in a dedicated chapter.
+We determined the mutual importance of the attributes and assigned weights to them based on pairwise comparison. For this, we used a Saaty matrix. In the Saaty matrix, in each cell we stated how many times we think the criterion in the row is more important than the criterion in the column. To evaluate the Saaty matrix, a sum is calculated for each row. These values are normalised to determine the weights, so the sum of the weights is 1. An example is shown in the figure below in the "weight determination", and our approach is explained further in a dedicated chapter ([Weighting]).
 
-We divided the area around Teplica river in Senica into spatial units that form our analysis geometry, the workflow is described in a dedicated chapter. These are the units on which the research questions will be answered. For each of these units, we determined the value of each criterion. We normalised these criteria to 0-1, so they are comparable with each other.
+We divided the area around Teplica river in Senica into spatial units that form our analysis geometry, the workflow is described in a dedicated chapter ([Analysis geometry]). These are the units on which the research questions will be answered. For each of these units, we determined the value of each criterion. We normalised these criteria to 0-1, so they are comparable with each other.
 
 Then, we multiplied the criteria by the weights to get their relative value (for each spatial unit, the sum of all the weighted criteria falls into interval 0-1). We determined the result of MCDA for the main research question, as well as for individual subquestions.
 
 You can see a simplified example demonstrating the principles of MCDA in the figure below.
 
-![Diagram of how MCDA works (by Viola Ebermannová)](img/MCDA_explanation.png)
+![Diagram of how MCDA works, with a simplified example of analysis geometry and criteria (by Viola Ebermannová)](img/MCDA_explanation.png)
 
 ### Selecting objectives and criteria – three pillar system {#selecting-objectives-and-criteria-three-pillar-system}
 
 ReBioClim is a project focused on sustainable urban stream restoration, and it builds on three pillars: *"The primary aim is to improve the quality of life in cities and at the same time to promote biodiversity and climate adaptation."* (ReBioClim n.d.)
 
-![Approach: combining the themes of biodiversity, climate adaptation, and quality of life (by Viola Ebermannová)](/img/_venndiagram.png){width="400"}
+![Approach: combining the themes of biodiversity, climate adaptation, and quality of life (by Viola Ebermannová)](/img/MCDA_venndiagram.png){width="400"}
 
-These three themes form the three branches of our MCDA analysis research tree. In each of these branches, we chose a number of sub-themes to determine the suitability of different more specific types of interventions. These sub-themes consist of attributes which we aggregate to use for MCDA. MCDA is performed for each of the three themes, as well as for sustainable urban stream restoration as a whole. Each attribute was given a unique code to be used across our research for clarity.
+These three themes form the three branches of our MCDA research tree. In each of these branches, we chose a number of sub-themes to determine the suitability of different more specific types of interventions. These sub-themes consist of attributes which we aggregate to use for MCDA. MCDA is performed for each of the three themes, as well as for sustainable urban stream restoration as a whole. Each attribute was given a unique code to be used across our research for clarity.
 
 ![Research structure – simplified flow chart of indicators used in each of the three themes (by Viola Ebermannová)](/img/MCDAresearchStructure_overview.png)
 
@@ -215,7 +215,7 @@ The values of MCDA criteria are evaluated on analysis geometry spatial units. We
     -   by analysing on logical spatial units
     -   more space-specific results will make the analysis-intention-decision path shorter
 
-The geometry was created mainly manually following four main principles, in this order. It follows the structure of the *Regional biocorridor* as defined in*Spatial Ecological Stability System* (*ÚSES*) as a spine along the river Teplica. The bounds of the geometry were defined based on the flood plain of the river Teplica, as that is the area we consider "belongs" to the river. We followed morphological characteristics of the space to create smaller units. In case the units needed to be partitioned further, and morphology was not used, the partitioning was inspired by the parcel system. Each of these four principles will be explained in a dedicated section.
+The geometry was created mainly manually following four principles, in this order. It follows the structure of the *Regional biocorridor* as defined in *Spatial Ecological Stability System* (*ÚSES*) as a spine along the river Teplica. The bounds of the geometry were defined based on the flood plain of the river Teplica, as that is the area we consider "belongs" to the river. We followed morphological characteristics of the space to create smaller units. In case the units needed to be partitioned further, and morphology was not used, the partitioning was inspired by the parcel system. Each of these four principles will be explained in a dedicated section.
 
 ![Four principles of determining analysis geometry units. (by Viola Ebermannová)](/img/analysisgeometry_overview.png)
 
@@ -251,7 +251,7 @@ The bounds of the analysis geometry were determined based on the floodplain of t
 
 Workflow:
 
-1.  Find flood danger (\*Povodňové ohrozenie) data, this project uses map accessible through [SVP š.p. map viewer](https://mpt.svp.sk/svp_vmapportal/?basemap=orto2023&zoom=5&lat=48.683285&lng=17.339609) (SVP š.p. 2023). (The outline was based on raster data available in an online map viewer. In case of raster or vector data being available directly as a retrievable GIS layer, it would be beneficial to use a more exact boundary.)
+1.  Find flood danger (*Povodňové ohrozenie*) data, this project uses map accessible through [SVP š.p. map viewer](https://mpt.svp.sk/svp_vmapportal/?basemap=orto2023&zoom=5&lat=48.683285&lng=17.339609) (SVP š.p. 2023). (The outline was based on raster data available in an online map viewer. In case of raster or vector data being available directly as a retrievable GIS layer, it would be beneficial to use a more exact boundary.)
 
 2.  Trace the flood danger area related to Teplica stream (discarding flood areas of other streams), following morphological boundaries (morphological boundaries already largely follow the approximate flood plain boundary).
 
@@ -331,7 +331,7 @@ We used linear min-max normalisation to 0-1, eventually inversed (1-\[standard m
 
 ### Biodiversity
 
-**How to improve local and supra local biodiversity resilience by interventions within the stream flood plain?** -\> Which spaces to prioritize based on value and feasibility of intervention?
+**How to improve local and supra local biodiversity resilience by interventions within the stream flood plain?** -\> Which spaces to prioritize based on ecological value and feasibility of intervention?
 
 In this chapter, we analyse the suitability of analysis geometry spatial units for interventions targeting biodiversity objectives. The examined characteristics are:
 
@@ -357,7 +357,7 @@ The elements of ÚSES are biocenters, biocorridors (connecting biocenters to all
 
 In Senica, there is a regional biocorridor along the river Teplica, and a larger supraregional biocorridor on the south-east side of the city. For the purposes of our analysis, we consider them of the same importance.
 
-![Map of ÚSES within our area (by Hongyue Kang)](/img/USES.png)
+![Map of ÚSES within our area (by Hongyue Kang)](/img/B1_USES.png)
 
 ##### Aggregation and normalisation
 
@@ -423,7 +423,7 @@ Note: In the area, there is a large water body present. This water body was assi
 
 #### Weighting
 
-An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing biodiversity criteria among each other, the values were given as follows:
+An overall pairwise comparison matrix was created for all indicators at once (see [Weighting]). For comparing biodiversity criteria among each other, the values were given as follows:
 
 ![Partial pairwise comparison matrix – biodiversity (screenshot from [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/) (Holeček n.d.))](img/B_SaatyMatrix.png)
 
@@ -439,11 +439,11 @@ The calculated weights for biodiversity indicators are:
 
 #### Biodiversity conclusion
 
-In this part, we developed a spatially explicit composite biodiversity index map for the spatial geometry by weighting three criteria: B1ndvi (current state of vegetation based on NDVI), B2uses (connectivity to ÚSES – Slovakian official Spatial system of ecological stability), and B3pot (ecological quality improvement and feasibility potential). Because we agree that vegetative cover remains a dominant factor influencing riparian biodiversity, in line with existing ecological connection, we assigned B3ndvi with the highest weight (0.083), followed by B1uses (0.058) and B2pot (0.027).
+In this part, we developed a spatially explicit composite biodiversity index map for the spatial geometry by weighting three criteria: *B1ndvi* (current state of vegetation based on NDVI), *B2uses* (connectivity to ÚSES – Slovakian official Spatial system of ecological stability), and *B3pot* (ecological quality improvement and feasibility potential). Because we agree that vegetative cover remains a dominant factor influencing riparian biodiversity, in line with existing ecological connection, we assigned *B3ndvi* with the highest weight (0.083), followed by *B1uses* (0.058) and *B2pot* (0.027).
 
-The conclusion map resembles the B3ndvi map a lot, with the addition of the ÚSES biocorridor(s) as higher priority. The two most important criteria, B3ndvi and B1uses are in a way contradictory: in ÚSES areas, it is more likely that the green has a high NDVI and therefore low B3ndvi value. However, in B1uses, spaces that are not green are also considered connected if they are adjacent to a green space continuously connected to ÚSES. Moreover, the supraregional biocorridor at the eastern edge of the city does not necessarily have high NDVI, as it is a larger structure.
+The conclusion map resembles the *B3ndvi* map a lot, with the addition of the ÚSES biocorridor(s) as higher priority. The two most important criteria, *B3ndvi* and B1uses are in a way contradictory: in ÚSES areas, it is more likely that the green has a high NDVI and therefore low *B3ndvi* value. However, in B1uses, spaces that are not green are also considered connected if they are adjacent to a green space continuously connected to ÚSES. Moreover, the supraregional biocorridor at the eastern edge of the city does not necessarily have high NDVI, as it is a larger structure.
 
-In general, the highest scores are in the east of the town, where the supraregional corridor passes the town, B2pot is the highest, and because of it being an urban area, NDVI is quite low -\> B3ndvi is quite high. **Overall, the highest suitability for biodiversity-oriented interventions seems to be in neglected urban or industrial areas, and especially clearly in urban areas of suburban character in the east of the town.** High values are also present in the water area at the north of the analysis area, however, we suspect that to be a mistake caused by improper use of NDVI data: for water, NDVI is very low, so the score of B3ndvi is very high, which is misleading.
+In general, the highest scores are in the east of the town, where the supraregional corridor passes the town, *B2pot* is the highest, and because of it being an urban area, NDVI is quite low -\> *B3ndvi* is quite high. **Overall, the highest suitability for biodiversity-oriented interventions seems to be in neglected urban or industrial areas, and especially clearly in urban areas of suburban character in the east of the town.** High values are also present in the water area at the north of the analysis area, however, we suspect that to be a mistake caused by improper use of NDVI data: for water, NDVI is very low, so the score of *B3ndvi* is very high, which is misleading.
 
 We recommend improving native biodiversity by implementing low maintenance nature-like native biotope landscaping in industrial areas. We also recommend improving biodiversity in the streets of the town with targeted interventions. In general, it is also beneficial to transform uniform fields to include dense vegetation patches that improve the resilience of local ecosystems and in general support biodiversity.
 
@@ -467,7 +467,7 @@ We focus on landscape water retention a lot, because in western Slovakia, high s
 
 ###### Land Surface Temperature
 
-To roughly estimate the need for cooling measures, we use Land Surface Temperature (LST) during a 3 month summer period.
+To estimate the need for cooling measures, we use Land Surface Temperature (LST) during a 3 month summer period.
 
 ###### Calculating LST
 
@@ -500,7 +500,7 @@ The normalization is a linear min-max normalization for a benefit criterion, mea
 
 ##### Weigting and normalisation
 
-Weighted as mean by Zonal statistics tool.
+Weighted as mean by Zonal statistics tool (QGIS).
 
 ![Criterion CA1temp – need for cooling (normalised.) (by Viola Ebermannová)](/img/MCDA_conclusions_CA1temp.png)
 
@@ -537,7 +537,7 @@ Values were assigned based on the soil characteristic on the majority of the spa
 
 #### Weighting
 
-An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing climate adaptation criteria among each other, the values were given as follows:
+An overall pairwise comparison matrix was created for all indicators at once (see [Weighting]). For comparing climate adaptation criteria among each other, the values were given as follows:
 
 ![Partial pairwise comparison matrix – climate adaptation(screenshot from [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/) (Holeček n.d.))](img/CA_SaatyMatrix.png)
 
@@ -552,9 +552,9 @@ The calculated weights for climate adaptation criteria are:
 
 #### Climate adaptation conclusion
 
-For climate adaptation, we considered two key factors: land surface temperature (CA1temp) and water retention capacity (CA2soil). For urban stream restoration climate adaptation measures, we considered the CA1temp criterion much more important, giving it a weight 0.198, and giving CA2soil weight 0.03.
+For climate adaptation, we considered two key factors: land surface temperature (*CA1temp*) and water retention capacity (*CA2soil*). For urban stream restoration climate adaptation measures, we considered the *CA1temp* criterion much more important, giving it a weight 0.198, and giving *CA2soil* weight 0.03.
 
-As shown in the resulting map, **spatial geometries located within urban areas, as well as those in large fields near the downstream section of the Teplica River, are identified as more suitable for climate adaptation interventions**. This outcome is primarily due to the significantly higher weight assigned to CA1temp, which has a more direct impact on climate adaptation potential. Consequently, areas currently experiencing higher land surface temperatures are prioritized as key targets for intervention.
+As shown in the resulting map, **spatial geometries located within urban areas, as well as those in large fields near the downstream section of the Teplica River, are identified as more suitable for climate adaptation interventions**. This outcome is primarily due to the significantly higher weight assigned to *CA1temp*, which has a more direct impact on climate adaptation potential. Consequently, areas currently experiencing higher land surface temperatures are prioritized as key targets for intervention.
 
 We recommend thinking about landscape water retention with all future plans for any interventions in the urban fabric. Moreover, we recommend focusing on implementing climate adaptation measures in the agricultural areas (such as dense vegetation separations strips, which help retain the water in the landscape and have a cooling effect as well.) In urban areas, using softer cooler surfaces and adding shadow can be beneficial, as well as adding more wet greenery (perhaps native flood plain biotopes), that improves the local microclimate.
 
@@ -578,17 +578,21 @@ In this chapter, we analyse the suitability of analysis geometry spatial units f
 
 ###### Angular choice analysis
 
-<!-- explanation of what it shows and space syntax intro -->
+To determine spatial potential for community functions, we used Angular Choice analysis. It belongs to Space Syntax analysis, a set of techniques analysing spatial potential. Angular choice analyses every choice of path on a path network from every origin to every destination and calculates how many possible routes go through each location, showing the spatial potential for centralities. It does not take into account the meanings of spaces, but only the structure of the network.
 
 ###### Results of local Angular choice analysis in Senica
 
-On OSM street network, in area there are no clearly fast routes and there are missing pathways along some roads, so we took all roads from the dataset as potentially slow.
+Amgular choice analysis was executed on OSM street network using the [PST QGIS plugin](https://smog.chalmers.se/projects/pst-plugin-for-qgis/) (SMOG n.d.). In area there are no clearly fast routes and there are missing pathways along some roads, so we took all roads from the dataset as potentially slow. A radius of 500 m was used, which is the scale of children playing next to their house or corner shops and neighbourhood functions.
 
 The values of Angular choice analysis with radius 500 m were lineary normalised to 0-1 range.
 
+In the map, the areas with high score show the places that have the spatial potential to be very frequented on routes in 500 m radius, and therefore the spatial potential for communal centralities.
+
+![Potential for local community functions (normalised.) (by Viola Ebermannová)](/img/QL1acl_baseanalysis.png)
+
 ##### Weighting and normalisation
 
-Aggregated as maximum value in polygon, to show the maximum potential in the area. Where there are no intersecting roads (gives result 'NULL'), 0 was assigned. This aggregate value was lineary normalised to 0-1 range.
+Aggregated as maximum value in polygon, to show the maximum potential in the area. Where there are no intersecting roads (gives result 'NULL'), 0 was assigned. This aggregate value was lineary normalised to 0-1 range using the expression:
 
 ```         
 aggregate( 'layer: angular_choice', 'max', "attribute: r=500 m, normalised", intersects($geometry,geometry(@parent)))
@@ -602,21 +606,31 @@ aggregate( 'layer: angular_choice', 'max', "attribute: r=500 m, normalised", int
 
 ###### Angular choice analysis
 
+To determine spatial potential for central urban functions, we used Angular Choice analysis, see [Angular choice analysis] for explanation.
+
 ###### Results of Angular choice analysis with larger radii in Senica
 
-Angular choice analysis was calculated for radii 1 km and 2 km. First, these two attributes were normalised. Then these values were combined to a common indicator, giving larger weight to the larger radius:
+Angular choice analysis was calculated using the [PST QGIS plugin](https://smog.chalmers.se/projects/pst-plugin-for-qgis/) (SMOG n.d.) for radii 1 km (local scale of walking to a shop or walking the dog) and 2 km (end of walkable scale). First, these two attributes were normalised. Then these values were combined to a common indicator, giving larger weight to the larger radius:
 
 | AC1km2km = 1\*(AC r=1km) + 2\*(AC r=2km)
 
-This attribute was then normalised.
+This attribute was then lineary normalised to 0-1.
+
+In the map, the areas with high score show the places that have the spatial potential to be very frequented on routes in 1000-2000 m radius, and therefore the spatial potential for town-wide centralities.
+
+![Potential for central urban functions (normalised.) (by Viola Ebermannová)](/img/QL2acg_baseanalysis.png)
 
 ##### Aggregation and normalisation
 
-Again, the value was aggregated by calculating maximum value in the polygon, to show the maximal potential in the area, and lineary normalised to 0-1 range.
+Again, the value was aggregated by calculating maximum value in the polygon, to show the maximal potential in the area, and lineary normalised to 0-1 range by the following expression:
 
 ```         
 aggregate( 'layer: angular_choice', 'max', "attribute: AC1km2km, normalised", intersects($geometry,geometry(@parent)))
 ```
+
+As the river flows through the city center, it is not surprising that the values are quite high.
+
+![Criterion QL2acg – Central urban function potential (normalised.) (by Viola Ebermannová)](/img/MCDA_conclusions_QL2acg.png)
 
 #### *QL3gr* – Where is a large need for green?
 
@@ -624,11 +638,15 @@ aggregate( 'layer: angular_choice', 'max', "attribute: AC1km2km, normalised", in
 
 ###### Attraction reach analysis
 
-explanation of what it calculates
+Attraction reach analysis is also a part of Space Syntax analysis. It evaluates the potential attraction density that is reachable from location (in our case, the attractions are OSM green areas, and the locations center points of buildings.) Attraction reach evaluates the reachable potential attraction density through a given path network based on its spatial conditions (we use the same OSM road network as for *QL1acl* and *QL2acg*.)
 
 ###### Results of Attraction reach analysis in Senica
 
-Attraction reach was calculated from centroids of buildings to green areas, as classified in OSM, weighted by the area of the green area. Value was normalised.
+Attraction reach was calculated using the [PST QGIS plugin](https://smog.chalmers.se/projects/pst-plugin-for-qgis/) (SMOG n.d.) from centroids of buildings to green areas, as classified in OSM, and weighted by the area of the green area. Value was lineary normalised to 0-1, inverting the value, giving high normalised scores to buildings with low attraction reach – showing the need for green, instead of the originally calculated accessibility of it.
+
+In the map, the buildings with high score are the ones with low potential reachability of (large) green spaces, we consider them as lacking connection to green.
+
+![Attraction reach to green areas (normalised). (by Viola Ebermannová)](img/QL3gr_baseanalysis.png)
 
 ##### Aggregation and normalisation
 
@@ -1029,65 +1047,65 @@ Despite that, we managed to combine some characteristics of each cluster to defi
 
 ###### Type 1 (urban area)
 
-+-------------+-------------+----------------------------------------------------------------------------+
-| Attribute   | Value       | Interpretation                                                             |
-+=============+=============+============================================================================+
-| B1uses      | Medium high | Not very connected to ÚSES, so biodiversity improvement of less importance |
-+-------------+-------------+----------------------------------------------------------------------------+
-| B3ndvi      | High        | Could use more green                                                       |
-+-------------+-------------+----------------------------------------------------------------------------+
-| CA1temp     | High        | Needs improvements against heat stress                                     |
-+-------------+-------------+----------------------------------------------------------------------------+
-| QL2acg      | High        | Does have potential for central urban functions                            |
-+-------------+-------------+----------------------------------------------------------------------------+
++-----------+-------------+----------------------------------------------------------------------------+
+| Attribute | Value       | Interpretation                                                             |
++===========+=============+============================================================================+
+| B1uses    | Medium high | Not very connected to ÚSES, so biodiversity improvement of less importance |
++-----------+-------------+----------------------------------------------------------------------------+
+| B3ndvi    | High        | Could use more green                                                       |
++-----------+-------------+----------------------------------------------------------------------------+
+| CA1temp   | High        | Needs improvements against heat stress                                     |
++-----------+-------------+----------------------------------------------------------------------------+
+| QL2acg    | High        | Does have potential for central urban functions                            |
++-----------+-------------+----------------------------------------------------------------------------+
 
 Type 1 consist of areas that are not very connected to ÚSES structures, so improvement of biodiversity will be of low priority. When planning urban development initiatives the focus should instead be on quality of life improvement and better climate adaptation. These areas have potential for central urban functions, the development of which can be paired with improvement of public space. After checking the areas of type 1 on a map, we additionally concluded that most type 1 areas are urban area. This lines up with our conclusions about this typology.
 
 ###### Type 2 (finetune areas a)
 
-+------------+---------------+--------------------------------------------------------------------------------------------+
-| Attribute  | Value         | Interpretation                                                                             |
-+============+===============+============================================================================================+
-| B1uses     | High          | Can use improvement of already existing ÚSES structures, with focus on biodiversity        |
-+------------+---------------+--------------------------------------------------------------------------------------------+
-| B3ndvi     | Medium low    | Quite good quality of green                                                                |
-+------------+---------------+--------------------------------------------------------------------------------------------+
-| CA1temp    | Medium low    | Does not really need cooling                                                               |
-+------------+---------------+--------------------------------------------------------------------------------------------+
-| QL2acg     | Extremely low | This value is unexpected, perhaps caused by clustering 0 values in areas without any roads |
-+------------+---------------+--------------------------------------------------------------------------------------------+
++-----------+---------------+--------------------------------------------------------------------------------------------+
+| Attribute | Value         | Interpretation                                                                             |
++===========+===============+============================================================================================+
+| B1uses    | High          | Can use improvement of already existing ÚSES structures, with focus on biodiversity        |
++-----------+---------------+--------------------------------------------------------------------------------------------+
+| B3ndvi    | Medium low    | Quite good quality of green                                                                |
++-----------+---------------+--------------------------------------------------------------------------------------------+
+| CA1temp   | Medium low    | Does not really need cooling                                                               |
++-----------+---------------+--------------------------------------------------------------------------------------------+
+| QL2acg    | Extremely low | This value is unexpected, perhaps caused by clustering 0 values in areas without any roads |
++-----------+---------------+--------------------------------------------------------------------------------------------+
 
 Type 2 areas score low on B3ndvi, CA1temp, and QL2acg meaning that its green areas are already of good quality, and that they do not have potential for central urban functions (likely because of not having any roads). There is also a low need for cooling, since the land surface temperatures are not too high. The only attribute that could use improvement is B1uses, but even this does not need too much attention. Therefore we suggest improvement of already existing structures in type 2 areas, possibly with native biodiversity oriented ecological interventions that specifically target ÚSES needs. In conclusion, type 2 does not need much drastic improvement and can instead benefit from finetuning and native biodiversity measures.
 
 ###### Type 3 (finetune areas b)
 
-+------------+-------------+-------------------------------------------------+
-| Attribute  | Value       | Interpretation                                  |
-+============+=============+=================================================+
-| B1uses     | High        | Good connectivity to ÚSES structures            |
-+------------+-------------+-------------------------------------------------+
-| B3ndvi     | Low         | Good quality of green                           |
-+------------+-------------+-------------------------------------------------+
-| CA1temp    | Medium high | Not that much need for cooling                  |
-+------------+-------------+-------------------------------------------------+
-| QL2acg     | High        | Does have potential for central urban functions |
-+------------+-------------+-------------------------------------------------+
++-------------+-------------+-------------------------------------------------+
+| Attribute   | Value       | Interpretation                                  |
++=============+=============+=================================================+
+| B1uses      | High        | Good connectivity to ÚSES structures            |
++-------------+-------------+-------------------------------------------------+
+| B3ndvi      | Low         | Good quality of green                           |
++-------------+-------------+-------------------------------------------------+
+| CA1temp     | Medium high | Not that much need for cooling                  |
++-------------+-------------+-------------------------------------------------+
+| QL2acg      | High        | Does have potential for central urban functions |
++-------------+-------------+-------------------------------------------------+
 
 Both B3ndvi and CA1temp score low, which means that there is not much need for cooling which is in line with a good quality of green in the area (B3ndvi). Type 3 areas have a good connectivity to existing ÚSES structures, so they are a good candidate for native biodiversity improvements. As for type 2, this can be done with small interventions. The high value for QL2acg is a bit unexpected, but can possibly be explained by the fact that main roads go through these areas, that naturally have high angular choice, more on that in the general clustering conclusion. In a way, type 2 and type 3 do not differ that much from each other and we suspect that the differences are mostly caused by the presence of main roads, or absence of any roads. Type 2 and 3 will therefore have similar urban stream development priorities and strategies.
 
 ###### Type 4 (fields)
 
-+---------------+---------------+-----------------------------------------------------+
-| Attribute     | Value         | Interpretation                                      |
-+===============+===============+=====================================================+
-| B1uses        | Medium high   | Moderate connectivity to existing ÚSES structures   |
-+---------------+---------------+-----------------------------------------------------+
-| B3ndvi        | Medium low    | Bad state of vegetation                             |
-+---------------+---------------+-----------------------------------------------------+
-| CA1temp       | High          | In high need of cooling                             |
-+---------------+---------------+-----------------------------------------------------+
-| QL2acg        | Very low      | Does not have potential for central urban functions |
-+---------------+---------------+-----------------------------------------------------+
++-------------+-------------+-----------------------------------------------------+
+| Attribute   | Value       | Interpretation                                      |
++=============+=============+=====================================================+
+| B1uses      | Medium high | Moderate connectivity to existing ÚSES structures   |
++-------------+-------------+-----------------------------------------------------+
+| B3ndvi      | Medium low  | Bad state of vegetation                             |
++-------------+-------------+-----------------------------------------------------+
+| CA1temp     | High        | In high need of cooling                             |
++-------------+-------------+-----------------------------------------------------+
+| QL2acg      | Very low    | Does not have potential for central urban functions |
++-------------+-------------+-----------------------------------------------------+
 
 Type 4 areas are characterised by a bad state of vegetation and a dire need for cooling. There is a moderate connectivity to existing ÚSES structures, and low potential for central urban functions. When checking the location of these type 4 areas, we found out that is it mostly fields. Heat island effects occur a lot above fields. Although the analysis suggests a need for improvement, we argue that the fields have a low priority for developments, since they often already have specified uses (also supported by results of MCDA). However, we do suggest possibly planting small clusters of denser vegetation and trees ([remízek](https://cs.wikipedia.org/wiki/Rem%C3%ADzek)). This could improve water retention (and in turn soil quality), microclimate, and biodiversity in the fields.
 
@@ -1198,7 +1216,7 @@ We performed a broader space syntax analysis, before choosing the layers to use 
 
 **Angular choice analysis**
 
-<iframe src="pdf/AngularChoice_20250518.pdf" width="100%" height="500" frameborder="0">
+<iframe src="pdf/XX_appendix_AngularChoice.pdf" width="100%" height="500" frameborder="0">
 
 </iframe>
 
@@ -1228,7 +1246,7 @@ Analyses every choice of path from every location to every destination – how m
 
 **Attraction reach from buildings to green spaces**
 
-<iframe src="pdf/AttractionReach_GreenSpace_20250518.pdf" width="100%" height="500" frameborder="0">
+<iframe src="pdf/XX_appendix_AttractionReach_GreenSpace.pdf" width="100%" height="500" frameborder="0">
 
 </iframe>
 
@@ -1254,7 +1272,7 @@ Analyses the *reachable* potential *attraction density* of location (sqm). Green
 
 **Attraction Reach from buildings to Teplica**
 
-<iframe src="pdf/AttractionReach_Teplica_20250518.pdf" width="100%" height="500" frameborder="0">
+<iframe src="pdf/XX_appendix_AttractionReach_Teplica.pdf" width="100%" height="500" frameborder="0">
 
 </iframe>
 
@@ -1292,10 +1310,6 @@ Analyses the *reachable* potential *attraction density* of location (sqm), was m
 
 ## Sources
 
-<!-- Use APA 7 - full here, bracketed in text and maps (for some i used the full version in the image for easier referencing) -->
-
-<!-- we could also make the bracketed versions and the full references linked -->
-
 ### Literature
 
 Agrointeg. (n.d.). Hydrologické funkce půdy. AGROINTEG, s.r.o. Retrieved June 21, 2025 from <https://www.agrointeg.cz/technologie-pro-kompostovani/hydrologicke-funkce-pudy>
@@ -1329,6 +1343,8 @@ NASA / USGS / JPL-Caltech. (2025) NASA SRTM Digital Elevation 30m. Retrieved Jun
 OSM. Open street map. <https://www.openstreetmap.org>
 
 SAŽP (Slovak Environment Agency) (2002-2024). Atlas krajiny Slovenskej republiky. (Atlas of the landscape of the Slovak Republic). Accessible through <https://www.enviroportal.sk/atlas-krajiny-sr>
+
+SMOG – Spatial morphology group Chalmers School of Architecture. (n.d.) PST plugin for QGIS – An open source tool for performing spatial analyses. Developed by: KTH School of Architecture, Chalmers School of Architecture (SMoG) and Spacescape AB. Alexander Ståhle, Lars Marcus, Daniel Koch, Martin Fitger, Ann Legeby, Gianna Stavroulaki, Meta Berghauser Pont, Anders Karlström, Pablo Miranda Carranza, Tobias Nordström. Accessible through <https://smog.chalmers.se/projects/pst-plugin-for-qgis/>
 
 SVP š.p. – Slovakian Water Management Utility. (15 June 2023). Mapy povodňového ohrozenia. (Flood danger maps). Retrieved June 1, 2025 from: <https://mpt.svp.sk/svp_vmapportal/?basemap=orto2023&zoom=5&lat=48.683285&lng=17.339609>
 

@@ -337,7 +337,7 @@ window.Quarto = {
 <p>Urban Stream Restoration, Sustainability, Multi Criteria Decision Analysis, Typology Construction, K-means clustering, Senica, Slovakia</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src=".\img/SenicaOnTheEdgeOfTeplica_googleStreetview.png" class="img-fluid figure-img"></p>
+<p><img src=".\img/_SenicaOnTheEdgeOfTeplica_googleStreetview.png" class="img-fluid figure-img"></p>
 <figcaption>River Senica on the edge of Teplica (Google Street View, 2012)</figcaption>
 </figure>
 </div>
@@ -394,15 +394,15 @@ window.Quarto = {
 <p>We use Multi Criteria Decision Analysis (MCDA) to determine suitability of areas in Teplica river floodplain in the city of Senica for urban stream restoration measures targeting specific themes, and also in general for sustainable urban stream restoration measures.</p>
 <section id="explanation-of-how-mcda-works" class="level3">
 <h3 class="anchored" data-anchor-id="explanation-of-how-mcda-works">Explanation of how MCDA works</h3>
-<p>This is a short overview of how Multi Criteria Decision Analysis works in this research project. MCDA starts with a research question and subquestions, leading to objectives. Our research objectives are described further in the report. From these, we determined criteria that will be used to describe/answer them.</p>
-<p>We determined the mutual importance of the attributes and assigned weights to them based on pairwise comparison. For this, we used a Saaty matrix. In the Saaty matrix, in each cell we stated how many times we think the criterion in the row is more important than the criterion in the column. To evaluate the Saaty matrix, a sum is calculated for each row. These values are normalised to determine the weights, so the sum of the weights is 1. An example is shown in the figure below in the “weight determination, and our approach is explained further in a dedicated chapter.</p>
-<p>We divided the area around Teplica river in Senica into spatial units that form our analysis geometry, the workflow is described in a dedicated chapter. These are the units on which the research questions will be answered. For each of these units, we determined the value of each criterion. We normalised these criteria to 0-1, so they are comparable with each other.</p>
+<p>This is a short overview of how Multi Criteria Decision Analysis works in this research project. MCDA starts with a research question and subquestions, leading to objectives. Our research objectives are described further in the report (see chapter <a href="#selecting-objectives-and-criteria-three-pillar-system">Selecting objectives and criteria – three pillar system</a>). From these, we determined criteria that will be used to describe/answer them.</p>
+<p>We determined the mutual importance of the attributes and assigned weights to them based on pairwise comparison. For this, we used a Saaty matrix. In the Saaty matrix, in each cell we stated how many times we think the criterion in the row is more important than the criterion in the column. To evaluate the Saaty matrix, a sum is calculated for each row. These values are normalised to determine the weights, so the sum of the weights is 1. An example is shown in the figure below in the “weight determination”, and our approach is explained further in a dedicated chapter (<a href="#weighting">Weighting</a>).</p>
+<p>We divided the area around Teplica river in Senica into spatial units that form our analysis geometry, the workflow is described in a dedicated chapter (<a href="#analysis-geometry">Analysis geometry</a>). These are the units on which the research questions will be answered. For each of these units, we determined the value of each criterion. We normalised these criteria to 0-1, so they are comparable with each other.</p>
 <p>Then, we multiplied the criteria by the weights to get their relative value (for each spatial unit, the sum of all the weighted criteria falls into interval 0-1). We determined the result of MCDA for the main research question, as well as for individual subquestions.</p>
 <p>You can see a simplified example demonstrating the principles of MCDA in the figure below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/MCDA_explanation.png" class="img-fluid figure-img"></p>
-<figcaption>Diagram of how MCDA works (by Viola Ebermannová)</figcaption>
+<figcaption>Diagram of how MCDA works, with a simplified example of analysis geometry and criteria (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
 </section>
@@ -411,11 +411,11 @@ window.Quarto = {
 <p>ReBioClim is a project focused on sustainable urban stream restoration, and it builds on three pillars: <em>“The primary aim is to improve the quality of life in cities and at the same time to promote biodiversity and climate adaptation.”</em> (ReBioClim n.d.)</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src=".\img/_venndiagram.png" class="img-fluid figure-img" width="400"></p>
+<p><img src=".\img/MCDA_venndiagram.png" class="img-fluid figure-img" width="400"></p>
 <figcaption>Approach: combining the themes of biodiversity, climate adaptation, and quality of life (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
-<p>These three themes form the three branches of our MCDA analysis research tree. In each of these branches, we chose a number of sub-themes to determine the suitability of different more specific types of interventions. These sub-themes consist of attributes which we aggregate to use for MCDA. MCDA is performed for each of the three themes, as well as for sustainable urban stream restoration as a whole. Each attribute was given a unique code to be used across our research for clarity.</p>
+<p>These three themes form the three branches of our MCDA research tree. In each of these branches, we chose a number of sub-themes to determine the suitability of different more specific types of interventions. These sub-themes consist of attributes which we aggregate to use for MCDA. MCDA is performed for each of the three themes, as well as for sustainable urban stream restoration as a whole. Each attribute was given a unique code to be used across our research for clarity.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDAresearchStructure_overview.png" class="img-fluid figure-img"></p>
@@ -510,7 +510,7 @@ CR = 0.086</div>
 <li>more space-specific results will make the analysis-intention-decision path shorter</li>
 </ul></li>
 </ol>
-<p>The geometry was created mainly manually following four main principles, in this order. It follows the structure of the <em>Regional biocorridor</em> as defined in<em>Spatial Ecological Stability System</em> (<em>ÚSES</em>) as a spine along the river Teplica. The bounds of the geometry were defined based on the flood plain of the river Teplica, as that is the area we consider “belongs” to the river. We followed morphological characteristics of the space to create smaller units. In case the units needed to be partitioned further, and morphology was not used, the partitioning was inspired by the parcel system. Each of these four principles will be explained in a dedicated section.</p>
+<p>The geometry was created mainly manually following four principles, in this order. It follows the structure of the <em>Regional biocorridor</em> as defined in <em>Spatial Ecological Stability System</em> (<em>ÚSES</em>) as a spine along the river Teplica. The bounds of the geometry were defined based on the flood plain of the river Teplica, as that is the area we consider “belongs” to the river. We followed morphological characteristics of the space to create smaller units. In case the units needed to be partitioned further, and morphology was not used, the partitioning was inspired by the parcel system. Each of these four principles will be explained in a dedicated section.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/analysisgeometry_overview.png" class="img-fluid figure-img"></p>
@@ -553,7 +553,7 @@ CR = 0.086</div>
 <p>The bounds of the analysis geometry were determined based on the floodplain of the river indicated by flood danger maps. This is the area that “belongs” to the river, thus it should be restored together with the watercourse.</p>
 <p>Workflow:</p>
 <ol type="1">
-<li><p>Find flood danger (*Povodňové ohrozenie) data, this project uses map accessible through <a href="https://mpt.svp.sk/svp_vmapportal/?basemap=orto2023&amp;zoom=5&amp;lat=48.683285&amp;lng=17.339609">SVP š.p. map viewer</a> (SVP š.p. 2023). (The outline was based on raster data available in an online map viewer. In case of raster or vector data being available directly as a retrievable GIS layer, it would be beneficial to use a more exact boundary.)</p></li>
+<li><p>Find flood danger (<em>Povodňové ohrozenie</em>) data, this project uses map accessible through <a href="https://mpt.svp.sk/svp_vmapportal/?basemap=orto2023&amp;zoom=5&amp;lat=48.683285&amp;lng=17.339609">SVP š.p. map viewer</a> (SVP š.p. 2023). (The outline was based on raster data available in an online map viewer. In case of raster or vector data being available directly as a retrievable GIS layer, it would be beneficial to use a more exact boundary.)</p></li>
 <li><p>Trace the flood danger area related to Teplica stream (discarding flood areas of other streams), following morphological boundaries (morphological boundaries already largely follow the approximate flood plain boundary).</p></li>
 <li><p>This results in an “outer boundary” polygon of the (approximate) flood plain.</p></li>
 </ol>
@@ -640,7 +640,7 @@ CR = 0.086</div>
 </section>
 <section id="biodiversity" class="level3">
 <h3 class="anchored" data-anchor-id="biodiversity">Biodiversity</h3>
-<p><strong>How to improve local and supra local biodiversity resilience by interventions within the stream flood plain?</strong> -&gt; Which spaces to prioritize based on value and&nbsp;feasibility of intervention?</p>
+<p><strong>How to improve local and supra local biodiversity resilience by interventions within the stream flood plain?</strong> -&gt; Which spaces to prioritize based on ecological value and&nbsp;feasibility of intervention?</p>
 <p>In this chapter, we analyse the suitability of analysis geometry spatial units for interventions targeting biodiversity objectives. The examined characteristics are:</p>
 <ul>
 <li><p>Connectivity to the official Slovakian Spatial system of ecological stability (ÚSES) –&gt; prioritise interventions in areas that are a part of, or well connected to, the ecological stability system.</p></li>
@@ -662,7 +662,7 @@ CR = 0.086</div>
 <p>In Senica, there is a regional biocorridor along the river Teplica, and a larger supraregional biocorridor on the south-east side of the city. For the purposes of our analysis, we consider them of the same importance.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src=".\img/USES.png" class="img-fluid figure-img"></p>
+<p><img src=".\img/B1_USES.png" class="img-fluid figure-img"></p>
 <figcaption>Map of ÚSES within our area (by Hongyue Kang)</figcaption>
 </figure>
 </div>
@@ -750,7 +750,7 @@ other polygons –&gt; 0</div>
 </section>
 <section id="weighting-1" class="level4">
 <h4 class="anchored" data-anchor-id="weighting-1">Weighting</h4>
-<p>An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing biodiversity criteria among each other, the values were given as follows:</p>
+<p>An overall pairwise comparison matrix was created for all indicators at once (see <a href="#weighting">Weighting</a>). For comparing biodiversity criteria among each other, the values were given as follows:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/B_SaatyMatrix.png" class="img-fluid figure-img"></p>
@@ -784,9 +784,9 @@ other polygons –&gt; 0</div>
 </section>
 <section id="biodiversity-conclusion" class="level4">
 <h4 class="anchored" data-anchor-id="biodiversity-conclusion">Biodiversity conclusion</h4>
-<p>In this part, we developed a spatially explicit composite biodiversity index map for the spatial geometry by weighting three criteria: B1ndvi (current state of vegetation based on NDVI), B2uses (connectivity to ÚSES – Slovakian official Spatial system of ecological stability), and B3pot (ecological quality improvement and feasibility potential). Because we agree that vegetative cover remains a dominant factor influencing riparian biodiversity, in line with existing ecological connection, we assigned B3ndvi with the highest weight (0.083), followed by B1uses (0.058) and B2pot (0.027).</p>
-<p>The conclusion map resembles the B3ndvi map a lot, with the addition of the ÚSES biocorridor(s) as higher priority. The two most important criteria, B3ndvi and B1uses are in a way contradictory: in ÚSES areas, it is more likely that the green has a high NDVI and therefore low B3ndvi value. However, in B1uses, spaces that are not green are also considered connected if they are adjacent to a green space continuously connected to ÚSES. Moreover, the supraregional biocorridor at the eastern edge of the city does not necessarily have high NDVI, as it is a larger structure.</p>
-<p>In general, the highest scores are in the east of the town, where the supraregional corridor passes the town, B2pot is the highest, and because of it being an urban area, NDVI is quite low -&gt; B3ndvi is quite high. <strong>Overall, the highest suitability for biodiversity-oriented interventions seems to be in neglected urban or industrial areas, and especially clearly in urban areas of suburban character in the east of the town.</strong> High values are also present in the water area at the north of the analysis area, however, we suspect that to be a mistake caused by improper use of NDVI data: for water, NDVI is very low, so the score of B3ndvi is very high, which is misleading.</p>
+<p>In this part, we developed a spatially explicit composite biodiversity index map for the spatial geometry by weighting three criteria: <em>B1ndvi</em> (current state of vegetation based on NDVI), <em>B2uses</em> (connectivity to ÚSES – Slovakian official Spatial system of ecological stability), and <em>B3pot</em> (ecological quality improvement and feasibility potential). Because we agree that vegetative cover remains a dominant factor influencing riparian biodiversity, in line with existing ecological connection, we assigned <em>B3ndvi</em> with the highest weight (0.083), followed by <em>B1uses</em> (0.058) and <em>B2pot</em> (0.027).</p>
+<p>The conclusion map resembles the <em>B3ndvi</em> map a lot, with the addition of the ÚSES biocorridor(s) as higher priority. The two most important criteria, <em>B3ndvi</em> and B1uses are in a way contradictory: in ÚSES areas, it is more likely that the green has a high NDVI and therefore low <em>B3ndvi</em> value. However, in B1uses, spaces that are not green are also considered connected if they are adjacent to a green space continuously connected to ÚSES. Moreover, the supraregional biocorridor at the eastern edge of the city does not necessarily have high NDVI, as it is a larger structure.</p>
+<p>In general, the highest scores are in the east of the town, where the supraregional corridor passes the town, <em>B2pot</em> is the highest, and because of it being an urban area, NDVI is quite low -&gt; <em>B3ndvi</em> is quite high. <strong>Overall, the highest suitability for biodiversity-oriented interventions seems to be in neglected urban or industrial areas, and especially clearly in urban areas of suburban character in the east of the town.</strong> High values are also present in the water area at the north of the analysis area, however, we suspect that to be a mistake caused by improper use of NDVI data: for water, NDVI is very low, so the score of <em>B3ndvi</em> is very high, which is misleading.</p>
 <p>We recommend improving native biodiversity by implementing low maintenance nature-like native biotope landscaping in industrial areas. We also recommend improving biodiversity in the streets of the town with targeted interventions. In general, it is also beneficial to transform uniform fields to include dense vegetation patches that improve the resilience of local ecosystems and in general support biodiversity.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -811,7 +811,7 @@ other polygons –&gt; 0</div>
 <h5 class="anchored" data-anchor-id="data-3">Data</h5>
 <section id="land-surface-temperature" class="level6">
 <h6 class="anchored" data-anchor-id="land-surface-temperature">Land Surface Temperature</h6>
-<p>To roughly estimate the need for cooling measures, we use Land Surface Temperature (LST) during a 3 month summer period.</p>
+<p>To estimate the need for cooling measures, we use Land Surface Temperature (LST) during a 3 month summer period.</p>
 </section>
 <section id="calculating-lst" class="level6">
 <h6 class="anchored" data-anchor-id="calculating-lst">Calculating LST</h6>
@@ -840,7 +840,7 @@ other polygons –&gt; 0</div>
 </section>
 <section id="weigting-and-normalisation" class="level5">
 <h5 class="anchored" data-anchor-id="weigting-and-normalisation">Weigting and normalisation</h5>
-<p>Weighted as mean by Zonal statistics tool.</p>
+<p>Weighted as mean by Zonal statistics tool (QGIS).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_CA1temp.png" class="img-fluid figure-img"></p>
@@ -889,7 +889,7 @@ RS High+ P Medium -&gt; 1</div>
 </section>
 <section id="weighting-2" class="level4">
 <h4 class="anchored" data-anchor-id="weighting-2">Weighting</h4>
-<p>An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing climate adaptation criteria among each other, the values were given as follows:</p>
+<p>An overall pairwise comparison matrix was created for all indicators at once (see <a href="#weighting">Weighting</a>). For comparing climate adaptation criteria among each other, the values were given as follows:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/CA_SaatyMatrix.png" class="img-fluid figure-img"></p>
@@ -919,8 +919,8 @@ RS High+ P Medium -&gt; 1</div>
 </section>
 <section id="climate-adaptation-conclusion" class="level4">
 <h4 class="anchored" data-anchor-id="climate-adaptation-conclusion">Climate adaptation conclusion</h4>
-<p>For climate adaptation, we considered two key factors: land surface temperature (CA1temp) and water retention capacity (CA2soil). For urban stream restoration climate adaptation measures, we considered the CA1temp criterion much more important, giving it a weight 0.198, and giving CA2soil weight 0.03.</p>
-<p>As shown in the resulting map, <strong>spatial geometries located within urban areas, as well as those in large fields near the downstream section of the Teplica River, are identified as more suitable for climate adaptation interventions</strong>. This outcome is primarily due to the significantly higher weight assigned to CA1temp, which has a more direct impact on climate adaptation potential. Consequently, areas currently experiencing higher land surface temperatures are prioritized as key targets for intervention.</p>
+<p>For climate adaptation, we considered two key factors: land surface temperature (<em>CA1temp</em>) and water retention capacity (<em>CA2soil</em>). For urban stream restoration climate adaptation measures, we considered the <em>CA1temp</em> criterion much more important, giving it a weight 0.198, and giving <em>CA2soil</em> weight 0.03.</p>
+<p>As shown in the resulting map, <strong>spatial geometries located within urban areas, as well as those in large fields near the downstream section of the Teplica River, are identified as more suitable for climate adaptation interventions</strong>. This outcome is primarily due to the significantly higher weight assigned to <em>CA1temp</em>, which has a more direct impact on climate adaptation potential. Consequently, areas currently experiencing higher land surface temperatures are prioritized as key targets for intervention.</p>
 <p>We recommend thinking about landscape water retention with all future plans for any interventions in the urban fabric. Moreover, we recommend focusing on implementing climate adaptation measures in the agricultural areas (such as dense vegetation separations strips, which help retain the water in the landscape and have a cooling effect as well.) In urban areas, using softer cooler surfaces and adding shadow can be beneficial, as well as adding more wet greenery (perhaps native flood plain biotopes), that improves the local microclimate.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -945,17 +945,24 @@ RS High+ P Medium -&gt; 1</div>
 <h5 class="anchored" data-anchor-id="data-5">Data</h5>
 <section id="angular-choice-analysis" class="level6">
 <h6 class="anchored" data-anchor-id="angular-choice-analysis">Angular choice analysis</h6>
-<!-- explanation of what it shows and space syntax intro -->
+<p>To determine spatial potential for community functions, we used Angular Choice analysis. It belongs to Space Syntax analysis, a set of techniques analysing spatial potential. Angular choice analyses every choice of path on a path network from every origin to every destination and calculates how many possible routes go through each location, showing the spatial potential for centralities. It does not take into account the meanings of spaces, but only the structure of the network.</p>
 </section>
 <section id="results-of-local-angular-choice-analysis-in-senica" class="level6">
 <h6 class="anchored" data-anchor-id="results-of-local-angular-choice-analysis-in-senica">Results of local Angular choice analysis in Senica</h6>
-<p>On OSM street network, in area there are no clearly fast routes and there are missing pathways along some roads, so we took all roads from the dataset as potentially slow.</p>
+<p>Amgular choice analysis was executed on OSM street network using the <a href="https://smog.chalmers.se/projects/pst-plugin-for-qgis/">PST QGIS plugin</a> (SMOG n.d.). In area there are no clearly fast routes and there are missing pathways along some roads, so we took all roads from the dataset as potentially slow. A radius of 500 m was used, which is the scale of children playing next to their house or corner shops and neighbourhood functions.</p>
 <p>The values of Angular choice analysis with radius 500 m were lineary normalised to 0-1 range.</p>
+<p>In the map, the areas with high score show the places that have the spatial potential to be very frequented on routes in 500 m radius, and therefore the spatial potential for communal centralities.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\img/QL1acl_baseanalysis.png" class="img-fluid figure-img"></p>
+<figcaption>Potential for local community functions (normalised.) (by Viola Ebermannová)</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="weighting-and-normalisation" class="level5">
 <h5 class="anchored" data-anchor-id="weighting-and-normalisation">Weighting and normalisation</h5>
-<p>Aggregated as maximum value in polygon, to show the maximum potential in the area. Where there are no intersecting roads (gives result ‘NULL’), 0 was assigned. This aggregate value was lineary normalised to 0-1 range.</p>
+<p>Aggregated as maximum value in polygon, to show the maximum potential in the area. Where there are no intersecting roads (gives result ‘NULL’), 0 was assigned. This aggregate value was lineary normalised to 0-1 range using the expression:</p>
 <pre><code>aggregate( 'layer: angular_choice', 'max', "attribute: r=500 m, normalised", intersects($geometry,geometry(@parent)))</code></pre>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -971,18 +978,33 @@ RS High+ P Medium -&gt; 1</div>
 <h5 class="anchored" data-anchor-id="data-6">Data</h5>
 <section id="angular-choice-analysis-1" class="level6">
 <h6 class="anchored" data-anchor-id="angular-choice-analysis-1">Angular choice analysis</h6>
+<p>To determine spatial potential for central urban functions, we used Angular Choice analysis, see <a href="#angular-choice-analysis">Angular choice analysis</a> for explanation.</p>
 </section>
 <section id="results-of-angular-choice-analysis-with-larger-radii-in-senica" class="level6">
 <h6 class="anchored" data-anchor-id="results-of-angular-choice-analysis-with-larger-radii-in-senica">Results of Angular choice analysis with larger radii in Senica</h6>
-<p>Angular choice analysis was calculated for radii 1 km and 2 km. First, these two attributes were normalised. Then these values were combined to a common indicator, giving larger weight to the larger radius:</p>
+<p>Angular choice analysis was calculated using the <a href="https://smog.chalmers.se/projects/pst-plugin-for-qgis/">PST QGIS plugin</a> (SMOG n.d.) for radii 1 km (local scale of walking to a shop or walking the dog) and 2 km (end of walkable scale). First, these two attributes were normalised. Then these values were combined to a common indicator, giving larger weight to the larger radius:</p>
 <div class="line-block">AC1km2km = 1*(AC r=1km) + 2*(AC r=2km)</div>
-<p>This attribute was then normalised.</p>
+<p>This attribute was then lineary normalised to 0-1.</p>
+<p>In the map, the areas with high score show the places that have the spatial potential to be very frequented on routes in 1000-2000 m radius, and therefore the spatial potential for town-wide centralities.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\img/QL2acg_baseanalysis.png" class="img-fluid figure-img"></p>
+<figcaption>Potential for central urban functions (normalised.) (by Viola Ebermannová)</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="aggregation-and-normalisation-4" class="level5">
 <h5 class="anchored" data-anchor-id="aggregation-and-normalisation-4">Aggregation and normalisation</h5>
-<p>Again, the value was aggregated by calculating maximum value in the polygon, to show the maximal potential in the area, and lineary normalised to 0-1 range.</p>
+<p>Again, the value was aggregated by calculating maximum value in the polygon, to show the maximal potential in the area, and lineary normalised to 0-1 range by the following expression:</p>
 <pre><code>aggregate( 'layer: angular_choice', 'max', "attribute: AC1km2km, normalised", intersects($geometry,geometry(@parent)))</code></pre>
+<p>As the river flows through the city center, it is not surprising that the values are quite high.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\img/MCDA_conclusions_QL2acg.png" class="img-fluid figure-img"></p>
+<figcaption>Criterion QL2acg – Central urban function potential (normalised.) (by Viola Ebermannová)</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="ql3gr-where-is-a-large-need-for-green" class="level4">
@@ -991,11 +1013,18 @@ RS High+ P Medium -&gt; 1</div>
 <h5 class="anchored" data-anchor-id="data-7">Data</h5>
 <section id="attraction-reach-analysis" class="level6">
 <h6 class="anchored" data-anchor-id="attraction-reach-analysis">Attraction reach analysis</h6>
-<p>explanation of what it calculates</p>
+<p>Attraction reach analysis is also a part of Space Syntax analysis. It evaluates the potential attraction density that is reachable from location (in our case, the attractions are OSM green areas, and the locations center points of buildings.) Attraction reach evaluates the reachable potential attraction density through a given path network based on its spatial conditions (we use the same OSM road network as for <em>QL1acl</em> and <em>QL2acg</em>.)</p>
 </section>
 <section id="results-of-attraction-reach-analysis-in-senica" class="level6">
 <h6 class="anchored" data-anchor-id="results-of-attraction-reach-analysis-in-senica">Results of Attraction reach analysis in Senica</h6>
-<p>Attraction reach was calculated from centroids of buildings to green areas, as classified in OSM, weighted by the area of the green area. Value was normalised.</p>
+<p>Attraction reach was calculated using the <a href="https://smog.chalmers.se/projects/pst-plugin-for-qgis/">PST QGIS plugin</a> (SMOG n.d.) from centroids of buildings to green areas, as classified in OSM, and weighted by the area of the green area. Value was lineary normalised to 0-1, inverting the value, giving high normalised scores to buildings with low attraction reach – showing the need for green, instead of the originally calculated accessibility of it.</p>
+<p>In the map, the buildings with high score are the ones with low potential reachability of (large) green spaces, we consider them as lacking connection to green.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/QL3gr_baseanalysis.png" class="img-fluid figure-img"></p>
+<figcaption>Attraction reach to green areas (normalised). (by Viola Ebermannová)</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="aggregation-and-normalisation-5" class="level5">
@@ -1327,8 +1356,8 @@ Projected CRS: ETRS89 / UTM zone 33N
 3 4  859.0034
 4 5  740.4449
 5 6  623.5229
-6 7  545.1301
-7 8  471.7611
+6 7  544.3696
+7 8  473.9501
 8 9  402.1753</code></pre>
 </div>
 </div>
@@ -1660,9 +1689,9 @@ Projected CRS: ETRS89 / UTM zone 33N
 <h6 class="anchored" data-anchor-id="type-1-urban-area">Type 1 (urban area)</h6>
 <table class="caption-top table">
 <colgroup>
+<col style="width: 11%">
 <col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 72%">
+<col style="width: 74%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1700,9 +1729,9 @@ Projected CRS: ETRS89 / UTM zone 33N
 <h6 class="anchored" data-anchor-id="type-2-finetune-areas-a">Type 2 (finetune areas a)</h6>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 10%">
+<col style="width: 9%">
 <col style="width: 13%">
-<col style="width: 75%">
+<col style="width: 76%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1740,9 +1769,9 @@ Projected CRS: ETRS89 / UTM zone 33N
 <h6 class="anchored" data-anchor-id="type-3-finetune-areas-b">Type 3 (finetune areas b)</h6>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
 <col style="width: 17%">
-<col style="width: 64%">
+<col style="width: 17%">
+<col style="width: 63%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1780,9 +1809,9 @@ Projected CRS: ETRS89 / UTM zone 33N
 <h6 class="anchored" data-anchor-id="type-4-fields">Type 4 (fields)</h6>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 62%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 65%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1915,7 +1944,7 @@ Projected CRS: ETRS89 / UTM zone 33N
 <h3 class="anchored" data-anchor-id="space-syntax-analysis">Space syntax analysis</h3>
 <p>We performed a broader space syntax analysis, before choosing the layers to use for Quality of life criteria. Source of data: OSM.</p>
 <p><strong>Angular choice analysis</strong></p>
-<iframe src="pdf/AngularChoice_20250518.pdf" width="100%" height="500" frameborder="0">
+<iframe src="pdf/XX_appendix_AngularChoice.pdf" width="100%" height="500" frameborder="0">
 </iframe>
 <p>Analyses every choice of path from every location to every destination – how many possible routes go through location, showing the spatial potential for centralities.</p>
 <ul>
@@ -1938,7 +1967,7 @@ Projected CRS: ETRS89 / UTM zone 33N
 </ul></li>
 </ul>
 <p><strong>Attraction reach from buildings to green spaces</strong></p>
-<iframe src="pdf/AttractionReach_GreenSpace_20250518.pdf" width="100%" height="500" frameborder="0">
+<iframe src="pdf/XX_appendix_AttractionReach_GreenSpace.pdf" width="100%" height="500" frameborder="0">
 </iframe>
 <p>Analyses the <em>reachable</em> potential <em>attraction density</em> of location (sqm). Green areas sourced from OSM were weighted by area.</p>
 <ul>
@@ -1959,7 +1988,7 @@ Projected CRS: ETRS89 / UTM zone 33N
 </ul></li>
 </ul>
 <p><strong>Attraction Reach from buildings to Teplica</strong></p>
-<iframe src="pdf/AttractionReach_Teplica_20250518.pdf" width="100%" height="500" frameborder="0">
+<iframe src="pdf/XX_appendix_AttractionReach_Teplica.pdf" width="100%" height="500" frameborder="0">
 </iframe>
 <p>Analyses the <em>reachable</em> potential <em>attraction density</em> of location (sqm), was measured to points every 5m of waterway.</p>
 <ul>
@@ -1989,8 +2018,6 @@ Projected CRS: ETRS89 / UTM zone 33N
 </section>
 <section id="sources" class="level2">
 <h2 class="anchored" data-anchor-id="sources">Sources</h2>
-<!-- Use APA 7 - full here, bracketed in text and maps (for some i used the full version in the image for easier referencing) -->
-<!-- we could also make the bracketed versions and the full references linked -->
 <section id="literature" class="level3">
 <h3 class="anchored" data-anchor-id="literature">Literature</h3>
 <p>Agrointeg. (n.d.). Hydrologické funkce půdy. AGROINTEG, s.r.o. Retrieved June 21, 2025 from <a href="https://www.agrointeg.cz/technologie-pro-kompostovani/hydrologicke-funkce-pudy" class="uri">https://www.agrointeg.cz/technologie-pro-kompostovani/hydrologicke-funkce-pudy</a></p>
@@ -2011,6 +2038,7 @@ Projected CRS: ETRS89 / UTM zone 33N
 <p>NASA / USGS / JPL-Caltech. (2025) NASA SRTM Digital Elevation 30m. Retrieved June 6, 2025 from Google Earth Engine</p>
 <p>OSM. Open street map. <a href="https://www.openstreetmap.org" class="uri">https://www.openstreetmap.org</a></p>
 <p>SAŽP (Slovak Environment Agency) (2002-2024). Atlas krajiny Slovenskej republiky. (Atlas of the landscape of the Slovak Republic). Accessible through <a href="https://www.enviroportal.sk/atlas-krajiny-sr" class="uri">https://www.enviroportal.sk/atlas-krajiny-sr</a></p>
+<p>SMOG – Spatial morphology group Chalmers School of Architecture. (n.d.) PST plugin for QGIS – An open source tool for performing spatial analyses. Developed by: KTH School of Architecture, Chalmers School of Architecture (SMoG) and Spacescape AB. Alexander Ståhle, Lars Marcus, Daniel Koch, Martin Fitger, Ann Legeby, Gianna Stavroulaki, Meta Berghauser Pont, Anders Karlström, Pablo Miranda Carranza, Tobias Nordström. Accessible through <a href="https://smog.chalmers.se/projects/pst-plugin-for-qgis/" class="uri">https://smog.chalmers.se/projects/pst-plugin-for-qgis/</a></p>
 <p>SVP š.p. – Slovakian Water Management Utility. (15 June 2023). Mapy povodňového ohrozenia. (Flood danger maps). Retrieved June 1, 2025 from: <a href="https://mpt.svp.sk/svp_vmapportal/?basemap=orto2023&amp;zoom=5&amp;lat=48.683285&amp;lng=17.339609" class="uri">https://mpt.svp.sk/svp_vmapportal/?basemap=orto2023&amp;zoom=5&amp;lat=48.683285&amp;lng=17.339609</a></p>
 <p>ÚGKK SK. (n.d.). Katastrálna mapa (Cadaster map), Mapa určeného operátu (Cadaster parcels usually not visible in the terrain merged into larger units). Portál elektronických služieb katastra nehnuteľností. (Portal for Electronic Services of the Cadaster). Úřad geodézie, kartografie a katastra Slovenskej reoubliky. (Office for geodesy, cartography, and cadaster of the Slovak Reoublic). Retrieved from <a href="https://kataster.skgeodesy.sk/eskn/rest/services/" class="uri">https://kataster.skgeodesy.sk/eskn/rest/services/</a></p>
 <p>USGS. (2025) USGS Landsat 9 Level 2, Collection 2, Tier 1. Retrieved June 6, 2025 from Google Earth Engine</p>
