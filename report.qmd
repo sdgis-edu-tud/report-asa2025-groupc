@@ -439,11 +439,13 @@ The calculated weights for biodiversity indicators are:
 
 #### Biodiversity conclusion
 
-<!--# some text  conclusion is needed here -->
+In this part, we developed a spatially explicit composite biodiversity index map for the spatial geometry by weighting three criteria: B1ndvi (current state of vegetation based on NDVI), B2uses (connectivity to ÚSES – Slovakian official Spatial system of ecological stability), and B3pot (ecological quality improvement and feasibility potential).
 
-In this part, we developed a spatially explicit composite biodiversity index map for the spatial geometry by integrating three indicators: NDVI, USES (spatial system of ecological stability), and POT (ecological quality improvement potential). Because we agree that vegetative cover remains a dominant factor influencing riparian biodiversity, in line with existing ecological connection, we assigned NDVI with the highest weight (0.083), followed by USES(0.058) and POT(0.027). At last we generated a composite map reflecting biodiversity improvement potential along the Teplica.
+Because we agree that vegetative cover remains a dominant factor influencing riparian biodiversity, in line with existing ecological connection, we assigned B3ndvi with the highest weight (0.083), followed by B1uses (0.058) and B2pot (0.027). At last we generated a composite map reflecting biodiversity improvement potential along the river Teplica.
 
-The resulting map reveals a clear spatial pattern: because of NDVI and USES’s high weight, area with high improvement potential are those where have low NDVI index and are less connected with USES, particularly in the midstream and upstream sections.
+The conclusion map resembles the B3ndvi map a lot, with the addition of the ÚSES biocorridor(s) as higher priority. The two most important criteria, B3ndvi and B1uses are in a way contradictory: in ÚSES areas, it is more likely that the green has a high NDVI and therefore low B3ndvi value. However, in B1uses, spaces that are not green are also considered connected if they are adjacent to a green space continuously connected to ÚSES. Moreover, the supraregional biocorridor at the eastern edge of the city does not necessarily have high NDVI, as it is a larger structure.
+
+In general, the highest scores are in the east of the town, where the supraregional corridor passes the town, B2pot is the highest, and because of it being an urban area, NDVI is quite low -\> B3ndvi is quite high. **Overall, the highest suitability for biodiversity-oriented interventions seems to be in neglected urban or industrial areas, and especially clearly in urban areas of suburban character in the east of the town.** High values are also present in the water area at the north of the analysis area, however, we suspect that to be a mistake caused by improper use of NDVI data: for water, NDVI is very low, so the score of B3ndvi is very high, which is misleading.
 
 ![MCDA Biodiversity conclusion (by Viola Ebermannová)](/img/MCDA_conclusions_B.png)
 
@@ -550,9 +552,11 @@ The calculated weights for climate adaptation criteria are:
 
 #### Climate adaptation conclusion
 
-<!-- some conclusion and interpretation text -->
+For climate adaptation, we considered two key factors: land surface temperature (CA1temp) and water retention capacity (CA2soil). For urban stream restoration climate adaptation measures, we considered the CA1temp criterion much more important, giving it a weight 0.198, and giving CA2soil weight 0.03.
 
-For climate adaptation, we considered two key factors: land surface temperature (CA1temp) and water retention capacity (CA2soil). As shown in the resulting map, spatial geometries located within urban areas, as well as those near the downstream section of the Teplica River, are identified as more suitable for climate adaptation interventions. This outcome is primarily due to the significantly higher weight assigned to CA1temp, which has a more direct impact on climate adaptation potential. Consequently, areas currently experiencing higher land surface temperatures are prioritized as key targets for intervention.
+As shown in the resulting map, spatial geometries located within urban areas, as well as those in large fields near the downstream section of the Teplica River, are identified as more suitable for climate adaptation interventions. This outcome is primarily due to the significantly higher weight assigned to CA1temp, which has a more direct impact on climate adaptation potential. Consequently, areas currently experiencing higher land surface temperatures are prioritized as key targets for intervention.
+
+We recommend thinking about landscape water retention with all future plans for any interventions in the urban fabric. Moreover, we recommend focusing on implementing climate adaptation measures in the agricultural areas (such as dense vegetation separations strips, which help retain the water in the landscape and have a cooling effect as well.) In urban areas, using softer cooler surfaces and adding shadow can be beneficial, as well as adding more wet greenery (perhaps native flood plain biotopes), that improves the local microclimate.
 
 ![MCDA Climate adaptation conclusion (by Viola Ebermannová)](/img/MCDA_conclusions_CA.png)
 
@@ -660,7 +664,7 @@ This was lineary normalised to 0-1 into the final value.
 
 #### Weighting
 
-An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing quality of life criteria among each other, the values were given as follows:
+An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing quality of life criteria among each other, the values were given as follows (accessible urban green has the overall highest priority, and QL1acg has more priority than QL2acg, because of central urban functions servicing more people):
 
 ![Partial pairwise comparison matrix – quality of life (screenshot from [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/) (Holeček n.d.))](img/QL_SaatyMatrix.png)
 
@@ -676,7 +680,11 @@ The calculated weights for climate adaptation criteria are:
 
 #### Quality of life conclusion
 
-<!-- text about conclusion and interpretation -->
+We weighted 3 criteria targeting improving quality of life in Senica: potential for community functions (QL2acl), potential for central urban functions (QL2acg), and need for green space (QL3gr). QL3gr was given the highest priority with a weight of 0.27, reflecting the potential of the river flood plain to act as a natural recreational area. Potential for central urban functions was given a weight 0.235, more than twice as high as QL1acl – central urban functions serve the whole town community, which makes them important.
+
+It needs to be noted that the layers of QL1acl and QL2acg overlap quite well, because they highlight in general the areas where there are roads, which is also why in the conclusion map, roads generally have higher potential. This does not mean that all roads should be prioritised, but merely that these are the areas to consider when intending to create urban central functions.
+
+Overall highest scores can be found in urban areas in the town, especially in the north side where there already are multiple central functions. Interventions should be aimed at embracing the location of these centralities, or new ones created, within the river basin, and profiting from the recreational opportunities it brings. Also, in general we recommend to use the biocorridor as an urban green area, and improve connectivity to urban green areas.
 
 ![MCDA Quality of life conclusion (by Viola Ebermannová)](/img/MCDA_conclusions_QL.png)
 
