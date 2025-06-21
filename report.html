@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.27">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,9 +24,8 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -37,7 +36,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -62,21 +61,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="report_files/libs/clipboard/clipboard.min.js"></script>
-<script src="report_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="report_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="report_files/libs/quarto-html/quarto.js"></script>
 <script src="report_files/libs/quarto-html/popper.min.js"></script>
 <script src="report_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="report_files/libs/quarto-html/anchor.min.js"></script>
 <link href="report_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="report_files/libs/quarto-html/quarto-syntax-highlighting-17a5f7109c529cfde00c5b46f211b69b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="report_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="report_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="report_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="report_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="quarto-light">
+<body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -604,9 +631,9 @@ CR = 0.086</div>
 <p><strong>How to improve local and supra local biodiversity resilience by interventions within the stream flood plain?</strong> -&gt; Which spaces to prioritize based on value and&nbsp;feasibility of intervention?</p>
 <p>In this chapter, we analyse the suitability of analysis geometry spatial units for interventions targeting biodiversity objectives. The examined characteristics are:</p>
 <ul>
-<li><p>Connectivity to the official Slovakian Spatial system of ecological stability (ÚSES) –&gt; prioritise interventions in areas that are a part of, or well connected to, the ecological stability system. ([B1uses])</p></li>
-<li><p>Improvement potential and feasibility of intervention –&gt; prioritise interventions in areas where the feasibility of investment is high and that have a mediocre ecological quality offering potential for (easy) significant improvement. ([B2pot])</p></li>
-<li><p>Current state of vegetation –&gt; prioritise interventions in areas where the state of vegetation determined by NDVI (Normalised Difference Vegetation Index) is low. ([B3ndvi])</p></li>
+<li><p>Connectivity to the official Slovakian Spatial system of ecological stability (ÚSES) –&gt; prioritise interventions in areas that are a part of, or well connected to, the ecological stability system.</p></li>
+<li><p>Improvement potential and feasibility of intervention –&gt; prioritise interventions in areas where the feasibility of investment is high and that have a mediocre ecological quality offering potential for (easy) significant improvement.</p></li>
+<li><p>Current state of vegetation –&gt; prioritise interventions in areas where the state of vegetation determined by NDVI (Normalised Difference Vegetation Index) is low.</p></li>
 </ul>
 <section id="b1uses-which-spaces-should-be-prioritised-because-of-their-connectivity-to-úses" class="level4">
 <h4 class="anchored" data-anchor-id="b1uses-which-spaces-should-be-prioritised-because-of-their-connectivity-to-úses"><em>B1uses</em> – Which spaces should be prioritised because of their connectivity to ÚSES?</h4>
@@ -745,9 +772,10 @@ other polygons –&gt; 0</div>
 </section>
 <section id="biodiversity-conclusion" class="level4">
 <h4 class="anchored" data-anchor-id="biodiversity-conclusion">Biodiversity conclusion</h4>
-<!--# some text  conclusion is needed here -->
-<p>In this part, we developed a spatially explicit composite biodiversity index map for the spatial geometry by integrating three indicators: NDVI, USES (spatial system of ecological stability), and POT (ecological quality improvement potential). Because we agree that vegetative cover remains a dominant factor influencing riparian biodiversity, in line with existing ecological connection, we assigned NDVI with the highest weight (0.083), followed by USES(0.058) and POT(0.027). At last we generated a composite map reflecting biodiversity improvement potential along the Teplica.</p>
-<p>The resulting map reveals a clear spatial pattern: because of NDVI and USES’s high weight, area with high improvement potential are those where have low NDVI index and are less connected with USES, particularly in the midstream and upstream sections.</p>
+<p>In this part, we developed a spatially explicit composite biodiversity index map for the spatial geometry by weighting three criteria: B1ndvi (current state of vegetation based on NDVI), B2uses (connectivity to ÚSES – Slovakian official Spatial system of ecological stability), and B3pot (ecological quality improvement and feasibility potential).</p>
+<p>Because we agree that vegetative cover remains a dominant factor influencing riparian biodiversity, in line with existing ecological connection, we assigned B3ndvi with the highest weight (0.083), followed by B1uses (0.058) and B2pot (0.027). At last we generated a composite map reflecting biodiversity improvement potential along the river Teplica.</p>
+<p>The conclusion map resembles the B3ndvi map a lot, with the addition of the ÚSES biocorridor(s) as higher priority. The two most important criteria, B3ndvi and B1uses are in a way contradictory: in ÚSES areas, it is more likely that the green has a high NDVI and therefore low B3ndvi value. However, in B1uses, spaces that are not green are also considered connected if they are adjacent to a green space continuously connected to ÚSES. Moreover, the supraregional biocorridor at the eastern edge of the city does not necessarily have high NDVI, as it is a larger structure.</p>
+<p>In general, the highest scores are in the east of the town, where the supraregional corridor passes the town, B2pot is the highest, and because of it being an urban area, NDVI is quite low -&gt; B3ndvi is quite high. <strong>Overall, the highest suitability for biodiversity-oriented interventions seems to be in neglected urban or industrial areas, and especially clearly in urban areas of suburban character in the east of the town.</strong> High values are also present in the water area at the north of the analysis area, however, we suspect that to be a mistake caused by improper use of NDVI data: for water, NDVI is very low, so the score of B3ndvi is very high, which is misleading.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_B.png" class="img-fluid figure-img"></p>
@@ -758,11 +786,13 @@ other polygons –&gt; 0</div>
 </section>
 <section id="climate-adaptation" class="level3">
 <h3 class="anchored" data-anchor-id="climate-adaptation">Climate adaptation</h3>
-<p><strong><em>How to use areas in the flood plain to capture water in the landscape? -&gt; where is good space for infiltration basins and natural flood protection measures based on soil types, and where is space for (wet) cooling measures?</em></strong></p>
-<!--# intro -->
-<!-- The question needs to be more specific and based in data – what are examples of interventions that can achieve this? How much space do they need? -->
-<p>WIP – please refer to the main research structure flow chart for overview.</p>
-<p>This chapter is based on the fact that in western slovakia, there is a large drought problem, and water management activities should target capturing water in the landscape. <!-- ^This needs a source, but it is true. --></p>
+<p><strong>How to use areas in the flood plain to capture water in the landscape?</strong> -&gt; Where is good space for infiltration basins and natural flood protection measures based on soil types, and where is space for (wet) cooling measures?</p>
+<p>In this chapter, we analyse the suitability of analysis geometry spatial units for interventions targeting climate adaptation objectives. The examined characteristics are:</p>
+<ul>
+<li><p>Land surface temperature –&gt; prioritise (wet) cooling measures in areas with a high summer surface temperature.</p></li>
+<li><p>Soil retention ability and permeability –&gt; prioritise interventions targeting landscape water retention capacity in areas where the retention ability and permeability high.</p></li>
+</ul>
+<p>We focus on landscape water retention a lot, because in western Slovakia, high summer soil drought is a pressing problem. (Intersucho 2025) In sustainable stream restoration, measures should be taken to combat this large scale problem by taking small steps across the landscape.</p>
 <section id="ca1temp-which-spaces-should-be-prioritized-for-interventions-aimed-at-cooling-the-area-down" class="level4">
 <h4 class="anchored" data-anchor-id="ca1temp-which-spaces-should-be-prioritized-for-interventions-aimed-at-cooling-the-area-down"><em>CA1temp</em> – Which spaces should be prioritized for interventions aimed at cooling the area down?</h4>
 <section id="data-3" class="level5">
@@ -877,8 +907,9 @@ RS High+ P Medium -&gt; 1</div>
 </section>
 <section id="climate-adaptation-conclusion" class="level4">
 <h4 class="anchored" data-anchor-id="climate-adaptation-conclusion">Climate adaptation conclusion</h4>
-<!-- some conclusion and interpretation text -->
-<p>For climate adaptation, we considered two key factors: land surface temperature (CA1temp) and water retention capacity (CA2soil). As shown in the resulting map, spatial geometries located within urban areas, as well as those near the downstream section of the Teplica River, are identified as more suitable for climate adaptation interventions. This outcome is primarily due to the significantly higher weight assigned to CA1temp, which has a more direct impact on climate adaptation potential. Consequently, areas currently experiencing higher land surface temperatures are prioritized as key targets for intervention.</p>
+<p>For climate adaptation, we considered two key factors: land surface temperature (CA1temp) and water retention capacity (CA2soil). For urban stream restoration climate adaptation measures, we considered the CA1temp criterion much more important, giving it a weight 0.198, and giving CA2soil weight 0.03.</p>
+<p>As shown in the resulting map, spatial geometries located within urban areas, as well as those in large fields near the downstream section of the Teplica River, are identified as more suitable for climate adaptation interventions. This outcome is primarily due to the significantly higher weight assigned to CA1temp, which has a more direct impact on climate adaptation potential. Consequently, areas currently experiencing higher land surface temperatures are prioritized as key targets for intervention.</p>
+<p>We recommend thinking about landscape water retention with all future plans for any interventions in the urban fabric. Moreover, we recommend focusing on implementing climate adaptation measures in the agricultural areas (such as dense vegetation separations strips, which help retain the water in the landscape and have a cooling effect as well.) In urban areas, using softer cooler surfaces and adding shadow can be beneficial, as well as adding more wet greenery (perhaps native flood plain biotopes), that improves the local microclimate.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_CA.png" class="img-fluid figure-img"></p>
@@ -889,9 +920,13 @@ RS High+ P Medium -&gt; 1</div>
 </section>
 <section id="quality-of-life" class="level3">
 <h3 class="anchored" data-anchor-id="quality-of-life">Quality of life</h3>
-<!--# intro -->
-<p><strong><em>What types of places should be created in the stream flood plain?</em></strong> -&gt; Ammenities, green spaces, connections?</p>
-<p>WIP – please refer to the main research structure flow chart for overview.</p>
+<p><strong>What types of places should be created in the stream flood plain?</strong> -&gt; What areas to target for improving quality of life?</p>
+<p>In this chapter, we analyse the suitability of analysis geometry spatial units for interventions targeting quality of life objectives. The examined characteristics are:</p>
+<ul>
+<li><p>Local centrality potential –&gt; prioritise creating central community functions in areas with high local centrality potential (determined by Angular choice analysis).</p></li>
+<li><p>Global centrality potential –&gt; prioritise creating central urban functions in areas with high global centrality potential (determined by Angular choice analysis).</p></li>
+<li><p>Need for green –&gt; prioritise measures creating accessible urban green areas in spaces where the surrounding buildings lack access to green.</p></li>
+</ul>
 <section id="ql1acl-where-is-potential-for-community-functions" class="level4">
 <h4 class="anchored" data-anchor-id="ql1acl-where-is-potential-for-community-functions"><em>QL1acl</em> – Where is potential for community functions?</h4>
 <section id="data-5" class="level5">
@@ -989,7 +1024,7 @@ END</code></pre>
 </section>
 <section id="weighting-3" class="level4">
 <h4 class="anchored" data-anchor-id="weighting-3">Weighting</h4>
-<p>An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing quality of life criteria among each other, the values were given as follows:</p>
+<p>An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing quality of life criteria among each other, the values were given as follows (accessible urban green has the overall highest priority, and QL1acg has more priority than QL2acg, because of central urban functions servicing more people):</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/QL_SaatyMatrix.png" class="img-fluid figure-img"></p>
@@ -1023,7 +1058,9 @@ END</code></pre>
 </section>
 <section id="quality-of-life-conclusion" class="level4">
 <h4 class="anchored" data-anchor-id="quality-of-life-conclusion">Quality of life conclusion</h4>
-<!-- text about conclusion and interpretation -->
+<p>We weighted 3 criteria targeting improving quality of life in Senica: potential for community functions (QL2acl), potential for central urban functions (QL2acg), and need for green space (QL3gr). QL3gr was given the highest priority with a weight of 0.27, reflecting the potential of the river flood plain to act as a natural recreational area. Potential for central urban functions was given a weight 0.235, more than twice as high as QL1acl – central urban functions serve the whole town community, which makes them important.</p>
+<p>It needs to be noted that the layers of QL1acl and QL2acg overlap quite well, because they highlight in general the areas where there are roads, which is also why in the conclusion map, roads generally have higher potential. This does not mean that all roads should be prioritised, but merely that these are the areas to consider when intending to create urban central functions.</p>
+<p>Overall highest scores can be found in urban areas in the town, especially in the north side where there already are multiple central functions. Interventions should be aimed at embracing the location of these centralities, or new ones created, within the river basin, and profiting from the recreational opportunities it brings. Also, in general we recommend to use the biocorridor as an urban green area, and improve connectivity to urban green areas.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_QL.png" class="img-fluid figure-img"></p>
@@ -1082,7 +1119,7 @@ END</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co"># for processing vector data </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Linking to GEOS 3.13.1, GDAL 3.10.2, PROJ 9.5.1; sf_use_s2() is TRUE</code></pre>
+<pre><code>Linking to GEOS 3.13.1, GDAL 3.11.0, PROJ 9.6.0; sf_use_s2() is TRUE</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># for selecting and transforming data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -1234,8 +1271,8 @@ Projected CRS: ETRS89 / UTM zone 33N
 3 4  859.0034
 4 5  740.4449
 5 6  623.5229
-6 7  544.3696
-7 8  474.7422
+6 7  545.1301
+7 8  474.6992
 8 9  402.1753</code></pre>
 </div>
 </div>
@@ -1363,25 +1400,86 @@ Projected CRS: ETRS89 / UTM zone 33N
 4 0.5454545 0.3013264 0.8374818 1.779817e-02</code></pre>
 </div>
 </div>
+<p>We can also calculate the standard deviation for a better insight in the accuracy of the results. The code for this was written with the help of <a href="https://claude.ai/">Claude AI</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate standard deviation within each cluster for each attribute</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># First, add cluster assignments to the features dataframe</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>features_with_clusters <span class="ot">&lt;-</span> features</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>features_with_clusters<span class="sc">$</span>cluster <span class="ot">&lt;-</span> kmeans_result<span class="sc">$</span>cluster</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate standard deviation for each attribute within each cluster</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>cluster_stds <span class="ot">&lt;-</span> features_with_clusters <span class="sc">%&gt;%</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cluster) <span class="sc">%&gt;%</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">B1uses_std =</span> <span class="fu">sd</span>(B1uses, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">B3ndvi_std =</span> <span class="fu">sd</span>(B3ndvi, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">CA1temp_std =</span> <span class="fu">sd</span>(CA1temp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">QL2acg_std =</span> <span class="fu">sd</span>(QL2acg, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Standard deviation within each cluster (original scale):"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Standard deviation within each cluster (original scale):"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cluster_stds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 5
+  cluster B1uses_std B3ndvi_std CA1temp_std QL2acg_std
+    &lt;int&gt;      &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt;
+1       1      0.361      0.189      0.0854     0.240 
+2       2      0.332      0.267      0.116      0     
+3       3      0.317      0.192      0.161      0.0729
+4       4      0.406      0.141      0.101      0.107 </code></pre>
+</div>
+</div>
 </section>
 <section id="step-6.-optional-calculate-distance-to-cluster-center" class="level4">
 <h4 class="anchored" data-anchor-id="step-6.-optional-calculate-distance-to-cluster-center">Step 6. (Optional) Calculate distance to cluster center</h4>
 <p>Optionally, we can compute the distance of each analysis geometry to the cluster center. This can be used as an indication of how well the geometry fits in its cluster, thus how closely an individual geometry resembles the general typology it is categorised in.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Step 6 (Optional): Compute distance to cluster center</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the cluster center for each row, using the cluster assignment</span></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>centroids_matrix <span class="ot">&lt;-</span> kmeans_result<span class="sc">$</span>centers[kmeans_result<span class="sc">$</span>cluster, ]</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Euclidean distance between each point and its assigned cluster center</span></span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>grid_distances <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">rowSums</span>((X_scaled <span class="sc">-</span> centroids_matrix)<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Save to grids</span></span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>grids<span class="sc">$</span>cluster_dist <span class="ot">&lt;-</span> grid_distances</span>
-<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(grids<span class="sc">$</span>cluster_dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Step 6 (Optional): Compute distance to cluster center</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the cluster center for each row, using the cluster assignment</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>centroids_matrix <span class="ot">&lt;-</span> kmeans_result<span class="sc">$</span>centers[kmeans_result<span class="sc">$</span>cluster, ]</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Euclidean distance between each point and its assigned cluster center</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>grid_distances <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">rowSums</span>((X_scaled <span class="sc">-</span> centroids_matrix)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Save to grids</span></span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>grids<span class="sc">$</span>cluster_dist <span class="ot">&lt;-</span> grid_distances</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(grids<span class="sc">$</span>cluster_dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.2968395 0.9446302 1.2510013 0.9494854 1.3623125 0.8529141</code></pre>
+</div>
+</div>
+<p>To get an even better idea of how well each cluster fits, we can also calculate the mean value of the distances to the cluster center for each cluster. This code was also written with the help of <a href="https://claude.ai/">Claude AI</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean distance to cluster center for each cluster</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>mean_distances_per_cluster <span class="ot">&lt;-</span> grids <span class="sc">%&gt;%</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cluster) <span class="sc">%&gt;%</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_distance =</span> <span class="fu">mean</span>(cluster_dist, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_geometries =</span> <span class="fu">n</span>(),</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Mean distance per cluster to cluster center:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Mean distance per cluster to cluster center:"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mean_distances_per_cluster)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  cluster mean_distance n_geometries
+  &lt;fct&gt;           &lt;dbl&gt;        &lt;int&gt;
+1 1                1.26          125
+2 2                1.26          139
+3 3                1.17          117
+4 4                1.17          110</code></pre>
 </div>
 </div>
 </section>
@@ -1391,7 +1489,7 @@ Projected CRS: ETRS89 / UTM zone 33N
 <section id="typology-description" class="level5">
 <h5 class="anchored" data-anchor-id="typology-description">Typology description</h5>
 <!-- 🔴 🟠 🟡 🟢 🔵 🟣 -->
-<p>To interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below shows the (unscaled) clustered values of each attribute.</p>
+<p>To interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below shows the (unscaled) clustered values of each attribute with their standard deviation.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
@@ -1414,34 +1512,34 @@ Projected CRS: ETRS89 / UTM zone 33N
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>🟠 0.417</td>
-<td>🔴 0.742</td>
-<td>🔴 0.778</td>
-<td>🔴 0.708</td>
+<td>0.417 (<span class="math inline">\(\sigma\)</span> = 0.36) 🟠</td>
+<td>0.742 (<span class="math inline">\(\sigma\)</span> = 0.19) 🔴</td>
+<td>0.778 (<span class="math inline">\(\sigma\)</span> = 0.09) 🔴</td>
+<td>0.708 (<span class="math inline">\(\sigma\)</span> = 0.24) 🔴</td>
 <td>High B3ndvi, CA1temp, and QL2acg. Low B1uses.</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>🔴 0.747</td>
-<td>🟡 0.300</td>
-<td>🟡 0.386</td>
-<td>🟣 7.216e-16</td>
+<td>0.747 (<span class="math inline">\(\sigma\)</span> = 0.33) 🔴</td>
+<td>0.300 (<span class="math inline">\(\sigma\)</span> = 0.27) 🟡</td>
+<td>0.386 (<span class="math inline">\(\sigma\)</span> = 0.12) 🟡</td>
+<td>7.216e-16 (<span class="math inline">\(\sigma\)</span> = 0.00) 🟣</td>
 <td>High B1uses and extremely low QL2acg</td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>🔴 0.781</td>
-<td>🟢 0.286</td>
-<td>🟠 0.442</td>
-<td>🔴 0.792</td>
+<td>0.781 (<span class="math inline">\(\sigma\)</span> = 0.32) 🔴</td>
+<td>0.286 (<span class="math inline">\(\sigma\)</span> = 0.19) 🟢</td>
+<td>0.442 (<span class="math inline">\(\sigma\)</span> = 0.16) 🟠</td>
+<td>0.792 (<span class="math inline">\(\sigma\)</span> = 0.07) 🔴</td>
 <td>High B1uses and QL2acg, low B3ndvi</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>🟠 0.545</td>
-<td>🟡 0.301</td>
-<td>🔴 0.837</td>
-<td>🔵 0.0177</td>
+<td>0.545 (<span class="math inline">\(\sigma\)</span> = 0.41) 🟠</td>
+<td>0.301 (<span class="math inline">\(\sigma\)</span> = 0.14) 🟡</td>
+<td>0.837 (<span class="math inline">\(\sigma\)</span> = 0.10) 🔴</td>
+<td>0.0177 (<span class="math inline">\(\sigma\)</span> = 0.11) 🔵</td>
 <td>High CA1temp and very low QL2acg</td>
 </tr>
 </tbody>
@@ -1452,6 +1550,38 @@ Projected CRS: ETRS89 / UTM zone 33N
 🟢 Low<br>
 🔵 Very low<br>
 🟣 Extremely low</p>
+<p>The mean distance to cluster center for the four clusters is shown in the table below together with the number of geometries in each cluster.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Mean Distance</th>
+<th>Number of geometries</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1.260</td>
+<td>125</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1.264</td>
+<td>139</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>1.169</td>
+<td>117</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1.173</td>
+<td>110</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 </section>
@@ -1561,12 +1691,13 @@ Projected CRS: ETRS89 / UTM zone 33N
 <!-- we could also make the bracketed versions and the full references linked -->
 <section id="literature" class="level3">
 <h3 class="anchored" data-anchor-id="literature">Literature</h3>
+<p>Agrointeg. (n.d.). Hydrologické funkce půdy. AGROINTEG, s.r.o. Retrieved June 21, 2025 from <a href="https://www.agrointeg.cz/technologie-pro-kompostovani/hydrologicke-funkce-pudy" class="uri">https://www.agrointeg.cz/technologie-pro-kompostovani/hydrologicke-funkce-pudy</a></p>
 <p>Holeček, P. (n.d.). Fuzzy AHP. Web Application. Screenshots taken on June 10 from <a href="https://fuzzyahp.holecekp.eu/en/" class="uri">https://fuzzyahp.holecekp.eu/en/</a></p>
+<p>Intersucho. (2025). Aktuálny stav sucha na Slovensku. (Current drought state in Slovakia.) Ústav výzkumu globální změny AV ČR. (Global Change Research Institute CAS). Retrieved June 21, 2025 from <a href="https://www.intersucho.sk/sk/?mapcountry=sk&amp;from=2024-06-21&amp;to=2025-06-21&amp;current=2024-10-06" class="uri">https://www.intersucho.sk/sk/?mapcountry=sk&amp;from=2024-06-21&amp;to=2025-06-21&amp;current=2024-10-06</a></p>
 <p>Mesto Senica. (19 May 2025). Demografia – Demografický vývoj v meste Senica. (Demography – Demographical development in the town Senica). Retrieved on June 21, 2025 from <a href="https://senica.sk/clanok/demografia" class="uri">https://senica.sk/clanok/demografia</a></p>
 <p>ReBioClim. (n.d.) ReBioClim - ProjectOverview. Interreg Central Europe. Retrieved June 20, 2025 from <a href="https://www.interreg-central.eu/projects/rebioclim/" class="uri">https://www.interreg-central.eu/projects/rebioclim/</a></p>
 <p>SAŽP. (n.d.). Územný systém ekologickej stability (ÚSES). SAŽP – Slovak Environment Agency. Retrieved on June 6, 2025 from <a href="https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/uzemny-system-ekologickej-stability-uses" class="uri">https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/uzemny-system-ekologickej-stability-uses</a></p>
 <p>Suchá, K. (2021). Retention capacity of soils and landscape possibilities of its increase in conditions of climate change. In <em>Dissertation Thesis</em> [Thesis]. <a href="https://www.shmu.sk/File/KMO/SuchaK_Retencni_schop_pud_krajiny_jej_zvys_podm_klimat_zmeny.pdf" class="uri">https://www.shmu.sk/File/KMO/SuchaK_Retencni_schop_pud_krajiny_jej_zvys_podm_klimat_zmeny.pdf</a></p>
-<p>Agrointeg. (n.d.). Hydrologické funkce půdy. AGROINTEG, s.r.o. Retrieved June 21, 2025 from <a href="https://www.agrointeg.cz/technologie-pro-kompostovani/hydrologicke-funkce-pudy" class="uri">https://www.agrointeg.cz/technologie-pro-kompostovani/hydrologicke-funkce-pudy</a></p>
 <p>Šachová, B. (2010). Hydrologické sucho v kontextu klimatické změny ve světě a v českém povodí Labe. (Hydrological drought in the context of climatic changes in the world and in the Czech part of Elbe River basin). Bachelor thesis supervised By J. Kocum. <a href="https://dspace.cuni.cz/bitstream/handle/20.500.11956/39621/BPTX_2009_1_11310_0_199808_0_78696.pdf?sequence=1&amp;isAllowed=y" class="uri">https://dspace.cuni.cz/bitstream/handle/20.500.11956/39621/BPTX_2009_1_11310_0_199808_0_78696.pdf?sequence=1&amp;isAllowed=y</a></p>
 <p>USGS. (n.d.). Landsat Normalized Difference Vegetation Index. Retrieved June 21, 2025 from <a href="https://www.usgs.gov/landsat-missions/landsat-normalized-difference-vegetation-index" class="uri">https://www.usgs.gov/landsat-missions/landsat-normalized-difference-vegetation-index</a></p>
 </section>
@@ -1592,242 +1723,239 @@ Projected CRS: ETRS89 / UTM zone 33N
 </main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
       }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
-        }
-        return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
         }
       }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
     }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
     }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
       } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
         }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
       }
     }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
           }
         } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
+          // See if we can fetch this
+          fetch(url.split('#')[0])
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
+            const note = htmlDoc.getElementById(id);
             if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
+              const html = processXRef(id, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1835,161 +1963,185 @@ Projected CRS: ETRS89 / UTM zone 33N
             instance.show();
           });
         }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
       } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
         });
       }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
     }
-  });
-  </script>
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
 </div> <!-- /content -->
 
 

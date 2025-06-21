@@ -903,6 +903,30 @@ print(original_centers)
 
 ```
 
+We can also calculate the standard deviation for a better insight in the accuracy of the results. The code for this was written with the help of [Claude AI](https://claude.ai/). 
+
+```{r}
+# Calculate standard deviation within each cluster for each attribute
+
+# First, add cluster assignments to the features dataframe
+features_with_clusters <- features
+features_with_clusters$cluster <- kmeans_result$cluster
+
+# Calculate standard deviation for each attribute within each cluster
+cluster_stds <- features_with_clusters %>%
+  group_by(cluster) %>%
+  summarise(
+    B1uses_std = sd(B1uses, na.rm = TRUE),
+    B3ndvi_std = sd(B3ndvi, na.rm = TRUE),
+    CA1temp_std = sd(CA1temp, na.rm = TRUE),
+    QL2acg_std = sd(QL2acg, na.rm = TRUE),
+    .groups = 'drop'
+  )
+
+print("Standard deviation within each cluster (original scale):")
+print(cluster_stds)
+```
+
 #### Step 6. (Optional) Calculate distance to cluster center {#step-6.-optional-calculate-distance-to-cluster-center}
 
 Optionally, we can compute the distance of each analysis geometry to the cluster center. This can be used as an indication of how well the geometry fits in its cluster, thus how closely an individual geometry resembles the general typology it is categorised in.
@@ -923,20 +947,37 @@ head(grids$cluster_dist)
 
 ```
 
+To get an even better idea of how well each cluster fits, we can also calculate the mean value of the distances to the cluster center for each cluster. This code was also written with the help of [Claude AI](https://claude.ai/). 
+
+```{r} 
+# Calculate mean distance to cluster center for each cluster
+mean_distances_per_cluster <- grids %>%
+  st_drop_geometry() %>%
+  group_by(cluster) %>%
+  summarise(
+    mean_distance = mean(cluster_dist, na.rm = TRUE),
+    n_geometries = n(),
+    .groups = 'drop'
+  )
+
+print("Mean distance per cluster to cluster center:")
+print(mean_distances_per_cluster)
+```
+
 ### Tpylogy Construction conclusion
 
 ##### Typology description
 
 <!-- 🔴 🟠 🟡 🟢 🔵 🟣 -->
 
-To interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below shows the (unscaled) clustered values of each attribute.
+To interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below shows the (unscaled) clustered values of each attribute with their standard deviation.
 
 | Type | B1uses | B3ndvi | CA1temp | QL2acg | Description |
 |------------|------------|------------|------------|------------|------------|
-| 1 | 🟠 0.417 | 🔴 0.742 | 🔴 0.778 | 🔴 0.708 | High B3ndvi, CA1temp, and QL2acg. Low B1uses. |
-| 2 | 🔴 0.747 | 🟡 0.300 | 🟡 0.386 | 🟣 7.216e-16 | High B1uses and extremely low QL2acg |
-| 3 | 🔴 0.781 | 🟢 0.286 | 🟠 0.442 | 🔴 0.792 | High B1uses and QL2acg, low B3ndvi |
-| 4 | 🟠 0.545 | 🟡 0.301 | 🔴 0.837 | 🔵 0.0177 | High CA1temp and very low QL2acg |
+| 1 | 0.417 ($\sigma$ = 0.36) 🟠 | 0.742 ($\sigma$ = 0.19) 🔴 | 0.778 ($\sigma$ = 0.09) 🔴 | 0.708 ($\sigma$ = 0.24) 🔴 | High B3ndvi, CA1temp, and QL2acg. Low B1uses. |
+| 2 | 0.747 ($\sigma$ = 0.33) 🔴 | 0.300 ($\sigma$ = 0.27) 🟡 | 0.386 ($\sigma$ = 0.12) 🟡 | 7.216e-16 ($\sigma$ = 0.00) 🟣 | High B1uses and extremely low QL2acg |
+| 3 | 0.781 ($\sigma$ = 0.32) 🔴 | 0.286 ($\sigma$ = 0.19) 🟢 | 0.442 ($\sigma$ = 0.16) 🟠 | 0.792 ($\sigma$ = 0.07) 🔴 | High B1uses and QL2acg, low B3ndvi |
+| 4 | 0.545 ($\sigma$ = 0.41) 🟠 | 0.301 ($\sigma$ = 0.14) 🟡 | 0.837 ($\sigma$ = 0.10) 🔴 | 0.0177 ($\sigma$ = 0.11) 🔵 | High CA1temp and very low QL2acg |
 
 🔴 High\
 🟠 Medium high\
@@ -944,6 +985,15 @@ To interpret the clustering results, we examine the centers of each cluster in t
 🟢 Low\
 🔵 Very low\
 🟣 Extremely low
+
+The mean distance to cluster center for the four clusters is shown in the table below together with the number of geometries in each cluster. 
+
+| Type | Mean Distance | Number of geometries | 
+|------|---------------|----------------------|
+| 1    | 1.260         | 125                  |
+| 2    | 1.264         | 139                  |
+| 3    | 1.169         | 117                  |
+| 4    | 1.173         | 110                  |
 
 ## Results
 
