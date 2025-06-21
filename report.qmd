@@ -1216,7 +1216,7 @@ We performed a broader space syntax analysis, before choosing the layers to use 
 
 **Angular choice analysis**
 
-<iframe src="pdf/XX_appendix_AngularChoice.pdf" width="100%" height="500" frameborder="0">
+<iframe src="pdf/99_AngularChoice.pdf" width="100%" height="500" frameborder="0">
 
 </iframe>
 
@@ -1246,7 +1246,7 @@ Analyses every choice of path from every location to every destination – how m
 
 **Attraction reach from buildings to green spaces**
 
-<iframe src="pdf/XX_appendix_AttractionReach_GreenSpace.pdf" width="100%" height="500" frameborder="0">
+<iframe src="pdf/99_AttractionReach_GreenSpace.pdf" width="100%" height="500" frameborder="0">
 
 </iframe>
 
@@ -1272,7 +1272,7 @@ Analyses the *reachable* potential *attraction density* of location (sqm). Green
 
 **Attraction Reach from buildings to Teplica**
 
-<iframe src="pdf/XX_appendix_AttractionReach_Teplica.pdf" width="100%" height="500" frameborder="0">
+<iframe src="pdf/99_AttractionReach_Teplica.pdf" width="100%" height="500" frameborder="0">
 
 </iframe>
 
