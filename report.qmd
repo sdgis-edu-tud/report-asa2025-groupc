@@ -70,7 +70,7 @@ format:
 
 ## Introduction
 
-***How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving biodiversity, ecological connectivity, and water retention in the landscape?***
+***How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving native biodiversity, ecological connectivity, and water retention in the landscape?***
 
 This report presents a spatial Multi Criteria Data Analysis and Typology Construction to determine possibilities for restoration of the Teplica river in the town Senica (Slovakia).
 
@@ -80,7 +80,7 @@ Note #2: THIS IS A WIP, IT WILL BE FINALISED IN END OF JUNE 2025.
 
 ##### Key words:
 
-Urban Stream Restoration, Biodiversity, XXXX, XXXX
+Urban Stream Restoration, Sustainability, Multi Criteria Decision Analysis, Typology Construction, K-means clustering, Senica, Slovakia
 
 ![River Senica on the edge of Teplica (Google Street View, 2012)](/img/SenicaOnTheEdgeOfTeplica_googleStreetview.png)
 
@@ -90,9 +90,9 @@ Urban Stream Restoration, Biodiversity, XXXX, XXXX
 
 Hongyue Kang (MSc Urbanism) – Presentation Lead, Data Analyst (microclimate analysis, NDVI)
 
-Kelly Schoonderwoerd (MSc Geomatics) – Editor, Data Analyst (surface temperature), R Expert, Clustering Lead
+Kelly Schoonderwoerd (MSc Geomatics) – Data Analyst (surface temperature), R Expert, Clustering Lead
 
-Viola Ebermannová (MSc Urbanism) – Project Coordinator, Research Lead, Design Lead (graphic guidelines and layout templates), Data Analyst (analysis geometry, space syntax analysis), MCDA Lead
+Viola Ebermannová (MSc Urbanism) – Project Coordinator, Research Lead, Design Lead (graphic guidelines and layout templates), Data Analyst (analysis geometry construction, space syntax analysis), MCDA Lead
 
 #### Course information
 
@@ -102,13 +102,31 @@ Tutors: Dr. Daniele Cannatella, Dr. Claudiu Forgaci, Yehan Wu, PhD
 
 In collaboration with the [ReBioClim](www.interreg-central.eu/projects/rebioclim/) project.
 
-### Introduction of the case, objectives, and problem statement
+### Introduction of the case, problem statement, and objectives
 
+Teplica is a small river flowing through the town of Senica, it is a tributary of the river Myjava in the Morava River basin (tributary of Danube, Black Sea drainage basin.) Senica lays in western Slovakia, it is a municipality with a slightly shrinking population of just under 20 000 inhabitants. (Mesto Senica 2025)
 
+The stream is now not integrated well into the urban fabric of Senica, often hidden in a jungle of high dense vegetation and flowing significantly lower than the surrounding area, acting as a barrier. This means the inhabitants cannot make use of the benefits an urban stream might bring to a town, such as improved recreation opportunities and communal and urban facilities benefiting from the location at the riverbank.
+
+In a large portion of the stream, the riverbed was straightened and artificially reinforced. This leads to decreased water retention in the landscape, contributing to (soil) drought, and decreasing the cooling potential of the stream area. Moreover, it decreases the flood protection ability of the stream bed by not providing natural flood spillage areas, directing water directly downstream.
+
+The stream corridor is an official biocorridor defined in the Slovakian Spatial System of Ecological Stability (ÚSES), a chain of ecosystems allowing for ecological flows. Right now, only the small footprint of the artificial banks is consistently covered by “natural” vegetation. This vegetation might technically be biodiverse, however the thin artificial riverbed leads to valuable natural floodplain ecosystems missing.
+
+***How to approach stream restoration so that it gives place for desired urban and community facilities, as well as improving native biodiversity, ecological connectivity, and water retention in the landscape?***
+
+This project is a spatial analysis of the stream flood plain highlighting the potentials for interventions targeting the topics of quality of life, biodiversity, and climate adaptation. It also proposes categorisation of spaces based on characteristics connected to the topics aiming at the simplification of visioning and design process of urban stream restoration interventions.
 
 ## Methods
 
-<!--# add intro!!! -->
+To determine the potentials for sustainable urban stream restoration interventions, we use Multi Criteria Decision Analysis. This analysis method offers an evidence-based evaluation of the suitability of area for intervention targeting different objectives based on predefined quantified criteria. (See chapter [MCDA].)
+
+To construct typologies of spaces based on biodiversity, quality of life, and climate adaptation characteristics we use k-means clustering. We use selected quantified criteria to discover patterns in how they combine in the flood plain area spaces. These typologies offer a simplified look at the area, being a good base for model examples of typical interventions. (See chapter [Typology construction].)
+
+For both approaches, we perform the analysis on morphologically defined spatial units, which were tailor-made for the flood plain of Teplica in the municipality of Senica. (See chapter [Analysis geometry].)
+
+The attributes/criteria we selected to represent the characteristics of spaces in the river flood plain are described in the chapter [Selecting objectives and criteria – three pillar system](#selecting-objectives-and-criteria-three-pillar-system). We used all these criteria for MCDA analysis, and chose four of them for the typology construction.
+
+Spatial analysis was conducted and maps produced by [QGIS](https://qgis.org/), an open source GIS (Geographic Information System) software. Typology construction was conducted through R scripts directly in the report file.
 
 ### Reproducibility self assessment
 
@@ -136,7 +154,7 @@ You can see a simplified example demonstrating the principles of MCDA in the fig
 
 ![Diagram of how MCDA works (by Viola Ebermannová)](img/MCDA_explanation.png)
 
-### Selecting objectives and criteria – three pillar system
+### Selecting objectives and criteria – three pillar system {#selecting-objectives-and-criteria-three-pillar-system}
 
 ReBioClim is a project focused on sustainable urban stream restoration, and it builds on three pillars: *"The primary aim is to improve the quality of life in cities and at the same time to promote biodiversity and climate adaptation."* (ReBioClim n.d.)
 
@@ -151,8 +169,6 @@ These three themes form the three branches of our MCDA analysis research tree. I
 Each of the sub/themes comes with its own research subquestion. In the scheme below, you can see a more detailed look at the MCDA research structure, together with an overview of what data we use to evaluate the attributes, and what format of geometry that data is. More specifics of how we sourced the data, what it represents, and how we worked with it are described below in the Data Structure, and more in detail in the chapters dedicated to individual attributes.
 
 <iframe src="pdf/MCDA_researchStructure_detailed.pdf" width="100%" height="500" frameborder="0">
-
-</iframe>
 
 </iframe>
 
@@ -315,11 +331,15 @@ We used linear min-max normalisation to 0-1, eventually inversed (1-\[standard m
 
 ### Biodiversity
 
-<!--# intro -->
+**How to improve local and supra local biodiversity resilience by interventions within the stream flood plain?** -\> Which spaces to prioritize based on value and feasibility of intervention?
 
-***How to improve local and supra local biodiversity resilience by interventions within the stream flood plain? -\> which spaces to prioritize based on value and feasibility of intervention***
+In this chapter, we analyse the suitability of analysis geometry spatial units for interventions targeting biodiversity objectives. The examined characteristics are:
 
-WIP – please refer to the main research structure flow chart for overview.
+-   Connectivity to the official Slovakian Spatial system of ecological stability (ÚSES) –\> prioritise interventions in areas that are a part of, or well connected to, the ecological stability system.
+
+-   Improvement potential and feasibility of intervention –\> prioritise interventions in areas where the feasibility of investment is high and that have a mediocre ecological quality offering potential for (easy) significant improvement.
+
+-   Current state of vegetation –\> prioritise interventions in areas where the state of vegetation determined by NDVI (Normalised Difference Vegetation Index) is low.
 
 #### *B1uses* – Which spaces should be prioritised because of their connectivity to ÚSES?
 
@@ -331,9 +351,11 @@ WIP – please refer to the main research structure flow chart for overview.
 
 The elements of ÚSES are biocenters, biocorridors (connecting biocenters to allow for movement of organisms and genetical information exchange), and interaction elements (spatially tied with biocorridors). These elements are defined on supraregional, regional, and local scale.
 
-(SAŽP n.d.)
+([SAŽP n.d.](https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/uzemny-system-ekologickej-stability-uses))
 
-###### ÚSES within our area
+###### ÚSES in Senica
+
+In Senica, there is a regional biocorridor along the river Teplica, and a larger supraregional biocorridor on the south-east side of the city. For the purposes of our analysis, we consider them of the same importance.
 
 ![Map of ÚSES within our area (by Hongyue Kang)](/img/USES.png)
 
@@ -347,9 +369,11 @@ Values were assigned based on the level of connectivity to ÚSES. Highest value 
 
 ![Criterion B1uses – Connectivity to ÚSES (normalised.) (by Viola Ebermannová)](/img/MCDA_conclusions_B1uses.png)
 
-#### *B2pot* – Which spaces should be prioritised based on ecological quality improvement potential?
+#### *B2pot* – Which spaces should be prioritised based on ecological quality improvement potential and feasibility of intervention?
 
-Our argument is that spaces with a potential for a high impact improvement and at the same time good investment feasibility should be prioritised, because of good actionability of intentions/plans.
+##### Data
+
+Improvement potential indicator is determined for each lands cover typology (See chapter [Land cover classification]) based on high impact improvement potential and good investment feasibility. Our argument is that spaces with a potential for a high impact improvement and at the same time good investment feasibility should be prioritised, because of good actionability of intentions/plans.
 
 Potential for high impact improvement is determined by unsatisfactory ecological quality. Investment feasibility is determined by attractivity to invest in biodiversity improvement and in general spatial quality improvement in an area like this. High investment feasibility is in the surrounding of dwellings, in spaces that are already upkept. Low investment feasibility is in agricultural areas, where produce is prioritised. In these areas in general it is advised to use agricultural methods that can aid local biodiversity.
 
@@ -363,9 +387,23 @@ The potential was calculated on range 0-1 directly on Analysis geometry polygons
 
 #### *B3ndvi* – Which spaces should be prioritized based on current state of the vegetation?
 
-##### NDVI
+##### Data
 
-The steps we take to calculate the NDVI are as follow: Sentinel-2 satellite imagery was accessed via Google Earth Engine (GEE), covering the study area during the growing season to ensure accurate vegetation representation. The Normalized Difference Vegetation Index (NDVI) was calculated within GEE using the standard formula: NDVI=(B8-B4)/(B8+B4) where B8 represents the near-infrared (NIR) band and B4 represents the red band. The resulting NDVI raster was exported from GEE as a GeoTIFF file and imported into QGIS. In QGIS, the NDVI layer was reprojected, clipped to the study boundary, and further analyzed using raster statistics and classification to evaluate vegetation cover across different spatial units along the Teplica River. Based on the different value of NDVI mean, we can deduce the vegetation state in each spatial geometry.
+###### What is NDVI?
+
+Normalised Difference Vegetation Index (NDVI) is an index *"used to quantify vegetation greenness and is useful in understanding vegetation density and assessing changes in plant health."* (USGS n.d.)
+
+###### Calculating NDVI
+
+The steps we take to calculate the NDVI are as follow:
+
+1.  Sentinel-2 satellite imagery was accessed via Google Earth Engine (GEE), covering the study area during the growing season to ensure accurate vegetation representation.
+
+2.  The Normalized Difference Vegetation Index (NDVI) was calculated within GEE using the standard formula: NDVI=(B8-B4)/(B8+B4) where B8 represents the near-infrared (NIR) band and B4 represents the red band. The resulting NDVI raster was exported from GEE as a GeoTIFF file and imported into QGIS.
+
+3.  In QGIS, the NDVI layer was reprojected, clipped to the study boundary, and further analyzed using raster statistics and classification to evaluate vegetation cover across different spatial units along the Teplica River.
+
+Based on the different value of NDVI mean, we can deduce the vegetation state in each spatial geometry.
 
 | **\< 0** – Water bodies, shadows, or noise
 | **0–0.1** – Bare soil or urban hardscape
@@ -379,7 +417,7 @@ The steps we take to calculate the NDVI are as follow: Sentinel-2 satellite imag
 
 Data was aggregated based on average value within analysis geometry polygon, and normalised by 1-\[linear min-max\] –\> priority is given to low quality vegetation.
 
-Note: In the area, there is a large water body present. This water body was assigned a high value for the nornalised *B3ndvi*, because water has a low NDVI value. That means it is classified as area with a large priority to improve the green cover based on its current state, despite there being no actuall green cover. This makes the analysis biased.
+Note: In the area, there is a large water body present. This water body was assigned a high value for the nornalised *B3ndvi*, because water has a low NDVI value. That means it is classified as area with a large priority to improve the green cover based on its current state, despite there being no actual green cover. This makes the analysis biased.
 
 ![Criterion B3ndvi – Current state of vegetation (normalised.) (by Viola Ebermannová)](/img/MCDA_conclusions_B3ndvi.png)
 
@@ -411,17 +449,25 @@ The resulting map reveals a clear spatial pattern: because of NDVI and USES’s 
 
 ### Climate adaptation
 
-***How to use areas in the flood plain to capture water in the landscape? -\> where is good space for infiltration basins and natural flood protection measures based on soil types, and where is space for (wet) cooling measures?***
+**How to use areas in the flood plain to capture water in the landscape?** -\> Where is good space for infiltration basins and natural flood protection measures based on soil types, and where is space for (wet) cooling measures?
 
-<!--# intro -->
+In this chapter, we analyse the suitability of analysis geometry spatial units for interventions targeting climate adaptation objectives. The examined characteristics are:
 
-<!-- The question needs to be more specific and based in data – what are examples of interventions that can achieve this? How much space do they need? -->
+-   Land surface temperature –\> prioritise (wet) cooling measures in areas with a high summer surface temperature.
 
-WIP – please refer to the main research structure flow chart for overview.
+-   Soil retention ability and permeability –\> prioritise interventions targeting landscape water retention capacity in areas where the retention ability and permeability high.
 
-This chapter is based on the fact that in western slovakia, there is a large drought problem, and water management activities should target capturing water in the landscape. <!-- ^This needs a source, but it is true. -->
+We focus on landscape water retention a lot, because in western Slovakia, high summer soil drought is a pressing problem. (Intersucho 2025) In sustainable stream restoration, measures should be taken to combat this large scale problem by taking small steps across the landscape.
 
 #### *CA1temp* – Which spaces should be prioritized for interventions aimed at cooling the area down?
+
+##### Data
+
+###### Land Surface Temperature
+
+To roughly estimate the need for cooling measures, we use Land Surface Temperature (LST) during a 3 month summer period.
+
+###### Calculating LST
 
 To analyse surface temperatures, we found a [Google Earth Engine script](https://code.earthengine.google.com/ac986028b56a794aefd3ea54e9cb09ba) made by [Ramadhan](https://www.youtube.com/watch?v=3LOMNzBHmjs) on YouTube (2024) that uses information from Sentinel-2, LANDSAT, and DEM to predict a raster LST (land surface temperature) with a higher resolution than other available datasets on LST, namely 10-meter resolution. The computations are complicated and will only be discussed in general lines in this report, but the results are relevant and useful to our research. Mainly to answer the question of which spaces should be prioritized to be wetter to help the area cool down, because now it is too hot. The draft image shows the results for dates 2024-06-01 to 2024-08-31, since these three months include the summer and will therefore be most susceptible for heat stress, which makes this time period interesting to look at for our research.
 
@@ -458,15 +504,29 @@ Weighted as mean by Zonal statistics tool.
 
 #### *CA2soil* – Where does the soil have high potential for water retention?
 
-##### Soil retention ability and permeability
+##### Data
 
-From Atlas of Slovakia, quite small scale.
+###### Soil retention ability and permeability
 
-Soil retention in this map means ..... Permeability means ....
+To determine suitability for water retention measures in the landscape, we use data about Soil retention ability and permeability. Soil retention ability in this map means the ability of soil to capture and retain water. It can contribute to limiting desertification and prevent flood. Permeability describes the ease with which the soil to let water, air, and other substances move through. In high permeability soil, water can be quickly redirected from the surface into the soil mass.
+
+Apart from acting as climate adaptation by combating drought and flood, improving landscape water retention has direct positive impact on soil quality and fertility, also through decreasing the water erosion danger. (Agrointeg n.d.) (Suchá 2021) (Šachová 2010)
+
+###### Soil characteristics in Senica
+
+In Senica, there are two different combinations of retention ability and permeability:
+
+1.  High retention ability and medium permeability – relatively more suitable for landscape water retention measures
+
+2.  Medium retention ability and medium permeability – relatively less suitable for landscape water retention measures
+
+Note: This data from From Atlas of Slovakia (SAŽP 2002-2024) is quite small scale. It would be beneficial to acquire more detailed data of the soil surface layers.
 
 ![Soil potential (by Viola Ebermannová)](/img/CA_soil.png)
 
 ##### Aggregation and normalisation
+
+Values were assigned based on the soil characteristic on the majority of the spatial unit area.
 
 | RS Medium+ P Medium -\> 0,5
 | RS High+ P Medium -\> 1
@@ -498,17 +558,25 @@ For climate adaptation, we considered two key factors: land surface temperature 
 
 ### Quality of life
 
-<!--# intro -->
+**What types of places should be created in the stream flood plain?** -\> What areas to target for improving quality of life?
 
-***What types of places should be created in the stream flood plain?*** -\> Ammenities, green spaces, connections?
+In this chapter, we analyse the suitability of analysis geometry spatial units for interventions targeting quality of life objectives. The examined characteristics are:
 
-WIP – please refer to the main research structure flow chart for overview.
+-   Local centrality potential –\> prioritise creating central community functions in areas with high local centrality potential (determined by Angular choice analysis).
+
+-   Global centrality potential –\> prioritise creating central urban functions in areas with high global centrality potential (determined by Angular choice analysis).
+
+-   Need for green –\> prioritise measures creating accessible urban green areas in spaces where the surrounding buildings lack access to green.
 
 #### *QL1acl* – Where is potential for community functions?
 
-##### Angular choice analysis
+##### Data
+
+###### Angular choice analysis
 
 <!-- explanation of what it shows and space syntax intro -->
+
+###### Results of local Angular choice analysis in Senica
 
 On OSM street network, in area there are no clearly fast routes and there are missing pathways along some roads, so we took all roads from the dataset as potentially slow.
 
@@ -526,6 +594,12 @@ aggregate( 'layer: angular_choice', 'max', "attribute: r=500 m, normalised", int
 
 #### *QL2acg* – Where is potential for "central" functions?
 
+##### Data
+
+###### Angular choice analysis
+
+###### Results of Angular choice analysis with larger radii in Senica
+
 Angular choice analysis was calculated for radii 1 km and 2 km. First, these two attributes were normalised. Then these values were combined to a common indicator, giving larger weight to the larger radius:
 
 | AC1km2km = 1\*(AC r=1km) + 2\*(AC r=2km)
@@ -542,9 +616,13 @@ aggregate( 'layer: angular_choice', 'max', "attribute: AC1km2km, normalised", in
 
 #### *QL3gr* – Where is a large need for green?
 
-##### Attraction reach analysis
+##### Data
+
+###### Attraction reach analysis
 
 explanation of what it calculates
+
+###### Results of Attraction reach analysis in Senica
 
 Attraction reach was calculated from centroids of buildings to green areas, as classified in OSM, weighted by the area of the green area. Value was normalised.
 
@@ -579,100 +657,6 @@ aggregate( 'layer: Buildings in need of green', 'sum', "Attraction reach to gree
 This was lineary normalised to 0-1 into the final value.
 
 ![Criterion QL3gr – need for green (normalised.) (by Viola Ebermannová)](/img/MCDA_conclusions_QL3gr.png)
-
-#### PLACEHOLDER SPACE SYNTAX base layers – UNTIL WE PUT IT IN CORRECT CHAPTERS
-
-![Angular Choice Analysis (note: idk why it is displayed wrong and don't have time to solve it now, sorry. You can display the frame by itself in new tab to see the pdf nicely.)](pdf/AngularChoice_20250518.pdf){height="100%" width="100%"}
-
-Angular choice:
-
--   Every choice of path from every location to every destination – how many possible routes go through location
-
--   500 m
-
-    -   very local scale, scale of children playing and shops on the corner even on this scale, there are some centralities along the river
-
-    -   this means the river has a potential to be used by the community and act as a very local common space under social control
-
--   1000 m
-
-    -   local scale of walking to shop or walking the dog
-
-    -   paths along river do not have very low angular choice, hinting at them being possibly moderately frequented
-
-    -   more centralities at bridges
-
--   2000m:
-
-    -   close to the end of walkable scale
-
-    -   some paths along river in the center have high angular choice, meaning they will likely be more frequented and have potential for active use and ammenities
-
-    -   more centralities at bridges
-
-![Attraction reach from buildings to green spaces (note: idk why it is displayed wrong and don't have time to solve it now, sorry. You can display the frame by itself in new tab to see the pdf nicely.)](pdf/AttractionReach_GreenSpace_20250518.pdf){height="100%" width="100%"}
-
-Attraction Reach Green space
-
--   What is the **reachable** potential **attraction density** of location (sqm)
-
-    green areas weighted by area
-
--   500m:
-
-    -   very local scale, scale of children playing and shops on the corner
-
-    -   river and surroundings as potential new green areas to serve local scale in the west and north of the town
-
--   1000m:
-
-    -   local scale of walking to shop or walking the dog
-
-    -   river and surroundings as potential new green areas to serve local scale in the west and north of the town
-
--   2000m:
-
-    -   close to the end of walkable scale
-
-    -   center/east of town not having access to more large areas of green
-
-![Attraction reach from buildings to Teplica (note: idk why it is displayed wrong and don't have time to solve it now, sorry. You can display the frame by itself in new tab to see the pdf nicely.)](pdf/AttractionReach_Teplica_20250518.pdf){height="100%" width="100%"}
-
-Attraction Reach Teplica
-
--   What is the **reachable** potential **attraction density** of location (sqm)
-
-    measured to points every 5m of waterway
-
--   500m:
-
-    -   very local scale, scale of children playing and shops on the corner
-
-    -   Teplica quite well accessible from houses
-
-    -   SW: industry is not so well connected
-
-    -   SE: lacking connection between road parallel to river
-
--   1000m:
-
-    -   local scale of walking to shop or walking the dog
-
-    -   SW industry not allowing houses behind it to access river
-
-    -   SE: still visible missing connection between parallel road and river
-
--   2000m:
-
-    -   close to the end of walkable scale
-
-    -   very similar to 1k
-
-    -   SW: industry finally permeable, however this is quite a large distance and if the river and the way to it are not nice, there are no reasons to go
-
-    -   W: the small village is not connected to a large path of the river, that is why it is lighter
-
-    -   SE: still visible missing connection between parallel road and river
 
 #### Weighting
 
@@ -739,7 +723,7 @@ The dataset that is used, is an aggregated dataset containing all normalised att
 [Step 3: Determine the optimal K]\
 [Step 4. Run K-means clustering]\
 [Step 5. Interpret cluster centers]\
-[Step 6. (Optional) Calculate distance to cluster center]
+[Step 6. (Optional) Calculate distance to cluster center](#step-6.-optional-calculate-distance-to-cluster-center)
 
 #### Step 1. Load R packages and data
 
@@ -911,7 +895,7 @@ print(original_centers)
 
 ```
 
-#### Step 6. (Optional) Calculate distance to cluster center
+#### Step 6. (Optional) Calculate distance to cluster center {#step-6.-optional-calculate-distance-to-cluster-center}
 
 Optionally, we can compute the distance of each analysis geometry to the cluster center. This can be used as an indication of how well the geometry fits in its cluster, thus how closely an individual geometry resembles the general typology it is categorised in.
 
@@ -977,7 +961,103 @@ In the area, there is a large water body present. This water body was assigned a
 
 <!--# layers and analyses we didnt use but would be shame not to include  -->
 
-![Density](pdf/Density_20250518.pdf) ![NVDI](pdf/GreenTypes_20250603.pdf)
+### Space syntax analysis
+
+We performed a broader space syntax analysis, before choosing the layers to use for Quality of life criteria. Source of data: OSM.
+
+**Angular choice analysis**
+
+<iframe src="pdf/AngularChoice_20250518.pdf" width="100%" height="500" frameborder="0">
+
+</iframe>
+
+Analyses every choice of path from every location to every destination – how many possible routes go through location, showing the spatial potential for centralities.
+
+-   500 m
+
+    -   very local scale, scale of children playing and shops on the corner even on this scale, there are some centralities along the river
+
+    -   this means the river has a potential to be used by the community and act as a very local common space under social control
+
+-   1000 m
+
+    -   local scale of walking to shop or walking the dog
+
+    -   paths along river do not have very low angular choice, hinting at them being possibly moderately frequented
+
+    -   more centralities at bridges
+
+-   2000m:
+
+    -   close to the end of walkable scale
+
+    -   some paths along river in the center have high angular choice, meaning they will likely be more frequented and have potential for active use and ammenities
+
+    -   more centralities at bridges
+
+**Attraction reach from buildings to green spaces**
+
+<iframe src="pdf/AttractionReach_GreenSpace_20250518.pdf" width="100%" height="500" frameborder="0">
+
+</iframe>
+
+Analyses the *reachable* potential *attraction density* of location (sqm). Green areas sourced from OSM were weighted by area.
+
+-   500m:
+
+    -   very local scale, scale of children playing and shops on the corner
+
+    -   river and surroundings as potential new green areas to serve local scale in the west and north of the town
+
+-   1000m:
+
+    -   local scale of walking to shop or walking the dog
+
+    -   river and surroundings as potential new green areas to serve local scale in the west and north of the town
+
+-   2000m:
+
+    -   close to the end of walkable scale
+
+    -   center/east of town not having access to more large areas of green
+
+**Attraction Reach from buildings to Teplica**
+
+<iframe src="pdf/AttractionReach_Teplica_20250518.pdf" width="100%" height="500" frameborder="0">
+
+</iframe>
+
+Analyses the *reachable* potential *attraction density* of location (sqm), was measured to points every 5m of waterway.
+
+-   500m:
+
+    -   very local scale, scale of children playing and shops on the corner
+
+    -   Teplica quite well accessible from houses
+
+    -   SW: industry is not so well connected
+
+    -   SE: lacking connection between road parallel to river
+
+-   1000m:
+
+    -   local scale of walking to shop or walking the dog
+
+    -   SW industry not allowing houses behind it to access river
+
+    -   SE: still visible missing connection between parallel road and river
+
+-   2000m:
+
+    -   close to the end of walkable scale
+
+    -   very similar to 1k
+
+    -   SW: industry finally permeable, however this is quite a large distance and if the river and the way to it are not nice, there are no reasons to go
+
+    -   W: the small village is not connected to a large path of the river, that is why it is lighter
+
+    -   SE: still visible missing connection between parallel road and river
 
 ## Sources
 
@@ -987,11 +1067,23 @@ In the area, there is a large water body present. This water body was assigned a
 
 ### Literature
 
+Agrointeg. (n.d.). Hydrologické funkce půdy. AGROINTEG, s.r.o. Retrieved June 21, 2025 from <https://www.agrointeg.cz/technologie-pro-kompostovani/hydrologicke-funkce-pudy>
+
+Holeček, P. (n.d.). Fuzzy AHP. Web Application. Screenshots taken on June 10 from <https://fuzzyahp.holecekp.eu/en/>
+
+Intersucho. (2025). Aktuálny stav sucha na Slovensku. (Current drought state in Slovakia.) Ústav výzkumu globální změny AV ČR. (Global Change Research Institute CAS). Retrieved June 21, 2025 from <https://www.intersucho.sk/sk/?mapcountry=sk&from=2024-06-21&to=2025-06-21&current=2024-10-06>
+
+Mesto Senica. (19 May 2025). Demografia – Demografický vývoj v meste Senica. (Demography – Demographical development in the town Senica). Retrieved on June 21, 2025 from <https://senica.sk/clanok/demografia>
+
 ReBioClim. (n.d.) ReBioClim - ProjectOverview. Interreg Central Europe. Retrieved June 20, 2025 from <https://www.interreg-central.eu/projects/rebioclim/>
 
 SAŽP. (n.d.). Územný systém ekologickej stability (ÚSES). SAŽP – Slovak Environment Agency. Retrieved on June 6, 2025 from <https://www.sazp.sk/zivotne-prostredie/starostlivost-o-krajinu/zelena-infrastruktura/uzemny-system-ekologickej-stability-uses>
 
-Holeček, P. (n.d.). Fuzzy AHP. Web Application. Screenshots taken on June 10 from <https://fuzzyahp.holecekp.eu/en/>
+Suchá, K. (2021). Retention capacity of soils and landscape possibilities of its increase in conditions of climate change. In *Dissertation Thesis* \[Thesis\]. <https://www.shmu.sk/File/KMO/SuchaK_Retencni_schop_pud_krajiny_jej_zvys_podm_klimat_zmeny.pdf>
+
+Šachová, B. (2010). Hydrologické sucho v kontextu klimatické změny ve světě a v českém povodí Labe. (Hydrological drought in the context of climatic changes in the world and in the Czech part of Elbe River basin). Bachelor thesis supervised By J. Kocum. <https://dspace.cuni.cz/bitstream/handle/20.500.11956/39621/BPTX_2009_1_11310_0_199808_0_78696.pdf?sequence=1&isAllowed=y>
+
+USGS. (n.d.). Landsat Normalized Difference Vegetation Index. Retrieved June 21, 2025 from <https://www.usgs.gov/landsat-missions/landsat-normalized-difference-vegetation-index>
 
 ### Map layers
 
@@ -1002,6 +1094,10 @@ European Union/ESA/Copernicus. (2025) Harmonized Sentinel-2 MSI, Level -2A. Retr
 Google Earth Engine. (2025) Cloud Score+ S2_HARMONIZED V1. Retrieved June 6, 2025 from Google Earth Engine
 
 NASA / USGS / JPL-Caltech. (2025) NASA SRTM Digital Elevation 30m. Retrieved June 6, 2025 from Google Earth Engine
+
+OSM. Open street map. <https://www.openstreetmap.org>
+
+SAŽP (Slovak Environment Agency) (2002-2024). Atlas krajiny Slovenskej republiky. (Atlas of the landscape of the Slovak Republic). Accessible through <https://www.enviroportal.sk/atlas-krajiny-sr>
 
 SVP š.p. – Slovakian Water Management Utility. (15 June 2023). Mapy povodňového ohrozenia. (Flood danger maps). Retrieved June 1, 2025 from: <https://mpt.svp.sk/svp_vmapportal/?basemap=orto2023&zoom=5&lat=48.683285&lng=17.339609>
 
