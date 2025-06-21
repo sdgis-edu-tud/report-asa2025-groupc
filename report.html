@@ -570,7 +570,7 @@ CR = 0.086</div>
 <section id="data-structure" class="level3">
 <h3 class="anchored" data-anchor-id="data-structure">Data structure</h3>
 <p>This is an overview of data formats and sources used, as well as a simplified description on how original geometry formats were aggregated onto our vector polygon analysis geometry spatial units. More detailed descriptions can be found in the attribute sub chapters of this report.</p>
-<p>General workflow for all of the attributes was: data was</p>
+<p>General workflow for all of the attributes was:</p>
 <ol type="1">
 <li><p>Perform calculations and create base layer</p></li>
 <li><p>Normalise values</p></li>
@@ -661,6 +661,7 @@ other polygons –&gt; 0</div>
 <section id="aggregation-and-normalisation-2" class="level5">
 <h5 class="anchored" data-anchor-id="aggregation-and-normalisation-2">Aggregation and normalisation</h5>
 <p>Data was aggregated based on average value within analysis geometry polygon, and normalised by 1-[linear min-max] –&gt; priority is given to low quality vegetation.</p>
+<p>Note: In the area, there is a large water body present. This water body was assigned a high value for the nornalised <em>B3ndvi</em>, because water has a low NDVI value. That means it is classified as area with a large priority to improve the green cover based on its current state, despite there being no actuall green cover. This makes the analysis biased.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src=".\img/MCDA_conclusions_B3ndvi.png" class="img-fluid figure-img"></p>
@@ -839,7 +840,7 @@ RS High+ P Medium -&gt; 1</div>
 </section>
 <section id="weighting-and-normalisation" class="level5">
 <h5 class="anchored" data-anchor-id="weighting-and-normalisation">Weighting and normalisation</h5>
-<p>Aggregated as maximum value in polygon. Where there are no intersecting roads (gives result ‘NULL’), 0 was assigned. This aggregate value was lineary normalised to 0-1 range.</p>
+<p>Aggregated as maximum value in polygon, to show the maximum potential in the area. Where there are no intersecting roads (gives result ‘NULL’), 0 was assigned. This aggregate value was lineary normalised to 0-1 range.</p>
 <pre><code>aggregate( 'layer: angular_choice', 'max', "attribute: r=500 m, normalised", intersects($geometry,geometry(@parent)))</code></pre>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -856,7 +857,7 @@ RS High+ P Medium -&gt; 1</div>
 <p>This attribute was then normalised.</p>
 <section id="aggregation-and-normalisation-4" class="level5">
 <h5 class="anchored" data-anchor-id="aggregation-and-normalisation-4">Aggregation and normalisation</h5>
-<p>Again, the value was aggregated by calculating maximum value in the polygon and lineary normalised to 0-1 range.</p>
+<p>Again, the value was aggregated by calculating maximum value in the polygon, to show the maximal potential in the area, and lineary normalised to 0-1 range.</p>
 <pre><code>aggregate( 'layer: angular_choice', 'max', "attribute: AC1km2km, normalised", intersects($geometry,geometry(@parent)))</code></pre>
 </section>
 </section>
@@ -869,7 +870,7 @@ RS High+ P Medium -&gt; 1</div>
 </section>
 <section id="aggregation-and-normalisation-5" class="level5">
 <h5 class="anchored" data-anchor-id="aggregation-and-normalisation-5">Aggregation and normalisation</h5>
-<p>Analysis geometry polygons was buffered by 500 m, to simulate area in 500 m walking distance of each polygon. (While technically not 500 m walking distance, on this small scale we consider the difference negligible.)</p>
+<p>Analysis geometry polygons was buffered by 500 m, to simulate area in 500 m walking distance of each polygon. (While technically not 500 m walking distance, on this small scale we consider the difference negligible.) (If replicating this workflow, consider using a 500 m walking distance service area instead, which captures the intended meaning of the analysis more accurately.)</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/QL3gr_bufferedpolygons.png" class="img-fluid figure-img"></p>
@@ -1238,8 +1239,8 @@ Projected CRS: ETRS89 / UTM zone 33N
 3 4  859.0034
 4 5  740.4449
 5 6  623.5229
-6 7  547.0234
-7 8  468.2062
+6 7  545.1301
+7 8  472.2143
 8 9  402.1753</code></pre>
 </div>
 </div>
@@ -1466,6 +1467,7 @@ Projected CRS: ETRS89 / UTM zone 33N
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
 <section id="discussion-of-results" class="level3">
 <h3 class="anchored" data-anchor-id="discussion-of-results">Discussion of results</h3>
+<p>In the area, there is a large water body present. This water body was assigned a high value for the nornalised <em>B3ndvi</em>, because water has a low NDVI value. That means it is classified as area with a large priority to improve the green cover based on its current state, despite there being no actuall green cover. This makes the analysis biased. <!-- -> In what way exactly???? What would we expect differently if we fixed this? --></p>
 </section>
 </section>
 <section id="reflection" class="level2">

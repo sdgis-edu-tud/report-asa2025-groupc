@@ -102,6 +102,10 @@ Tutors: Dr. Daniele Cannatella, Dr. Claudiu Forgaci, Yehan Wu, PhD
 
 In collaboration with the [ReBioClim](www.interreg-central.eu/projects/rebioclim/) project.
 
+### Introduction of the case, objectives, and problem statement
+
+
+
 ## Methods
 
 <!--# add intro!!! -->
@@ -199,7 +203,6 @@ The geometry was created mainly manually following four main principles, in this
 
 ![Four principles of determining analysis geometry units. (by Viola Ebermannová)](/img/analysisgeometry_overview.png)
 
-
 ![Overview of analysis geometry (by Viola Ebermannová)](img/AnalysisGeometryOverview_250527.png)
 
 ##### Principle 1: ÚSES
@@ -281,7 +284,6 @@ Workflow:
 3.  This results in analysis geometry with a sufficiently uniform grain size based in actual spatial structure.
 
 ![Some larger uniform areas were partitioned based on parcelation. (by Viola Ebermannová)](/img/analysisgeometry_parcelation.png)
-
 
 #### Land cover classification
 
@@ -377,7 +379,7 @@ The steps we take to calculate the NDVI are as follow: Sentinel-2 satellite imag
 
 Data was aggregated based on average value within analysis geometry polygon, and normalised by 1-\[linear min-max\] –\> priority is given to low quality vegetation.
 
-Note: In the area, there is a large water body present. This water body was assigned a high value for the nornalised *B3ndvi*, because water has a low NDVI value. That means it is classified as area with a large priority to improve the green cover based on its current state, despite there being no actuall green cover. This makes the analysis biased. 
+Note: In the area, there is a large water body present. This water body was assigned a high value for the nornalised *B3ndvi*, because water has a low NDVI value. That means it is classified as area with a large priority to improve the green cover based on its current state, despite there being no actuall green cover. This makes the analysis biased.
 
 ![Criterion B3ndvi – Current state of vegetation (normalised.) (by Viola Ebermannová)](/img/MCDA_conclusions_B3ndvi.png)
 
@@ -718,13 +720,13 @@ The typology construction is based on the course's provided tutorial on how to c
 
 The focus area of the typology clustering is the stream corridor in Senica and the spatial unit is the earlier defined analysis geometries. For the typology clustering, we use four variables that were previously analysed, namely:
 
-`B1uses` - Normalised scores based on the connectivity of an area to ÚSES (the regional ecological stability system).
+`B1uses` - Normalised scores based on the connectivity of an area to ÚSES (the regional ecological stability system). The higher the connectivity, the higher the score.
 
-`B3ndvi` - Normalised scores based on the current state of vegetation in an area, as indicated by the ndvi (Normalised Difference Vegetation Index).
+`B3ndvi` - Normalised scores based on the current "lower health/density" state of vegetation in an area, as indicated by NDVI (Normalised Difference Vegetation Index). The lower the NDVI, the higher the score (high and lush vegetation has lower score.)
 
-`CA1temp` - Normalised scores based on the mean LST (Land Surface Temperature) of an area.
+`CA1temp` - Normalised scores based on the mean LST (Land Surface Temperature) of an area. The higher the temperature, the higher the score.
 
-`QL2acg` - Normalised scores based on the potential of an area for "central" functions. Calculated by using high angular choice within polygons.
+`QL2acg` - Normalised scores based on the potential of an area for "central urban" functions.The higher the maximum angular choice within spatial unit, the higher the score.
 
 These specific attributes were chosen, because we judged them to be the most relevant for typology clustering. Both biodiversity attributes (B1uses and B3ndvi) give information about the areas and their current characteristics, making them useful for typology clustering. The other two attributes (CA1temp and QL2acg) got a high weight in the MCDA and are thus important to our research question. Another attribute that scored high in the MCDA is QL3gr, indicating spaces that lack green area within a radius of 500m. This attribute has been left out of the typology construction, since the presence and quality of green areas is already included in attribute B3ndvi and we judged B3ndvi to be more about the area itself than QL3gr, which takes into account the surroundings as well.
 
@@ -732,12 +734,12 @@ These specific attributes were chosen, because we judged them to be the most rel
 
 The dataset that is used, is an aggregated dataset containing all normalised attributes for each analysis geometry. The clustering steps can be generally described as follows:
 
-Step 1. Load R packages and data\
-Step 2. Standardization\
-Step 3. Determine optimal k\
-Step 4. Run K-means clustering\
-Step 5. Interpret cluster center\
-Step 6. (Optional) Calculate distance to cluster center
+[Step 1. Load R packages and data]\
+[Step 2. Standardization]\
+[Step 3: Determine the optimal K]\
+[Step 4. Run K-means clustering]\
+[Step 5. Interpret cluster centers]\
+[Step 6. (Optional) Calculate distance to cluster center]
 
 #### Step 1. Load R packages and data
 
@@ -957,8 +959,7 @@ To interpret the clustering results, we examine the centers of each cluster in t
 
 ### Discussion of results
 
-In the area, there is a large water body present. This water body was assigned a high value for the nornalised *B3ndvi*, because water has a low NDVI value. That means it is classified as area with a large priority to improve the green cover based on its current state, despite there being no actuall green cover. This makes the analysis biased.
- <!-- -> In what way exactly???? What would we expect differently if we fixed this? -->
+In the area, there is a large water body present. This water body was assigned a high value for the nornalised *B3ndvi*, because water has a low NDVI value. That means it is classified as area with a large priority to improve the green cover based on its current state, despite there being no actuall green cover. This makes the analysis biased. <!-- -> In what way exactly???? What would we expect differently if we fixed this? -->
 
 ## Reflection
 
@@ -969,7 +970,6 @@ In the area, there is a large water body present. This water body was assigned a
     - analysis geometry (suitability, methodology, scale) – this might also be in discussion, at least partly
   -->
 ```
-
 
 ## Conclusion
 
