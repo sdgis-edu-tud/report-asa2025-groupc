@@ -730,7 +730,7 @@ The dataset that is used, is an aggregated dataset containing all normalised att
 
 #### Step 1. Load R packages and data
 
-First, load the necessary R packages.
+First, install the necessary R packages.
 
 ```{r}
 #install.packages("sf") 
