@@ -644,7 +644,7 @@ This was lineary normalised to 0-1 into the final value.
 
 #### Weighting
 
-An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing quality of life criteria among each other, the values were given as follows (accessible urban green has the overall highest priority, and QL1acg has more priority than QL2acg, because of central urban functions servicing more people):
+An overall pairwise comparison matrix was created for all indicators at once (see more above). For comparing quality of life criteria among each other, the values were given as follows (accessible urban green has the overall highest priority, and QL2acg has more priority than QL1acl, because of central urban functions servicing more people):
 
 ![Partial pairwise comparison matrix – quality of life (screenshot from [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/) (Holeček n.d.))](img/QL_SaatyMatrix.png)
 
@@ -660,7 +660,7 @@ The calculated weights for climate adaptation criteria are:
 
 #### Quality of life conclusion
 
-We weighted 3 criteria targeting improving quality of life in Senica: potential for community functions (QL2acl), potential for central urban functions (QL2acg), and need for green space (QL3gr). QL3gr was given the highest priority with a weight of 0.27, reflecting the potential of the river flood plain to act as a natural recreational area. Potential for central urban functions was given a weight 0.235, more than twice as high as QL1acl – central urban functions serve the whole town community, which makes them important.
+We weighted 3 criteria targeting improving quality of life in Senica: potential for community functions (QL1acl), potential for central urban functions (QL2acg), and need for green space (QL3gr). QL3gr was given the highest priority with a weight of 0.27, reflecting the potential of the river flood plain to act as a natural recreational area. Potential for central urban functions was given a weight 0.235, more than twice as high as QL1acl – central urban functions serve the whole town community, which makes them important.
 
 It needs to be noted that the layers of QL1acl and QL2acg overlap quite well, because they highlight in general the areas where there are roads, which is also why in the conclusion map, roads generally have higher potential. This does not mean that all roads should be prioritised, but merely that these are the areas to consider when intending to create urban central functions.
 
@@ -687,7 +687,7 @@ Here is a reminder of the weights assigned to each attribute:
 
 : Weights of MCDA criteria
 
-When designing the weights, we gave highest priority to criteria that directly influence liveability and, in our opinion, offer very actionable basis for feasible and tenable investments (QL3gr, QL2acg, CA1temp). This approach is visible in the results: overall the highest score was achieved in well accessible urban areas, mainly in the east of the town.
+When assigning the weights, we gave highest priority to criteria that directly influence liveability and, in our opinion, offer very actionable basis for feasible and tenable investments (QL3gr, QL2acg, CA1temp). This approach is visible in the results: overall the highest score was achieved in well accessible urban areas, mainly in the east of the town.
 
 This map should be interpreted in the context of the whole analysis, and interventions should be designed to suit the needs of specific locations.
 
