@@ -319,7 +319,7 @@ The elements of ÚSES are biocenters, biocorridors (connecting biocenters to all
 
 In Senica, there is a regional biocorridor along the river Teplica, and a larger supraregional biocorridor on the south-east side of the city. For the purposes of our analysis, we consider them of the same importance.
 
-![Map of ÚSES within our area (by Hongyue Kang)](/img/B1_USES.png)
+![Map of ÚSES within our area (by Hongyue Kang)](/img/B1uses.png)
 
 ##### Aggregation and normalisation
 
@@ -373,7 +373,7 @@ Based on the different value of NDVI mean, we can deduce the vegetation state in
 | **0.3–0.6** – Moderate vegetation
 | **\> 0.6** – Dense and healthy vegetation
 
-![NDVI classification (by Hongyue Kang)](img/NDVI.png)
+![NDVI classification (by Hongyue Kang)](img/B3ndvi.png)
 
 ##### Aggregation and normalisation
 
@@ -486,7 +486,7 @@ In Senica, there are two different combinations of retention ability and permeab
 
 Note: This data from From Atlas of Slovakia (SAŽP 2002-2024) is quite small scale. It would be beneficial to acquire more detailed data of the soil surface layers.
 
-![Soil potential (by Viola Ebermannová)](/img/CA_soil.png)
+![Soil potential (by Hongyue Kang)](/img/CA2soil.png)
 
 ##### Aggregation and normalisation
 
