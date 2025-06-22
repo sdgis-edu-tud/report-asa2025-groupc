@@ -898,7 +898,7 @@ print(original_centers)
 
 ```
 
-We can also calculate the standard deviation for a better insight in the accuracy of the results. The code for this was written with the help of [Claude AI](https://claude.ai/). It is important to note that the standard deviation for attribute QL2acg in cluster 2 is zero, but only because its cluster center also has an extremely low value. In this case, the standard deviation of zero therefore does not necessarily mean that the value is extremely accurate. 
+We can also calculate the standard deviation for a better insight in the accuracy of the results. The code for this was written with the help of [Claude AI](https://claude.ai/). It is important to note that the standard deviation for attribute QL2acg in cluster 2 seems to be zero, but only because its cluster center also has an extremely low value. In this case, the standard deviation of zero therefore does not necessarily mean that the value is extremely accurate. 
 
 ```{r}
 # Calculate standard deviation within each cluster for each attribute
