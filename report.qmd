@@ -544,7 +544,7 @@ To determine spatial potential for community functions, we used Angular Choice a
 
 ###### Results of local Angular choice analysis in Senica
 
-Amgular choice analysis was executed on OSM street network using the [PST QGIS plugin](https://smog.chalmers.se/projects/pst-plugin-for-qgis/) (SMOG n.d.). In area there are no clearly fast routes and there are missing pathways along some roads, so we took all roads from the dataset as potentially slow. A radius of 500 m was used, which is the scale of children playing next to their house or corner shops and neighbourhood functions.
+Angular choice analysis was executed on OSM street network using the [PST QGIS plugin](https://smog.chalmers.se/projects/pst-plugin-for-qgis/) (SMOG n.d.). In area there are no clearly fast routes and there are missing pathways along some roads, so we took all roads from the dataset as potentially slow. A radius of 500 m was used, which is the scale of children playing next to their house or corner shops and neighbourhood functions.
 
 The values of Angular choice analysis with radius 500 m were lineary normalised to 0-1 range.
 
