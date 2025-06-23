@@ -86,7 +86,7 @@ tools:
     editing report, clustering algorithms written in
     [R](https://www.r-project.org/)
 
--   [Quarto ](https://quarto.org/)– the report is a Quarto markdown file
+-   [Quarto](https://quarto.org/)– the report is a Quarto markdown file
 
 ### Data availability
 
