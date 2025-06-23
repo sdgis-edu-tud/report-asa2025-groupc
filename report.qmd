@@ -179,7 +179,7 @@ The geometry was created mainly manually following four principles, in this orde
 
 ![Four principles of determining analysis geometry units. (by Viola Ebermannová)](/img/analysisgeometry_overview.png)
 
-![Overview of analysis geometry (by Viola Ebermannová)](img/AnalysisGeometryOverview_250527.png)
+![Overview of analysis geometry (by Viola Ebermannová)](img/AnalysisGeometry.png)
 
 ##### Principle 1: ÚSES
 
@@ -265,9 +265,9 @@ Workflow:
 
 The analysis geometry was manually assigned Land Cover classes. Below is an overview of these classes with a typical example. Each land cover class was assigned an estimate ecological quality indicator based on intuition.
 
-![Landcover overview version 27. 5. 2025 (by Viola Ebermannová)](img/LandcoverOverview_250527.png)
+![Landcover overview (by Viola Ebermannová)](img/LandCover.png)
 
-![Typical examples of land cover classes, draft estimate ecological quality indicator (by Viola Ebermannová)](/img/B_LandCover_typology.png)
+![Typical examples of land cover classes, draft estimate ecological quality indicator (by Viola Ebermannová)](/img/LandCover_typology.png)
 
 ### Data structure
 
