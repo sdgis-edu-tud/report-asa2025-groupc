@@ -32,8 +32,6 @@ This report presents a spatial Multi Criteria Data Analysis and Typology Constru
 
 Note: This is student work created as part of the Applied Spatial Analysis for Sustainable Urban Development course at TU Delft.
 
-Note #2: THIS IS A WIP, IT WILL BE FINALISED IN END OF JUNE 2025.
-
 ##### Key words:
 
 Urban Stream Restoration, Sustainability, Multi Criteria Decision Analysis, Typology Construction, K-means clustering, Senica, Slovakia
@@ -401,7 +399,7 @@ The calculated weights for biodiversity indicators are:
 
 #### Biodiversity conclusion
 
-In this part, we developed a spatially explicit composite biodiversity index map for the spatial geometry by weighting three criteria: *B1uses* (connectivity to ÚSES – Slovakian official Spatial system of ecological stability), *B2pot* (ecological quality improvement and feasibility,  potential), and *B3ndvi* (current state of vegetation based on NDVI). Because we agree that vegetative cover remains a dominant factor influencing riparian biodiversity, in line with existing ecological connection, we assigned *B3ndvi* with the highest weight (0.083), followed by *B1uses* (0.058) and *B2pot* (0.027).
+In this part, we developed a spatially explicit composite biodiversity index map for the spatial geometry by weighting three criteria: *B1uses* (connectivity to ÚSES – Slovakian official Spatial system of ecological stability), *B2pot* (ecological quality improvement and feasibility, potential), and *B3ndvi* (current state of vegetation based on NDVI). Because we agree that vegetative cover remains a dominant factor influencing riparian biodiversity, in line with existing ecological connection, we assigned *B3ndvi* with the highest weight (0.083), followed by *B1uses* (0.058) and *B2pot* (0.027).
 
 The conclusion map resembles the *B3ndvi* map a lot, with the addition of the ÚSES biocorridor(s) as higher priority. The two most important criteria, *B3ndvi* and B1uses are in a way contradictory: in ÚSES areas, it is more likely that the green has a high NDVI and therefore low *B3ndvi* value. However, in B1uses, spaces that are not green are also considered connected if they are adjacent to a green space continuously connected to ÚSES. Moreover, the supraregional biocorridor at the eastern edge of the city does not necessarily have high NDVI, as it is a larger structure.
 
@@ -898,7 +896,7 @@ print(original_centers)
 
 ```
 
-We can also calculate the standard deviation for a better insight in the accuracy of the results. The code for this was written with the help of [Claude AI](https://claude.ai/). It is important to note that the standard deviation for attribute QL2acg in cluster 2 seems to be zero, but only because its cluster center also has an extremely low value. In this case, the standard deviation of zero therefore does not necessarily mean that the value is extremely accurate. 
+We can also calculate the standard deviation for a better insight in the accuracy of the results. The code for this was written with the help of [Claude AI](https://claude.ai/). It is important to note that the standard deviation for attribute QL2acg in cluster 2 seems to be zero, but only because its cluster center also has an extremely low value. In this case, the standard deviation of zero therefore does not necessarily mean that the value is extremely accurate.
 
 ```{r}
 # Calculate standard deviation within each cluster for each attribute
@@ -1009,33 +1007,33 @@ Despite that, we managed to combine some characteristics of each cluster to defi
 
 ###### Type 1 (urban area)
 
-+-------------+-------------+----------------------------------------------------------------------------+
-| Attribute   | Value       | Interpretation                                                             |
-+=============+=============+============================================================================+
-| B1uses      | Medium high | Not very connected to ÚSES, so biodiversity improvement of less importance |
-+-------------+-------------+----------------------------------------------------------------------------+
-| B3ndvi      | High        | Could use more green                                                       |
-+-------------+-------------+----------------------------------------------------------------------------+
-| CA1temp     | High        | Needs improvements against heat stress                                     |
-+-------------+-------------+----------------------------------------------------------------------------+
-| QL2acg      | High        | Does have potential for central urban functions                            |
-+-------------+-------------+----------------------------------------------------------------------------+
++-----------+-------------+----------------------------------------------------------------------------+
+| Attribute | Value       | Interpretation                                                             |
++===========+=============+============================================================================+
+| B1uses    | Medium high | Not very connected to ÚSES, so biodiversity improvement of less importance |
++-----------+-------------+----------------------------------------------------------------------------+
+| B3ndvi    | High        | Could use more green                                                       |
++-----------+-------------+----------------------------------------------------------------------------+
+| CA1temp   | High        | Needs improvements against heat stress                                     |
++-----------+-------------+----------------------------------------------------------------------------+
+| QL2acg    | High        | Does have potential for central urban functions                            |
++-----------+-------------+----------------------------------------------------------------------------+
 
 Type 1 consist of areas that are not very connected to ÚSES structures, so improvement of biodiversity will be of low priority. When planning urban development initiatives the focus should instead be on quality of life improvement and better climate adaptation. These areas have potential for central urban functions, the development of which can be paired with improvement of public space. After checking the areas of type 1 on a map, we additionally concluded that most type 1 areas are urban area. This lines up with our conclusions about this typology.
 
 ###### Type 2 (finetune areas a)
 
-+------------+---------------+--------------------------------------------------------------------------------------------+
-| Attribute  | Value         | Interpretation                                                                             |
-+============+===============+============================================================================================+
-| B1uses     | High          | Can use improvement of already existing ÚSES structures, with focus on biodiversity        |
-+------------+---------------+--------------------------------------------------------------------------------------------+
-| B3ndvi     | Medium low    | Quite good quality of green                                                                |
-+------------+---------------+--------------------------------------------------------------------------------------------+
-| CA1temp    | Medium low    | Does not really need cooling                                                               |
-+------------+---------------+--------------------------------------------------------------------------------------------+
-| QL2acg     | Extremely low | This value is unexpected, perhaps caused by clustering 0 values in areas without any roads |
-+------------+---------------+--------------------------------------------------------------------------------------------+
++-----------+---------------+--------------------------------------------------------------------------------------------+
+| Attribute | Value         | Interpretation                                                                             |
++===========+===============+============================================================================================+
+| B1uses    | High          | Can use improvement of already existing ÚSES structures, with focus on biodiversity        |
++-----------+---------------+--------------------------------------------------------------------------------------------+
+| B3ndvi    | Medium low    | Quite good quality of green                                                                |
++-----------+---------------+--------------------------------------------------------------------------------------------+
+| CA1temp   | Medium low    | Does not really need cooling                                                               |
++-----------+---------------+--------------------------------------------------------------------------------------------+
+| QL2acg    | Extremely low | This value is unexpected, perhaps caused by clustering 0 values in areas without any roads |
++-----------+---------------+--------------------------------------------------------------------------------------------+
 
 Type 2 areas score low on B3ndvi, CA1temp, and QL2acg meaning that its green areas are already of good quality, and that they do not have potential for central urban functions (likely because of not having any roads). There is also a low need for cooling, since the land surface temperatures are not too high. The only attribute that could use improvement is B1uses, but even this does not need too much attention. Therefore we suggest improvement of already existing structures in type 2 areas, possibly with native biodiversity oriented ecological interventions that specifically target ÚSES needs. In conclusion, type 2 does not need much drastic improvement and can instead benefit from finetuning and native biodiversity measures.
 
@@ -1164,11 +1162,11 @@ The collaboration might have been effective on paper, with a functioning distrib
 
 #### Kelly’s reflection on teamwork
 
-For me the progression of this course did not entirely go according to plan. In the beginning, I struggled a bit with fully understanding the assignment and the end goal of our research. Therefore it was hard for me to start working and producing products immediately. Additionally, I also had a lot of work for other courses which made it challenging to find time for a course where it was not entirely clear what I could do to make progress. This is also why I really appreciated Viola taking the lead, creating structure and also taking a lot of work on her plate. Then, I sadly got the flu for some time making it impossible for me to work on this project (or any other university related stuff) at all, which also resulted in me feeling a bit out of the loop. When I got better, I wanted to put the effort in and actively asked for a detailed update on where we stood as a team regarding our progress. This is when I felt like I could finally do my part. The analyses that I did, I really enjoyed and I feel like I learned several new useful skills, besides learning about MCDA and Typology Clustering. 
+For me the progression of this course did not entirely go according to plan. In the beginning, I struggled a bit with fully understanding the assignment and the end goal of our research. Therefore it was hard for me to start working and producing products immediately. Additionally, I also had a lot of work for other courses which made it challenging to find time for a course where it was not entirely clear what I could do to make progress. This is also why I really appreciated Viola taking the lead, creating structure and also taking a lot of work on her plate. Then, I sadly got the flu for some time making it impossible for me to work on this project (or any other university related stuff) at all, which also resulted in me feeling a bit out of the loop. When I got better, I wanted to put the effort in and actively asked for a detailed update on where we stood as a team regarding our progress. This is when I felt like I could finally do my part. The analyses that I did, I really enjoyed and I feel like I learned several new useful skills, besides learning about MCDA and Typology Clustering.
 
-In general, I do feel like this is a pretty big course and it is impossible to learn about everything. For example, the three workshops given in week 3. All of those workshops sounded so interesting but due to limited time it was sadly not feasible to do them all. Even though the workshops did play a significant part in the final analyses. Because I could only follow one of the workshops it was a bit hard for me to understand the results and workings of the analyses performed based on the other two workshops. As a team we could have put more effort into teaching and telling each other about what we learned in the different workshops, so that is something to keep in mind during future courses and group work. 
+In general, I do feel like this is a pretty big course and it is impossible to learn about everything. For example, the three workshops given in week 3. All of those workshops sounded so interesting but due to limited time it was sadly not feasible to do them all. Even though the workshops did play a significant part in the final analyses. Because I could only follow one of the workshops it was a bit hard for me to understand the results and workings of the analyses performed based on the other two workshops. As a team we could have put more effort into teaching and telling each other about what we learned in the different workshops, so that is something to keep in mind during future courses and group work.
 
-All in all, I wish I could have done more work earlier in the quarter, but I am satisfied with what I managed to do in the end. This course was very interesting, but sadly there was too much information in a limited time period so that not everyone could learn about everything. More communication could have positively effected this though, by sharing more actively what we learned individually. 
+All in all, I wish I could have done more work earlier in the quarter, but I am satisfied with what I managed to do in the end. This course was very interesting, but sadly there was too much information in a limited time period so that not everyone could learn about everything. More communication could have positively effected this though, by sharing more actively what we learned individually.
 
 ## Conclusion
 
