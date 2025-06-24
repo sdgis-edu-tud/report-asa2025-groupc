@@ -230,13 +230,15 @@ window.Quarto = {
   <ul>
   <li><a href="#analysis-geometry-1" id="toc-analysis-geometry-1" class="nav-link" data-scroll-target="#analysis-geometry-1">Analysis geometry</a></li>
   <li><a href="#mcda-criteria-selection" id="toc-mcda-criteria-selection" class="nav-link" data-scroll-target="#mcda-criteria-selection">MCDA criteria selection</a></li>
+  <li><a href="#typology-construction-and-discussion-on-attibute-ql2acg" id="toc-typology-construction-and-discussion-on-attibute-ql2acg" class="nav-link" data-scroll-target="#typology-construction-and-discussion-on-attibute-ql2acg">Typology construction and discussion on attibute <em>QL2acg</em></a></li>
   <li><a href="#other-notes" id="toc-other-notes" class="nav-link" data-scroll-target="#other-notes">Other notes</a></li>
-  <li><a href="#significant-flaws-in-analysis" id="toc-significant-flaws-in-analysis" class="nav-link" data-scroll-target="#significant-flaws-in-analysis">Significant flaws in analysis</a></li>
+  <li><a href="#other-notable-flaws-in-analysis" id="toc-other-notable-flaws-in-analysis" class="nav-link" data-scroll-target="#other-notable-flaws-in-analysis">Other notable flaws in analysis</a></li>
   </ul></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a>
   <ul>
   <li><a href="#violas-reflection-on-teamwork" id="toc-violas-reflection-on-teamwork" class="nav-link" data-scroll-target="#violas-reflection-on-teamwork">Viola’s reflection on teamwork</a></li>
   <li><a href="#kellys-reflection-on-teamwork" id="toc-kellys-reflection-on-teamwork" class="nav-link" data-scroll-target="#kellys-reflection-on-teamwork">Kelly’s reflection on teamwork</a></li>
+  <li><a href="#hongyue-kangs-reflection-on-teamwork" id="toc-hongyue-kangs-reflection-on-teamwork" class="nav-link" data-scroll-target="#hongyue-kangs-reflection-on-teamwork">Hongyue Kang’s reflection on teamwork</a></li>
   </ul></li>
   <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1">Conclusion</a></li>
   <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a>
@@ -257,7 +259,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Urban stream restoration – Teplica (Senica, SK)</h1>
-<p class="subtitle lead">Project report of Group C (WIP)</p>
+<p class="subtitle lead">Project report of Group C</p>
 </div>
 
 
@@ -352,6 +354,7 @@ window.Quarto = {
 <p>For both approaches, we perform the analysis on morphologically defined spatial units, which were tailor-made for the flood plain of Teplica in the municipality of Senica. (See chapter <a href="#analysis-geometry">Analysis geometry</a>.)</p>
 <p>The attributes/criteria we selected to represent the characteristics of spaces in the river flood plain are described in the chapter <a href="#selecting-objectives-and-criteria-three-pillar-system">Selecting objectives and criteria – three pillar system</a>. We used all these criteria for MCDA analysis, and chose four of them for the typology construction.</p>
 <p>Spatial analysis was conducted and maps produced by <a href="https://qgis.org/">QGIS</a>, an open source GIS (Geographic Information System) software, including the <a href="https://smog.chalmers.se/projects/pst-plugin-for-qgis/">PST plugin</a> (SMOG n.d.). Typology construction was conducted through R scripts directly in the report file. Some data was accessed and analysed through Google Earth Engine.</p>
+<p>We used secondary data available online. The aggregated data of our base analyses on the spatial units of the analysis geometry is available at: <a href="https://doi.org/10.4121/ca0da4ec-b4d0-430a-b8b9-84aa5a90446b.v1" class="uri">https://doi.org/10.4121/ca0da4ec-b4d0-430a-b8b9-84aa5a90446b.v1</a>.</p>
 <section id="reproducibility-self-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="reproducibility-self-assessment">Reproducibility self assessment</h3>
 <p>This reproducibility self assessment is based on the ReproducibilityChecklist.md file (in main directory).</p>
@@ -413,7 +416,7 @@ window.Quarto = {
 <section id="weighting" class="level3">
 <h3 class="anchored" data-anchor-id="weighting">Weighting</h3>
 <p>In MCDA, each attribute results in a quantifiable criterion. These criteria are normalised and weighed among each other based on their hierarchy of importance in relation to the research question. There are different approaches to determined the weights, we used pairwise comparison Saaty matrix. For this, we used <a href="https://fuzzyahp.holecekp.eu/en/info">Fuzzy AHP</a> by Pavel Holeček (Holeček n.d.).</p>
-<p>We determined how many times more or less important is each criterion in relation to every other criterion. This was done in a subjective way, based on our understanding of the problem. The complete matrix of the importance ratios looks like this:</p>
+<p>We determined how many times more or less important is each criterion in relation to every other criterion. This was done in a subjective way, based on our understanding of the problem. First, we focused on mutual relations within the three themes (B, CA, QL), and then filled out the rest of the matrix and adjusted the matrix to be consistent. The complete matrix of the importance ratios looks like this:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/CompleteSaatyMatrix.png" class="img-fluid figure-img"></p>
@@ -1337,9 +1340,9 @@ Projected CRS: ETRS89 / UTM zone 33N
 3 4  859.0034
 4 5  740.4449
 5 6  623.5229
-6 7  547.9949
-7 8  471.7611
-8 9  405.7474</code></pre>
+6 7  544.3696
+7 8  468.2062
+8 9  402.1753</code></pre>
 </div>
 </div>
 <p>The changing of inertia with increasing k is visualised and based on the <em>elbow point</em> we choose the best value for k. After this elbow point, adding more clusters does not add much to the quality of the end results.</p>
@@ -1555,6 +1558,12 @@ Projected CRS: ETRS89 / UTM zone 33N
 <section id="typology-description" class="level5">
 <h5 class="anchored" data-anchor-id="typology-description">Typology description</h5>
 <!-- 🔴 🟠 🟡 🟢 🔵 🟣 -->
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/typology_clusteroverview.png" class="img-fluid figure-img"></p>
+<figcaption>Cluster overview in Senica (by Viola Ebermannová)</figcaption>
+</figure>
+</div>
 <p>To interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below shows the (unscaled) cluster center values of each attribute with their standard deviation.</p>
 <table class="caption-top table">
 <colgroup>
@@ -1784,7 +1793,7 @@ Projected CRS: ETRS89 / UTM zone 33N
 </tr>
 </tbody>
 </table>
-<p>Both B3ndvi and CA1temp score low, which means that there is not much need for cooling which is in line with a good quality of green in the area (B3ndvi). Type 3 areas have a good connectivity to existing ÚSES structures, so they are a good candidate for native biodiversity improvements. As for type 2, this can be done with small interventions. The high value for QL2acg is a bit unexpected, but can possibly be explained by the fact that main roads go through these areas, that naturally have high angular choice, more on that in the general clustering conclusion. In a way, type 2 and type 3 do not differ that much from each other and we suspect that the differences are mostly caused by the presence of main roads, or absence of any roads. Type 2 and 3 will therefore have similar urban stream development priorities and strategies.</p>
+<p>Both B3ndvi and CA1temp score low, which means that there is not much need for cooling which is in line with a good quality of green in the area (B3ndvi). Type 3 areas have a good connectivity to existing ÚSES structures, so they are a good candidate for native biodiversity improvements. As for type 2, this can be done with small interventions. The high value for QL2acg is a bit unexpected, but can possibly be explained by the fact that important connective roads go through these areas, that naturally have high angular choice, more on that in the general clustering conclusion. These important roads might have a spatial potential to hav central functions, as many possible routes go through them, however their real-world centrality potential is low because of their location in relation to other urban functions. In a way, type 2 and type 3 do not differ that much from each other and we suspect that the differences are mostly caused by the presence of main roads, or absence of any roads. Type 2 and 3 will therefore have similar urban stream development priorities and strategies.</p>
 </section>
 <section id="type-4-fields" class="level6">
 <h6 class="anchored" data-anchor-id="type-4-fields">Type 4 (fields)</h6>
@@ -1847,7 +1856,7 @@ Projected CRS: ETRS89 / UTM zone 33N
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src=".\img/MCDA_conclusions_sum.png" class="img-fluid figure-img"></p>
+<p><img src=".\img/MCDA_conclusions_sum_outline.png" class="img-fluid figure-img"></p>
 <figcaption>MCDA Final conclusion (by Viola Ebermannová)</figcaption>
 </figure>
 </div>
@@ -1857,23 +1866,22 @@ Projected CRS: ETRS89 / UTM zone 33N
 <li><p>Type 2 – “finetune areas a”, and type 3 – “finetunes areas b” – improving already existing structures by native biodiversity oriented measures and other fine tuning</p></li>
 <li><p>Type 3 – “fields” – fields have an overall low priority for development, however we recommend climate adaptation and biodiversity measures such as dense vegetation islands/strips</p></li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot clusters with base R</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(grids[<span class="st">"cluster"</span>], </span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial Pattern of Urban Stream Clusters"</span>, </span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">border =</span> <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="report_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="img/typology_clusteroverview.png" class="img-fluid figure-img"></p>
+<figcaption>Cluster overview in Senica (by Viola Ebermannová)</figcaption>
 </figure>
-</div>
-</div>
 </div>
 <section id="tying-the-two-analysis-methods-together" class="level3">
 <h3 class="anchored" data-anchor-id="tying-the-two-analysis-methods-together">Tying the two analysis methods together</h3>
 <p>When comparing the results from MCDA and Typology construction, it is apparent that type 1 (“urban areas”) corresponds to the areas that scored highest in MCDA. This is not surprising, as the criteria that we prioritised in weighting target improvement of the urban environment. This result suggest that overall largest priority in deciding where to intervene should be given to improving green space accessibility, urban functions, and climate adaptation within the town of Senica.</p>
 <p>The lowest MCDA scores can be found in mainly type 4 areas (“fields”), and also in type 2 areas (“finetune areas a”, the areas with extremely low need for green – areas likely without buildings). This follows the same logic.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/conclusion_MCDAxTypology.png" class="img-fluid figure-img"></p>
+<figcaption>Comparison of the 4 typologies and MCDA results (by Viola Ebermannová)</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="discussion" class="level2">
@@ -1885,18 +1893,24 @@ Projected CRS: ETRS89 / UTM zone 33N
 </section>
 <section id="mcda-criteria-selection" class="level3">
 <h3 class="anchored" data-anchor-id="mcda-criteria-selection">MCDA criteria selection</h3>
-<p>Criteria should be comprehensive and measurable. Set of criteria should be complete, operational, decomposable, non-redundant, and minimal. Although we gave a lot of thought to the selection of criteria, we were limited by the availability of datasets, and also our analysis abilities. This limited the comprehensibility of the criteria, as by using land surface temperature to measure thermal comfort, or angular choice analysis to determine potential for central functions. Criteria <em>B2pot</em> and <em>B3ndvi</em> are partly redundant, because <em>B2pot</em> depends on land cover typology. In future research, the whole set of criteria should be reevaluated and individual criteria should be made more comprehensible.</p>
+<p>Criteria should be comprehensive and measurable. Set of criteria should be complete, operational, decomposable, non-redundant, and minimal. Although we gave a lot of thought to the selection of criteria, we were limited by the availability of datasets, and also our analysis abilities. This limited the comprehensibility of the criteria, as by using land surface temperature to measure thermal comfort, or angular choice analysis to determine potential for central functions. Criteria <em>B2pot</em> and <em>B3ndvi</em> are partly redundant, because <em>B2pot</em> depends on land cover typology. In future research, the set of criteria should be reevaluated and individual criteria should be made more comprehensible.</p>
+</section>
+<section id="typology-construction-and-discussion-on-attibute-ql2acg" class="level3">
+<h3 class="anchored" data-anchor-id="typology-construction-and-discussion-on-attibute-ql2acg">Typology construction and discussion on attibute <em>QL2acg</em></h3>
+<p>We chose to select only 4 variables for the typology construction. This decision was made to limit the scatteredness of the resulting clusters, and better interpretability. For a more nuanced analysis, that would make justice to our morphologicaly defined quite detailed analysis geometry, it would be beneficial to use more variables, however we do expect the interpretation would be challenging. Moreover, to perform a more nuanced analysis and typology construction, the detail level of our data, and the preciseness in which it answers the research questions, would need to be higher. Ideally, we would have a larger number of more precise variables.</p>
+<p>After we performed the clustering, the resulting clusters 2 and 3 were very similar in all variables other than <em>QL2acg</em>. In our opinion, our methodology for determining urban centralities is flawed, which caused this variable to not have much informational value. Therefore we came to the decision to group clusters 2 and 3 together for intervention recommendations.</p>
+<p>In <em>QL2acg</em>, areas with no roads were assigned value 0, and areas with main roads that are technically in the middle of a field were assigned high values. This lead to the clustering being ambiguous. The high values of main roads in the middle of nowhere demonstrate the character of Space Syntax analysis – it is a network analysis based on solely the network spatial structure, which does not take into account the actual structure of the environment and the meanings and values of places. If we used a more complex approach to determining the potential urban centralities taking into account also these characteristics, these areas would have a low score.</p>
+<p>An easier path towards a more telling analysis of potential centralities could be to adjust the radius of the angular choice analysis. By slightly reducing the radius to better adhere to the scale of the city (which has a width of at the widest point ~ 2,3 km.) Another option could be to include a larger area in the network map, because perhaps edge effect might have also had some effect on the ambiguity.</p>
 </section>
 <section id="other-notes" class="level3">
 <h3 class="anchored" data-anchor-id="other-notes">Other notes</h3>
-<p>Land cover typology classification was not based on much evidence, which is something that needs to be improved in possible future research. Also the Improvement potential was evaluated only conceptually and not based in evidence.</p>
+<p>Although based in data, this research is subjective and depends on the authors’ interpretation of data and results, as well as their values in determining the general research approach and priorities. Some parts of the research are especially subjective. Land cover typology classification was not based on much evidence, which is something that needs to be improved in possible future research. Also the Improvement potential was evaluated only conceptually and not based in evidence.</p>
 <p>It would also be good to highlight more specific intervention possibilities for the different objectives, that are based in research, and show references of related good (and bad) practice.</p>
 <p>Overall, for future research, it would be beneficial to use more evidence based classifications and precise data. Perhaps also primary data, which is based in local conditions and collaborative knowledge gathered from locals and various experts.</p>
 </section>
-<section id="significant-flaws-in-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="significant-flaws-in-analysis">Significant flaws in analysis</h3>
+<section id="other-notable-flaws-in-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="other-notable-flaws-in-analysis">Other notable flaws in analysis</h3>
 <p>In the area, there is a large water body present. This water body was assigned a high value for the normalised <em>B3ndvi</em>, because water has a low NDVI value. That means it is classified as area with a large priority to improve the green cover based on its current state, despite there being no actual green cover. This makes the analysis biased.</p>
-<p>In <em>QL2acg</em>, areas with no roads were assigned value 0, and areas with main roads that are technically in the middle of a field were assigned high values. This lead to the clustering being ambiguous. The high values of main roads in the middle of nowhere demonstrate the character of Space Syntax analysis – it is a network analysis based on solely the network spatial structure, which does not take into account the actual structure of the environment and the meanings and values of places. If we used a more complex approach to determining the potential urban centralities taking into account also these characteristics, these areas would have a low score.</p>
 <p>Attribute <em>QL3gr</em> would benefit from a more precise selection of buildings in need of green, and also the urban green areas determined by field research, the data from OSM was very limited.</p>
 </section>
 </section>
@@ -1917,6 +1931,13 @@ Projected CRS: ETRS89 / UTM zone 33N
 <p>For me the progression of this course did not entirely go according to plan. In the beginning, I struggled a bit with fully understanding the assignment and the end goal of our research. Therefore it was hard for me to start working and producing products immediately. Additionally, I also had a lot of work for other courses which made it challenging to find time for a course where it was not entirely clear what I could do to make progress. This is also why I really appreciated Viola taking the lead, creating structure and also taking a lot of work on her plate. Then, I sadly got the flu for some time making it impossible for me to work on this project (or any other university related stuff) at all, which also resulted in me feeling a bit out of the loop. When I got better, I wanted to put the effort in and actively asked for a detailed update on where we stood as a team regarding our progress. This is when I felt like I could finally do my part. The analyses that I did, I really enjoyed and I feel like I learned several new useful skills, besides learning about MCDA and Typology Clustering.</p>
 <p>In general, I do feel like this is a pretty big course and it is impossible to learn about everything. For example, the three workshops given in week 3. All of those workshops sounded so interesting but due to limited time it was sadly not feasible to do them all. Even though the workshops did play a significant part in the final analyses. Because I could only follow one of the workshops it was a bit hard for me to understand the results and workings of the analyses performed based on the other two workshops. As a team we could have put more effort into teaching and telling each other about what we learned in the different workshops, so that is something to keep in mind during future courses and group work.</p>
 <p>All in all, I wish I could have done more work earlier in the quarter, but I am satisfied with what I managed to do in the end. This course was very interesting, but sadly there was too much information in a limited time period so that not everyone could learn about everything. More communication could have positively effected this though, by sharing more actively what we learned individually.</p>
+</section>
+<section id="hongyue-kangs-reflection-on-teamwork" class="level4">
+<h4 class="anchored" data-anchor-id="hongyue-kangs-reflection-on-teamwork">Hongyue Kang’s reflection on teamwork</h4>
+<p>Through this course, I have developed a foundational understanding of both Multi-Criteria Decision Analysis (MCDA) and typology construction. While I did not directly participate in the typology construction process, I gained insight into how it works—particularly through learning about k-means clustering—and I find it to be a highly useful tool. I may apply this method in my future research. Importantly, I came to understand how typology construction and MCDA can complement each other: typologies help structure complex datasets into interpretable categories, while MCDA provides a framework to assess and make decisions based on these structured outcomes.</p>
+<p>In this course, I was also responsible for the micro-climate analysis. Unfortunately, we did not obtain any concrete results, which I consider a real pity, as I am genuinely interested in this topic. The first challenge I encountered was data acquisition. Unlike in previous quarters, where datasets were prepared by tutors, this time I had to search for the data myself—a process that took considerable time. It was frustrating to find that most of the data was either imprecise or simply unavailable. Despite spending a great deal of time, I was unable to generate a meaningful outcome, which was quite discouraging. However, I also understand that this is a common reality in research: data is not always readily accessible. If I hope to conduct original research in the future, I must be prepared to face and overcome such obstacles.</p>
+<p>The second difficulty I faced was the large deviation caused by the accumulation of multiple small errors. For example, when I attempted to calculate the shadow patterns in our research area, I lacked essential datasets such as DSM (Digital Surface Model) and CDSM. As a workaround, I tried to generate them using NDVI, DEM, and available building height data. However, this approach was problematic. The NDVI data only allowed for rough estimation of vegetation height and coverage, and the building height information was based on a 100×100 meter raster layer, which was far too coarse. These small inaccuracies compounded, resulting in a significant deviation in the shadow simulation. In the end, the outcome was unusable. If I had more time, I would have ensured that every dataset used was as accurate and high-resolution as possible. This is an important lesson I will carry forward into future research.</p>
+<p>Overall, this course taught me scientific methods for conducting research and analyzing problems in a more quantitative way. I believe this is especially valuable in the fields of architecture and urban studies, where research is often qualitative. In my view, qualitative insights alone are not always convincing unless they are supported by reliable, empirical data.</p>
 </section>
 </section>
 <section id="conclusion-1" class="level2">

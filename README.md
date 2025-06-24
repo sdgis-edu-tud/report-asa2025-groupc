@@ -15,7 +15,8 @@ Senica, Slovakia.
 ### Authors and contact information
 
 Viola Ebermannová (MSc track Urbanism, BK TU Delft) –
-v.ebermannova\@student.tudelft.nl, <https://github.com/violae>
+v.ebermannova\@student.tudelft.nl, <https://github.com/violae>,
+<https://orcid.org/0009-0004-4450-5067>
 
 Hongyue Kang (MSc track Urbanism, BK TU Delft) – hongyuekang\@tudelft.nl
 
@@ -90,7 +91,9 @@ tools:
 
 ### Data availability
 
-Data is available in the **data** folder.
+Data is available in the **data** folder. The results of the base
+analyses aggregated to analysis geometry spatial units are available at:
+<https://doi.org/10.4121/ca0da4ec-b4d0-430a-b8b9-84aa5a90446b.v1>.
 
 ### Feedback
 

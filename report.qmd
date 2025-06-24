@@ -1,6 +1,6 @@
 ---
 title: "Urban stream restoration – Teplica (Senica, SK)"
-subtitle: "Project report of Group C (WIP)"
+subtitle: "Project report of Group C"
 author:
   - name: "Hongyue Kang"
     affiliation: "MSc Urbanism"
@@ -82,6 +82,8 @@ The attributes/criteria we selected to represent the characteristics of spaces i
 
 Spatial analysis was conducted and maps produced by [QGIS](https://qgis.org/), an open source GIS (Geographic Information System) software, including the [PST plugin](https://smog.chalmers.se/projects/pst-plugin-for-qgis/) (SMOG n.d.). Typology construction was conducted through R scripts directly in the report file. Some data was accessed and analysed through Google Earth Engine.
 
+We used secondary data available online. The aggregated data of our base analyses on the spatial units of the analysis geometry is available at: <https://doi.org/10.4121/ca0da4ec-b4d0-430a-b8b9-84aa5a90446b.v1>.
+
 ### Reproducibility self assessment
 
 This reproducibility self assessment is based on the ReproducibilityChecklist.md file (in main directory).
@@ -136,7 +138,7 @@ Each of the sub/themes comes with its own research subquestion. In the scheme be
 
 In MCDA, each attribute results in a quantifiable criterion. These criteria are normalised and weighed among each other based on their hierarchy of importance in relation to the research question. There are different approaches to determined the weights, we used pairwise comparison Saaty matrix. For this, we used [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/info) by Pavel Holeček (Holeček n.d.).
 
-We determined how many times more or less important is each criterion in relation to every other criterion. This was done in a subjective way, based on our understanding of the problem. The complete matrix of the importance ratios looks like this:
+We determined how many times more or less important is each criterion in relation to every other criterion. This was done in a subjective way, based on our understanding of the problem. First, we focused on mutual relations within the three themes (B, CA, QL), and then filled out the rest of the matrix and adjusted the matrix to be consistent. The complete matrix of the importance ratios looks like this:
 
 ![Complete Saaty Matrix. The meaning of the numbers is: "How many times more important is the criterion in the row compared to the criterion in the column?" (screenshot from [Fuzzy AHP](https://fuzzyahp.holecekp.eu/en/) (Holeček n.d.))](img/CompleteSaatyMatrix.png)
 
@@ -963,6 +965,8 @@ print(mean_distances_per_cluster)
 
 <!-- 🔴 🟠 🟡 🟢 🔵 🟣 -->
 
+![Cluster overview in Senica (by Viola Ebermannová)](img/typology_clusteroverview.png)
+
 To interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below shows the (unscaled) cluster center values of each attribute with their standard deviation.
 
 +---------+-------------------+-------------------+-------------------+-------------------+-----------------------------------------------+
@@ -1051,7 +1055,7 @@ Type 2 areas score low on B3ndvi, CA1temp, and QL2acg meaning that its green are
 | QL2acg      | High        | Does have potential for central urban functions |
 +-------------+-------------+-------------------------------------------------+
 
-Both B3ndvi and CA1temp score low, which means that there is not much need for cooling which is in line with a good quality of green in the area (B3ndvi). Type 3 areas have a good connectivity to existing ÚSES structures, so they are a good candidate for native biodiversity improvements. As for type 2, this can be done with small interventions. The high value for QL2acg is a bit unexpected, but can possibly be explained by the fact that main roads go through these areas, that naturally have high angular choice, more on that in the general clustering conclusion. In a way, type 2 and type 3 do not differ that much from each other and we suspect that the differences are mostly caused by the presence of main roads, or absence of any roads. Type 2 and 3 will therefore have similar urban stream development priorities and strategies.
+Both B3ndvi and CA1temp score low, which means that there is not much need for cooling which is in line with a good quality of green in the area (B3ndvi). Type 3 areas have a good connectivity to existing ÚSES structures, so they are a good candidate for native biodiversity improvements. As for type 2, this can be done with small interventions. The high value for QL2acg is a bit unexpected, but can possibly be explained by the fact that important connective roads go through these areas, that naturally have high angular choice, more on that in the general clustering conclusion. These important roads might have a spatial potential to hav central functions, as many possible routes go through them, however their real-world centrality potential is low because of their location in relation to other urban functions. In a way, type 2 and type 3 do not differ that much from each other and we suspect that the differences are mostly caused by the presence of main roads, or absence of any roads. Type 2 and 3 will therefore have similar urban stream development priorities and strategies.
 
 ###### Type 4 (fields)
 
@@ -1091,7 +1095,7 @@ The Multi Criteria Decision Analysis (MCDA) highlights areas which should be pri
 
 -   prioritising native species and naturally occurring biotopes in any future interventions (climate adaptation, improving biodiversity)
 
-![MCDA Final conclusion (by Viola Ebermannová)](/img/MCDA_conclusions_sum.png)
+![MCDA Final conclusion (by Viola Ebermannová)](/img/MCDA_conclusions_sum_outline.png)
 
 The typologies created in Typology construction offer a simplified typology of areas that can act as a basis for an overview of typical spatial intervention sets. The four typologies and the interventions we recommend for them are:
 
@@ -1101,18 +1105,15 @@ The typologies created in Typology construction offer a simplified typology of a
 
 -   Type 3 – “fields” – fields have an overall low priority for development, however we recommend climate adaptation and biodiversity measures such as dense vegetation islands/strips
 
-```{r}
-# Plot clusters with base R
-plot(grids["cluster"], 
-     main = "Spatial Pattern of Urban Stream Clusters", 
-     border = NA)
-```
+![Cluster overview in Senica (by Viola Ebermannová)](img/typology_clusteroverview.png)
 
 ### Tying the two analysis methods together
 
 When comparing the results from MCDA and Typology construction, it is apparent that type 1 (“urban areas”) corresponds to the areas that scored highest in MCDA. This is not surprising, as the criteria that we prioritised in weighting target improvement of the urban environment. This result suggest that overall largest priority in deciding where to intervene should be given to improving green space accessibility, urban functions, and climate adaptation within the town of Senica.
 
 The lowest MCDA scores can be found in mainly type 4 areas (“fields”), and also in type 2 areas (“finetune areas a”, the areas with extremely low need for green – areas likely without buildings). This follows the same logic.
+
+![Comparison of the 4 typologies and MCDA results (by Viola Ebermannová)](img/conclusion_MCDAxTypology.png)
 
 ## Discussion
 
@@ -1124,21 +1125,29 @@ To fulfil the potential of using morphologically defined spatial units, in futur
 
 ### MCDA criteria selection
 
-Criteria should be comprehensive and measurable. Set of criteria should be complete, operational, decomposable, non-redundant, and minimal. Although we gave a lot of thought to the selection of criteria, we were limited by the availability of datasets, and also our analysis abilities. This limited the comprehensibility of the criteria, as by using land surface temperature to measure thermal comfort, or angular choice analysis to determine potential for central functions. Criteria *B2pot* and *B3ndvi* are partly redundant, because *B2pot* depends on land cover typology. In future research, the whole set of criteria should be reevaluated and individual criteria should be made more comprehensible.
+Criteria should be comprehensive and measurable. Set of criteria should be complete, operational, decomposable, non-redundant, and minimal. Although we gave a lot of thought to the selection of criteria, we were limited by the availability of datasets, and also our analysis abilities. This limited the comprehensibility of the criteria, as by using land surface temperature to measure thermal comfort, or angular choice analysis to determine potential for central functions. Criteria *B2pot* and *B3ndvi* are partly redundant, because *B2pot* depends on land cover typology. In future research, the set of criteria should be reevaluated and individual criteria should be made more comprehensible.
+
+### Typology construction and discussion on attibute *QL2acg*
+
+We chose to select only 4 variables for the typology construction. This decision was made to limit the scatteredness of the resulting clusters, and better interpretability. For a more nuanced analysis, that would make justice to our morphologicaly defined quite detailed analysis geometry, it would be beneficial to use more variables, however we do expect the interpretation would be challenging. Moreover, to perform a more nuanced analysis and typology construction, the detail level of our data, and the preciseness in which it answers the research questions, would need to be higher. Ideally, we would have a larger number of more precise variables.
+
+After we performed the clustering, the resulting clusters 2 and 3 were very similar in all variables other than *QL2acg*. In our opinion, our methodology for determining urban centralities is flawed, which caused this variable to not have much informational value. Therefore we came to the decision to group clusters 2 and 3 together for intervention recommendations.
+
+In *QL2acg*, areas with no roads were assigned value 0, and areas with main roads that are technically in the middle of a field were assigned high values. This lead to the clustering being ambiguous. The high values of main roads in the middle of nowhere demonstrate the character of Space Syntax analysis – it is a network analysis based on solely the network spatial structure, which does not take into account the actual structure of the environment and the meanings and values of places. If we used a more complex approach to determining the potential urban centralities taking into account also these characteristics, these areas would have a low score.
+
+An easier path towards a more telling analysis of potential centralities could be to adjust the radius of the angular choice analysis by slightly reducing it to better adhere to the scale of the city (which has a width of at the widest point ~ 2,3 km.) In addition, it could be good to include a larger area in the network map, because perhaps edge effect might have also had some effect on the ambiguity.
 
 ### Other notes
 
-Land cover typology classification was not based on much evidence, which is something that needs to be improved in possible future research. Also the Improvement potential was evaluated only conceptually and not based in evidence.
+Although based in data, this research is subjective and depends on the authors' interpretation of data and results, as well as their values in determining the general research approach and priorities. Some parts of the research are especially subjective. Land cover typology classification was not based on much evidence, which is something that needs to be improved in possible future research. Also the Improvement potential was evaluated only conceptually and not based in evidence.
 
 It would also be good to highlight more specific intervention possibilities for the different objectives, that are based in research, and show references of related good (and bad) practice.
 
 Overall, for future research, it would be beneficial to use more evidence based classifications and precise data. Perhaps also primary data, which is based in local conditions and collaborative knowledge gathered from locals and various experts.
 
-### Significant flaws in analysis
+### Other notable flaws in analysis
 
 In the area, there is a large water body present. This water body was assigned a high value for the normalised *B3ndvi*, because water has a low NDVI value. That means it is classified as area with a large priority to improve the green cover based on its current state, despite there being no actual green cover. This makes the analysis biased.
-
-In *QL2acg*, areas with no roads were assigned value 0, and areas with main roads that are technically in the middle of a field were assigned high values. This lead to the clustering being ambiguous. The high values of main roads in the middle of nowhere demonstrate the character of Space Syntax analysis – it is a network analysis based on solely the network spatial structure, which does not take into account the actual structure of the environment and the meanings and values of places. If we used a more complex approach to determining the potential urban centralities taking into account also these characteristics, these areas would have a low score.
 
 Attribute *QL3gr* would benefit from a more precise selection of buildings in need of green, and also the urban green areas determined by field research, the data from OSM was very limited.
 
