@@ -15,9 +15,6 @@ author:
 format:
   html:
     toc: true
-    toc-location: right
-    toc-depth: 5
-    toc-expand: 2
 ---
 
 <!-- ## This is a computational notebook -->
